@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\Administrator\Desktop\s233122\RCasey Tutorial 03 Exercise 01\RCaseySDL\main.cpp(5,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  RCaseySDL.vcxproj -> C:\Users\Administrator\Desktop\s233122\RCasey Tutorial 03 Exercise 01\Debug\RCaseySDL.exe
