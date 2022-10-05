@@ -14,10 +14,10 @@ void Game::SetDisplayColour()
 		{
 			// render in a pretty red colour
 			int result = SDL_SetRenderDrawColor(
-				m_Renderer,		// our trarget renderer
-				255,			//r
-				0,				//g
-				0,				//b
+				m_Renderer,		// our target renderer
+				0,				//r
+				206,			//g
+				255,			//b
 				255				//alpha
 			);
 
@@ -28,7 +28,8 @@ void Game::SetDisplayColour()
 			SDL_RenderPresent(m_Renderer);
 
 			//pause for 5 secs
-			SDL_Delay(16);		//SDL_Delay takes millisecs
+			SDL_Delay(1000);		//SDL_Delay takes millisecs
+			
 		}
 
 }
@@ -44,9 +45,9 @@ Game::Game() {
 
 	//create the window
 	m_Window = SDL_CreateWindow(
-		"My First Window",	//title
-		250,				// initial x position
-		50,					// initial y position
+		"Great Success!",	//title
+		600,				// initial x position
+		300,				// initial y position
 		640,				// width, in pixels
 		480,				// height in pixels
 		0				// window behaviour flags (ignore for now)
