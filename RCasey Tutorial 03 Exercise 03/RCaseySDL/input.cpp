@@ -1,10 +1,8 @@
-#include "Game.h"
-#include "SDL.h"
 #include "input.h"
-#include <iostream>
+#include <SDL.h>
 
 
-void Input::Input()
+Input::Input()
 {
 
 	//loop through all the events in the events list
@@ -16,7 +14,7 @@ void Input::Input()
 		if (m_event.type == SDL_KEYDOWN)
 		{
 			//cache the code of key we pressed for easier debugging
-			SDL_Keycode keyPressed = m_event.key.keysym.sym:
+			SDL_Keycode keyPressed = m_event.key.keysym.sym;
 
 			//update keys
 			switch (keyPressed)
@@ -51,11 +49,11 @@ void Input::Input()
 				break;
 
 				case SDLK_g:
-				m_keyPressed[KEY_G] = false;
+				m_keysPressed[KEY_G] = false;
 				break;
 
 				case SDLK_b:
-				m_keyPressed[KEY_B] = false;
+				m_keysPressed[KEY_B] = false;
 				break;
 			}
 		}
