@@ -149,11 +149,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bitmap.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bitmap.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="input.h" />
   </ItemGroup>
