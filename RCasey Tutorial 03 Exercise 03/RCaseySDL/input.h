@@ -1,7 +1,5 @@
-#ifndef GAME_H
-#define GAME_H
+#pragma once
 #include <SDL.h>
-#include <stdio.h>
 
 enum KEYS_PRESSED_LIST
 {
@@ -22,4 +20,3 @@ private:
 	bool m_keysPressed[SIZE_OF_KEYS_PRESSED_ENUM];
 };
 
-#endif

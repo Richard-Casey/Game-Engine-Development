@@ -1,7 +1,6 @@
-#include "Game.h"
-#include "SDL.h"
 #include "input.h"
-#include <iostream>
+#include <SDL.h>
+
 
 
 void Input::Input()
