@@ -1,7 +1,5 @@
 ﻿  Game.cpp
-C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 03 Exercise 03\RCaseySDL\Game.h(3,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
   input.cpp
-C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 03 Exercise 03\RCaseySDL\input.h(2,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
   main.cpp
-C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 03 Exercise 03\RCaseySDL\Game.h(3,10): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
   Generating Code...
+  RCaseySDL.vcxproj -> C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 03 Exercise 03\Debug\RCaseySDL.exe

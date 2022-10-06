@@ -24,7 +24,8 @@ public:
 			SDL_DestroyWindow(m_Window);
 		}
 	}
-	void SetDisplayColour(void);
+	void SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
+	void Update();
 	
 };
 
