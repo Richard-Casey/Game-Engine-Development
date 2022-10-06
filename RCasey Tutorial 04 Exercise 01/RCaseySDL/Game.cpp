@@ -3,6 +3,7 @@
 #include "SDL.h"
 #include "input.h"
 #include "bitmap.h"
+using namespace std;
 
 
 
@@ -86,12 +87,13 @@ Game::Game() {
 		return;
 	}
 
-	std::string directory = "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\";
+	std::string directory1 = "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\";
+	std::string directory2 = "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 01\\assets\\";
 	float monsterxpos = 200;
 	float monsterypos = 100;
-	m_monster = new Bitmap(m_Renderer, directory + "monster.bmp", 100, 100);
-	m_monsterTrans = new Bitmap(m_Renderer, directory + "monsterTrans.bmp", monsterxpos, monsterypos);
-	m_monsterTransKeyed = new Bitmap(m_Renderer, directory + "monsterTrans.bmp", 300, 100, true);
+	m_monster = new Bitmap(m_Renderer, directory2 + "monster.bmp", 100, 100);
+	m_monsterTrans = new Bitmap(m_Renderer, directory2 + "monsterTrans.bmp", monsterxpos, monsterypos);
+	m_monsterTransKeyed = new Bitmap(m_Renderer, directory2 + "monsterTrans.bmp", 300, 100, true);
 
 	//Update();
 }
