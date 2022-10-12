@@ -1,2 +1,1 @@
-﻿  Game.cpp
-  RCaseySDL.vcxproj -> C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 03 Exercise 03\Debug\RCaseySDL.exe
+﻿LINK : fatal error LNK1104: cannot open file 'SDL2.lib'

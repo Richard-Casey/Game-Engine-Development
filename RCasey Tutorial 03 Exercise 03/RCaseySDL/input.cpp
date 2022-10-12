@@ -19,7 +19,7 @@ Input::Input()
 			//update keys
 			switch (keyPressed)
 			{
-				case SDLK_ESCAPE;
+			case SDLK_ESCAPE:
 					m_keysPressed[KEY_ESCAPE] = true;
 					break;
 

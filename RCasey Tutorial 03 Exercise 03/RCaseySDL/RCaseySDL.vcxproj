@@ -74,13 +74,13 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 03 Exercise 03\SDL2-2.24.0\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 03 Exercise 03\SDL2-2.24.0\lib\x86;$(LibraryPath)</LibraryPath>
-    <ExecutablePath>C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 03 Exercise 03\SDL2-2.24.0\include;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath>C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 03 Exercise 03\SDL2-2.24.0\include;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 03 Exercise 03\SDL2-2.24.0\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 03 Exercise 03\SDL2-2.24.0\lib\x86;$(LibraryPath)</LibraryPath>
-    <ExecutablePath>C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 03 Exercise 03\SDL2-2.24.0\include;$(ExecutablePath)</ExecutablePath>
+    <ExecutablePath>C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 03 Exercise 03\SDL2-2.24.0\include;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
