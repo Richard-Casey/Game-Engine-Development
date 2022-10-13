@@ -1,5 +1,5 @@
 #include "Creature.h"
 
-bitmap
-draw
-update
+//bitmap
+//draw
+//update
