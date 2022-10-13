@@ -1,8 +1,13 @@
 #ifndef GAME_H
 #define GAME_H
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include <stdio.h>
 #include "input.h"
+#include <string>
+
+using namespace std;
+
 
 struct SDL_Window;
 struct SDL_Renderer;
@@ -15,7 +20,7 @@ private:
 
 	//SDL Stuff
 	SDL_Window* m_window;
-	SDL_Renderer* m_renderer;
+	
 	bool m_running;
 
 	//bitmaps!
@@ -23,7 +28,11 @@ private:
 	Bitmap* m_monsterTrans; //04-01
 	Bitmap* m_monsterTransKeyed; //04-01
 
+	TTF_Font* m_pSmallFont;
+	TTF_Font* m_pBigFont;
+
 	void CheckEvents();
+	void UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour);
 
 
 	Uint8 r = 127, g = 127, b = 127, a = 255;

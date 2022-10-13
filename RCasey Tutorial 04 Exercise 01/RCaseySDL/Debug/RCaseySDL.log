@@ -1,1 +1,4 @@
-﻿  RCaseySDL.vcxproj -> C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 01\Debug\RCaseySDL.exe
+﻿  Game.cpp
+C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 04 Exercise 01\RCaseySDL\Game.cpp(99,88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 04 Exercise 01\RCaseySDL\Game.cpp(99,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  RCaseySDL.vcxproj -> C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 04 Exercise 01\Debug\RCaseySDL.exe
