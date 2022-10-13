@@ -1,0 +1,7 @@
+﻿  main.cpp
+C:\Users\Administrator\Desktop\s233122\RCasey Tutorial 03 Exercise 01\RCaseySDL\main.cpp(5,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 1 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  RCaseySDL.vcxproj -> C:\Users\Administrator\Desktop\s233122\RCasey Tutorial 03 Exercise 01\Release\RCaseySDL.exe
