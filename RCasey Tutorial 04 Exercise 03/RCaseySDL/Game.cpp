@@ -93,15 +93,15 @@ Game::Game()
 		return;
 	}
 
-	std::string directory1 = "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\";
-	std::string directory2 = "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 01\\assets\\";
+	std::string directory1 = "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 04 Exercise 03\\assets\\";
+	std::string directory2 = "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\";
 	float monsterxpos = 200;
 	float monsterypos = 100;
 	m_monster = new Creature(m_Renderer, directory1 + "monster.bmp", 100, 100);
 	m_monsterTrans = new Creature(m_Renderer, directory1 + "monsterTrans.bmp", monsterxpos, monsterypos);
 	m_monsterTransKeyed = new Creature(m_Renderer, directory1 + "monsterTrans.bmp", 300, 100, true);
 
-	m_pTheMonster = new Monster(m_Renderer, directory1 + "monsterTrans.bmp", 10, 10, true);
+	m_pTheMonster = new Monster(m_Renderer, directory1 + "deadpool.png", 10, 10, true);
 
 	//read in the font
 	// Uni Comp Directory "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf";
@@ -219,6 +219,26 @@ void Game::Update(void)
 		m_monsterTrans->addoffset(1, 0);
 	}
 
+	if (input->KeyIsPressed(KEY_U))
+	{
+		m_pTheMonster->addoffset(0, -1);
+	}
+
+	if (input->KeyIsPressed(KEY_J))
+	{
+		m_pTheMonster->addoffset(0, 1);
+	}
+
+	if (input->KeyIsPressed(KEY_H))
+	{
+		m_pTheMonster->addoffset(-1, 0);
+	}
+
+	if (input->KeyIsPressed(KEY_K))
+	{
+		m_pTheMonster->addoffset(1, 0);
+	}
+
 
 	SetDisplayColour(r, g, b, a); //Set our colour display
 	//wipe the display to the currently set colour.
@@ -227,6 +247,7 @@ void Game::Update(void)
 	m_monster->draw();
 	m_monsterTrans->draw();
 	m_monsterTransKeyed->draw();
+	m_pTheMonster->draw();
 
 	//draw the text
 	UpdateText("Small Red", 50, 10, m_pSmallFont, {255, 0, 0});

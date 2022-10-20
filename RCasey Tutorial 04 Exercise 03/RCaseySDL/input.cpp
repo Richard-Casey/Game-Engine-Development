@@ -50,6 +50,22 @@ void Input::Update(void)
 			case SDLK_a:
 				m_keysPressed[KEY_A] = true;
 				break;
+
+			case SDLK_u:
+				m_keysPressed[KEY_U] = true;
+				break;
+
+			case SDLK_j:
+				m_keysPressed[KEY_J] = true;
+				break;
+
+			case SDLK_h:
+				m_keysPressed[KEY_H] = true;
+				break;
+
+			case SDLK_k:
+				m_keysPressed[KEY_K] = true;
+				break;
 			}
 		}
 		// check for key up
@@ -86,6 +102,22 @@ void Input::Update(void)
 
 			case SDLK_d:
 				m_keysPressed[KEY_D] = false;
+				break;
+
+			case SDLK_u:
+				m_keysPressed[KEY_U] = false;
+				break;
+
+			case SDLK_j:
+				m_keysPressed[KEY_J] = false;
+				break;
+
+			case SDLK_h:
+				m_keysPressed[KEY_H] = false;
+				break;
+
+			case SDLK_k:
+				m_keysPressed[KEY_K] = false;
 				break;
 			}
 		}
