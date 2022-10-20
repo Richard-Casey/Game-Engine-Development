@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include "input.h"
 #include <string>
+#include "Creature.h"
+#include "Monster.h"
 
 using namespace std;
 
@@ -24,9 +26,11 @@ private:
 	bool m_running;
 
 	//bitmaps!
-	Bitmap* m_monster; //04-01
-	Bitmap* m_monsterTrans; //04-01
-	Bitmap* m_monsterTransKeyed; //04-01
+	Creature* m_monster; //04-01
+	Creature* m_monsterTrans; //04-01
+	Creature* m_monsterTransKeyed; //04-01
+
+	Monster* m_pTheMonster; // Created monster
 
 	TTF_Font* m_pSmallFont;
 	TTF_Font* m_pBigFont;

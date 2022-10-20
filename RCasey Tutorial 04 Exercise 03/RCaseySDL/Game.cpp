@@ -4,6 +4,9 @@
 #include "input.h"
 #include "bitmap.h"
 #include "SDL_ttf.h"
+#include "Hero.h"
+#include "Monster.h"
+
 using namespace std;
 
 
@@ -40,13 +43,12 @@ void Game::SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 
 }
 
-
-
 void Game::CheckEvents()
 {
 }
 
-Game::Game() {
+Game::Game() 
+{
 
 	m_running = true;
 
@@ -95,13 +97,19 @@ Game::Game() {
 	std::string directory2 = "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 01\\assets\\";
 	float monsterxpos = 200;
 	float monsterypos = 100;
-	m_monster = new Bitmap(m_Renderer, directory2 + "monster.bmp", 100, 100);
-	m_monsterTrans = new Bitmap(m_Renderer, directory2 + "monsterTrans.bmp", monsterxpos, monsterypos);
-	m_monsterTransKeyed = new Bitmap(m_Renderer, directory2 + "monsterTrans.bmp", 300, 100, true);
+	m_monster = new Creature(m_Renderer, directory1 + "monster.bmp", 100, 100);
+	m_monsterTrans = new Creature(m_Renderer, directory1 + "monsterTrans.bmp", monsterxpos, monsterypos);
+	m_monsterTransKeyed = new Creature(m_Renderer, directory1 + "monsterTrans.bmp", 300, 100, true);
+
+	m_pTheMonster = new Monster(m_Renderer, directory1 + "monsterTrans.bmp", 10, 10, true);
 
 	//read in the font
-	m_pSmallFont = TTF_OpenFont("C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\DejaVuSans.ttf", 15);
-	m_pBigFont = TTF_OpenFont("C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\DejaVuSans.ttf", 50);
+	// Uni Comp Directory "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf";
+	// Home Comp Directory "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\DejaVuSans.ttf";
+	m_pSmallFont = TTF_OpenFont("C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf", 15);
+	m_pBigFont = TTF_OpenFont("C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf", 50);
+
+
 
 
 	void UpdateText();
@@ -130,6 +138,8 @@ Game::~Game()
 
 	delete input;			//clean up
 	input = nullptr;
+
+	
 	
 
 	//clean up
@@ -241,7 +251,7 @@ void Game::Update(void)
 	
 }
 
-	void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour)
+void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour)
 	{
 		SDL_Surface* surface = nullptr;
 		SDL_Texture* texture = nullptr;

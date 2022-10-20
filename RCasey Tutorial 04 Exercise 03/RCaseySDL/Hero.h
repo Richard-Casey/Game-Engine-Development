@@ -1,5 +1,16 @@
 #pragma once
-class Hero
-{
-};
+#include "Creature.h"
+#include "bitmap.h"
 
+class Hero : public Creature
+{
+public:
+	Hero(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency = false);
+	~Hero();
+	void Update()
+	{
+
+	}
+private:
+
+};
