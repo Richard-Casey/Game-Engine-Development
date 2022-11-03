@@ -12,7 +12,11 @@ private:
 	SDL_Texture* m_pbitmapTexture;
 	SDL_Renderer* m_pRenderer;
 
+
+protected:
 	int m_x, m_y;
+
+	//int m_x1, m_y1;
 
 public:
 	Bitmap(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency = false);
@@ -20,4 +24,13 @@ public:
 	void draw();
 	void addoffset(int x, int y);
 	
+	int GetX()
+	{
+		return m_x;
+	}
+	int  GetY()
+	{
+		return m_y;
+	}
+
 };

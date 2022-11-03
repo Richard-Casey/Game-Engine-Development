@@ -7,6 +7,7 @@
 #include <string>
 #include "Creature.h"
 #include "Monster.h"
+#include "hero.h"
 
 using namespace std;
 
@@ -32,6 +33,8 @@ private:
 
 	Monster* m_pTheMonster; // Created monster
 
+	Hero* m_pTheHero;		// created hero
+
 	TTF_Font* m_pSmallFont;
 	TTF_Font* m_pBigFont;
 
@@ -54,6 +57,13 @@ public:
 
 	Input* input = new Input();
 	
+	int themonsterXpos = 10;
+	int themonsterYpos = 10;
+
+	int heroXpos = 705;
+	int heroYpos = 510;
+
+
 };
 
 #endif

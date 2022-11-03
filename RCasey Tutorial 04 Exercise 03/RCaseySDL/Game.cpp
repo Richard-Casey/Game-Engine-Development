@@ -51,7 +51,6 @@ Game::Game()
 {
 
 	m_running = true;
-
 	m_Window = nullptr;
 	m_Renderer = nullptr;
 
@@ -63,10 +62,10 @@ Game::Game()
 	//create the window
 	m_Window = SDL_CreateWindow(
 		"My First Window",	//title
-		600,				// initial x position
-		300,				// initial y position
-		640,				// width, in pixels
-		480,				// height in pixels
+		SDL_WINDOWPOS_CENTERED,				// initial x position
+		SDL_WINDOWPOS_CENTERED,				// initial y position
+		800,				// width, in pixels
+		600,				// height in pixels
 		0				// window behaviour flags (ignore for now)
 	);
 
@@ -93,21 +92,31 @@ Game::Game()
 		return;
 	}
 
+	
+
 	std::string directory1 = "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 04 Exercise 03\\assets\\";
 	std::string directory2 = "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\";
-	float monsterxpos = 200;
-	float monsterypos = 100;
-	m_monster = new Creature(m_Renderer, directory2 + "GrimReaper.bmp", 100, 100);
-	m_monsterTrans = new Creature(m_Renderer, directory2 + "monsterTrans.bmp", monsterxpos, monsterypos);
-	m_monsterTransKeyed = new Creature(m_Renderer, directory2 + "monsterTrans.bmp", 300, 100, true);
+	
+	/*int themonsterXpos = 10;
+	int themonsterYpos = 10;
+	
+	int heroXpos = 705;
+	int heroYpos = 510;*/
+	
+	m_monster = new Creature(m_Renderer, directory1 + "monster.bmp", 100, 100);
+	m_monsterTrans = new Creature(m_Renderer, directory1 + "monsterTrans.bmp", 200, 100);
+	m_monsterTransKeyed = new Creature(m_Renderer, directory1 + "monsterTrans.bmp", 300, 100, true);
 
-	m_pTheMonster = new Monster(m_Renderer, directory2 + "deadpool.bmp", 10, 10, true);
+	
+	m_pTheHero = new Hero(m_Renderer, directory1 + "deadpool.bmp", heroXpos, heroYpos, true);
+	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directory1 + "GrimReaper.bmp", themonsterXpos, themonsterYpos, true);
+	
 
 	//read in the font
 	// Uni Comp Directory "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf";
 	// Home Comp Directory "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\DejaVuSans.ttf";
-	m_pSmallFont = TTF_OpenFont("C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\DejaVuSans.ttf", 15);
-	m_pBigFont = TTF_OpenFont("C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\DejaVuSans.ttf", 50);
+	m_pSmallFont = TTF_OpenFont("C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf", 15);
+	m_pBigFont = TTF_OpenFont("C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf", 50);
 
 
 
@@ -158,6 +167,9 @@ Game::~Game()
 	if (m_monster)
 		delete m_monster;
 
+	if (m_pTheHero)
+		delete m_pTheHero;
+
 	if (m_Renderer)
 	{
 		SDL_DestroyRenderer(m_Renderer);
@@ -204,25 +216,25 @@ void Game::Update(void)
 
 	if (input->KeyIsPressed(KEY_W))
 	{
-		m_monsterTrans->addoffset(0, -1);
+		m_pTheHero->addoffset(0, -2);
 	}
 
 	if (input->KeyIsPressed(KEY_S))
 	{
-		m_monsterTrans->addoffset(0, 1);
+		m_pTheHero->addoffset(0, 2);
 	}
 
 	if (input->KeyIsPressed(KEY_A))
 	{
-		m_monsterTrans->addoffset(-1, 0);
+		m_pTheHero->addoffset(-2, 0);
 	}
 
 	if (input->KeyIsPressed(KEY_D))
 	{
-		m_monsterTrans->addoffset(1, 0);
+		m_pTheHero->addoffset(2, 0);
 	}
 
-	if (input->KeyIsPressed(KEY_U))
+	/*if (input->KeyIsPressed(KEY_U))
 	{
 		m_pTheMonster->addoffset(0, -1);
 	}
@@ -240,33 +252,41 @@ void Game::Update(void)
 	if (input->KeyIsPressed(KEY_K))
 	{
 		m_pTheMonster->addoffset(1, 0);
-	}
+	}*/
+
+	/*if (themonsterXpos != heroXpos)
+	{
+		themonsterXpos++;
+	}*/
 
 
 	SetDisplayColour(r, g, b, a); //Set our colour display
 	//wipe the display to the currently set colour.
 
 	//show our bitmaps
-	m_monster->draw();
-	m_monsterTrans->draw();
-	m_monsterTransKeyed->draw();
+	//m_monster->draw();
+	//m_monsterTrans->draw();
+	//m_monsterTransKeyed->draw();
+	m_pTheMonster->Chase();
 	m_pTheMonster->draw();
+	m_pTheHero->draw();	// The sequence of which the bitmaps are drawn is important
+						// bitmaps drawn first are behind anything drawn after them!
 
 	//draw the text
-	UpdateText("Small Red", 50, 10, m_pSmallFont, {255, 0, 0});
-	UpdateText("Small Blue", 50, 40, m_pSmallFont, { 0, 0, 255 });
+	//UpdateText("Small Red", 50, 10, m_pSmallFont, {255, 0, 0});
+	//UpdateText("Small Blue", 50, 40, m_pSmallFont, { 0, 0, 255 });
 
 	char char_array[] = "Big White";
 	
-	UpdateText(char_array, 50, 140, m_pBigFont, { Uint8(255-r) , Uint8(255-g), Uint8(255-b)});
+	//UpdateText(char_array, 50, 140, m_pBigFont, { Uint8(255-r) , Uint8(255-g), Uint8(255-b)});
 
 	string myString = "Big Green";
-	UpdateText(myString, 50, 70, m_pBigFont, { 0, 255, 0 });
+	//UpdateText(myString, 50, 70, m_pBigFont, { 0, 255, 0 });
 
 	int testNumber = 1234;
 	string testString = "Test Number: ";
 	testString += to_string(testNumber);
-	UpdateText(testString, 50, 210, m_pBigFont, { 255, 255, 255 });
+	//UpdateText(testString, 50, 210, m_pBigFont, { 255, 255, 255 });
 
 	//show what weve drawn
 	SDL_RenderPresent(m_Renderer);

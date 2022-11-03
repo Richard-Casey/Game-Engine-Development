@@ -1,5 +1,6 @@
 #include "Creature.h"
 #include "bitmap.h"
+#include "Hero.h"
 
 //bitmap
 //draw

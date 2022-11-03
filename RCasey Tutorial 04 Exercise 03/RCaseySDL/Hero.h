@@ -5,7 +5,7 @@
 class Hero : public Creature
 {
 public:
-	Hero(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency = false);
+	Hero(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency);
 	~Hero();
 	void Update()
 	{
