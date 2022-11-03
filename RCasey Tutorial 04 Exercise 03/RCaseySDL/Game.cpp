@@ -66,7 +66,7 @@ Game::Game()
 		SDL_WINDOWPOS_CENTERED,				// initial y position
 		800,				// width, in pixels
 		600,				// height in pixels
-		0				// window behaviour flags (ignore for now)
+		SDL_WINDOW_RESIZABLE				// window behaviour flags (ignore for now)
 	);
 
 	if (!m_Window)
@@ -94,8 +94,8 @@ Game::Game()
 
 	
 
-	std::string directory1 = "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 04 Exercise 03\\assets\\";
-	std::string directory2 = "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\";
+	std::string directoryUni = "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 04 Exercise 03\\assets\\";
+	std::string directoryHome = "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\";
 	
 	/*int themonsterXpos = 10;
 	int themonsterYpos = 10;
@@ -103,20 +103,23 @@ Game::Game()
 	int heroXpos = 705;
 	int heroYpos = 510;*/
 	
-	m_monster = new Creature(m_Renderer, directory1 + "monster.bmp", 100, 100);
-	m_monsterTrans = new Creature(m_Renderer, directory1 + "monsterTrans.bmp", 200, 100);
-	m_monsterTransKeyed = new Creature(m_Renderer, directory1 + "monsterTrans.bmp", 300, 100, true);
+	m_monster = new Creature(m_Renderer, directoryHome + "monster.bmp", 100, 100);
+	m_monsterTrans = new Creature(m_Renderer, directoryHome + "monsterTrans.bmp", 200, 100);
+	m_monsterTransKeyed = new Creature(m_Renderer, directoryHome + "monsterTrans.bmp",
+										300, 100, true);
 
 	
-	m_pTheHero = new Hero(m_Renderer, directory1 + "deadpool.bmp", heroXpos, heroYpos, true);
-	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directory1 + "GrimReaper.bmp", themonsterXpos, themonsterYpos, true);
+	m_pTheHero = new Hero(m_Renderer, directoryHome + "deadpool.bmp", 
+							heroXpos, heroYpos, true);
+	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directoryHome + "GrimReaper.bmp", 
+							themonsterXpos, themonsterYpos, true);
 	
-
+	
 	//read in the font
 	// Uni Comp Directory "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf";
 	// Home Comp Directory "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\DejaVuSans.ttf";
-	m_pSmallFont = TTF_OpenFont("C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf", 15);
-	m_pBigFont = TTF_OpenFont("C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf", 50);
+	m_pSmallFont = TTF_OpenFont("C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\DejaVuSans.ttf", 15);
+	m_pBigFont = TTF_OpenFont("C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\DejaVuSans.ttf", 50);
 
 
 
