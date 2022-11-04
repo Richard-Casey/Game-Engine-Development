@@ -103,23 +103,23 @@ Game::Game()
 	int heroXpos = 705;
 	int heroYpos = 510;*/
 	
-	m_monster = new Creature(m_Renderer, directoryHome + "monster.bmp", 100, 100);
-	m_monsterTrans = new Creature(m_Renderer, directoryHome + "monsterTrans.bmp", 200, 100);
-	m_monsterTransKeyed = new Creature(m_Renderer, directoryHome + "monsterTrans.bmp",
+	m_monster = new Creature(m_Renderer, directoryUni + "monster.bmp", 100, 100);
+	m_monsterTrans = new Creature(m_Renderer, directoryUni + "monsterTrans.bmp", 200, 100);
+	m_monsterTransKeyed = new Creature(m_Renderer, directoryUni + "monsterTrans.bmp",
 										300, 100, true);
 
 	
-	m_pTheHero = new Hero(m_Renderer, directoryHome + "deadpool.bmp", 
+	m_pTheHero = new Hero(m_Renderer, directoryUni + "deadpool.bmp", 
 							heroXpos, heroYpos, true);
-	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directoryHome + "GrimReaper.bmp", 
+	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directoryUni + "GrimReaper.bmp", 
 							themonsterXpos, themonsterYpos, true);
 	
 	
 	//read in the font
 	// Uni Comp Directory "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf";
 	// Home Comp Directory "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\DejaVuSans.ttf";
-	m_pSmallFont = TTF_OpenFont("C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\DejaVuSans.ttf", 15);
-	m_pBigFont = TTF_OpenFont("C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\DejaVuSans.ttf", 50);
+	m_pSmallFont = TTF_OpenFont("C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf", 15);
+	m_pBigFont = TTF_OpenFont("C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf", 50);
 
 
 
