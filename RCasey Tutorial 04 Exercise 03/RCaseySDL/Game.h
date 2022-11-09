@@ -22,7 +22,7 @@ class Game
 private:
 
 	//SDL Stuff
-	SDL_Window* m_window;
+	//SDL_Window* m_window;
 	
 	bool m_running;
 
