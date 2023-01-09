@@ -27,20 +27,10 @@ void Game::SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 			int result = SDL_SetRenderDrawColor(
 				m_Renderer,		// our target renderer
 				r,				//r
-				g,			//g
-				b,			//b
+				g,				//g
+				b,				//b
 				a				//alpha
 			);
-
-			//wipe the display to the colour we just set.
-			//SDL_RenderClear(m_Renderer);
-
-			//show what weve drawn (i.e. a red screen).
-			//SDL_RenderPresent(m_Renderer);
-
-			//pause for 5 secs
-			//SDL_Delay(16);		//SDL_Delay takes millisecs
-
 			
 		}
 
@@ -64,46 +54,16 @@ Game::Game()
 
 	//create the window
 	m_Window = SDL_CreateWindow(
-		"My First Window",	//title
+		"My First Window",					//title
 		SDL_WINDOWPOS_CENTERED,				// initial x position
 		SDL_WINDOWPOS_CENTERED,				// initial y position
-		800,				// width, in pixels
-		600,				// height in pixels
-		SDL_WINDOW_RESIZABLE);	// window behaviour flags (ignore for now)
+		800,								// width, in pixels
+		600,								// height in pixels
+		SDL_WINDOW_RESIZABLE);				// window behaviour flags (ignore for now)
 
 
 		SDL_GLContext SDL_GLContext = SDL_GL_CreateContext(m_Window);
 		
-		//imGUI Setup
-		IMGUI_CHECKVERSION();
-		ImGui::CreateContext();
-		SDL_DisplayMode DisplayMode;
-		SDL_GetCurrentDisplayMode(0, &DisplayMode);
-		ImGuiSDL::Initialize(m_Renderer, DisplayMode.w, DisplayMode.h);
-		
-		ImGuiIO io = ImGui::GetIO();
-		(void)io;
-		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
-		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
-		ImGui::StyleColorsDark();
-
-		ImGui_ImplSDL2_InitForOpenGL(m_Window, SDL_GLContext);
-		
-		ImGui::NewFrame();
-		ImGui_ImplSDL2_NewFrame(m_Window);
-		ImGui::SetNextWindowSize(ImVec2(200, 200));
-		bool show = true;
-		//ShowExampleAppDockSpace(&show);
-		
-
-		ImGui::ShowDemoWindow(nullptr);
-
-		//ImGui::End();
-
-		ImGui::Render();
-		ImGuiSDL::Render(ImGui::GetDrawData());
-		SDL_RenderPresent(m_Renderer);
 	
 
 	if (!m_Window)
@@ -131,14 +91,25 @@ Game::Game()
 
 	
 
+	//imGUI Setup THIS NEEDS TO BE AFTER THE RENDERER
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	SDL_DisplayMode DisplayMode;
+	SDL_GetCurrentDisplayMode(0, &DisplayMode);
+	ImGuiSDL::Initialize(m_Renderer, DisplayMode.w, DisplayMode.h);
+
+	ImGuiIO io = ImGui::GetIO();
+	(void)io;
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+	io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+	ImGui::StyleColorsDark();
+
+	ImGui_ImplSDL2_InitForOpenGL(m_Window, SDL_GLContext);
+
 	std::string directoryUni = "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 04 Exercise 03\\assets\\";
 	std::string directoryHome = "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\";
 	
-	/*int themonsterXpos = 10;
-	int themonsterYpos = 10;
-	
-	int heroXpos = 705;
-	int heroYpos = 510;*/
 	
 	m_monster = new Creature(m_Renderer, directoryUni + "monster.bmp", 100, 100);
 	m_monsterTrans = new Creature(m_Renderer, directoryUni + "monsterTrans.bmp", 200, 100);
@@ -153,8 +124,7 @@ Game::Game()
 	
 	
 	//read in the font
-	// Uni Comp Directory "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf";
-	// Home Comp Directory "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\DejaVuSans.ttf";
+	
 	m_pSmallFont = TTF_OpenFont("C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf", 15);
 	m_pBigFont = TTF_OpenFont("C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf", 50);
 
@@ -177,7 +147,7 @@ Game::Game()
 		testString += to_string(testNumber);
 		testString, 50, 210, m_pBigFont, 255, 255, 255;
 	}
-	//Update();
+	
 
 }
 
@@ -234,6 +204,14 @@ void Game::Update(void)
 
 
 
+	
+	
+
+
+
+
+
+
 	input->Update();
 
 	//increase r
@@ -274,61 +252,43 @@ void Game::Update(void)
 		m_pTheHero->addoffset(2, 0);
 	}
 
-	/*if (input->KeyIsPressed(KEY_U))
-	{
-		m_pTheMonster->addoffset(0, -1);
-	}
-
-	if (input->KeyIsPressed(KEY_J))
-	{
-		m_pTheMonster->addoffset(0, 1);
-	}
-
-	if (input->KeyIsPressed(KEY_H))
-	{
-		m_pTheMonster->addoffset(-1, 0);
-	}
-
-	if (input->KeyIsPressed(KEY_K))
-	{
-		m_pTheMonster->addoffset(1, 0);
-	}*/
-
-	/*if (themonsterXpos != heroXpos)
-	{
-		themonsterXpos++;
-	}*/
 
 
 	SetDisplayColour(r, g, b, a); //Set our colour display
 	//wipe the display to the currently set colour.
 
 	//show our bitmaps
-	//m_monster->draw();
-	//m_monsterTrans->draw();
-	//m_monsterTransKeyed->draw();
 	m_pTheMonster->Chase();
 	m_pTheMonster->draw();
 	m_pTheHero->draw();	// The sequence of which the bitmaps are drawn is important
 						// bitmaps drawn first are behind anything drawn after them!
 
-	//draw the text
-	//UpdateText("Small Red", 50, 10, m_pSmallFont, {255, 0, 0});
-	//UpdateText("Small Blue", 50, 40, m_pSmallFont, { 0, 0, 255 });
-
+	
 	char char_array[] = "Big White";
 	
-	//UpdateText(char_array, 50, 140, m_pBigFont, { Uint8(255-r) , Uint8(255-g), Uint8(255-b)});
-
 	string myString = "Big Green";
-	//UpdateText(myString, 50, 70, m_pBigFont, { 0, 255, 0 });
-
+	
 	int testNumber = 1234;
 	string testString = "Test Number: ";
 	testString += to_string(testNumber);
-	//UpdateText(testString, 50, 210, m_pBigFont, { 255, 255, 255 });
 
-	//show what weve drawn
+
+
+
+
+
+
+	ImGui::NewFrame();
+	ImGui_ImplSDL2_NewFrame(m_Window);
+	ImGui::SetNextWindowSize(ImVec2(200, 200));
+	static bool show = true;
+
+
+	ImGui::ShowDemoWindow(&show);
+
+	ImGui::Render();
+	ImGuiSDL::Render(ImGui::GetDrawData());
+	
 	SDL_RenderPresent(m_Renderer);
 	//pause for 1/60th sec (ish)
 	SDL_Delay(16);
@@ -345,11 +305,7 @@ void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour
 		int texW = 0;
 		int texH = 0;
 
-		//SDL_Color color = { 0, 0, 0 };
-
-		//char msg [100];
-		//sprintf_s(msg, "Checks %d", m_checkTally);
-
+		
 		surface = TTF_RenderText_Solid(font, msg.c_str(), colour);
 		if (!surface)
 		{
