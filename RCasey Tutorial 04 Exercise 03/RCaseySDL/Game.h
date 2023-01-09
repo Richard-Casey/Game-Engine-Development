@@ -8,6 +8,10 @@
 #include "Creature.h"
 #include "Monster.h"
 #include "hero.h"
+#include "imgui.h"
+#include "backends/imgui_impl_sdl.h"
+#include "imgui_sdl.h"
+#include "imgui_internal.h"
 
 using namespace std;
 

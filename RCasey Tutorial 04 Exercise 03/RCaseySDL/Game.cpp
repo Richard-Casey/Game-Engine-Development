@@ -6,6 +6,9 @@
 #include "SDL_ttf.h"
 #include "Hero.h"
 #include "Monster.h"
+#include "imgui.h"
+
+
 
 using namespace std;
 
@@ -66,8 +69,42 @@ Game::Game()
 		SDL_WINDOWPOS_CENTERED,				// initial y position
 		800,				// width, in pixels
 		600,				// height in pixels
-		SDL_WINDOW_RESIZABLE				// window behaviour flags (ignore for now)
-	);
+		SDL_WINDOW_RESIZABLE);	// window behaviour flags (ignore for now)
+
+
+		SDL_GLContext SDL_GLContext = SDL_GL_CreateContext(m_Window);
+		
+		//imGUI Setup
+		IMGUI_CHECKVERSION();
+		ImGui::CreateContext();
+		SDL_DisplayMode DisplayMode;
+		SDL_GetCurrentDisplayMode(0, &DisplayMode);
+		ImGuiSDL::Initialize(m_Renderer, DisplayMode.w, DisplayMode.h);
+		
+		ImGuiIO io = ImGui::GetIO();
+		(void)io;
+		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+		ImGui::StyleColorsDark();
+
+		ImGui_ImplSDL2_InitForOpenGL(m_Window, SDL_GLContext);
+		
+		ImGui::NewFrame();
+		ImGui_ImplSDL2_NewFrame(m_Window);
+		ImGui::SetNextWindowSize(ImVec2(200, 200));
+		bool show = true;
+		//ShowExampleAppDockSpace(&show);
+		
+
+		ImGui::ShowDemoWindow(nullptr);
+
+		//ImGui::End();
+
+		ImGui::Render();
+		ImGuiSDL::Render(ImGui::GetDrawData());
+		SDL_RenderPresent(m_Renderer);
+	
 
 	if (!m_Window)
 	{
@@ -295,6 +332,8 @@ void Game::Update(void)
 	SDL_RenderPresent(m_Renderer);
 	//pause for 1/60th sec (ish)
 	SDL_Delay(16);
+
+
 	
 }
 
