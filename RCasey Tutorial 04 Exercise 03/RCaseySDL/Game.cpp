@@ -6,7 +6,8 @@
 #include "SDL_ttf.h"
 #include "Hero.h"
 #include "Monster.h"
-#include "imgui.h"
+#include <iostream>
+
 
 
 
@@ -57,9 +58,9 @@ Game::Game()
 		"My First Window",					//title
 		SDL_WINDOWPOS_CENTERED,				// initial x position
 		SDL_WINDOWPOS_CENTERED,				// initial y position
-		800,								// width, in pixels
-		600,								// height in pixels
-		SDL_WINDOW_RESIZABLE);				// window behaviour flags (ignore for now)
+		1024,								// width, in pixels
+		768,								// height in pixels
+		SDL_WINDOW_RESIZABLE);		// window behaviour flags (ignore for now) - can be OR'd together using ||
 
 
 		SDL_GLContext SDL_GLContext = SDL_GL_CreateContext(m_Window);
@@ -107,19 +108,18 @@ Game::Game()
 
 	ImGui_ImplSDL2_InitForOpenGL(m_Window, SDL_GLContext);
 
-	std::string directoryUni = "C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 04 Exercise 03\\assets\\";
-	std::string directoryHome = "C:\\Users\\riche\\OneDrive\\Desktop\\s233122\\Game-Engine-Development\\RCasey Tutorial 04 Exercise 03\\assets\\";
+	std::string directory = "../assets/";
 	
 	
-	m_monster = new Creature(m_Renderer, directoryUni + "monster.bmp", 100, 100);
-	m_monsterTrans = new Creature(m_Renderer, directoryUni + "monsterTrans.bmp", 200, 100);
-	m_monsterTransKeyed = new Creature(m_Renderer, directoryUni + "monsterTrans.bmp",
+	//m_monster = new Creature(m_Renderer, directory + "monster.bmp", 100, 100);
+	//m_monsterTrans = new Creature(m_Renderer, directory + "monsterTrans.bmp", 200, 100);
+	m_monsterTransKeyed = new Creature(m_Renderer, directory + "monsterTrans.bmp",
 										300, 100, true);
 
 	
-	m_pTheHero = new Hero(m_Renderer, directoryUni + "deadpool.bmp", 
+	m_pTheHero = new Hero(m_Renderer, directory + "deadpool.bmp", 
 							heroXpos, heroYpos, true);
-	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directoryUni + "GrimReaper.bmp", 
+	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directory + "GrimReaper.bmp", 
 							themonsterXpos, themonsterYpos, true);
 	
 	
@@ -276,16 +276,26 @@ void Game::Update(void)
 
 
 
-
+	// imGUI input must be between here and "ImGUI::Render"
+	// Every new Frame for ImGUI must start with ImGui::Begin ("Name Window") and end with ImGui::End
 
 	ImGui::NewFrame();
 	ImGui_ImplSDL2_NewFrame(m_Window);
-	ImGui::SetNextWindowSize(ImVec2(200, 200));
+	ImGui::SetNextWindowSize(ImVec2(300, 200));
 	static bool show = true;
-
+	
+	ImGui::Begin("My Test Window");
+	if (ImGui::Button("Print Hello World"))
+	{
+		cout << "Hello World!" << endl;
+	}
+	ImGui::Text("Label");
+	ImGui::End();
 
 	ImGui::ShowDemoWindow(&show);
 
+
+	// End ImGUI Input
 	ImGui::Render();
 	ImGuiSDL::Render(ImGui::GetDrawData());
 	

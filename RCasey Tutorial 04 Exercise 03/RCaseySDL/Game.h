@@ -64,8 +64,8 @@ public:
 	int themonsterXpos = 10;
 	int themonsterYpos = 10;
 
-	int heroXpos = 705;
-	int heroYpos = 510;
+	int heroXpos = 930;
+	int heroYpos = 680;
 
 
 };
