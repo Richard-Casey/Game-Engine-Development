@@ -272,12 +272,8 @@ void Game::Update(void)
 	string testString = "Test Number: ";
 	testString += to_string(testNumber);
 
-
-
-
-
 	// imGUI input must be between here and "ImGUI::Render"
-	// Every new Frame for ImGUI must start with ImGui::Begin ("Name Window") and end with ImGui::End
+	// Every new Window for ImGUI must start with ImGui::Begin ("Name Window") and end with ImGui::End
 
 	ImGui::NewFrame();
 	ImGui_ImplSDL2_NewFrame(m_Window);
