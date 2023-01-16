@@ -14,7 +14,7 @@ public:
 	{
 
 	}
-	void caughtAndReset();
+
 private:
 	Hero* m_HeroToChase;
 

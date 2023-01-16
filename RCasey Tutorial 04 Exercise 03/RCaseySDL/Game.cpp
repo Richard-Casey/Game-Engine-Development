@@ -167,7 +167,12 @@ Game::~Game()
 	TTF_CloseFont(m_pBigFont);
 	TTF_CloseFont(m_pSmallFont);
 }
-
+//enum activeWindowTypes {
+//	none,
+//	hero,
+//	monster,
+//	ImGui
+//};
 void Game::Update(void)
 {
 	CheckEvents();
@@ -237,7 +242,10 @@ void Game::Update(void)
 	if (showHeroImgui)
 	{
 		ImGui::Begin("Hero");
-		ImGui::
+		if (ImGui::Button("Close Window", ImVec2(100, 30)))
+		{
+			showHeroImgui = false;
+		}
 		ImGui::End();
 	}
 	if (isMouseOverHero && io->MouseDown[0])
@@ -250,6 +258,7 @@ void Game::Update(void)
 	}
 	
 	
+	
 
 	bool isMouseOverMonster = SDL_PointInRect(&mousePoint, &spriteMonsterRect);
 	ImGui::SetNextWindowSize(ImVec2(300, 200));
@@ -257,6 +266,11 @@ void Game::Update(void)
 	if (showMonsterImgui)
 	{
 		ImGui::Begin("Monster");
+		
+		if(ImGui::Button("Close Window", ImVec2(100, 30))) 
+		{
+			showMonsterImgui = false;
+		};
 		ImGui::End();
 	}
 	if (isMouseOverMonster && io->MouseDown[0])

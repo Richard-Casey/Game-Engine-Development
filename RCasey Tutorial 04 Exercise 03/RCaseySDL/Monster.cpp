@@ -33,8 +33,3 @@ void Monster::Chase()
 	this->m_y += diffy;
 }
 
-//void Monster::caughtAndReset()
-//{
-//	if (monsterX && monsterY == Hero::heroX && Hero::heroY)
-//	
-//}
