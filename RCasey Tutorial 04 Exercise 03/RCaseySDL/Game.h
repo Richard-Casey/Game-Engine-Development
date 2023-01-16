@@ -71,6 +71,9 @@ public:
 	int heroXpos = 930;
 	int heroYpos = 680;
 
+	bool showMonsterImgui = false;
+	bool showHeroImgui = false;
+
 
 
 };

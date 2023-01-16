@@ -226,22 +226,56 @@ void Game::Update(void)
 
 
 	SDL_Point mousePoint = { io->MousePos.x, io->MousePos.y};
-	SDL_Rect spriteRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
+	SDL_Rect spriteHeroRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
+	SDL_Rect spriteMonsterRect = {m_pTheMonster->GetX(), m_pTheMonster->GetY(), m_pTheMonster->GetW(), m_pTheMonster->GetH() };
 
 
-	bool isMouseOverSprite = SDL_PointInRect(&mousePoint, &spriteRect);
+	bool isMouseOverHero = SDL_PointInRect(&mousePoint, &spriteHeroRect);
 	ImGui::NewFrame();
 	ImGui_ImplSDL2_NewFrame(m_Window);
 	ImGui::SetNextWindowSize(ImVec2(300, 200));
-	if (isMouseOverSprite && io->MouseDown[0])
-			
-	{	
-		ImGui::Begin("Sprite");
+	if (showHeroImgui)
+	{
+		ImGui::Begin("Hero");
+		ImGui::
 		ImGui::End();
 	}
+	if (isMouseOverHero && io->MouseDown[0])
+	{	
+		showHeroImgui = true;
+	}
+	if (isMouseOverHero && io->MouseReleased[0])
+	{
+		showHeroImgui = true;
+	}
+	
+	
+
+	bool isMouseOverMonster = SDL_PointInRect(&mousePoint, &spriteMonsterRect);
+	ImGui::SetNextWindowSize(ImVec2(300, 200));
+	
+	if (showMonsterImgui)
+	{
+		ImGui::Begin("Monster");
+		ImGui::End();
+	}
+	if (isMouseOverMonster && io->MouseDown[0])
+	{
+		showMonsterImgui = true;
+	}
+	if (isMouseOverMonster && io->MouseReleased[0])
+	{
+		showMonsterImgui = true;
+	}
+	
 		
 
 	// imGUI input must be between here and "ImGUI::Render"
+	 
+	 
+	//ImGui::ShowDemoWindow(nullptr);
+	
+	
 	// Every new Window for ImGUI must start with ImGui::Begin ("Name Window") and end with ImGui::End
 
 
