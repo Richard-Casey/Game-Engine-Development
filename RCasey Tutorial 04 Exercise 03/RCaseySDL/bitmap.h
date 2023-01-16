@@ -32,5 +32,8 @@ public:
 	{
 		return m_y;
 	}
+	int GetW();
+	int  GetH();
+	
 
 };

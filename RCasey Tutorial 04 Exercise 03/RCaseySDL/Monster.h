@@ -14,8 +14,10 @@ public:
 	{
 
 	}
+	void caughtAndReset();
 private:
 	Hero* m_HeroToChase;
+
 };
 
 // Draw method is not nessacry as inheriting from Creature

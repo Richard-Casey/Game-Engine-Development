@@ -49,6 +49,8 @@ private:
 	Uint8 r = 127, g = 127, b = 127, a = 255;
 	int xpos;
 	int ypos;
+
+	ImGuiIO* io;
 	
 	
 public:
@@ -59,6 +61,8 @@ public:
 	void SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 	void Update();
 
+	string directory = "../assets/";
+
 	Input* input = new Input();
 	
 	int themonsterXpos = 10;
@@ -66,6 +70,7 @@ public:
 
 	int heroXpos = 930;
 	int heroYpos = 680;
+
 
 
 };

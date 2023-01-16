@@ -3,6 +3,7 @@
 #include "Creature.h"
 #include "Hero.h"
 #include "Game.h"
+#include <iostream>
 
 Monster::Monster(Hero* HeroToChase, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency) :Creature(renderer, filename, xpos, ypos, useTransparency)
 {
@@ -31,3 +32,9 @@ void Monster::Chase()
 	this->m_x += diffx;
 	this->m_y += diffy;
 }
+
+//void Monster::caughtAndReset()
+//{
+//	if (monsterX && monsterY == Hero::heroX && Hero::heroY)
+//	
+//}

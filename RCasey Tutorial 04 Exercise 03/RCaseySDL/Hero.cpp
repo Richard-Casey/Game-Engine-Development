@@ -12,3 +12,9 @@ Hero::~Hero()
 {
 }
 
+//Hero::heroX()
+//{
+//	heroX = Hero::GetX;
+//	heroY = Hero::GetY;
+//}
+

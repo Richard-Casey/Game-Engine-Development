@@ -99,20 +99,23 @@ Game::Game()
 	SDL_GetCurrentDisplayMode(0, &DisplayMode);
 	ImGuiSDL::Initialize(m_Renderer, DisplayMode.w, DisplayMode.h);
 
-	ImGuiIO io = ImGui::GetIO();
+	io= &ImGui::GetIO();
 	(void)io;
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
-	io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-	io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+	io->ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+	io->ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+	io->ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 	ImGui::StyleColorsDark();
 
 	ImGui_ImplSDL2_InitForOpenGL(m_Window, SDL_GLContext);
 
-	std::string directory = "../assets/";
+	// Find mouse coords and store in variables
 	
+
 	
-	//m_monster = new Creature(m_Renderer, directory + "monster.bmp", 100, 100);
-	//m_monsterTrans = new Creature(m_Renderer, directory + "monsterTrans.bmp", 200, 100);
+
+
+
+	
 	m_monsterTransKeyed = new Creature(m_Renderer, directory + "monsterTrans.bmp",
 										300, 100, true);
 
@@ -121,46 +124,16 @@ Game::Game()
 							heroXpos, heroYpos, true);
 	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directory + "GrimReaper.bmp", 
 							themonsterXpos, themonsterYpos, true);
-	
-	
-	//read in the font
-	
-	m_pSmallFont = TTF_OpenFont("C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf", 15);
-	m_pBigFont = TTF_OpenFont("C:\\Users\\Administrator\\Desktop\\s233122\\Game Engine Development\\RCasey Tutorial 03 Exercise 03\\assets\\DejaVuSans.ttf", 50);
 
 
-
-
-	void UpdateText();
-	{
-		"Small Red", 50, 10, m_pSmallFont,  255, 0, 0 ;
-		"Small Blue", 50, 40, m_pSmallFont,  0, 0, 255 ;
-
-		char char_array[] = "Big White";
-		char_array, 50, 140, m_pBigFont, 255, 255, 255;
-
-		string myString = "Big Green";
-		myString, 50, 70, m_pBigFont, 0, 255, 0;
-
-		int testNumber = 1234;
-		string testString = "Test Number: ";
-		testString += to_string(testNumber);
-		testString, 50, 210, m_pBigFont, 255, 255, 255;
-	}
-	
 
 }
 
 Game::~Game()
 {
-
-
 	delete input;			//clean up
 	input = nullptr;
-
 	
-	
-
 	//clean up
 //dont forget - we destroy in the reverse order that they were created
 
@@ -197,21 +170,8 @@ Game::~Game()
 
 void Game::Update(void)
 {
-
 	CheckEvents();
 	SDL_RenderClear(m_Renderer);
-
-
-
-
-	
-	
-
-
-
-
-
-
 	input->Update();
 
 	//increase r
@@ -252,43 +212,37 @@ void Game::Update(void)
 		m_pTheHero->addoffset(2, 0);
 	}
 
-
-
 	SetDisplayColour(r, g, b, a); //Set our colour display
 	//wipe the display to the currently set colour.
 
-	//show our bitmaps
+	// Implement chase function
 	m_pTheMonster->Chase();
+
+	// Show our bitmaps
 	m_pTheMonster->draw();
 	m_pTheHero->draw();	// The sequence of which the bitmaps are drawn is important
 						// bitmaps drawn first are behind anything drawn after them!
 
-	
-	char char_array[] = "Big White";
-	
-	string myString = "Big Green";
-	
-	int testNumber = 1234;
-	string testString = "Test Number: ";
-	testString += to_string(testNumber);
 
-	// imGUI input must be between here and "ImGUI::Render"
-	// Every new Window for ImGUI must start with ImGui::Begin ("Name Window") and end with ImGui::End
 
+	SDL_Point mousePoint = { io->MousePos.x, io->MousePos.y};
+	SDL_Rect spriteRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
+
+
+	bool isMouseOverSprite = SDL_PointInRect(&mousePoint, &spriteRect);
 	ImGui::NewFrame();
 	ImGui_ImplSDL2_NewFrame(m_Window);
 	ImGui::SetNextWindowSize(ImVec2(300, 200));
-	static bool show = true;
-	
-	ImGui::Begin("My Test Window");
-	if (ImGui::Button("Print Hello World"))
-	{
-		cout << "Hello World!" << endl;
+	if (isMouseOverSprite && io->MouseDown[0])
+			
+	{	
+		ImGui::Begin("Sprite");
+		ImGui::End();
 	}
-	ImGui::Text("Label");
-	ImGui::End();
+		
 
-	ImGui::ShowDemoWindow(&show);
+	// imGUI input must be between here and "ImGUI::Render"
+	// Every new Window for ImGUI must start with ImGui::Begin ("Name Window") and end with ImGui::End
 
 
 	// End ImGUI Input

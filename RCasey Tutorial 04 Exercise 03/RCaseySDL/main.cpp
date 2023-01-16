@@ -19,6 +19,7 @@ int main(int argc, char* argv[])
 			
 			game->Update(); // update the game
 
+			
 
 		}
 
@@ -30,5 +31,3 @@ int main(int argc, char* argv[])
 
 	return 0;		// exit nicely
 }
-
-

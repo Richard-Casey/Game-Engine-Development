@@ -5,11 +5,20 @@
 
 using namespace std;
 
+int Bitmap::GetW()
+{
+	return this->m_pbitmapSurface->w;
+}
+int  Bitmap::GetH()
+{
+	return this->m_pbitmapSurface->h;
+}
+
 
 
 Bitmap::Bitmap(SDL_Renderer* renderer, string filename, int xpos, int ypos, bool useTransparency)
 {
-	
+
 	//store the renderer for future configuring and drawing
 	m_pRenderer = renderer;
 
