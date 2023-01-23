@@ -13,10 +13,9 @@ private:
 	SDL_Renderer* m_pRenderer;
 
 
-protected:
+public:
 	int m_x, m_y;
 
-	//int m_x1, m_y1;
 
 public:
 	Bitmap(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency = false);

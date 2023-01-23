@@ -1,11 +1,2 @@
-﻿  Creature.cpp
-  Game.cpp
-C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(233,39): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(233,39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(233,55): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(233,55): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  Hero.cpp
-  Monster.cpp
-  main.cpp
-  Generating Code...
-  RCaseySDL.vcxproj -> C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 04 Exercise 03\Debug\RCaseySDL.exe
+﻿  bitmap.cpp
+  RCaseySDL.vcxproj -> C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\Debug\RCaseySDL.exe

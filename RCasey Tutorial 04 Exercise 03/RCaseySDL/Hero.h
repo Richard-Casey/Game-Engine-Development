@@ -3,6 +3,7 @@
 #include "Hero.h"
 #include "bitmap.h"
 
+
 class Hero : public Creature
 {
 public:
@@ -12,8 +13,7 @@ public:
 	{
 
 	}
-	void Eaten();
-
+	
 
 private:
 	

@@ -63,7 +63,7 @@ void Bitmap::draw()
 	//render the bitmap at the x/y coords
 	if (m_pbitmapTexture)
 	{
-		SDL_Rect destRect = { m_x, m_y, m_pbitmapSurface->w, m_pbitmapSurface->h };
+		SDL_Rect destRect = { m_x, m_y, m_pbitmapSurface->w, 81 };
 		SDL_RenderCopy(m_pRenderer, m_pbitmapTexture, NULL, &destRect);
 	}
 }

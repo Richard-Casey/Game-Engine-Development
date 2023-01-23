@@ -20,16 +20,26 @@ void Monster::Chase()
 	int diffx = this->m_x - m_HeroToChase->GetX();
 	int diffy = this->m_y - m_HeroToChase->GetY();
 	if (diffx > 0)
-		diffx = -1;
+		diffx = -2;
 	else if(diffx < 0)
-		diffx = 1;
+		diffx = 2;
 	
 	if (diffy > 0)
-		diffy = -1;
+		diffy = -2;
 	else if (diffy < 0)
-		diffy = 1;
+		diffy = 2;
 
 	this->m_x += diffx;
 	this->m_y += diffy;
+
+	// If Monster coords match hero coord - reset (eaten)
+	if (this->m_x == m_HeroToChase->GetX() && this->m_y == m_HeroToChase->GetY())
+	{
+		this->m_x = 10;
+		this->m_y = 10;
+		m_HeroToChase->m_x = 930;
+		m_HeroToChase->m_y = 680;
+	}
+	
 }
 

@@ -20,11 +20,8 @@ void Game::SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 
 		// clean up
 		// dont forget - we destroy in the REVERSE order that they were created
-
-	
 		if (m_Renderer)
 		{
-			// render in a pretty red colour
 			int result = SDL_SetRenderDrawColor(
 				m_Renderer,		// our target renderer
 				r,				//r
@@ -43,11 +40,9 @@ void Game::CheckEvents()
 
 Game::Game() 
 {
-
 	m_running = true;
 	m_Window = nullptr;
 	m_Renderer = nullptr;
-
 
 	//start up
 	SDL_Init(SDL_INIT_VIDEO);
@@ -65,8 +60,6 @@ Game::Game()
 
 		SDL_GLContext SDL_GLContext = SDL_GL_CreateContext(m_Window);
 		
-	
-
 	if (!m_Window)
 	{
 		printf("WINDOW initialisation failed: %s\n", SDL_GetError());
@@ -108,48 +101,18 @@ Game::Game()
 
 	ImGui_ImplSDL2_InitForOpenGL(m_Window, SDL_GLContext);
 
-	// Find mouse coords and store in variables
-	
-
-	
-
-
-
-	
-	m_monsterTransKeyed = new Creature(m_Renderer, directory + "monsterTrans.bmp",
-										300, 100, true);
-
-	
-	m_pTheHero = new Hero(m_Renderer, directory + "deadpool.bmp", 
-							heroXpos, heroYpos, true);
-	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directory + "GrimReaper.bmp", 
-							themonsterXpos, themonsterYpos, true);
-
-
+	m_pTheHero = new Hero(m_Renderer, directory + "deadpool.bmp", heroXpos, heroYpos, true);
+	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directory + "GrimReaper.bmp", themonsterXpos, themonsterYpos, true);
 
 }
 
 Game::~Game()
 {
-	delete input;			//clean up
+	//clean up dont forget - we destroy in the reverse order that they were created
+	delete input;			
 	input = nullptr;
-	
-	//clean up
-//dont forget - we destroy in the reverse order that they were created
-
-//Destroy the bitmaps.
 	if (m_pTheMonster)
 		delete m_pTheMonster;
-
-	if (m_monsterTransKeyed)
-		delete m_monsterTransKeyed;
-
-	if (m_monsterTrans)
-		delete m_monsterTrans;
-
-	if (m_monster)
-		delete m_monster;
-
 	if (m_pTheHero)
 		delete m_pTheHero;
 
@@ -162,17 +125,9 @@ Game::~Game()
 	{
 		SDL_DestroyWindow(m_Window);
 	}
-
-	//free the font
-	TTF_CloseFont(m_pBigFont);
-	TTF_CloseFont(m_pSmallFont);
+		
 }
-//enum activeWindowTypes {
-//	none,
-//	hero,
-//	monster,
-//	ImGui
-//};
+
 void Game::Update(void)
 {
 	CheckEvents();
@@ -228,13 +183,11 @@ void Game::Update(void)
 	m_pTheHero->draw();	// The sequence of which the bitmaps are drawn is important
 						// bitmaps drawn first are behind anything drawn after them!
 
-
-
 	SDL_Point mousePoint = { io->MousePos.x, io->MousePos.y};
 	SDL_Rect spriteHeroRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
 	SDL_Rect spriteMonsterRect = {m_pTheMonster->GetX(), m_pTheMonster->GetY(), m_pTheMonster->GetW(), m_pTheMonster->GetH() };
 
-
+	//ImGui Window for Hero
 	bool isMouseOverHero = SDL_PointInRect(&mousePoint, &spriteHeroRect);
 	ImGui::NewFrame();
 	ImGui_ImplSDL2_NewFrame(m_Window);
@@ -257,9 +210,7 @@ void Game::Update(void)
 		showHeroImgui = true;
 	}
 	
-	
-	
-
+	// ImGui window for Monster
 	bool isMouseOverMonster = SDL_PointInRect(&mousePoint, &spriteMonsterRect);
 	ImGui::SetNextWindowSize(ImVec2(300, 200));
 	
@@ -300,49 +251,46 @@ void Game::Update(void)
 	SDL_RenderPresent(m_Renderer);
 	//pause for 1/60th sec (ish)
 	SDL_Delay(16);
-
-
 	
 }
 
-void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour)
-	{
-		SDL_Surface* surface = nullptr;
-		SDL_Texture* texture = nullptr;
-
-		int texW = 0;
-		int texH = 0;
-
-		
-		surface = TTF_RenderText_Solid(font, msg.c_str(), colour);
-		if (!surface)
-		{
-			//surface not loaded? Output the error
-			printf("[SURFACE] for font not loaded!\n");
-			printf("%s\n", SDL_GetError());
-		}
-		else
-		{
-			texture = SDL_CreateTextureFromSurface(m_Renderer, surface);
-			if (!texture)
-			{
-				//surface not loaded? Output the error
-				printf("SURFACE for font not loaded! \n");
-				printf("%s\n", SDL_GetError());
-			}
-			else
-			{
-				SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
-				SDL_Rect textRect = { x, y, texW, texH };
-
-				SDL_RenderCopy(m_Renderer, texture, NULL, &textRect);
-			}
-		}
-
-		if (texture)
-			SDL_DestroyTexture(texture);
-
-		if (surface)
-			SDL_FreeSurface(surface);
-	}
+//void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour)
+//	{
+//		SDL_Surface* surface = nullptr;
+//		SDL_Texture* texture = nullptr;
+//
+//		int texW = 0;
+//		int texH = 0;
+//				
+//		surface = TTF_RenderText_Solid(font, msg.c_str(), colour);
+//		if (!surface)
+//		{
+//			//surface not loaded? Output the error
+//			printf("[SURFACE] for font not loaded!\n");
+//			printf("%s\n", SDL_GetError());
+//		}
+//		else
+//		{
+//			texture = SDL_CreateTextureFromSurface(m_Renderer, surface);
+//			if (!texture)
+//			{
+//				//surface not loaded? Output the error
+//				printf("SURFACE for font not loaded! \n");
+//				printf("%s\n", SDL_GetError());
+//			}
+//			else
+//			{
+//				SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
+//				SDL_Rect textRect = { x, y, texW, texH };
+//
+//				SDL_RenderCopy(m_Renderer, texture, NULL, &textRect);
+//			}
+//		}
+//
+//		if (texture)
+//			SDL_DestroyTexture(texture);
+//
+//		if (surface)
+//			SDL_FreeSurface(surface);
+//	}
 

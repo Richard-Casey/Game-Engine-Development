@@ -25,25 +25,18 @@ class Game
 {
 private:
 
-	//SDL Stuff
-	//SDL_Window* m_window;
-	
 	bool m_running;
-
 	//bitmaps!
 	Creature* m_monster; //04-01
 	Creature* m_monsterTrans; //04-01
 	Creature* m_monsterTransKeyed; //04-01
-
 	Monster* m_pTheMonster; // Created monster
-
 	Hero* m_pTheHero;		// created hero
-
 	TTF_Font* m_pSmallFont;
 	TTF_Font* m_pBigFont;
 
 	void CheckEvents();
-	void UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour);
+	//void UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour);
 
 
 	Uint8 r = 127, g = 127, b = 127, a = 255;
@@ -73,8 +66,6 @@ public:
 
 	bool showMonsterImgui = false;
 	bool showHeroImgui = false;
-
-
 
 };
 
