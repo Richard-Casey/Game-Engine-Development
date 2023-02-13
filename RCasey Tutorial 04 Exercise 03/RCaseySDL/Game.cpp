@@ -7,6 +7,7 @@
 #include "Hero.h"
 #include "Monster.h"
 #include <iostream>
+#include "Profiler.h"
 
 
 
@@ -103,6 +104,8 @@ Game::Game()
 
 	m_pTheHero = new Hero(m_Renderer, directory + "deadpool.bmp", heroXpos, heroYpos, true);
 	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directory + "GrimReaper.bmp", themonsterXpos, themonsterYpos, true);
+
+	DebugPrintF("System::Initialise, %d, %d, %f \n", 10, 15, 52.3f);
 
 }
 
@@ -253,44 +256,3 @@ void Game::Update(void)
 	SDL_Delay(16);
 	
 }
-
-//void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour)
-//	{
-//		SDL_Surface* surface = nullptr;
-//		SDL_Texture* texture = nullptr;
-//
-//		int texW = 0;
-//		int texH = 0;
-//				
-//		surface = TTF_RenderText_Solid(font, msg.c_str(), colour);
-//		if (!surface)
-//		{
-//			//surface not loaded? Output the error
-//			printf("[SURFACE] for font not loaded!\n");
-//			printf("%s\n", SDL_GetError());
-//		}
-//		else
-//		{
-//			texture = SDL_CreateTextureFromSurface(m_Renderer, surface);
-//			if (!texture)
-//			{
-//				//surface not loaded? Output the error
-//				printf("SURFACE for font not loaded! \n");
-//				printf("%s\n", SDL_GetError());
-//			}
-//			else
-//			{
-//				SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
-//				SDL_Rect textRect = { x, y, texW, texH };
-//
-//				SDL_RenderCopy(m_Renderer, texture, NULL, &textRect);
-//			}
-//		}
-//
-//		if (texture)
-//			SDL_DestroyTexture(texture);
-//
-//		if (surface)
-//			SDL_FreeSurface(surface);
-//	}
-
