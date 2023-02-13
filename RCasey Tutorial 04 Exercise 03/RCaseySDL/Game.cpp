@@ -8,6 +8,7 @@
 #include "Monster.h"
 #include <iostream>
 #include "Profiler.h"
+#include "ResourceManager.h"
 
 
 
@@ -105,7 +106,7 @@ Game::Game()
 	m_pTheHero = new Hero(m_Renderer, directory + "deadpool.bmp", heroXpos, heroYpos, true);
 	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directory + "GrimReaper.bmp", themonsterXpos, themonsterYpos, true);
 
-	DebugPrintF("System::Initialise, %d, %d, %f \n", 10, 15, 52.3f);
+	//DebugPrintF("System::Initialise, %d, %d, %f \n", 10, 15, 52.3f);
 
 }
 

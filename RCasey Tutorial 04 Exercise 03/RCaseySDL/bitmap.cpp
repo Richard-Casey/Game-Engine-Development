@@ -2,6 +2,7 @@
 #include "bitmap.h"
 #include "SDL.h"
 #include "SDL_render.h"
+#include "ResourceManager.h"
 
 using namespace std;
 
@@ -42,7 +43,9 @@ Bitmap::Bitmap(SDL_Renderer* renderer, string filename, int xpos, int ypos, bool
 		}
 
 		//create the texture
-		m_pbitmapTexture = SDL_CreateTextureFromSurface(m_pRenderer, m_pbitmapSurface);
+		SDL_Surface* retrieveSurface = ResourceManager::GetInstance().GetSurface("../assets/GrimReaper.bmp");
+		//SDL_Surface* retrieveSurface = ResourceManager::GetInstance().GetSurface("../assets/deadpool.bmp");
+		m_pbitmapTexture = SDL_CreateTextureFromSurface(m_pRenderer, retrieveSurface);
 		if (!m_pbitmapTexture)
 		{
 			//texture not loaded? Output an error

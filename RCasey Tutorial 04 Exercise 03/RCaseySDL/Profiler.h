@@ -9,4 +9,4 @@ enum Verbosity
 	All
 };
 
-void Init;
+//void Init;
