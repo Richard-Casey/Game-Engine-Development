@@ -44,7 +44,7 @@ Bitmap::Bitmap(SDL_Renderer* renderer, string filename, int xpos, int ypos, bool
 
 		//create the texture
 		SDL_Surface* retrieveSurface = ResourceManager::GetInstance().GetSurface("../assets/GrimReaper.bmp");
-		//SDL_Surface* retrieveSurface = ResourceManager::GetInstance().GetSurface("../assets/deadpool.bmp");
+		SDL_Surface* retrieveSurface = ResourceManager::GetInstance().GetSurface("../assets/deadpool.bmp");
 		m_pbitmapTexture = SDL_CreateTextureFromSurface(m_pRenderer, retrieveSurface);
 		if (!m_pbitmapTexture)
 		{
