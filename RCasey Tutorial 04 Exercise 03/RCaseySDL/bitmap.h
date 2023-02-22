@@ -15,6 +15,8 @@ private:
 
 public:
 	int m_x, m_y;
+	int spriteWidth = 69;
+	//int spriteHeight = 81
 
 
 public:

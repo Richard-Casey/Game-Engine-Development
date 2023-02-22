@@ -1,7 +1,6 @@
 #include "Hero.h"
 #include "bitmap.h"
 #include "Creature.h"
-#include "bitmap.h"
 #include "Monster.h"
 
 Hero::Hero(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency) :Creature(renderer, filename, xpos, ypos, useTransparency)

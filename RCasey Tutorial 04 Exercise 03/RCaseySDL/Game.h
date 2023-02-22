@@ -12,6 +12,7 @@
 #include "backends/imgui_impl_sdl.h"
 #include "imgui_sdl.h"
 #include "imgui_internal.h"
+#include "Pickup.h"
 
 using namespace std;
 
@@ -32,6 +33,7 @@ private:
 	Creature* m_monsterTransKeyed; //04-01
 	Monster* m_pTheMonster; // Created monster
 	Hero* m_pTheHero;		// created hero
+	Pickup* m_Pickup;
 	TTF_Font* m_pSmallFont;
 	TTF_Font* m_pBigFont;
 
@@ -47,6 +49,10 @@ private:
 	
 	
 public:
+	SDL_Point mousePoint; //= { io->MousePos.x, io->MousePos.y };
+	SDL_Rect spriteHeroRect; //= { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
+	SDL_Rect spriteMonsterRect; //= { m_pTheMonster->GetX(), m_pTheMonster->GetY(), m_pTheMonster->GetW(), m_pTheMonster->GetH() };
+	SDL_Rect spritePickupRect; //= { m_Pickup->GetX(), m_Pickup->GetY(), m_Pickup->GetW(), m_Pickup->GetH() };
 	SDL_Window* m_Window;
 	SDL_Renderer *m_Renderer;
 	Game();
@@ -64,8 +70,21 @@ public:
 	int heroXpos = 930;
 	int heroYpos = 680;
 
+	int pickupXPos = 100;
+	int pickupYPos = 100;
+
 	bool showMonsterImgui = false;
 	bool showHeroImgui = false;
+
+	SDL_Rect GetSpriteHeroRect()
+	{
+		return spriteHeroRect;
+	}
+
+	SDL_Rect GetPickupRect()
+	{
+		return spritePickupRect;
+	}
 
 };
 

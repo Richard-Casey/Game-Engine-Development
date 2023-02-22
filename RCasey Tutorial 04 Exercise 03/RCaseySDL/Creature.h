@@ -1,8 +1,6 @@
 #pragma once
 #include "bitmap.h"
 
-using namespace std;
-
 class Creature : public Bitmap
 {
 public:

@@ -1,4 +1,6 @@
-﻿  ResourceManager.cpp
-  bitmap.cpp
-  Generating Code...
-  RCaseySDL.vcxproj -> C:\Users\Administrator\Desktop\s233122\Game Engine Development\RCasey Tutorial 04 Exercise 03\Debug\RCaseySDL.exe
+﻿  Game.cpp
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(196,39): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(196,39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(196,55): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(196,55): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  RCaseySDL.vcxproj -> C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\Debug\RCaseySDL.exe

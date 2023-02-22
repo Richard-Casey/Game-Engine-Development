@@ -20,14 +20,14 @@ void Monster::Chase()
 	int diffx = this->m_x - m_HeroToChase->GetX();
 	int diffy = this->m_y - m_HeroToChase->GetY();
 	if (diffx > 0)
-		diffx = -2;
+		diffx = -1;
 	else if(diffx < 0)
-		diffx = 2;
+		diffx = 1;
 	
 	if (diffy > 0)
-		diffy = -2;
+		diffy = -1;
 	else if (diffy < 0)
-		diffy = 2;
+		diffy = 1;
 
 	this->m_x += diffx;
 	this->m_y += diffy;

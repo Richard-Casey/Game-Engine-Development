@@ -105,6 +105,8 @@ Game::Game()
 
 	m_pTheHero = new Hero(m_Renderer, directory + "deadpool.bmp", heroXpos, heroYpos, true);
 	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directory + "GrimReaper.bmp", themonsterXpos, themonsterYpos, true);
+	m_Pickup = new Pickup(m_pTheHero, m_Renderer, directory + "pickup.bmp", pickupXPos, pickupYPos, true);
+	
 
 	//DebugPrintF("System::Initialise, %d, %d, %f \n", 10, 15, 52.3f);
 
@@ -119,6 +121,8 @@ Game::~Game()
 		delete m_pTheMonster;
 	if (m_pTheHero)
 		delete m_pTheHero;
+	if (m_Pickup)
+		delete m_Pickup;
 
 	if (m_Renderer)
 	{
@@ -137,6 +141,8 @@ void Game::Update(void)
 	CheckEvents();
 	SDL_RenderClear(m_Renderer);
 	input->Update();
+
+
 
 	//increase r
 	if (input->KeyIsPressed(KEY_R))
@@ -179,17 +185,25 @@ void Game::Update(void)
 	SetDisplayColour(r, g, b, a); //Set our colour display
 	//wipe the display to the currently set colour.
 
-	// Implement chase function
-	m_pTheMonster->Chase();
 
 	// Show our bitmaps
+	m_Pickup->draw();
 	m_pTheMonster->draw();
 	m_pTheHero->draw();	// The sequence of which the bitmaps are drawn is important
 						// bitmaps drawn first are behind anything drawn after them!
 
-	SDL_Point mousePoint = { io->MousePos.x, io->MousePos.y};
+
+	SDL_Point mousePoint = { io->MousePos.x, io->MousePos.y };
 	SDL_Rect spriteHeroRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
-	SDL_Rect spriteMonsterRect = {m_pTheMonster->GetX(), m_pTheMonster->GetY(), m_pTheMonster->GetW(), m_pTheMonster->GetH() };
+	SDL_Rect spriteMonsterRect = { m_pTheMonster->GetX(), m_pTheMonster->GetY(), m_pTheMonster->GetW(), m_pTheMonster->GetH() };
+	SDL_Rect spritePickupRect = { m_Pickup->GetX(), m_Pickup->GetY(), m_Pickup->GetW(), m_Pickup->GetH() };
+
+	// Implement chase function
+	m_pTheMonster->Chase();
+	// Implement pcikup update
+	m_Pickup->Update();
+
+	
 
 	//ImGui Window for Hero
 	bool isMouseOverHero = SDL_PointInRect(&mousePoint, &spriteHeroRect);
@@ -236,6 +250,8 @@ void Game::Update(void)
 	{
 		showMonsterImgui = true;
 	}
+
+
 	
 		
 

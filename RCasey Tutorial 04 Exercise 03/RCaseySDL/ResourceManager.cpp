@@ -37,7 +37,7 @@ SDL_Surface* ResourceManager::GetSurface(std::string filepath)
 	}
 	else
 	{
-		std::cout << "Image allocated once \n";
+		std::cout << "Image allocated once" + filepath << std::endl;
 		SDL_Surface* surface = SDL_LoadBMP(filepath.c_str());
 		m_Surfaces.insert(std::make_pair(filepath, surface));
 

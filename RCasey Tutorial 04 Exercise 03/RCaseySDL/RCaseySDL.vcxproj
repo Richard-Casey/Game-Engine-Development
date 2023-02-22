@@ -163,6 +163,7 @@
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="Pickup.cpp" />
     <ClCompile Include="Profiler.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -181,6 +182,7 @@
     <ClInclude Include="Hero.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="Monster.h" />
+    <ClInclude Include="Pickup.h" />
     <ClInclude Include="Profiler.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="TextureManager.h" />

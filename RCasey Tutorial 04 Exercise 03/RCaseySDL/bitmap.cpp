@@ -43,7 +43,7 @@ Bitmap::Bitmap(SDL_Renderer* renderer, string filename, int xpos, int ypos, bool
 		}
 
 		//create the texture
-		SDL_Surface* retrieveSurface1 = ResourceManager::GetInstance().GetSurface("../assets/" + filename);
+		SDL_Surface* retrieveSurface1 = ResourceManager::GetInstance().GetSurface(filename);
 		m_pbitmapTexture = SDL_CreateTextureFromSurface(m_pRenderer, retrieveSurface1);
 		if (!m_pbitmapTexture)
 		{
@@ -65,7 +65,7 @@ void Bitmap::draw()
 	//render the bitmap at the x/y coords
 	if (m_pbitmapTexture)
 	{
-		SDL_Rect destRect = { m_x, m_y, m_pbitmapSurface->w, 81 };
+		SDL_Rect destRect = { m_x, m_y, m_pbitmapSurface->w, spriteWidth, };
 		SDL_RenderCopy(m_pRenderer, m_pbitmapTexture, NULL, &destRect);
 	}
 }
