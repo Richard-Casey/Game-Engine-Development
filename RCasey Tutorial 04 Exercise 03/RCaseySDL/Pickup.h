@@ -13,7 +13,6 @@ public:
 	void Update();
 	bool isVisable = true;
 	Hero* m_hero;
-	Pickup* pickup;
 	std::string directory = "../assets/";
 	//int m_x, m_y;
 };

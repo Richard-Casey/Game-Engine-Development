@@ -187,7 +187,9 @@ void Game::Update(void)
 
 
 	// Show our bitmaps
-	m_Pickup->draw();
+	if(m_Pickup->isVisable)
+		m_Pickup->draw();
+
 	m_pTheMonster->draw();
 	m_pTheHero->draw();	// The sequence of which the bitmaps are drawn is important
 						// bitmaps drawn first are behind anything drawn after them!
@@ -201,7 +203,8 @@ void Game::Update(void)
 	// Implement chase function
 	m_pTheMonster->Chase();
 	// Implement pcikup update
-	m_Pickup->Update();
+	if (m_Pickup->isVisable)
+		m_Pickup->Update();
 
 	
 

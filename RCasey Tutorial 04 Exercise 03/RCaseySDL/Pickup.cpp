@@ -16,10 +16,12 @@ Pickup::~Pickup()
 
 void Pickup::Update()
 {
-	if (this->m_x == m_hero->GetX() && this->m_y == m_hero->GetY())
+	SDL_Point heroPos{ m_hero->GetX() + (m_hero->GetW() / 2), m_hero->GetY() + (m_hero->GetH() / 2) };
+	SDL_Rect spritePickupRect = { GetX(), GetY(), GetW(), GetH() };
+
+	if (SDL_PointInRect(&heroPos, &spritePickupRect))
 	{
 		isVisable = false;
-		printf("Item collected");
-	
+		printf("Item collected\n");
 	}
 }
