@@ -4,6 +4,7 @@
 #include "Hero.h"
 #include "Game.h"
 #include <iostream>
+#include "Pickup.h"
 
 Monster::Monster(Hero* HeroToChase, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency) :Creature(renderer, filename, xpos, ypos, useTransparency)
 {
@@ -39,6 +40,9 @@ void Monster::Chase()
 		this->m_y = 10;
 		m_HeroToChase->m_x = 930;
 		m_HeroToChase->m_y = 680;
+		
+		pickup->isVisable = true;
+		
 	}
 	
 }

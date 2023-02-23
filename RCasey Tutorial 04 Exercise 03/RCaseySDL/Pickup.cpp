@@ -10,9 +10,9 @@ Pickup::Pickup(Hero* hero, SDL_Renderer* renderer, std::string filename, int xpo
 	//this->Update(); // Specifies that the update from Pickup needs to be used instead of the Update from Creature or Hero
 }
 
-Pickup::~Pickup()
-{
-}
+//Pickup::~Pickup()
+//{
+//}
 
 void Pickup::Update()
 {

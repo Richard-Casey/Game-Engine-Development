@@ -13,6 +13,8 @@
 #include "imgui_sdl.h"
 #include "imgui_internal.h"
 #include "Pickup.h"
+#include "MonsterHome.h"
+#include <cmath>
 
 using namespace std;
 
@@ -34,6 +36,7 @@ private:
 	Monster* m_pTheMonster; // Created monster
 	Hero* m_pTheHero;		// created hero
 	Pickup* m_Pickup;
+	MonsterHome* m_MonsterHome;
 	TTF_Font* m_pSmallFont;
 	TTF_Font* m_pBigFont;
 
@@ -59,7 +62,7 @@ public:
 	~Game();
 	void SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 	void Update();
-
+	double  randomNumber();
 	string directory = "../assets/";
 
 	Input* input = new Input();
@@ -72,6 +75,9 @@ public:
 
 	int pickupXPos = 600;
 	int pickupYPos = 600;
+
+	int MHomeXPos = 450;
+	int MHomeYPos = 450;
 
 	bool showMonsterImgui = false;
 	bool showHeroImgui = false;

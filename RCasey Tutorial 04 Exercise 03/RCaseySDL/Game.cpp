@@ -9,6 +9,7 @@
 #include <iostream>
 #include "Profiler.h"
 #include "ResourceManager.h"
+#include "Pickup.h"
 
 
 
@@ -38,6 +39,34 @@ void Game::SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 
 void Game::CheckEvents()
 {
+}
+
+double Game::randomNumber()
+{
+	// CATASTROPHIC OVERKILL TO CREATE A NORMALISED NUMBER!....But it works...
+
+	static bool need_random = true;
+
+	if (need_random)
+	{
+		srand(static_cast<unsigned int>(time(NULL)));
+		need_random = false;
+	}
+
+	int n = (rand() % 12) + 1;
+	if ((rand() % 100) >= 90) n = 1;
+	double a = 0;
+	double b = 0;
+	for (long long i = 0, j = 0; i < n; i++)
+	{
+		j = (rand() % 10);
+		b = b * 10 + j;
+	}
+	std::streamsize input_precision = n;
+	a += (b / std::pow(10, input_precision));
+
+	if ((rand() % 100) >= 60) a = (-a);
+	return a;
 }
 
 Game::Game() 
@@ -85,6 +114,9 @@ Game::Game()
 		return;
 	}
 
+
+	
+
 	
 
 	//imGUI Setup THIS NEEDS TO BE AFTER THE RENDERER
@@ -105,7 +137,8 @@ Game::Game()
 
 	m_pTheHero = new Hero(m_Renderer, directory + "deadpool.bmp", heroXpos, heroYpos, true);
 	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directory + "GrimReaper.bmp", themonsterXpos, themonsterYpos, true);
-	m_Pickup = new Pickup(m_pTheHero, m_Renderer, directory + "pickup.bmp", pickupXPos, pickupYPos, true);
+	m_Pickup = new Pickup(m_pTheHero, m_Renderer, directory + "pickup1.bmp", pickupXPos, pickupYPos, true);
+	m_MonsterHome = new MonsterHome(m_pTheMonster, m_Renderer, directory + "hunterbase.bmp", MHomeXPos, MHomeYPos, true);
 	
 
 	//DebugPrintF("System::Initialise, %d, %d, %f \n", 10, 15, 52.3f);
@@ -141,6 +174,8 @@ void Game::Update(void)
 	CheckEvents();
 	SDL_RenderClear(m_Renderer);
 	input->Update();
+
+	//std::cout << randomNumber() << endl;
 
 
 
@@ -189,7 +224,7 @@ void Game::Update(void)
 	// Show our bitmaps
 	if(m_Pickup->isVisable)
 		m_Pickup->draw();
-
+	m_MonsterHome->draw();
 	m_pTheMonster->draw();
 	m_pTheHero->draw();	// The sequence of which the bitmaps are drawn is important
 						// bitmaps drawn first are behind anything drawn after them!
@@ -199,13 +234,16 @@ void Game::Update(void)
 	SDL_Rect spriteHeroRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
 	SDL_Rect spriteMonsterRect = { m_pTheMonster->GetX(), m_pTheMonster->GetY(), m_pTheMonster->GetW(), m_pTheMonster->GetH() };
 	SDL_Rect spritePickupRect = { m_Pickup->GetX(), m_Pickup->GetY(), m_Pickup->GetW(), m_Pickup->GetH() };
+	SDL_Rect spriteMHomeRect = { m_MonsterHome->GetX(), m_MonsterHome->GetY(), m_MonsterHome->GetW(), m_MonsterHome->GetH() };
 
-	// Implement chase function
-	m_pTheMonster->Chase();
+
 	// Implement pcikup update
 	if (m_Pickup->isVisable)
 		m_Pickup->Update();
 
+
+	// Implement chase function
+	m_pTheMonster->Chase();
 	
 
 	//ImGui Window for Hero
