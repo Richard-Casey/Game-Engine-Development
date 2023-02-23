@@ -251,6 +251,29 @@ void Game::Update(void)
 		showMonsterImgui = true;
 	}
 
+	//IMGui window for pickup
+	bool isMouseOverPickup = SDL_PointInRect(&mousePoint, &spritePickupRect);
+	ImGui::SetNextWindowSize(ImVec2(300, 200));
+
+	if (showPickupImgui)
+	{
+		ImGui::Begin("Pickup");
+
+		if (ImGui::Button("Close Window", ImVec2(100, 30)))
+		{
+			showPickupImgui = false;
+		};
+		ImGui::End();
+	}
+	if (isMouseOverPickup && io->MouseDown[0])
+	{
+		showPickupImgui = true;
+	}
+	if (isMouseOverPickup && io->MouseReleased[0])
+	{
+		showPickupImgui = true;
+	}
+
 
 	
 		

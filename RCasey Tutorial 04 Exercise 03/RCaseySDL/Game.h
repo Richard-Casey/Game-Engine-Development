@@ -70,11 +70,12 @@ public:
 	int heroXpos = 930;
 	int heroYpos = 680;
 
-	int pickupXPos = 100;
-	int pickupYPos = 100;
+	int pickupXPos = 600;
+	int pickupYPos = 600;
 
 	bool showMonsterImgui = false;
 	bool showHeroImgui = false;
+	bool showPickupImgui = false;
 
 	SDL_Rect GetSpriteHeroRect()
 	{
