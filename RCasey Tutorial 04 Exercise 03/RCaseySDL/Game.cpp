@@ -43,7 +43,7 @@ void Game::CheckEvents()
 
 double Game::randomNumber()
 {
-	// CATASTROPHIC OVERKILL TO CREATE A NORMALISED NUMBER!....But it works...
+	// ABSOLOUTE OVERKILL TO CREATE A NORMALISED NUMBER!....But it works...
 
 	static bool need_random = true;
 
