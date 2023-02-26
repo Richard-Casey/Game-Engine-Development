@@ -138,7 +138,6 @@ Game::Game()
 	m_pTheHero = new Hero(m_Renderer, directory + "deadpool.bmp", heroXpos, heroYpos, true);
 	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directory + "GrimReaper.bmp", themonsterXpos, themonsterYpos, true);
 	m_Pickup = new Pickup(m_pTheHero, m_Renderer, directory + "pickup1.bmp", pickupXPos, pickupYPos, true);
-	m_MonsterHome = new MonsterHome(m_pTheMonster, m_Renderer, directory + "hunterbase.bmp", MHomeXPos, MHomeYPos, true);
 	
 
 	//DebugPrintF("System::Initialise, %d, %d, %f \n", 10, 15, 52.3f);
@@ -224,7 +223,6 @@ void Game::Update(void)
 	// Show our bitmaps
 	if(m_Pickup->isVisable)
 		m_Pickup->draw();
-	m_MonsterHome->draw();
 	m_pTheMonster->draw();
 	m_pTheHero->draw();	// The sequence of which the bitmaps are drawn is important
 						// bitmaps drawn first are behind anything drawn after them!
@@ -234,7 +232,7 @@ void Game::Update(void)
 	SDL_Rect spriteHeroRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
 	SDL_Rect spriteMonsterRect = { m_pTheMonster->GetX(), m_pTheMonster->GetY(), m_pTheMonster->GetW(), m_pTheMonster->GetH() };
 	SDL_Rect spritePickupRect = { m_Pickup->GetX(), m_Pickup->GetY(), m_Pickup->GetW(), m_Pickup->GetH() };
-	SDL_Rect spriteMHomeRect = { m_MonsterHome->GetX(), m_MonsterHome->GetY(), m_MonsterHome->GetW(), m_MonsterHome->GetH() };
+	
 
 
 	// Implement pcikup update
