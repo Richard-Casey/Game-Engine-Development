@@ -20,8 +20,6 @@ ResourceManager ResourceManager::operator = (ResourceManager const& rhs)
 // Instantiate exactly one instance of our class
 ResourceManager& ResourceManager::GetInstance()
 {
-	static ResourceManager* s_instance = new ResourceManager;
-
 	return *s_instance;
 }
 
@@ -30,20 +28,14 @@ SDL_Surface* ResourceManager::GetSurface(std::string filepath)
 	// We will look through our m_durfaces which is an unordered map and see if a file exists
 	// And if the file does exist then return the associeated surface.
 	auto search = m_Surfaces.find(filepath);
-	if (search != m_Surfaces.end())
-	{
-
-		return m_Surfaces[filepath];
-	}
-	else
+	if (search == m_Surfaces.end())
 	{
 		std::cout << "Image allocated once" + filepath << std::endl;
 		SDL_Surface* surface = SDL_LoadBMP(filepath.c_str());
 		m_Surfaces.insert(std::make_pair(filepath, surface));
-
-		return m_Surfaces[filepath];
 	}
 
-	return nullptr;
+	return m_Surfaces[filepath];
 
 }
+ResourceManager* ResourceManager::s_instance = new ResourceManager();

@@ -39,6 +39,22 @@ void Game::SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 
 void Game::CheckEvents()
 {
+	SDL_Event e;
+	while (SDL_PollEvent(&e) != NULL)
+	{
+
+		input->Update(e);
+
+		if (e.type == Game::ResetEvent && e.user.code == 1)
+		{
+			UnLoadObjects();
+			LoadObjects();
+		}
+		if (e.type == Game::PickupEvent && e.user.code == 2)
+		{
+			m_Goal->isVisable = false;
+		}
+	}
 }
 
 double Game::randomNumber()
@@ -135,13 +151,34 @@ Game::Game()
 
 	ImGui_ImplSDL2_InitForOpenGL(m_Window, SDL_GLContext);
 
-	m_pTheHero = new Hero(m_Renderer, directory + "deadpool.bmp", heroXpos, heroYpos, true);
-	m_pTheMonster = new Monster(m_pTheHero , m_Renderer, directory + "GrimReaper.bmp", themonsterXpos, themonsterYpos, true);
-	m_Pickup = new Pickup(m_pTheHero, m_Renderer, directory + "pickup1.bmp", pickupXPos, pickupYPos, true);
-	
+	LoadObjects();
 
 	//DebugPrintF("System::Initialise, %d, %d, %f \n", 10, 15, 52.3f);
+	Game::ResetEvent = SDL_RegisterEvents(1);
+}
 
+void Game::LoadObjects()
+{
+	m_pTheHero = new Hero(m_Renderer, directory + "deadpool.bmp", heroXpos, heroYpos, true);
+	m_pTheMonster = new Monster(m_pTheHero, m_Renderer, directory + "GrimReaper.bmp", themonsterXpos, themonsterYpos, true);
+	m_Pickup = new Pickup(m_pTheHero, m_Renderer, directory + "pickup1.bmp", pickupXPos, pickupYPos, true);
+	m_Goal = new Pickup(m_pTheHero, m_Renderer, directory + "goal1.bmp", goalXPos, goalYPos, true);
+	m_Goal2 = new Pickup(m_pTheHero, m_Renderer, directory + "goal2.bmp", goalXPos, goalYPos, true);
+}
+
+void Game::UnLoadObjects()
+{
+	delete m_pTheHero;
+	delete m_pTheMonster;
+	delete m_Pickup;
+	delete m_Goal;
+	delete m_Goal2;
+
+	m_pTheHero = nullptr;
+	m_pTheMonster = nullptr;
+	m_Pickup = nullptr;
+	m_Goal = nullptr;
+	m_Goal2 = nullptr;
 }
 
 Game::~Game()
@@ -155,6 +192,8 @@ Game::~Game()
 		delete m_pTheHero;
 	if (m_Pickup)
 		delete m_Pickup;
+	if (m_Goal)
+		delete m_Goal;
 
 	if (m_Renderer)
 	{
@@ -172,166 +211,204 @@ void Game::Update(void)
 {
 	CheckEvents();
 	SDL_RenderClear(m_Renderer);
-	input->Update();
-
-	//std::cout << randomNumber() << endl;
-
-
-
-	//increase r
-	if (input->KeyIsPressed(KEY_R))
+	if (State == Game::SPLASH)
 	{
-		if (++r > 255) r = 0;
-	}
 
-	//increase g
-	if (input->KeyIsPressed(KEY_G))
+	}
+	else if (State == Game::GAME)
 	{
-		if (++g > 255) g = 0;
-	}
-
-	//increase b
-	if (input->KeyIsPressed(KEY_B))
-	{
-		if (++b > 255) b = 0;
-	}
-
-	if (input->KeyIsPressed(KEY_W))
-	{
-		m_pTheHero->addoffset(0, -2);
-	}
-
-	if (input->KeyIsPressed(KEY_S))
-	{
-		m_pTheHero->addoffset(0, 2);
-	}
-
-	if (input->KeyIsPressed(KEY_A))
-	{
-		m_pTheHero->addoffset(-2, 0);
-	}
-
-	if (input->KeyIsPressed(KEY_D))
-	{
-		m_pTheHero->addoffset(2, 0);
-	}
-
-	SetDisplayColour(r, g, b, a); //Set our colour display
-	//wipe the display to the currently set colour.
+		//std::cout << randomNumber() << endl;
 
 
-	// Show our bitmaps
-	if(m_Pickup->isVisable)
-		m_Pickup->draw();
-	m_pTheMonster->draw();
-	m_pTheHero->draw();	// The sequence of which the bitmaps are drawn is important
+
+		//increase r
+		if (input->KeyIsPressed(KEY_R))
+		{
+			if (++r > 255) r = 0;
+		}
+
+		//increase g
+		if (input->KeyIsPressed(KEY_G))
+		{
+			if (++g > 255) g = 0;
+		}
+
+		//increase b
+		if (input->KeyIsPressed(KEY_B))
+		{
+			if (++b > 255) b = 0;
+		}
+
+		if (input->KeyIsPressed(KEY_W))
+		{
+			m_pTheHero->addoffset(0, -2);
+		}
+
+		if (input->KeyIsPressed(KEY_S))
+		{
+			m_pTheHero->addoffset(0, 2);
+		}
+
+		if (input->KeyIsPressed(KEY_A))
+		{
+			m_pTheHero->addoffset(-2, 0);
+		}
+
+		if (input->KeyIsPressed(KEY_D))
+		{
+			m_pTheHero->addoffset(2, 0);
+		}
+
+		SetDisplayColour(r, g, b, a); //Set our colour display
+		//wipe the display to the currently set colour.
+
+
+		// Show our bitmaps
+		if (m_Pickup->isVisable)
+			m_Pickup->draw();
+		if (!m_Pickup->isVisable)
+		{
+			m_Goal2->draw();
+
+		}
+		m_Goal->draw();
+		m_pTheMonster->draw();
+		m_pTheHero->draw();	// The sequence of which the bitmaps are drawn is important
 						// bitmaps drawn first are behind anything drawn after them!
 
 
-	SDL_Point mousePoint = { io->MousePos.x, io->MousePos.y };
-	SDL_Rect spriteHeroRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
-	SDL_Rect spriteMonsterRect = { m_pTheMonster->GetX(), m_pTheMonster->GetY(), m_pTheMonster->GetW(), m_pTheMonster->GetH() };
-	SDL_Rect spritePickupRect = { m_Pickup->GetX(), m_Pickup->GetY(), m_Pickup->GetW(), m_Pickup->GetH() };
-	
+		SDL_Point mousePoint = { io->MousePos.x, io->MousePos.y };
+		SDL_Rect spriteHeroRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
+		SDL_Rect spriteMonsterRect = { m_pTheMonster->GetX(), m_pTheMonster->GetY(), m_pTheMonster->GetW(), m_pTheMonster->GetH() };
+		SDL_Rect spritePickupRect = { m_Pickup->GetX(), m_Pickup->GetY(), m_Pickup->GetW(), m_Pickup->GetH() };
+		SDL_Rect spriteGoalRect = { m_Goal->GetX(), m_Goal->GetY(), m_Goal->GetW(), m_Goal->GetH() };
+		//SDL_Rect spriteGoalRect2 = { m_Goal2->GetX(), m_Goal2->GetY(), m_Goal2->GetW(), m_Goal2->GetH() };
 
 
-	// Implement pcikup update
-	if (m_Pickup->isVisable)
-		m_Pickup->Update();
+		// Implement pcikup update
+		if (m_Pickup->isVisable)
+			m_Pickup->Update();
 
 
-	// Implement chase function
-	m_pTheMonster->Chase();
-	
+		// Implement chase function
+		m_pTheMonster->Chase();
 
-	//ImGui Window for Hero
-	bool isMouseOverHero = SDL_PointInRect(&mousePoint, &spriteHeroRect);
-	ImGui::NewFrame();
-	ImGui_ImplSDL2_NewFrame(m_Window);
-	ImGui::SetNextWindowSize(ImVec2(300, 200));
-	if (showHeroImgui)
-	{
-		ImGui::Begin("Hero");
-		if (ImGui::Button("Close Window", ImVec2(100, 30)))
+
+		//ImGui Window for Hero
+		bool isMouseOverHero = SDL_PointInRect(&mousePoint, &spriteHeroRect);
+		ImGui::NewFrame();
+		ImGui_ImplSDL2_NewFrame(m_Window);
+		ImGui::SetNextWindowSize(ImVec2(300, 200));
+		if (showHeroImgui)
 		{
-			showHeroImgui = false;
+			ImGui::Begin("Hero");
+			if (ImGui::Button("Close Window", ImVec2(100, 30)))
+			{
+				showHeroImgui = false;
+			}
+			ImGui::End();
 		}
-		ImGui::End();
-	}
-	if (isMouseOverHero && io->MouseDown[0])
-	{	
-		showHeroImgui = true;
-	}
-	if (isMouseOverHero && io->MouseReleased[0])
-	{
-		showHeroImgui = true;
-	}
-	
-	// ImGui window for Monster
-	bool isMouseOverMonster = SDL_PointInRect(&mousePoint, &spriteMonsterRect);
-	ImGui::SetNextWindowSize(ImVec2(300, 200));
-	
-	if (showMonsterImgui)
-	{
-		ImGui::Begin("Monster");
-		
-		if(ImGui::Button("Close Window", ImVec2(100, 30))) 
+		if (isMouseOverHero && io->MouseDown[0])
 		{
-			showMonsterImgui = false;
-		};
-		ImGui::End();
-	}
-	if (isMouseOverMonster && io->MouseDown[0])
-	{
-		showMonsterImgui = true;
-	}
-	if (isMouseOverMonster && io->MouseReleased[0])
-	{
-		showMonsterImgui = true;
-	}
-
-	//IMGui window for pickup
-	bool isMouseOverPickup = SDL_PointInRect(&mousePoint, &spritePickupRect);
-	ImGui::SetNextWindowSize(ImVec2(300, 200));
-
-	if (showPickupImgui)
-	{
-		ImGui::Begin("Pickup");
-
-		if (ImGui::Button("Close Window", ImVec2(100, 30)))
+			showHeroImgui = true;
+		}
+		if (isMouseOverHero && io->MouseReleased[0])
 		{
-			showPickupImgui = false;
-		};
+			showHeroImgui = true;
+		}
+
+		// ImGui window for Monster
+		bool isMouseOverMonster = SDL_PointInRect(&mousePoint, &spriteMonsterRect);
+		ImGui::SetNextWindowSize(ImVec2(300, 200));
+
+		if (showMonsterImgui)
+		{
+			ImGui::Begin("Monster");
+
+			if (ImGui::Button("Close Window", ImVec2(100, 30)))
+			{
+				showMonsterImgui = false;
+			};
+			ImGui::End();
+		}
+		if (isMouseOverMonster && io->MouseDown[0])
+		{
+			showMonsterImgui = true;
+		}
+		if (isMouseOverMonster && io->MouseReleased[0])
+		{
+			showMonsterImgui = true;
+		}
+
+		//IMGui window for pickup
+		bool isMouseOverPickup = SDL_PointInRect(&mousePoint, &spritePickupRect);
+		ImGui::SetNextWindowSize(ImVec2(300, 200));
+
+		if (showPickupImgui)
+		{
+			ImGui::Begin("Pickup");
+
+			if (ImGui::Button("Close Window", ImVec2(100, 30)))
+			{
+				showPickupImgui = false;
+			};
+			ImGui::End();
+		}
+		if (isMouseOverPickup && io->MouseDown[0])
+		{
+			showPickupImgui = true;
+		}
+		if (isMouseOverPickup && io->MouseReleased[0])
+		{
+			showPickupImgui = true;
+		}
+
+		ImGui::SetNextWindowSize(ImVec2(600, 100));
+		ImGui::Begin("Game Settings");
+
+		//converto to lfoat
+
+		int R, G, B;
+		R = r;
+		G = g;
+		B = b;
+
+		ImGui::DragInt("Hero Speed", &R, 0.01f, 0, 255);
+		ImGui::DragInt("Monster Speed", &G, 0.01f, 0, 255);
+		ImGui::DragInt("Monster Speed", &B, 0.01f, 0, 255);
+
+		r = R;
+		g = G;
+		b = B;
+
+		//unconvert
+
 		ImGui::End();
+
+
+
+
+
+
+		// imGUI input must be between here and "ImGUI::Render"
+
+
+		//ImGui::ShowDemoWindow(nullptr);
+
+
+		// Every new Window for ImGUI must start with ImGui::Begin ("Name Window") and end with ImGui::End
+
+
+		// End ImGUI Input
+		ImGui::Render();
+		ImGuiSDL::Render(ImGui::GetDrawData());
 	}
-	if (isMouseOverPickup && io->MouseDown[0])
-	{
-		showPickupImgui = true;
-	}
-	if (isMouseOverPickup && io->MouseReleased[0])
-	{
-		showPickupImgui = true;
-	}
-
-
-	
-		
-
-	// imGUI input must be between here and "ImGUI::Render"
-	 
-	 
-	//ImGui::ShowDemoWindow(nullptr);
-	
-	
-	// Every new Window for ImGUI must start with ImGui::Begin ("Name Window") and end with ImGui::End
-
-
-	// End ImGUI Input
-	ImGui::Render();
-	ImGuiSDL::Render(ImGui::GetDrawData());
-	
 	SDL_RenderPresent(m_Renderer);
 	//pause for 1/60th sec (ish)
 	SDL_Delay(16);
 	
 }
+
+
+Uint32 Game::ResetEvent = SDL_RegisterEvents(1);
+Uint32 Game::PickupEvent = SDL_RegisterEvents(1);

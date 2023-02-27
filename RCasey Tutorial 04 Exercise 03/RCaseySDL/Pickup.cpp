@@ -23,5 +23,14 @@ void Pickup::Update()
 	{
 		isVisable = false;
 		printf("Item collected\n");
+		if(Game::PickupEvent != ((Uint32)-1)) {
+			SDL_Event event;
+			SDL_memset(&event, 0, sizeof(event)); /* or SDL_zero(event) */
+			event.type = Game::PickupEvent;
+			event.user.code = 2;
+			event.user.data1 = 0;
+			event.user.data2 = 0;
+			SDL_PushEvent(&event);
+		}
 	}
 }

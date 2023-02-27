@@ -15,5 +15,6 @@ private:
 public:
 	static ResourceManager& GetInstance();
 	SDL_Surface* GetSurface(std::string filepath);
+	static ResourceManager* s_instance;
 };
 

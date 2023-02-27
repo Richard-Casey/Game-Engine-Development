@@ -3,11 +3,13 @@
 
 
 
-void Input::Update(void)
+void Input::Update(SDL_Event m_event)
 {
 	//loop through all the events in the events list
-	while (SDL_PollEvent(&m_event) != NULL)
-	{
+	//while (SDL_PollEvent(&m_event) != NULL)
+	//{
+
+
 		//got an event, lets process it.
 
 		//check for keydown
@@ -121,7 +123,7 @@ void Input::Update(void)
 				break;
 			}
 		}
-	}
+	//}
 }
 
 Input::Input()

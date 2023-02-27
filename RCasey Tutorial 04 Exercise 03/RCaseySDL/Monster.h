@@ -4,6 +4,7 @@
 #include "Hero.h"
 #include "Monster.h"
 #include "Pickup.h"
+#include "Game.h"
 
 class Monster : public Creature
 {
@@ -19,6 +20,7 @@ public:
 private:
 	Hero* m_HeroToChase;
 	Pickup* pickup;
+	
 };
 
 // Draw method is not nessacry as inheriting from Creature

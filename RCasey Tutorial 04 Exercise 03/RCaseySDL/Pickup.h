@@ -14,6 +14,11 @@ public:
 	Hero* m_hero;
 	std::string directory = "../assets/";
 	//int m_x, m_y;
+	void draw()
+	{
+		if (isVisable)
+			Bitmap::draw();
+	}
 };
 
 

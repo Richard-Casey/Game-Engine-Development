@@ -10,7 +10,7 @@ class Input
 {
 public:
 	SDL_Event m_event;
-	void Update(void);
+	void Update(SDL_Event m_event);
 	Input();
 	~Input();	
 	bool m_keysPressed[SIZE_OF_KEYS_PRESSED_ENUM] = {};

@@ -164,7 +164,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Monster.cpp" />
-    <ClCompile Include="MonsterHome.cpp" />
     <ClCompile Include="Pickup.cpp" />
     <ClCompile Include="Profiler.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
@@ -186,7 +185,6 @@
     <ClInclude Include="input.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Monster.h" />
-    <ClInclude Include="MonsterHome.h" />
     <ClInclude Include="Pickup.h" />
     <ClInclude Include="Profiler.h" />
     <ClInclude Include="ResourceManager.h" />
