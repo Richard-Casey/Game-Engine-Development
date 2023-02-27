@@ -37,6 +37,44 @@ void Game::SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 
 }
 
+void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour)
+{
+	SDL_Surface* surface = nullptr;
+	SDL_Texture* texture = nullptr;
+
+	int texW = 0;
+	int texH = 0;
+
+	surface = TTF_RenderText_Solid(font, msg.c_str(), colour);
+	if (!surface)
+	{
+		// Surface not loaded? OutPut the error
+		printf("SURFACE for font not loaded! \n");
+		printf("%s\n", SDL_GetError());
+	}
+	else
+	{
+		texture = SDL_CreateTextureFromSurface(m_Renderer, surface);
+		if (!texture)
+		{
+			// Surface not loaded? Output the error
+			printf("SURFACE for font not loaded! \n");
+			printf("%s\n", SDL_GetError());
+		}
+		else
+		{
+			SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
+			SDL_Rect textRect = { x,y,texW,texH };
+			SDL_RenderCopy(m_Renderer, texture, NULL, &textRect);
+		}
+	}
+
+	if (texture)
+		SDL_DestroyTexture(texture);
+	if (surface)
+		SDL_FreeSurface(surface);
+}
+
 void Game::CheckEvents()
 {
 	SDL_Event e;
@@ -164,6 +202,9 @@ void Game::LoadObjects()
 	m_Pickup = new Pickup(m_pTheHero, m_Renderer, directory + "pickup1.bmp", pickupXPos, pickupYPos, true);
 	m_Goal = new Pickup(m_pTheHero, m_Renderer, directory + "goal1.bmp", goalXPos, goalYPos, true);
 	m_Goal2 = new Pickup(m_pTheHero, m_Renderer, directory + "goal2.bmp", goalXPos, goalYPos, true);
+
+	m_pSmallFont = TTF_OpenFont("../assets/DejaVuSans.ttf", 15);
+	m_pBigFont = TTF_OpenFont("../assets/DejaVuSans.ttf", 50);
 }
 
 void Game::UnLoadObjects()
@@ -173,12 +214,16 @@ void Game::UnLoadObjects()
 	delete m_Pickup;
 	delete m_Goal;
 	delete m_Goal2;
+	delete m_pSmallFont;
+	delete m_pBigFont;
 
 	m_pTheHero = nullptr;
 	m_pTheMonster = nullptr;
 	m_Pickup = nullptr;
 	m_Goal = nullptr;
 	m_Goal2 = nullptr;
+	m_pSmallFont = nullptr;
+	m_pBigFont = nullptr;
 }
 
 Game::~Game()
@@ -194,6 +239,9 @@ Game::~Game()
 		delete m_Pickup;
 	if (m_Goal)
 		delete m_Goal;
+
+	TTF_CloseFont(m_pBigFont);
+	TTF_CloseFont(m_pSmallFont);
 
 	if (m_Renderer)
 	{
@@ -211,9 +259,25 @@ void Game::Update(void)
 {
 	CheckEvents();
 	SDL_RenderClear(m_Renderer);
+
+	// This starts the game in the SPASH state - essentially a menu
 	if (State == Game::SPLASH)
 	{
+		// Logic for the menu - a button press that return the state to GAME
+		UpdateText("Testing Testy Test", 50, 10, m_pSmallFont, { 255,0,0 });
+		UpdateText("More Testing Testy Test", 50, 40, m_pSmallFont, { 0,0,255 });
 
+		char char_array[] = "Big Testy";
+		UpdateText(char_array, 50, 140, m_pBigFont, { 255,255,255 });
+
+		string mystring = "Big Green Testy";
+		UpdateText(mystring, 50, 70, m_pBigFont, { 0,255,0 });
+
+		int testnumber = 1234;
+		string teststring = "Test Number :";
+		teststring += to_string(testnumber);
+		UpdateText(teststring, 50, 210, m_pBigFont, { 255,255,255 });
+		
 	}
 	else if (State == Game::GAME)
 	{

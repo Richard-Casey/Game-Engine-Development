@@ -58,7 +58,7 @@ private:
 
 
 	void CheckEvents();
-	//void UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour);
+	void UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour);
 
 
 	Uint8 r = 127, g = 127, b = 127, a = 255;
