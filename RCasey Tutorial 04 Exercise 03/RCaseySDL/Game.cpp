@@ -138,8 +138,8 @@ Game::Game()
 		"My First Window",					//title
 		SDL_WINDOWPOS_CENTERED,				// initial x position
 		SDL_WINDOWPOS_CENTERED,				// initial y position
-		1024,								// width, in pixels
-		768,								// height in pixels
+		ScreenWidth,								// width, in pixels
+		ScreenHeight,								// height in pixels
 		SDL_WINDOW_RESIZABLE);		// window behaviour flags (ignore for now) - can be OR'd together using ||
 
 
@@ -203,8 +203,9 @@ void Game::LoadObjects()
 	m_Goal = new Pickup(m_pTheHero, m_Renderer, directory + "goal1.bmp", goalXPos, goalYPos, true);
 	m_Goal2 = new Pickup(m_pTheHero, m_Renderer, directory + "goal2.bmp", goalXPos, goalYPos, true);
 
-	m_pSmallFont = TTF_OpenFont("../assets/DejaVuSans.ttf", 15);
-	m_pBigFont = TTF_OpenFont("../assets/DejaVuSans.ttf", 50);
+	m_pSmallFont = TTF_OpenFont("../assets/FatPixels.ttf", 25);
+	m_pBigFont = TTF_OpenFont("../assets/FatPixels.ttf", 75);
+	m_pInfoFont = TTF_OpenFont("../assets/Condensed.ttf", 25);
 }
 
 void Game::UnLoadObjects()
@@ -263,8 +264,40 @@ void Game::Update(void)
 	// This starts the game in the SPASH state - essentially a menu
 	if (State == Game::SPLASH)
 	{
+		
+		SDL_Rect ClickHereRect;
+		ClickHereRect.x = 500;
+		ClickHereRect.y = 500;
+		ClickHereRect.w = 400;
+		ClickHereRect.h = 25;
+		//bool isMouseOverText = SDL_PointInRect(&mousePoint, &ClickHereRect);
+		//if (ClickHereRect && io->MouseDown[0])
+		//{
+		//	State = Game::GAME;
+		//}
+
+		
+		
 		// Logic for the menu - a button press that return the state to GAME
-		UpdateText("Testing Testy Test", 50, 10, m_pSmallFont, { 255,0,0 });
+
+		UpdateText("Press Enter", 210, 250, m_pBigFont, { 255,255,255 });
+		UpdateText("To Start", 275, 320, m_pBigFont, { 255,255,255 });
+
+		UpdateText("...Or Click The Screen", 500, 550, m_pSmallFont, { 255,255,255 });
+
+		UpdateText("Simple proof of concept game in which you retrieve the key to allow you to return to the start and complete the level", 10, 650, m_pInfoFont, { 200, 240, 236 });
+		UpdateText("all while avoiding the Grim Reaper.", 350, 675, m_pInfoFont, { 223,62,62 });
+
+		if (input->KeyIsPressed(KEY_RETURN))
+		{
+			State = Game::GAME;
+		}
+
+		if (input->KeyIsPressed(KEY_MOUSE))
+		{
+			State = Game::GAME;
+		}
+		/*UpdateText("Testing Testy Test", 50, 10, m_pSmallFont, { 255,0,0 });
 		UpdateText("More Testing Testy Test", 50, 40, m_pSmallFont, { 0,0,255 });
 
 		char char_array[] = "Big Testy";
@@ -276,7 +309,7 @@ void Game::Update(void)
 		int testnumber = 1234;
 		string teststring = "Test Number :";
 		teststring += to_string(testnumber);
-		UpdateText(teststring, 50, 210, m_pBigFont, { 255,255,255 });
+		UpdateText(teststring, 50, 210, m_pBigFont, { 255,255,255 });*/
 		
 	}
 	else if (State == Game::GAME)

@@ -68,6 +68,14 @@ void Input::Update(SDL_Event m_event)
 			case SDLK_k:
 				m_keysPressed[KEY_K] = true;
 				break;
+
+			case SDLK_RETURN:
+				m_keysPressed[KEY_RETURN] = true;
+				break;
+
+			case SDL_MOUSEBUTTONDOWN:
+				m_keysPressed[KEY_MOUSE] = true;
+				break;
 			}
 		}
 		// check for key up
@@ -120,6 +128,14 @@ void Input::Update(SDL_Event m_event)
 
 			case SDLK_k:
 				m_keysPressed[KEY_K] = false;
+				break;
+
+			case SDLK_RETURN:
+				m_keysPressed[KEY_RETURN] = false;
+				break;
+
+			case SDL_MOUSEBUTTONDOWN:
+				m_keysPressed[KEY_MOUSE] = false;
 				break;
 			}
 		}

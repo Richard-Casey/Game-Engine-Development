@@ -9,7 +9,8 @@ public:
 	enum Status
 	{
 		Menu,
-		Game
+		Game,
+		End
 	};
 
 	void Update();

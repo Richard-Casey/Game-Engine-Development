@@ -55,6 +55,7 @@ private:
 	Pickup* m_Goal2;
 	TTF_Font* m_pSmallFont;
 	TTF_Font* m_pBigFont;
+	TTF_Font* m_pInfoFont;
 
 
 	void CheckEvents();
@@ -76,6 +77,8 @@ public:
 	SDL_Rect spriteGoalRect;
 	SDL_Window* m_Window;
 	SDL_Renderer *m_Renderer;
+	int ScreenWidth = 1024;
+	int ScreenHeight = 768;
 	Game();
 	void LoadObjects();
 	void UnLoadObjects();
@@ -109,6 +112,7 @@ public:
 	bool showPickupImgui = false;
 	bool showGoalImgui = false;
 	bool isGoalActive = false;
+	
 
 	SDL_Rect GetSpriteHeroRect()
 	{
