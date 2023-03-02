@@ -163,10 +163,17 @@ Game::Game()
 
 	ImGui_ImplSDL2_InitForOpenGL(m_Window, SDL_GLContext);
 
+
+
 	LoadObjects();
 
 	//DebugPrintF("System::Initialise, %d, %d, %f \n", 10, 15, 52.3f);
 	Game::ResetEvent = SDL_RegisterEvents(1);
+
+
+
+
+
 }
 
 void Game::LoadObjects()
@@ -229,6 +236,9 @@ Game::~Game()
 	}
 		
 }
+
+
+
 
 void Game::Update(void)
 {
@@ -351,7 +361,9 @@ void Game::Update(void)
 
 		// Implement chase function
 		m_pTheMonster->Chase();
-		//handleDragAndDrop();
+		RenderObjectsWindow();
+	
+
 
 		//ImGui Window for Hero
 		bool isMouseOverHero = SDL_PointInRect(&mousePoint, &spriteHeroRect);
@@ -422,39 +434,200 @@ void Game::Update(void)
 			showPickupImgui = true;
 		}
 
-		ImGui::SetNextWindowSize(ImVec2(600, 100));
-		ImGui::Begin("Game Settings");
 
-		//converto to lfoat
+		ImGui::Begin("Settings Panel");
 
-		int R, G, B;
-		R = r;
-		G = g;
-		B = b;
+		// Hero object panel
+		ImGui::BeginChild("Hero Settings");
+		ImGui::Text("Hero Settings");
 
-		ImGui::DragInt("Background Red", &R, 1.0f, 0, 255);
-		ImGui::DragInt("Background Green", &G, 1.0f, 0, 255);
-		ImGui::DragInt("Background Blue", &B, 1.0f, 0, 255);
+		// X and Y positions
+		static float heroXPos = m_pTheHero->getX();
+		static float heroYPos = m_pTheHero->getY();
+		if (ImGui::InputFloat("X Position", &heroXPos)) 
+		{
+			m_pTheHero->setX(heroXPos);
+		}	
+		if (ImGui::InputFloat("Y Position", &heroYPos)) 
+		{
+			m_pTheHero->setY(heroYPos);
+		}
 
-		r = R;
-		g = G;
-		b = B;
+		// Speed
+		static float heroSpeed = m_pTheHero->getSpeed();
+		if (ImGui::SliderFloat("Speed", &heroSpeed, 0.0f, 10.0f)) 
+		{
+			m_pTheHero->setSpeed(heroSpeed);
+		}
 
-		//unconvert
+ImGui::EndChild();
 
-		ImGui::End();
+ImGui::End();
 
 
-
+		AssetManager();
+		RenderSceneHierarchy();
 
 		ImGui::Render();
 		ImGuiSDL::Render(ImGui::GetDrawData());
 	}
+
+	if (applyGravity)
+	{
+		m_pTheHero->addoffset(0, 2); // add a constant value to the Y coordinate
+		m_pTheMonster->addoffset(0, 2);
+		m_Pickup->addoffset(0, 2);
+		m_Goal->addoffset(0, 2);
+		m_Goal2->addoffset(0, 2);
+	}
+
+	if (showGravityWindow)
+	{
+		ImGui::Begin("Gravity");
+		bool checkboxValue = applyGravity;
+		if (ImGui::Checkbox("Apply Gravity", &checkboxValue))
+		{
+			applyGravity = checkboxValue;
+		}
+		ImGui::End();
+	}
+
+	SDL_Point mousePoint = { io->MousePos.x, io->MousePos.y };
+	SDL_Rect spriteHeroRect = { m_pTheHero->GetX(), m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
+	bool isMouseOverHero = SDL_PointInRect(&mousePoint, &spriteHeroRect);
+	if (isMouseOverHero && io->MouseDown[0])
+	{
+		showGravityWindow = true;
+	}
+
+
+
+
 	SDL_RenderPresent(m_Renderer);
 	//pause for 1/60th sec (ish)
 	SDL_Delay(16);
 	
 }
+
+void Game::RenderSceneHierarchy()
+{
+	ImGui::Begin("Scene Hierarchy", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar);
+	// Window content here
+
+	// Add scene hierarchy nodes here
+	if (ImGui::TreeNode(m_pTheHero->GetName().c_str()))
+	{
+		// Add child nodes here
+		ImGui::TreePop();
+	}
+
+	ImGui::End();
+}
+
+
+void Game::MoveObject(SDL_Rect& rect)
+{
+	ImGuiIO& io = ImGui::GetIO();
+	float speed = 100.0f * io.DeltaTime;
+
+	if (ImGui::IsKeyDown(SDL_SCANCODE_UP))
+	{
+		rect.y -= (int)speed;
+	}
+
+	if (ImGui::IsKeyDown(SDL_SCANCODE_DOWN))
+	{
+		rect.y += (int)speed;
+	}
+
+	if (ImGui::IsKeyDown(SDL_SCANCODE_LEFT))
+	{
+		rect.x -= (int)speed;
+	}
+
+	if (ImGui::IsKeyDown(SDL_SCANCODE_RIGHT))
+	{
+		rect.x += (int)speed;
+	}
+}
+
+void Game::RenderObjectsWindow()
+{
+	ImGui::NewFrame();
+	ImGui::Begin("Objects");
+
+	if (ImGui::Button("Select Hero"))
+	{
+		m_SelectedObject = m_pTheHero;
+	}
+
+	if (ImGui::Button("Select Monster"))
+	{
+		m_SelectedObject = m_pTheMonster;
+	}
+
+	if (ImGui::Button("Select Pickup"))
+	{
+		m_SelectedObject = m_Pickup;
+	}
+
+	if (ImGui::Button("Select Goal"))
+	{
+		m_SelectedObject = m_Goal;
+	}
+
+	ImGui::End();
+
+	if (m_SelectedObject)
+	{
+		ImGui::Begin("Object Details");
+
+		int x = m_SelectedObject->m_x;
+		int y = m_SelectedObject->m_y;
+
+		ImGui::InputInt("X", &x);
+		ImGui::InputInt("Y", &y);
+
+		m_SelectedObject->SetPosition(x, y);
+
+		ImGui::End();
+	}
+	ImGui::EndFrame();
+}
+
+
+void Game::AssetManager()
+{
+	ImGui::Begin("Asset Manager");
+	if (ImGui::Button("Refresh"))
+	{
+		// Reload the asset folder
+	}
+
+	for (const auto& file : std::filesystem::directory_iterator("../assets"))
+	{
+		if (ImGui::Selectable(file.path().string().c_str()))
+		{
+			// set the drag and drop payload when a file is selected
+			ImGui::BeginDragDropSource();
+			ImGui::SetDragDropPayload("ASSET", file.path().string().c_str(), sizeof(char) * file.path().string().size(), ImGuiCond_Once);
+		}
+	}
+
+	if (ImGui::BeginDragDropTarget())
+	{
+		if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("ASSET"))
+		{
+			// Get the dropped asset path
+			std::string assetPath(reinterpret_cast<const char*>(payload->Data), payload->DataSize);
+
+			// Load asset into the game
+		}
+		ImGui::EndDragDropTarget();
+	}
+	ImGui::End();
+}
+
 
 
 

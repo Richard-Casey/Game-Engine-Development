@@ -35,7 +35,11 @@ public :
 	static Uint32 PickupEvent;
 	struct AssetData { std::string filename; };
 	std::vector<AssetData> assetList;
+	void RenderSceneHierarchy();
 private:
+	bool applyGravity;
+	bool showGravityWindow;
+	Bitmap* m_SelectedObject = nullptr;
 
 	enum GameState
 	{
@@ -47,6 +51,7 @@ private:
 	GameState State = SPLASH;
 
 	bool m_running;
+	bool m_useGravity = true;
 	//bitmaps!
 	Creature* m_monster; //04-01
 	Creature* m_monsterTrans; //04-01
@@ -63,9 +68,15 @@ private:
 	TTF_Font* m_pBigFont;
 	TTF_Font* m_pInfoFont;
 
-
+	void AssetManager();
 	void CheckEvents();
 	void UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour);
+	void Render();
+	void RenderObjectsWindow();
+	void MoveObject(SDL_Rect& rect);
+	
+	const float GRAVITY = 500.0f;
+	float m_ay = 9.81f; // default value for m_ay
 
 
 	Uint8 r = 127, g = 127, b = 127, a = 255;

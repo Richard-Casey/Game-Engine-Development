@@ -10,16 +10,30 @@ int Bitmap::GetW()
 {
 	return this->m_pbitmapSurface->w;
 }
-int  Bitmap::GetH()
+
+int Bitmap::GetH()
 {
 	return this->m_pbitmapSurface->h;
 }
 
-
-
-Bitmap::Bitmap(SDL_Renderer* renderer, string filename, int xpos, int ypos, bool useTransparency)
+int Bitmap::GetPositionX()
 {
+	return m_x;
+}
 
+int Bitmap::GetPositionY()
+{
+	return m_y;
+}
+
+void Bitmap::SetPosition(int x, int y)
+{
+	m_x = x;
+	m_y = y;
+}
+
+Bitmap::Bitmap(SDL_Renderer* renderer, string filename, int xpos, int ypos, bool useTransparency) : deltaTime(0.0f) // initialize deltaTime to 0
+{
 	//store the renderer for future configuring and drawing
 	m_pRenderer = renderer;
 
@@ -31,7 +45,6 @@ Bitmap::Bitmap(SDL_Renderer* renderer, string filename, int xpos, int ypos, bool
 		printf("SURFACE for bitmap '%s' not loaded! \n", filename.c_str());
 		printf("%s\n", SDL_GetError());
 	}
-	 
 	else
 	{
 		//if we are to use the transparency, going to assume
@@ -56,13 +69,17 @@ Bitmap::Bitmap(SDL_Renderer* renderer, string filename, int xpos, int ypos, bool
 	//store the position vals
 	m_x = xpos;
 	m_y = ypos;
-
-	
 }
 
 void Bitmap::draw()
 {
-	//render the bitmap at the x/y coords
+	// update the object's position based on its velocity and acceleration
+	m_vx += m_ax * deltaTime; // deltaTime is the time elapsed since the last frame
+	m_vy += m_ay * deltaTime;
+	m_x += m_vx * deltaTime;
+	m_y += m_vy * deltaTime;
+
+	//render the bitmap at the updated position
 	if (m_pbitmapTexture)
 	{
 		SDL_Rect destRect = { m_x, m_y, m_pbitmapSurface->w, spriteWidth, };
@@ -76,8 +93,6 @@ void Bitmap::addoffset(int x, int y)
 	m_y += y;
 }
 
-
-
 Bitmap::~Bitmap()
 {
 	if (m_pbitmapTexture)
@@ -87,3 +102,8 @@ Bitmap::~Bitmap()
 		SDL_FreeSurface(m_pbitmapSurface);
 }
 
+// function definition for GetName()
+std::string Bitmap::GetName() const
+{
+	return m_name;
+}

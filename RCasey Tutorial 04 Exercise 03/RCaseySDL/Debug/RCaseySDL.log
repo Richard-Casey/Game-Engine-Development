@@ -1,14 +1,20 @@
 ﻿  Game.cpp
-C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(192,21): warning C4150: deletion of pointer to incomplete type '_TTF_Font'; no destructor called
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Hero.h(24,37): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Hero.h(25,44): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(199,21): warning C4150: deletion of pointer to incomplete type '_TTF_Font'; no destructor called
 C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\SDL2-2.24.0\include\SDL_ttf.h(164): message : see declaration of '_TTF_Font'
-C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(193,19): warning C4150: deletion of pointer to incomplete type '_TTF_Font'; no destructor called
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(200,19): warning C4150: deletion of pointer to incomplete type '_TTF_Font'; no destructor called
 C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\SDL2-2.24.0\include\SDL_ttf.h(164): message : see declaration of '_TTF_Font'
-C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(242,40): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(242,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(242,56): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(242,56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(340,40): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(340,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(340,56): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
-C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(340,56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(252,40): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(252,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(252,56): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(252,56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(350,40): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(350,40): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(350,56): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(350,56): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(495,39): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(495,39): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(495,55): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\RCaseySDL\Game.cpp(495,55): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   RCaseySDL.vcxproj -> C:\Users\riche\OneDrive\Desktop\s233122\Game-Engine-Development\RCasey Tutorial 04 Exercise 03\Debug\RCaseySDL.exe

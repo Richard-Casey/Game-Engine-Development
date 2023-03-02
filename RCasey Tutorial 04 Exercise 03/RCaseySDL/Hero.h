@@ -13,9 +13,20 @@ public:
 	{
 
 	}
-	
+
+    // Getters and setters
+    float getX() const { return m_x; }
+    void setX(float x) { m_x = x; }
+
+    float getY() const { return m_y; }
+    void setY(float y) { m_y = y; }
+
+    float getSpeed() const { return m_speed; }
+    void setSpeed(float speed) { m_speed = speed; }
 
 private:
-	
+    float m_x;
+    float m_y;
+    int m_speed;
 
 };
