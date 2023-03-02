@@ -14,6 +14,10 @@
 #include "imgui_internal.h"
 #include "Pickup.h"
 #include <cmath>
+#include <vector>
+#include <unordered_map>
+#include <filesystem>
+
 
 using namespace std;
 
@@ -29,6 +33,8 @@ class Game
 public :
 	static Uint32 ResetEvent;
 	static Uint32 PickupEvent;
+	struct AssetData { std::string filename; };
+	std::vector<AssetData> assetList;
 private:
 
 	enum GameState

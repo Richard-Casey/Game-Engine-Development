@@ -1,22 +1,18 @@
 #include <stdio.h>
+#include <iostream>
+#include <filesystem>
+
 #include "Game.h"
 #include "SDL.h"
+#include "SDL_ttf.h"
 #include "input.h"
 #include "bitmap.h"
-#include "SDL_ttf.h"
 #include "Hero.h"
 #include "Monster.h"
 #include <iostream>
-#include "Profiler.h"
 #include "ResourceManager.h"
 #include "Pickup.h"
-
-
-
-
-using namespace std;
-
-
+#include <imgui.h>
 
 void Game::SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 {	
@@ -39,41 +35,34 @@ void Game::SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 
 void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour)
 {
-	SDL_Surface* surface = nullptr;
-	SDL_Texture* texture = nullptr;
+	SDL_Surface* surface = TTF_RenderText_Solid(font, msg.c_str(), colour);
+	if (!surface)
+	{
+		printf("SURFACE for font not loaded! \n");
+		printf("%s\n", SDL_GetError());
+		return;
+	}
+
+	SDL_Texture* texture = SDL_CreateTextureFromSurface(m_Renderer, surface);
+	if (!texture)
+	{
+		printf("TEXTURE for font not loaded! \n");
+		printf("%s\n", SDL_GetError());
+		SDL_FreeSurface(surface);
+		return;
+	}
 
 	int texW = 0;
 	int texH = 0;
+	SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
 
-	surface = TTF_RenderText_Solid(font, msg.c_str(), colour);
-	if (!surface)
-	{
-		// Surface not loaded? OutPut the error
-		printf("SURFACE for font not loaded! \n");
-		printf("%s\n", SDL_GetError());
-	}
-	else
-	{
-		texture = SDL_CreateTextureFromSurface(m_Renderer, surface);
-		if (!texture)
-		{
-			// Surface not loaded? Output the error
-			printf("SURFACE for font not loaded! \n");
-			printf("%s\n", SDL_GetError());
-		}
-		else
-		{
-			SDL_QueryTexture(texture, NULL, NULL, &texW, &texH);
-			SDL_Rect textRect = { x,y,texW,texH };
-			SDL_RenderCopy(m_Renderer, texture, NULL, &textRect);
-		}
-	}
+	SDL_Rect textRect = { x, y, texW, texH };
+	SDL_RenderCopy(m_Renderer, texture, NULL, &textRect);
 
-	if (texture)
-		SDL_DestroyTexture(texture);
-	if (surface)
-		SDL_FreeSurface(surface);
+	SDL_DestroyTexture(texture);
+	SDL_FreeSurface(surface);
 }
+
 
 void Game::CheckEvents()
 {
@@ -97,31 +86,16 @@ void Game::CheckEvents()
 
 double Game::randomNumber()
 {
-	// ABSOLOUTE OVERKILL TO CREATE A NORMALISED NUMBER!....But it works...
+    static bool need_random = true;
+    if (need_random)
+    {
+        srand(static_cast<unsigned int>(time(NULL)));
+        need_random = false;
+    }
 
-	static bool need_random = true;
-
-	if (need_random)
-	{
-		srand(static_cast<unsigned int>(time(NULL)));
-		need_random = false;
-	}
-
-	int n = (rand() % 12) + 1;
-	if ((rand() % 100) >= 90) n = 1;
-	double a = 0;
-	double b = 0;
-	for (long long i = 0, j = 0; i < n; i++)
-	{
-		j = (rand() % 10);
-		b = b * 10 + j;
-	}
-	std::streamsize input_precision = n;
-	a += (b / std::pow(10, input_precision));
-
-	if ((rand() % 100) >= 60) a = (-a);
-	return a;
+    return static_cast<double>(rand()) / RAND_MAX;
 }
+
 
 Game::Game() 
 {
@@ -265,16 +239,17 @@ void Game::Update(void)
 	if (State == Game::SPLASH)
 	{
 		
-		SDL_Rect ClickHereRect;
-		ClickHereRect.x = 500;
-		ClickHereRect.y = 500;
-		ClickHereRect.w = 400;
-		ClickHereRect.h = 25;
-		//bool isMouseOverText = SDL_PointInRect(&mousePoint, &ClickHereRect);
-		//if (ClickHereRect && io->MouseDown[0])
-		//{
-		//	State = Game::GAME;
-		//}
+		SDL_Point mousePoint = { io->MousePos.x, io->MousePos.y };
+		SDL_Rect ClickScreenRect;
+		ClickScreenRect.x = 0;
+		ClickScreenRect.y = 0;
+		ClickScreenRect.w = ScreenWidth;
+		ClickScreenRect.h = ScreenHeight;
+		bool isMouseOverText = SDL_PointInRect(&mousePoint, &ClickScreenRect);
+		if (isMouseOverText)
+		{
+			printf("MOUSE ON SCREEN");
+		}
 
 		
 		
@@ -283,7 +258,7 @@ void Game::Update(void)
 		UpdateText("Press Enter", 210, 250, m_pBigFont, { 255,255,255 });
 		UpdateText("To Start", 275, 320, m_pBigFont, { 255,255,255 });
 
-		UpdateText("...Or Click The Screen", 500, 550, m_pSmallFont, { 255,255,255 });
+		//UpdateText("...Or Click The Screen", 500, 550, m_pSmallFont, { 255,255,255 });
 
 		UpdateText("Simple proof of concept game in which you retrieve the key to allow you to return to the start and complete the level", 10, 650, m_pInfoFont, { 200, 240, 236 });
 		UpdateText("all while avoiding the Grim Reaper.", 350, 675, m_pInfoFont, { 223,62,62 });
@@ -297,19 +272,7 @@ void Game::Update(void)
 		{
 			State = Game::GAME;
 		}
-		/*UpdateText("Testing Testy Test", 50, 10, m_pSmallFont, { 255,0,0 });
-		UpdateText("More Testing Testy Test", 50, 40, m_pSmallFont, { 0,0,255 });
 
-		char char_array[] = "Big Testy";
-		UpdateText(char_array, 50, 140, m_pBigFont, { 255,255,255 });
-
-		string mystring = "Big Green Testy";
-		UpdateText(mystring, 50, 70, m_pBigFont, { 0,255,0 });
-
-		int testnumber = 1234;
-		string teststring = "Test Number :";
-		teststring += to_string(testnumber);
-		UpdateText(teststring, 50, 210, m_pBigFont, { 255,255,255 });*/
 		
 	}
 	else if (State == Game::GAME)
@@ -379,7 +342,6 @@ void Game::Update(void)
 		SDL_Rect spriteMonsterRect = { m_pTheMonster->GetX(), m_pTheMonster->GetY(), m_pTheMonster->GetW(), m_pTheMonster->GetH() };
 		SDL_Rect spritePickupRect = { m_Pickup->GetX(), m_Pickup->GetY(), m_Pickup->GetW(), m_Pickup->GetH() };
 		SDL_Rect spriteGoalRect = { m_Goal->GetX(), m_Goal->GetY(), m_Goal->GetW(), m_Goal->GetH() };
-		//SDL_Rect spriteGoalRect2 = { m_Goal2->GetX(), m_Goal2->GetY(), m_Goal2->GetW(), m_Goal2->GetH() };
 
 
 		// Implement pcikup update
@@ -389,7 +351,7 @@ void Game::Update(void)
 
 		// Implement chase function
 		m_pTheMonster->Chase();
-
+		//handleDragAndDrop();
 
 		//ImGui Window for Hero
 		bool isMouseOverHero = SDL_PointInRect(&mousePoint, &spriteHeroRect);
@@ -470,9 +432,9 @@ void Game::Update(void)
 		G = g;
 		B = b;
 
-		ImGui::DragInt("Hero Speed", &R, 0.01f, 0, 255);
-		ImGui::DragInt("Monster Speed", &G, 0.01f, 0, 255);
-		ImGui::DragInt("Monster Speed", &B, 0.01f, 0, 255);
+		ImGui::DragInt("Background Red", &R, 1.0f, 0, 255);
+		ImGui::DragInt("Background Green", &G, 1.0f, 0, 255);
+		ImGui::DragInt("Background Blue", &B, 1.0f, 0, 255);
 
 		r = R;
 		g = G;
@@ -485,18 +447,6 @@ void Game::Update(void)
 
 
 
-
-
-		// imGUI input must be between here and "ImGUI::Render"
-
-
-		//ImGui::ShowDemoWindow(nullptr);
-
-
-		// Every new Window for ImGUI must start with ImGui::Begin ("Name Window") and end with ImGui::End
-
-
-		// End ImGUI Input
 		ImGui::Render();
 		ImGuiSDL::Render(ImGui::GetDrawData());
 	}
@@ -505,6 +455,7 @@ void Game::Update(void)
 	SDL_Delay(16);
 	
 }
+
 
 
 Uint32 Game::ResetEvent = SDL_RegisterEvents(1);

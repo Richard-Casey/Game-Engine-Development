@@ -36,14 +36,7 @@ void Monster::Chase()
 	// If Monster coords match hero coord - reset (eaten)
 	if (this->m_x == m_HeroToChase->GetX() && this->m_y == m_HeroToChase->GetY())
 	{
-		/*this->m_x = 10;
-		this->m_y = 10;
-		m_HeroToChase->m_x = 930;
-		m_HeroToChase->m_y = 680;*/
-		
-		//if (!pickup->isVisable)
-		//pickup->isVisable = true;
-		
+			
 		
 		if (Game::ResetEvent != ((Uint32)-1)) {
 			SDL_Event event;
