@@ -143,11 +143,6 @@ Game::Game()
 		return;
 	}
 
-
-	
-
-	
-
 	//imGUI Setup THIS NEEDS TO BE AFTER THE RENDERER
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
@@ -171,10 +166,7 @@ Game::Game()
 	m_pBigFont = TTF_OpenFont("../assets/FatPixels.ttf", 75);
 	m_pInfoFont = TTF_OpenFont("../assets/Condensed.ttf", 25);
 
-	
-	
 
-	//DebugPrintF("System::Initialise, %d, %d, %f \n", 10, 15, 52.3f);
 	Game::ResetEvent = SDL_RegisterEvents(1);
 
 
@@ -196,35 +188,6 @@ Game::Game()
 		//debug
 		std::cout << entry.path() << std::endl;
 	}
-
-	//ImGui::Begin("Editor");
-	//ImGui::BeginChild("Content Window", ImVec2(), true);
-	////ImGui::BeginTable("Content browser", 3);
-	//;
-	//for (int i = 0; i < content.size(); i++)
-	//{
-	//	ImGui::PushID(i);
-
-	//	ImGui::ImageButton((ImTextureID)content[i]->GetTextureRef(), { 100,100 });
-
-
-	//	//for dragging
-	//	/*if (ImGui::BeginDragDropSource())
-	//	{
-	//		AssetMousDrag = content[i];
-	//		ImGui::Image((ImTextureID)content[i]->GetTextureRef(), { 100,100 });
-	//		ImGui::EndDragDropSource();
-	//	}*/
-	//	ImGui::PopID();
-	//	ImGui::SameLine();
-	//}
-
-	////ImGui::EndTabItem();
-
-	//ImGui::EndChild();
-	//ImGui::End();
-
-
 
 }
 
@@ -304,8 +267,6 @@ void Game::Update(void)
 	// This starts the game in the SPASH state - essentially a menu
 	if (State == Game::SPLASH)
 	{
-		
-	
 		// Logic for the menu - a button press that return the state to GAME
 
 		UpdateText("Press Enter", 210, 250, m_pBigFont, { 255,255,255 });
@@ -320,12 +281,6 @@ void Game::Update(void)
 		{
 			State = Game::GAME;
 		}
-
-		if (input->KeyIsPressed(KEY_MOUSE))
-		{
-			State = Game::GAME;
-		}
-
 		
 	}
 	else if (State == Game::GAME)
@@ -406,10 +361,6 @@ void Game::Update(void)
 		// Implement chase function
 		m_pTheMonster->Chase();
 		RenderObjectsWindow();
-	
-
-
-
 
 
 
@@ -501,38 +452,6 @@ void Game::Update(void)
 			showPickupImgui = true;
 		}
 
-		
-
-
-		//ImGui::Begin("Settings Panel");
-
-		//// Hero object panel
-		//ImGui::BeginChild("Hero Settings");
-		//ImGui::Text("Hero Settings");
-
-		//// X and Y positions
-		//static float heroXPos = m_pTheHero->getX();
-		//static float heroYPos = m_pTheHero->getY();
-		//if (ImGui::InputFloat("X Position", &heroXPos)) 
-		//{
-		//	m_pTheHero->setX(heroXPos);
-		//}	
-		//if (ImGui::InputFloat("Y Position", &heroYPos)) 
-		//{
-		//	m_pTheHero->setY(heroYPos);
-		//}
-
-		//// Speed
-		//static float heroSpeed = m_pTheHero->getSpeed();
-		//if (ImGui::SliderFloat("Speed", &heroSpeed, 0.0f, 10.0f)) 
-		//{
-		//	m_pTheHero->setSpeed(heroSpeed);
-		//}
-
-//ImGui::EndChild();
-
-//ImGui::End();
-
 
 		AssetManager();
 		RenderSceneHierarchy();
@@ -560,18 +479,6 @@ void Game::Update(void)
 	{
 		m_Goal2->addoffset(0, 2);
 	}
-
-	/*if (showGravityWindow)
-	{
-		ImGui::SetNextWindowSize(ImVec2(300, 200));
-		ImGui::Begin("Gravity");
-		bool checkboxValue = applyGravityHero, applyGravityMonster, applyGravityPickup, applyGravityGoal, applyGravityGoal2;
-		if (ImGui::Checkbox("Apply Gravity To All", &checkboxValue))
-		{
-			applyGravityHero, applyGravityMonster,applyGravityGoal, applyGravityPickup, applyGravityGoal2 = checkboxValue;
-		}
-		ImGui::End();
-	}*/
 
 	SDL_Point mousePoint = { io->MousePos.x, io->MousePos.y };
 	SDL_Rect spriteHeroRect = { m_pTheHero->GetX(), m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
