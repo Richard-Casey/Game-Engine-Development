@@ -5,7 +5,7 @@ class Creature : public Bitmap
 {
 public:
 
-	Creature(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency = false);
+	Creature(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency = false);
 	~Creature();
 	void Update()
 	{

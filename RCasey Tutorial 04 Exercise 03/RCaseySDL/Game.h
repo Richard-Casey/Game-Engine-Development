@@ -37,7 +37,11 @@ public :
 	std::vector<AssetData> assetList;
 	void RenderSceneHierarchy();
 private:
-	bool applyGravity;
+	bool applyGravityHero;
+	bool applyGravityMonster;
+	bool applyGravityPickup;
+	bool applyGravityGoal;
+	bool applyGravityGoal2;
 	bool showGravityWindow;
 	Bitmap* m_SelectedObject = nullptr;
 
@@ -60,6 +64,7 @@ private:
 	Monster* m_pTheMonster; // Created monster
 
 
+	vector<Bitmap*> ObjectsInScene;
 	Hero* m_pTheHero;		// created hero
 	Pickup* m_Pickup;
 	Pickup* m_Goal;

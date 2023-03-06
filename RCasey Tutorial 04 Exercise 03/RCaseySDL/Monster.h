@@ -9,7 +9,7 @@
 class Monster : public Creature
 {
 public:
-	Monster(Hero* HeroToChase, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency = false);
+	Monster(Hero* HeroToChase, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency = false);
 	~Monster();
 	void Chase();
 	void Update()

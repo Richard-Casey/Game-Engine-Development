@@ -7,7 +7,7 @@
 class Hero : public Creature
 {
 public:
-	Hero(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency);
+	Hero(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency);
 	~Hero();
 	void Update()
 	{
@@ -24,9 +24,11 @@ public:
     float getSpeed() const { return m_speed; }
     void setSpeed(float speed) { m_speed = speed; }
 
-private:
     float m_x;
     float m_y;
+
+private:
+ 
     int m_speed;
 
 };

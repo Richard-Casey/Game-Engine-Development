@@ -157,6 +157,7 @@
     <ClCompile Include="..\imgui-master\imgui_tables.cpp" />
     <ClCompile Include="..\imgui-master\imgui_widgets.cpp" />
     <ClCompile Include="..\imgui_sdl-master\imgui_sdl.cpp" />
+    <ClCompile Include="Asseteditorcode.cpp" />
     <ClCompile Include="bitmap.cpp" />
     <ClCompile Include="Creature.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -164,6 +165,7 @@
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="MouseSelectdragsnippet.cpp" />
     <ClCompile Include="Pickup.cpp" />
     <ClCompile Include="Profiler.cpp" />
     <ClCompile Include="ResourceManager.cpp" />

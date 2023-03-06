@@ -10,9 +10,9 @@ class Bitmap
 {
 private:
 	SDL_Surface* m_pbitmapSurface;
-	SDL_Texture* m_pbitmapTexture;
+	SDL_Texture* m_pbitmapTexture = NULL;
 	SDL_Renderer* m_pRenderer;
-	std::string m_name; // added member variable to store name of bitmap
+	//std::string m_name; // added member variable to store name of bitmap
 
 public:
 	int m_x, m_y;
@@ -30,7 +30,7 @@ public:
 	std::string GetName() const; // added function declaration
 
 public:
-	Bitmap(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency = false);
+	Bitmap(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency = false );
 	~Bitmap();
 	void draw();
 	void addoffset(int x, int y);
@@ -46,6 +46,7 @@ public:
 	int GetW();
 	int  GetH();
 
+	std::string Name;
 
 };
 

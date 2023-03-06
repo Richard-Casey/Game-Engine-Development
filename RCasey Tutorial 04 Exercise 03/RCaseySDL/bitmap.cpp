@@ -32,8 +32,9 @@ void Bitmap::SetPosition(int x, int y)
 	m_y = y;
 }
 
-Bitmap::Bitmap(SDL_Renderer* renderer, string filename, int xpos, int ypos, bool useTransparency) : deltaTime(0.0f) // initialize deltaTime to 0
+Bitmap::Bitmap(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency)// : deltaTime(0.0f) // initialize deltaTime to 0
 {
+	Name = name;
 	//store the renderer for future configuring and drawing
 	m_pRenderer = renderer;
 
@@ -105,5 +106,5 @@ Bitmap::~Bitmap()
 // function definition for GetName()
 std::string Bitmap::GetName() const
 {
-	return m_name;
+	return Name;
 }

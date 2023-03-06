@@ -4,7 +4,7 @@
 #include "Pickup.h"
 #include "Game.h"
 
-Pickup::Pickup(Hero* hero, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency) : Bitmap(renderer, filename, xpos, ypos, useTransparency)
+Pickup::Pickup(Hero* hero, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency) : Bitmap(renderer, filename, xpos, ypos, name, useTransparency)
 {
 	m_hero = hero;
 	//this->Update(); // Specifies that the update from Pickup needs to be used instead of the Update from Creature or Hero

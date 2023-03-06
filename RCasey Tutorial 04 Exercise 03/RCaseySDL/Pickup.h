@@ -8,7 +8,7 @@
 class Pickup : public Bitmap
 {
 public:
-	Pickup(Hero* hero, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, bool useTransparency);
+	Pickup(Hero* hero, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency);
 	void Update();
 	bool isVisable = true;
 	Hero* m_hero;
