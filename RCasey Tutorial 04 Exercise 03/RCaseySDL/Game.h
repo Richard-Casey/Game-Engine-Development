@@ -19,6 +19,8 @@
 #include <filesystem>
 
 
+
+
 using namespace std;
 
 
@@ -35,6 +37,8 @@ public :
 	static Uint32 PickupEvent;
 	struct AssetData { std::string filename; };
 	std::vector<AssetData> assetList;
+	std::vector<Bitmap*> m_Bitmaps;
+	Bitmap* m_SelectedBitmap = nullptr;
 	void RenderSceneHierarchy();
 private:
 	bool applyGravityHero;
@@ -99,6 +103,7 @@ public:
 	SDL_Rect spriteGoalRect;
 	SDL_Window* m_Window;
 	SDL_Renderer *m_Renderer;
+	
 	int ScreenWidth = 1024;
 	int ScreenHeight = 768;
 	Game();
@@ -134,6 +139,7 @@ public:
 	bool showPickupImgui = false;
 	bool showGoalImgui = false;
 	bool isGoalActive = false;
+	bool AssetMousDrag = false;
 	
 
 	SDL_Rect GetSpriteHeroRect()
@@ -145,6 +151,7 @@ public:
 	{
 		return spritePickupRect;
 	}
+
 
 };
 

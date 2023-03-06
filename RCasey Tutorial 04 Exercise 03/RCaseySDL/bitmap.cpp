@@ -4,8 +4,6 @@
 #include "SDL_render.h"
 #include "ResourceManager.h"
 
-using namespace std;
-
 int Bitmap::GetW()
 {
 	return this->m_pbitmapSurface->w;
@@ -31,6 +29,8 @@ void Bitmap::SetPosition(int x, int y)
 	m_x = x;
 	m_y = y;
 }
+
+
 
 Bitmap::Bitmap(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency)// : deltaTime(0.0f) // initialize deltaTime to 0
 {
@@ -108,3 +108,14 @@ std::string Bitmap::GetName() const
 {
 	return Name;
 }
+
+
+
+//
+//bool Bitmap::ContainsPoint(int x, int y) const {
+//	if (x >= m_x && x <= m_x + m_w && y >= m_y && y <= m_y + m_h) {
+//		return true;
+//	}
+//	return false;
+//}
+

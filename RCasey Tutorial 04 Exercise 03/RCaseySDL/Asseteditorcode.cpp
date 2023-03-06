@@ -1,12 +1,3 @@
-//#include <filesystem>
-//#include <vector>
-//#include <iostream>
-//#include <imgui.h>
-//#include <imgui_internal.h>
-//#include <imgui_sdl.h>
-//
-//#include "bitmap.h"
-//
 //std::vector<Bitmap*> content;
 //			std::string path = "../Assets";
 //			for (const auto& entry : std::filesystem::directory_iterator(path)) //directory_iterator(path) //recursive_
@@ -21,7 +12,7 @@
 //				{
 //					std::cout << "dir " << entry << std::endl;
 //				}
-//				//debug
+//				debug
 //				std::cout << entry.path() << std::endl;
 //			}
 //

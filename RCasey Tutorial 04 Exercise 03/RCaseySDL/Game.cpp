@@ -167,28 +167,8 @@ Game::Game()
 	m_pInfoFont = TTF_OpenFont("../assets/Condensed.ttf", 25);
 
 
+
 	Game::ResetEvent = SDL_RegisterEvents(1);
-
-
-	// Asset Editor Code Provided by Nick
-	std::vector<Bitmap*> content;
-	std::string path = "../Assets";
-	for (const auto& entry : std::filesystem::directory_iterator(path)) //directory_iterator(path) //recursive_
-	{
-		if (entry.path().extension() == ".bmp" || entry.path().extension() == ".jpg" || entry.path().extension() == ".png")
-		{
-			Bitmap* Asset = new Bitmap(m_Renderer, entry.path().string(), 0, 0, entry.path().string(),  true);
-			content.push_back(Asset);
-
-		}
-		else if (entry.is_directory())
-		{
-			std::cout << "dir " << entry << std::endl;
-		}
-		//debug
-		std::cout << entry.path() << std::endl;
-	}
-
 }
 
 void Game::LoadObjects()
@@ -327,6 +307,8 @@ void Game::Update(void)
 			m_pTheHero->addoffset(2, 0);
 		}
 
+
+
 		SetDisplayColour(r, g, b, a); //Set our colour display
 		//wipe the display to the currently set colour.
 
@@ -451,6 +433,7 @@ void Game::Update(void)
 		{
 			showPickupImgui = true;
 		}
+
 
 
 		AssetManager();
@@ -589,25 +572,51 @@ void Game::RenderObjectsWindow()
 	//ImGui::EndFrame();
 }
 
-
 void Game::AssetManager()
 {
 	ImGui::Begin("Asset Manager");
+
+	// Refresh button
 	if (ImGui::Button("Refresh"))
 	{
 		// Reload the asset folder
 	}
 
+	// Create a collapsible tree structure for the file explorer
+	ImGui::PushStyleVar(ImGuiStyleVar_IndentSpacing, ImGui::GetFontSize() * 3);
 	for (const auto& file : std::filesystem::directory_iterator("../assets"))
 	{
-		if (ImGui::Selectable(file.path().string().c_str()))
+		if (file.is_directory())
 		{
-			// set the drag and drop payload when a file is selected
-			//ImGui::BeginDragDropSource();
-			//ImGui::SetDragDropPayload("ASSET", file.path().string().c_str(), sizeof(char) * file.path().string().size(), ImGuiCond_Once);
+			bool node_open = ImGui::TreeNode(file.path().filename().string().c_str());
+			if (node_open)
+			{
+				// Recursively display the subdirectory
+				for (const auto& subfile : std::filesystem::directory_iterator(file.path()))
+				{
+					if (ImGui::Selectable(subfile.path().string().c_str()))
+					{
+						// Set the drag and drop payload when a file is selected
+						//ImGui::BeginDragDropSource();
+						//ImGui::SetDragDropPayload("ASSET", subfile.path().string().c_str(), sizeof(char) * subfile.path().string().size(), ImGuiCond_Once);
+					}
+				}
+				ImGui::TreePop();
+			}
+		}
+		else
+		{
+			if (ImGui::Selectable(file.path().string().c_str()))
+			{
+				// Set the drag and drop payload when a file is selected
+				//ImGui::BeginDragDropSource();
+				//ImGui::SetDragDropPayload("ASSET", file.path().string().c_str(), sizeof(char) * file.path().string().size(), ImGuiCond_Once);
+			}
 		}
 	}
+	ImGui::PopStyleVar();
 
+	// Drag and drop target
 	if (ImGui::BeginDragDropTarget())
 	{
 		if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("ASSET"))
@@ -619,11 +628,42 @@ void Game::AssetManager()
 		}
 		ImGui::EndDragDropTarget();
 	}
+
 	ImGui::End();
 }
 
 
-
+//void Game::AssetManager()
+//{
+//	ImGui::Begin("Asset Manager");
+//	if (ImGui::Button("Refresh"))
+//	{
+//		// Reload the asset folder
+//	}
+//
+//	for (const auto& file : std::filesystem::directory_iterator("../assets"))
+//	{
+//		if (ImGui::Selectable(file.path().string().c_str()))
+//		{
+//			// set the drag and drop payload when a file is selected
+//			//ImGui::BeginDragDropSource();
+//			//ImGui::SetDragDropPayload("ASSET", file.path().string().c_str(), sizeof(char) * file.path().string().size(), ImGuiCond_Once);
+//		}
+//	}
+//
+//	if (ImGui::BeginDragDropTarget())
+//	{
+//		if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("ASSET"))
+//		{
+//			// Get the dropped asset path
+//			std::string assetPath(reinterpret_cast<const char*>(payload->Data), payload->DataSize);
+//
+//			// Load asset into the game
+//		}
+//		ImGui::EndDragDropTarget();
+//	}
+//	ImGui::End();
+//}
 
 Uint32 Game::ResetEvent = SDL_RegisterEvents(1);
 Uint32 Game::PickupEvent = SDL_RegisterEvents(1);
