@@ -83,6 +83,7 @@ private:
 	void RenderObjectsWindow();
 	void MoveObject(SDL_Rect& rect);
 	
+
 	void FindAssets();
 	vector<Bitmap*> content;
 
@@ -100,10 +101,10 @@ private:
 	
 	
 public:
-	SDL_Point mousePoint; //= { io->MousePos.x, io->MousePos.y };
-	SDL_Rect spriteHeroRect; //= { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
-	SDL_Rect spriteMonsterRect; //= { m_pTheMonster->GetX(), m_pTheMonster->GetY(), m_pTheMonster->GetW(), m_pTheMonster->GetH() };
-	SDL_Rect spritePickupRect; //= { m_Pickup->GetX(), m_Pickup->GetY(), m_Pickup->GetW(), m_Pickup->GetH() };
+	SDL_Point mousePoint; 
+	SDL_Rect spriteHeroRect; 
+	SDL_Rect spriteMonsterRect; 
+	SDL_Rect spritePickupRect; 
 	SDL_Rect spriteGoalRect;
 	SDL_Window* m_Window;
 	SDL_Renderer *m_Renderer;

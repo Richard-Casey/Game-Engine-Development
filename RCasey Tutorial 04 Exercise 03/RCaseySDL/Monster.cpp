@@ -15,6 +15,9 @@ Monster::~Monster()
 
 void Monster::Chase()
 {
+	if (m_HeroToChase == nullptr)
+		return; // do nothing if m_HeroToChase is null
+
 	int diffx = m_HeroToChase->GetX() - m_x;
 	int diffy = m_HeroToChase->GetY() - m_y;
 
@@ -45,3 +48,4 @@ void Monster::Chase()
 		}
 	}
 }
+

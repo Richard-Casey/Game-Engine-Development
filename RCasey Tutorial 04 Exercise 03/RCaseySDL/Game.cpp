@@ -2,11 +2,8 @@
 #include <iostream>
 #include <filesystem>
 #include <imgui.h>
-
 #include <fstream>
-
 #include "nlohmann/json.hpp"
-
 #include "Game.h"
 #include "SDL.h"
 #include "SDL_ttf.h"
@@ -20,47 +17,31 @@
 
 using json = nlohmann::json;
 
-/*
-[
-{
-	type: 0,
-	x: 300,
-	y: 400,
-	file: "spritedata.bmp"
-},
-{
-	type: 0,
-	x: 300,
-	y: 400,
-	file: "spritedata.bmp"
-}
-]
-*/
-
+// Set the display color for rendering
 void Game::SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
-{	
-
-		// clean up
-		// dont forget - we destroy in the REVERSE order that they were created
-		if (m_Renderer)
-		{
-			int result = SDL_SetRenderDrawColor(
-				m_Renderer,		// our target renderer
-				r,				//r
-				g,				//g
-				b,				//b
-				a				//alpha
-			);
-			
-		}
-
+{
+	// Clean up
+	// Don't forget - we destroy in the reverse order that they were created
+	if (m_Renderer)
+	{
+		// Set the render color
+		int result = SDL_SetRenderDrawColor(
+			m_Renderer,		// Our target renderer
+			r,				// R
+			g,				// G
+			b,				// B
+			a				// Alpha
+		);
+	}
 }
 
+// Update text on screen
 void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour)
 {
 	SDL_Surface* surface = TTF_RenderText_Solid(font, msg.c_str(), colour);
 	if (!surface)
 	{
+		// Handle error when surface is not loaded
 		printf("SURFACE for font not loaded! \n");
 		printf("%s\n", SDL_GetError());
 		return;
@@ -69,6 +50,7 @@ void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(m_Renderer, surface);
 	if (!texture)
 	{
+		// Handle error when texture is not loaded
 		printf("TEXTURE for font not loaded! \n");
 		printf("%s\n", SDL_GetError());
 		SDL_FreeSurface(surface);
@@ -86,94 +68,105 @@ void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour
 	SDL_FreeSurface(surface);
 }
 
-
+// Check events for the game
 void Game::CheckEvents()
 {
 	SDL_Event e;
 	while (SDL_PollEvent(&e) != NULL)
 	{
-
+		// Update input
 		input->Update(e);
 
+		// Reset game event
 		if (e.type == Game::ResetEvent && e.user.code == 1)
 		{
 			UnLoadObjects();
 			LoadObjects();
 		}
+
+		// Pickup event
 		if (e.type == Game::PickupEvent && e.user.code == 2)
 		{
-			//m_Goal->isVisable = false;
+			// m_Goal->isVisable = false;
 			m_Goal2->isVisable = true;
 		}
 	}
 }
 
+// Generate a random number
 double Game::randomNumber()
 {
-    static bool need_random = true;
-    if (need_random)
-    {
-        srand(static_cast<unsigned int>(time(NULL)));
-        need_random = false;
-    }
+	static bool need_random = true;
+	if (need_random)
+	{
+		// Seed the random number generator
+		srand(static_cast<unsigned int>(time(NULL)));
+		need_random = false;
+	}
 
-    return static_cast<double>(rand()) / RAND_MAX;
+	// Generate the random number
+	return static_cast<double>(rand()) / RAND_MAX;
 }
 
 
-Game::Game() 
+
+// Constructor for the Game class
+Game::Game()
 {
+	// Initialize member variables
 	m_running = true;
 	m_Window = nullptr;
 	m_Renderer = nullptr;
 
-	//start up
+	// Initialize SDL and TTF
 	SDL_Init(SDL_INIT_VIDEO);
 	TTF_Init();
 
-	//create the window
+	// Create the window
 	m_Window = SDL_CreateWindow(
-		"My First Window",					//title
+		"My First Window",					// title
 		SDL_WINDOWPOS_CENTERED,				// initial x position
 		SDL_WINDOWPOS_CENTERED,				// initial y position
-		ScreenWidth,								// width, in pixels
-		ScreenHeight,								// height in pixels
-		SDL_WINDOW_RESIZABLE);		// window behaviour flags (ignore for now) - can be OR'd together using ||
+		ScreenWidth,						// width, in pixels
+		ScreenHeight,						// height in pixels
+		SDL_WINDOW_RESIZABLE);				// window behaviour flags (ignore for now) - can be OR'd together using ||
 
+	// Create the OpenGL context
+	SDL_GLContext SDL_GLContext = SDL_GL_CreateContext(m_Window);
 
-		SDL_GLContext SDL_GLContext = SDL_GL_CreateContext(m_Window);
-		
+	// Handle error if window creation fails
 	if (!m_Window)
 	{
-		printf("WINDOW initialisation failed: %s\n", SDL_GetError());
+		printf("WINDOW initialization failed: %s\n", SDL_GetError());
 		printf("Press any key to continue\n");
 		getchar();
 		return;
 	}
 
-	//now create the renderer
+	// Create the renderer
 	m_Renderer = SDL_CreateRenderer(
 		m_Window,			// link the renderer to our newly created win
 		-1,					// index rendering driver (ignore for now)
 		0					// renderer behaviour flags (ignore for now)
 	);
 
+	// Handle error if renderer creation fails
 	if (!m_Renderer)
 	{
-		printf("RENDERER intiialisation failed %s\n", SDL_GetError());
+		printf("RENDERER initialization failed %s\n", SDL_GetError());
 		printf("Press any key to continue\n");
 
 		return;
 	}
 
-	//imGUI Setup THIS NEEDS TO BE AFTER THE RENDERER
+	// imGUI Setup - this needs to be after the renderer is created
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 	SDL_DisplayMode DisplayMode;
 	SDL_GetCurrentDisplayMode(0, &DisplayMode);
 	ImGuiSDL::Initialize(m_Renderer, DisplayMode.w, DisplayMode.h);
 
-	io= &ImGui::GetIO();
+	io = &ImGui::GetIO();
 	(void)io;
 	io->ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
 	io->ConfigFlags |= ImGuiConfigFlags_DockingEnable;
@@ -182,99 +175,93 @@ Game::Game()
 
 	ImGui_ImplSDL2_InitForOpenGL(m_Window, SDL_GLContext);
 
-
-
+	// Load objects, fonts, and assets
 	LoadObjects();
 	m_pSmallFont = TTF_OpenFont("../assets/FatPixels.ttf", 25);
 	m_pBigFont = TTF_OpenFont("../assets/FatPixels.ttf", 75);
 	m_pInfoFont = TTF_OpenFont("../assets/Condensed.ttf", 25);
-
 	FindAssets();
 
+	// Register the ResetEvent
 	Game::ResetEvent = SDL_RegisterEvents(1);
+
 }
 
+// This function is used to convert a Bitmap object into a JSON object.
 void to_json(json& j, const Bitmap& p) {
 	j = json{
-		{"type", (int)p.type},
-		{"x", p.m_x},
-		{"y", p.m_y},
-		{"file", p.path}
+	{"type", (int)p.type}, // The type of the Bitmap object
+	{"x", p.m_x}, // The x-coordinate of the Bitmap object
+	{"y", p.m_y}, // The y-coordinate of the Bitmap object
+	{"file", p.path} // The file path of the Bitmap object
 	};
 }
 
+// This function is used to convert a JSON object into a Bitmap object.
 void from_json(const json& j, Bitmap& p) {
-	j.at("type").get_to(p.type);
-	j.at("x").get_to(p.m_x);
-	j.at("y").get_to(p.m_y);
-	j.at("file").get_to(p.path);
+	j.at("type").get_to(p.type); // The type of the Bitmap object
+	j.at("x").get_to(p.m_x); // The x-coordinate of the Bitmap object
+	j.at("y").get_to(p.m_y); // The y-coordinate of the Bitmap object
+	j.at("file").get_to(p.path); // The file path of the Bitmap object
 }
 
+// This function is used to load objects from a JSON file.
 void Game::LoadObjects()
 {
-	/*m_pTheHero = new Hero(m_Renderer, directory + "deadpool.bmp", heroXpos, heroYpos, "Hero", true);
-	m_pTheMonster = new Monster(m_pTheHero, m_Renderer, directory + "GrimReaper.bmp", themonsterXpos, themonsterYpos,"Monster", true);
-	m_Pickup = new Pickup(m_pTheHero, m_Renderer, directory + "pickup1.bmp", pickupXPos, pickupYPos, "PickUp", true);
-	m_Goal = new Pickup(m_pTheHero, m_Renderer, directory + "goal1.bmp", goalXPos, goalYPos,"goal", true);
-	m_Goal2 = new Pickup(m_pTheHero, m_Renderer, directory + "goal2.bmp", goalXPos, goalYPos, "gloal2", true);
-	m_Goal2->isVisable = false;
+	std::vector<Monster*> monsters; // A vector to store Monster objects
+	std::vector<Pickup*> pickups; // A vector to store Pickup objects
 
-	ObjectsInScene.clear();
-	ObjectsInScene.push_back(m_pTheHero);
-	ObjectsInScene.push_back(m_pTheMonster);
-	ObjectsInScene.push_back(m_Pickup);
-	ObjectsInScene.push_back(m_Goal);
-	ObjectsInScene.push_back(m_Goal2);*/
-
-	std::vector<Monster*> monsters;
-	std::vector<Pickup*> pickups;
-
+	// Open the JSON file containing the game object data
 	std::ifstream f("../assets/world.json");
 	if (f.good())
 	{
+		// Parse the JSON data
 		json data = json::parse(f);
 
+		// Loop through the JSON object data and create new game objects based on the object type
 		for (auto obj : data)
 		{
 			Bitmap* newObject = nullptr;
 
-			ObjectType type = obj.at("type");
-			std::string file = obj.at("file");
-			int x = obj.at("x");
-			int y = obj.at("y");
+			ObjectType type = obj.at("type"); // Get the object type
+			std::string file = obj.at("file"); // Get the file path for the object
+			int x = obj.at("x"); // Get the x-coordinate of the object
+			int y = obj.at("y"); // Get the y-coordinate of the object
 
+			// Create a new game object based on its type
 			switch (type)
 			{
 			case ObjectType::Hero:
-				newObject = new Hero(m_Renderer, file, x, y, "Hero", true);
-				m_pTheHero = static_cast<Hero*>(newObject);
+				newObject = new Hero(m_Renderer, file, x, y, "Hero", true); // Create a new hero object
+				m_pTheHero = static_cast<Hero*>(newObject); // Set the hero object as the main hero in the game
 				break;
 			case ObjectType::Monster:
-				newObject = new Monster(nullptr, m_Renderer, file, x, y, "Monster", true);
-				monsters.push_back(static_cast<Monster*>(newObject));
+				newObject = new Monster(nullptr, m_Renderer, file, x, y, "Monster", true); // Create a new monster object
+				monsters.push_back(static_cast<Monster*>(newObject)); // Add the monster object to the monsters vector
 				break;
 			case ObjectType::Pickup:
 			{
-				bool endGoal = obj.at("end");
-				newObject = new Pickup(nullptr, m_Renderer, file, x, y, "Pickup", true);
+				bool endGoal = obj.at("end"); // Check if the pickup object is an end goal
+				newObject = new Pickup(nullptr, m_Renderer, file, x, y, "Pickup", true); // Create a new pickup object
 				if (endGoal)
 				{
-					m_Goal2 = static_cast<Pickup*>(newObject);
+					m_Goal2 = static_cast<Pickup*>(newObject); // Set the pickup object as the second goal if it is an end goal
 					m_Goal2->isEnd = true;
 				}
-				pickups.push_back(static_cast<Pickup*>(newObject));
+				pickups.push_back(static_cast<Pickup*>(newObject)); // Add the pickup object to the pickups vector
 				break;
 			}
 			case ObjectType::Static:
-				newObject = new Bitmap(m_Renderer, file, x, y, file, true);
+				newObject = new Bitmap(m_Renderer, file, x, y, file, true); // Create a new static object
 				break;
 			default:
 				break;
 			}
 
-			ObjectsInScene.push_back(newObject);
+			ObjectsInScene.push_back(newObject); // Add the new game object to the objects in the scene vector
 		}
 
+		// Assign the hero object to each monster and pickup object in the scene
 		if (m_pTheHero != nullptr)
 		{
 			for (auto monster : monsters)
@@ -286,95 +273,103 @@ void Game::LoadObjects()
 	}
 }
 
+
 void Game::UnLoadObjects()
 {
+	// delete all objects in the scene
 	for (int i = 0; i < ObjectsInScene.size(); i++)
 		delete ObjectsInScene[i];
 
+	// clear the scene vector and nullify all object pointers
 	ObjectsInScene.clear();
-
 	m_pTheHero = nullptr;
 	m_pTheMonster = nullptr;
 	m_Pickup = nullptr;
 	m_Goal = nullptr;
 	m_Goal2 = nullptr;
-	//m_pSmallFont = nullptr;
-	//m_pBigFont = nullptr;
 }
 
 Game::~Game()
 {
-	//clean up dont forget - we destroy in the reverse order that they were created
-	delete input;			
+	// Clean up all resources allocated by the game
+	// Destroy input
+	delete input;
 	input = nullptr;
+
+	// Destroy monster object if exists
 	if (m_pTheMonster)
 		delete m_pTheMonster;
+
+	// Destroy hero object if exists
 	if (m_pTheHero)
 		delete m_pTheHero;
+
+	// Destroy pickup object if exists
 	if (m_Pickup)
 		delete m_Pickup;
+
+	// Destroy goal object if exists
 	if (m_Goal)
 		delete m_Goal;
 
+	// Close fonts used in the game
 	TTF_CloseFont(m_pBigFont);
 	TTF_CloseFont(m_pSmallFont);
 
+	// Destroy the renderer
 	if (m_Renderer)
 	{
 		SDL_DestroyRenderer(m_Renderer);
 	}
 
+	// Destroy the window
 	if (m_Window)
 	{
 		SDL_DestroyWindow(m_Window);
 	}
-		
 }
 
 void Game::Update(void)
 {
-	CheckEvents();
-	SDL_RenderClear(m_Renderer);
-	ImGui::NewFrame();
-	//ImGui::DockSpaceOverViewport();
-	ImGui_ImplSDL2_NewFrame(m_Window);
-	// This starts the game in the SPASH state - essentially a menu
+	CheckEvents();  // Check for any events (e.g. key presses) and update the input manager accordingly
+	SDL_RenderClear(m_Renderer);  // Clear the renderer
+	ImGui::NewFrame();  // Start a new GUI frame
+	ImGui_ImplSDL2_NewFrame(m_Window);  // Start a new SDL2 frame
+
+	// SPLASH state
 	if (State == Game::SPLASH)
 	{
-		// Logic for the menu - a button press that return the state to GAME
-
+		// Show a menu with a button that starts the game if ENTER is pressed
 		UpdateText("Press Enter", 210, 250, m_pBigFont, { 255,255,255 });
 		UpdateText("To Start", 275, 320, m_pBigFont, { 255,255,255 });
-
-		//UpdateText("...Or Click The Screen", 500, 550, m_pSmallFont, { 255,255,255 });
-
 		UpdateText("Simple proof of concept game in which you retrieve the key to allow you to return to the start and complete the level", 10, 650, m_pInfoFont, { 200, 240, 236 });
 		UpdateText("all while avoiding the Grim Reaper.", 350, 675, m_pInfoFont, { 223,62,62 });
 
+		// If ENTER is pressed, switch to GAME state
 		if (input->KeyIsPressed(KEY_RETURN))
 		{
 			State = Game::GAME;
 		}
-		
 	}
 
+	// ENDGAME state
 	else if (State == ENDGAME)
 	{
-		// Logic for the End Game Menu - a button press that either returns to Menu or to Game
-
+		// Show a menu with buttons to either return to the SPLASH state or start a new game
 		UpdateText("Press Q", 150, 250, m_pBigFont, { 255,255,255 });
 		UpdateText("To Return to the Menu", 550, 270, m_pSmallFont, { 0,0,128, });
-
 		UpdateText("Press Enter", 150, 350, m_pBigFont, { 255,255,255 });
 		UpdateText("To Return to the Game", 550, 450, m_pSmallFont, { 0,255,0 });
 
-
+		// If ENTER is pressed, start a new game
 		if (input->KeyIsPressed(KEY_RETURN))
 		{
 			UnLoadObjects();
 			LoadObjects();
 			State = Game::GAME;
 		}
+
+		// If Q is pressed, return to the SPLASH state
 		if (input->KeyIsPressed(KEY_Q))
 		{
 			UnLoadObjects();
@@ -383,26 +378,18 @@ void Game::Update(void)
 		}
 	}
 
-
+	// GAME state
 	else if (State == Game::GAME)
 	{
-		//std::cout << randomNumber() << endl;
-
-
-
-		//increase r
+		// Change the display colour based on user input
 		if (input->KeyIsPressed(KEY_R))
 		{
 			if (++r > 255) r = 0;
 		}
-
-		//increase g
 		if (input->KeyIsPressed(KEY_G))
 		{
-			if (++g > 255) g = 0;	
+			if (++g > 255) g = 0;
 		}
-
-		//increase b
 		if (input->KeyIsPressed(KEY_B))
 		{
 			if (++b > 255) b = 0;
@@ -438,19 +425,6 @@ void Game::Update(void)
 			object->Update();
 			object->draw();
 		}
-		// Show our bitmaps
-		//if (m_Pickup->isVisable)
-		//	m_Pickup->draw();
-		//if (!m_Pickup->isVisable)
-		//{
-		//	m_Goal2->draw();
-
-		//}
-		//m_Goal->draw();
-		//m_pTheMonster->draw();
-		//m_pTheHero->draw();	// The sequence of which the bitmaps are drawn is important
-		//				// bitmaps drawn first are behind anything drawn after them!
-
 
 		SDL_Point mousePoint = { io->MousePos.x, io->MousePos.y };
 		SDL_Rect spriteHeroRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
@@ -458,7 +432,7 @@ void Game::Update(void)
 
 
 		// Implement chase function
-		//m_pTheMonster->Chase();
+		m_pTheMonster->Chase();
 		RenderObjectsWindow();
 
 		if (showSelectionGui && m_SelectedObject != nullptr)
@@ -484,18 +458,6 @@ void Game::Update(void)
 			};
 			ImGui::End();
 		}
-
-		/*for (auto bitmap : ObjectsInScene)
-		{
-			// check if the mouse is over any bitmaps
-			SDL_Rect objectRect = { bitmap->GetX(),bitmap->GetY(),bitmap->GetW(), bitmap->GetH() };
-			if (SDL_PointInRect(&mousePoint, &objectRect))
-			{
-				// if so, make that bitmap selection
-				m_SelectedObject = bitmap;
-				break;
-			}
-		}*/
 
 		AssetManager();
 		RenderSceneHierarchy();
@@ -540,10 +502,6 @@ void Game::Update(void)
 			Bitmap* bitmap = new Bitmap(m_Renderer, AssetMousDrag->path, x, y, AssetMousDrag->Name, AssetMousDrag->transparent);
 			ObjectsInScene.push_back(bitmap);
 
-			//Sprite* s = new Sprite(pRenderer, AssetMousDrag->FileName, x, y, true, &io, AssetMousDrag->);
-			//s->Transfrom.ParentSet(GameWindow::Instance().GetHirarcy());
-			//sceneRoot.Children.push_back(&s->M_Transform);
-
 			AssetMousDrag = nullptr;
 		}
 		
@@ -582,7 +540,6 @@ void Game::Update(void)
 		SDL_Rect spriteHeroRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
 		SDL_Rect spriteGoal2Rect = { m_Goal2->GetX(), m_Goal2->GetY(), m_Goal2->GetW(), m_Goal2->GetH() };
 		SDL_Point heroPos{ m_pTheHero->GetX() + (m_pTheHero->GetW() / 2), m_pTheHero->GetY() + (m_pTheHero->GetH() / 2) };
-		//SDL_Rect spritePickupRect = { GetX(), GetY(), GetW(), GetH() };
 
 		if (SDL_PointInRect(&heroPos, &spriteGoal2Rect)&& State !=Game::ENDGAME)
 		{
@@ -591,9 +548,6 @@ void Game::Update(void)
 		}
 		
 	}
-
-	
-
 
 	ImGui::Render();
 	ImGuiSDL::Render(ImGui::GetDrawData());
@@ -675,14 +629,6 @@ void Game::SaveWorldData()
 {
 	json world;
 
-	/*  {
-    "type": 1,
-    "x": 358,
-    "y": 400,
-    "file": "deadpool.bmp",
-    "end": false
-  },*/
-
 	for (auto object : ObjectsInScene)
 	{
 		json obj;
@@ -701,7 +647,6 @@ void Game::SaveWorldData()
 
 void Game::RenderObjectsWindow()
 {
-	//ImGui::NewFrame();
 	ImGui::Begin("Objects");
 
 	for (auto bitmap : ObjectsInScene)
@@ -711,27 +656,6 @@ void Game::RenderObjectsWindow()
 			m_SelectedObject = bitmap;
 		}
 	}
-
-	/*if (ImGui::Button("Select Hero"))
-	{
-		m_SelectedObject = m_pTheHero;
-	}
-
-	if (ImGui::Button("Select Monster"))
-	{
-		m_SelectedObject = m_pTheMonster;
-	}
-
-	if (ImGui::Button("Select Pickup"))
-	{
-		m_SelectedObject = m_Pickup;
-	
-	}
-
-	if (ImGui::Button("Select Goal"))
-	{
-		m_SelectedObject = m_Goal;
-	}*/
 
 	ImGui::End();
 
@@ -749,14 +673,12 @@ void Game::RenderObjectsWindow()
 
 		ImGui::End();
 	}
-	//ImGui::EndFrame();
 }
 
 void Game::AssetManager()
 {
 	ImGui::Begin("Editor");
 	ImGui::BeginChild("Content Window", ImVec2(), true);
-	//ImGui::BeginTable("Content browser", 3);
 	;
 	for (int i = 0; i < content.size(); i++)
 	{
@@ -765,118 +687,20 @@ void Game::AssetManager()
 		ImGui::ImageButton((ImTextureID)content[i]->GetTextureRef(), { 100,100 });
 
 
-		/////////////////////////////////For Draging
+		 // For Dragging
 		if (ImGui::BeginDragDropSource())
 		{
 			AssetMousDrag = content[i];
 			ImGui::Image((ImTextureID)content[i]->GetTextureRef(), { 100,100 });
 			ImGui::EndDragDropSource();
 		}
-		/////////////////////////////////For Draging
+		//For Dragging
 		ImGui::PopID();
 	}
 
-	//ImGui::EndTabItem();
-
 	ImGui::EndChild();
 	ImGui::End();
-
-	//ImGui::Begin("Asset Manager");
-
-	//// Refresh button
-	//if (ImGui::Button("Refresh"))
-	//{
-	//	// Reload the asset folder
-	//}
-
-	//// Create a collapsible tree structure for the file explorer
-	//ImGui::PushStyleVar(ImGuiStyleVar_IndentSpacing, ImGui::GetFontSize() * 3);
-	//for (const auto& file : std::filesystem::directory_iterator("../assets"))
-	//{
-	//	if (file.is_directory())
-	//	{
-	//		bool node_open = ImGui::TreeNode(file.path().filename().string().c_str());
-	//		if (node_open)
-	//		{
-	//			// Recursively display the subdirectory
-	//			for (const auto& subfile : std::filesystem::directory_iterator(file.path()))
-	//			{
-	//				if (ImGui::Selectable(subfile.path().string().c_str()))
-	//				{
-	//					// Set the drag and drop payload when a file is selected
-	//					if (ImGui::BeginDragDropSource())
-	//					{
-	//						ImGui::SetDragDropPayload("ASSET", subfile.path().string().c_str(), sizeof(char) * subfile.path().string().size(), ImGuiCond_Once);
-	//						ImGui::EndDragDropSource();
-	//					}
-	//				}
-	//			}
-	//			ImGui::TreePop();
-	//		}
-	//	}
-	//	else
-	//	{
-	//		if (ImGui::Selectable(file.path().string().c_str()))
-	//		{
-	//			// Set the drag and drop payload when a file is selected
-	//			if (ImGui::BeginDragDropSource())
-	//			{
-	//				ImGui::SetDragDropPayload("ASSET", file.path().string().c_str(), sizeof(char) * file.path().string().size(), ImGuiCond_Once);
-	//				ImGui::EndDragDropSource();
-	//			}
-	//		}
-	//	}
-	//}
-	//ImGui::PopStyleVar();
-
-	//// Drag and drop target
-	//if (ImGui::BeginDragDropTarget())
-	//{
-	//	if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("ASSET"))
-	//	{
-	//		// Get the dropped asset path
-	//		std::string assetPath(reinterpret_cast<const char*>(payload->Data), payload->DataSize);
-
-	//		// Load asset into the game
-	//	}
-	//	ImGui::EndDragDropTarget();
-	//}
-
-	//ImGui::End();
 }
-
-
-//void Game::AssetManager()
-//{
-//	ImGui::Begin("Asset Manager");
-//	if (ImGui::Button("Refresh"))
-//	{
-//		// Reload the asset folder
-//	}
-//
-//	for (const auto& file : std::filesystem::directory_iterator("../assets"))
-//	{
-//		if (ImGui::Selectable(file.path().string().c_str()))
-//		{
-//			// set the drag and drop payload when a file is selected
-//			//ImGui::BeginDragDropSource();
-//			//ImGui::SetDragDropPayload("ASSET", file.path().string().c_str(), sizeof(char) * file.path().string().size(), ImGuiCond_Once);
-//		}
-//	}
-//
-//	if (ImGui::BeginDragDropTarget())
-//	{
-//		if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("ASSET"))
-//		{
-//			// Get the dropped asset path
-//			std::string assetPath(reinterpret_cast<const char*>(payload->Data), payload->DataSize);
-//
-//			// Load asset into the game
-//		}
-//		ImGui::EndDragDropTarget();
-//	}
-//	ImGui::End();
-//}
 
 Uint32 Game::ResetEvent = SDL_RegisterEvents(1);
 Uint32 Game::PickupEvent = SDL_RegisterEvents(1);
