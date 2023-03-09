@@ -5,6 +5,7 @@
 Monster::Monster(Hero* HeroToChase, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency)
 	: Creature(renderer, filename, xpos, ypos, name, useTransparency)
 {
+	type = ObjectType::Monster;
 	m_HeroToChase = HeroToChase;
 }
 

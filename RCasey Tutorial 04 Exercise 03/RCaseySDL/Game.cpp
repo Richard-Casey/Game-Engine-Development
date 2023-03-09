@@ -3,6 +3,10 @@
 #include <filesystem>
 #include <imgui.h>
 
+#include <fstream>
+
+#include "nlohmann/json.hpp"
+
 #include "Game.h"
 #include "SDL.h"
 #include "SDL_ttf.h"
@@ -14,6 +18,24 @@
 #include "ResourceManager.h"
 #include "Pickup.h"
 
+using json = nlohmann::json;
+
+/*
+[
+{
+	type: 0,
+	x: 300,
+	y: 400,
+	file: "spritedata.bmp"
+},
+{
+	type: 0,
+	x: 300,
+	y: 400,
+	file: "spritedata.bmp"
+}
+]
+*/
 
 void Game::SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 {	
@@ -80,7 +102,8 @@ void Game::CheckEvents()
 		}
 		if (e.type == Game::PickupEvent && e.user.code == 2)
 		{
-			m_Goal->isVisable = false;
+			//m_Goal->isVisable = false;
+			m_Goal2->isVisable = true;
 		}
 	}
 }
@@ -166,36 +189,109 @@ Game::Game()
 	m_pBigFont = TTF_OpenFont("../assets/FatPixels.ttf", 75);
 	m_pInfoFont = TTF_OpenFont("../assets/Condensed.ttf", 25);
 
-
+	FindAssets();
 
 	Game::ResetEvent = SDL_RegisterEvents(1);
 }
 
+void to_json(json& j, const Bitmap& p) {
+	j = json{
+		{"type", (int)p.type},
+		{"x", p.m_x},
+		{"y", p.m_y},
+		{"file", p.path}
+	};
+}
+
+void from_json(const json& j, Bitmap& p) {
+	j.at("type").get_to(p.type);
+	j.at("x").get_to(p.m_x);
+	j.at("y").get_to(p.m_y);
+	j.at("file").get_to(p.path);
+}
+
 void Game::LoadObjects()
 {
-	m_pTheHero = new Hero(m_Renderer, directory + "deadpool.bmp", heroXpos, heroYpos, "Hero", true);
+	/*m_pTheHero = new Hero(m_Renderer, directory + "deadpool.bmp", heroXpos, heroYpos, "Hero", true);
 	m_pTheMonster = new Monster(m_pTheHero, m_Renderer, directory + "GrimReaper.bmp", themonsterXpos, themonsterYpos,"Monster", true);
 	m_Pickup = new Pickup(m_pTheHero, m_Renderer, directory + "pickup1.bmp", pickupXPos, pickupYPos, "PickUp", true);
 	m_Goal = new Pickup(m_pTheHero, m_Renderer, directory + "goal1.bmp", goalXPos, goalYPos,"goal", true);
 	m_Goal2 = new Pickup(m_pTheHero, m_Renderer, directory + "goal2.bmp", goalXPos, goalYPos, "gloal2", true);
+	m_Goal2->isVisable = false;
 
 	ObjectsInScene.clear();
 	ObjectsInScene.push_back(m_pTheHero);
 	ObjectsInScene.push_back(m_pTheMonster);
 	ObjectsInScene.push_back(m_Pickup);
 	ObjectsInScene.push_back(m_Goal);
-	ObjectsInScene.push_back(m_Goal2);
+	ObjectsInScene.push_back(m_Goal2);*/
+
+	std::vector<Monster*> monsters;
+	std::vector<Pickup*> pickups;
+
+	std::ifstream f("../assets/world.json");
+	if (f.good())
+	{
+		json data = json::parse(f);
+
+		for (auto obj : data)
+		{
+			Bitmap* newObject = nullptr;
+
+			ObjectType type = obj.at("type");
+			std::string file = obj.at("file");
+			int x = obj.at("x");
+			int y = obj.at("y");
+
+			switch (type)
+			{
+			case ObjectType::Hero:
+				newObject = new Hero(m_Renderer, file, x, y, "Hero", true);
+				m_pTheHero = static_cast<Hero*>(newObject);
+				break;
+			case ObjectType::Monster:
+				newObject = new Monster(nullptr, m_Renderer, file, x, y, "Monster", true);
+				monsters.push_back(static_cast<Monster*>(newObject));
+				break;
+			case ObjectType::Pickup:
+			{
+				bool endGoal = obj.at("end");
+				newObject = new Pickup(nullptr, m_Renderer, file, x, y, "Pickup", true);
+				if (endGoal)
+				{
+					m_Goal2 = static_cast<Pickup*>(newObject);
+					m_Goal2->isEnd = true;
+				}
+				pickups.push_back(static_cast<Pickup*>(newObject));
+				break;
+			}
+			case ObjectType::Static:
+				newObject = new Bitmap(m_Renderer, file, x, y, file, true);
+				break;
+			default:
+				break;
+			}
+
+			ObjectsInScene.push_back(newObject);
+		}
+
+		if (m_pTheHero != nullptr)
+		{
+			for (auto monster : monsters)
+				monster->m_HeroToChase = m_pTheHero;
+
+			for (auto pickup : pickups)
+				pickup->m_hero = m_pTheHero;
+		}
+	}
 }
 
 void Game::UnLoadObjects()
 {
-	delete m_pTheHero;
-	delete m_pTheMonster;
-	delete m_Pickup;
-	delete m_Goal;
-	delete m_Goal2;
-	//delete m_pSmallFont;
-	//delete m_pBigFont;
+	for (int i = 0; i < ObjectsInScene.size(); i++)
+		delete ObjectsInScene[i];
+
+	ObjectsInScene.clear();
 
 	m_pTheHero = nullptr;
 	m_pTheMonster = nullptr;
@@ -235,14 +331,12 @@ Game::~Game()
 		
 }
 
-
-
-
 void Game::Update(void)
 {
 	CheckEvents();
 	SDL_RenderClear(m_Renderer);
 	ImGui::NewFrame();
+	//ImGui::DockSpaceOverViewport();
 	ImGui_ImplSDL2_NewFrame(m_Window);
 	// This starts the game in the SPASH state - essentially a menu
 	if (State == Game::SPLASH)
@@ -263,6 +357,33 @@ void Game::Update(void)
 		}
 		
 	}
+
+	else if (State == ENDGAME)
+	{
+		// Logic for the End Game Menu - a button press that either returns to Menu or to Game
+
+		UpdateText("Press Q", 150, 250, m_pBigFont, { 255,255,255 });
+		UpdateText("To Return to the Menu", 550, 270, m_pSmallFont, { 0,0,128, });
+
+		UpdateText("Press Enter", 150, 350, m_pBigFont, { 255,255,255 });
+		UpdateText("To Return to the Game", 550, 450, m_pSmallFont, { 0,255,0 });
+
+
+		if (input->KeyIsPressed(KEY_RETURN))
+		{
+			UnLoadObjects();
+			LoadObjects();
+			State = Game::GAME;
+		}
+		if (input->KeyIsPressed(KEY_Q))
+		{
+			UnLoadObjects();
+			LoadObjects();
+			State = Game::SPLASH;
+		}
+	}
+
+
 	else if (State == Game::GAME)
 	{
 		//std::cout << randomNumber() << endl;
@@ -278,7 +399,7 @@ void Game::Update(void)
 		//increase g
 		if (input->KeyIsPressed(KEY_G))
 		{
-			if (++g > 255) g = 0;
+			if (++g > 255) g = 0;	
 		}
 
 		//increase b
@@ -312,111 +433,49 @@ void Game::Update(void)
 		SetDisplayColour(r, g, b, a); //Set our colour display
 		//wipe the display to the currently set colour.
 
-
-		// Show our bitmaps
-		if (m_Pickup->isVisable)
-			m_Pickup->draw();
-		if (!m_Pickup->isVisable)
+		for (auto object : ObjectsInScene)
 		{
-			m_Goal2->draw();
-
+			object->Update();
+			object->draw();
 		}
-		m_Goal->draw();
-		m_pTheMonster->draw();
-		m_pTheHero->draw();	// The sequence of which the bitmaps are drawn is important
-						// bitmaps drawn first are behind anything drawn after them!
+		// Show our bitmaps
+		//if (m_Pickup->isVisable)
+		//	m_Pickup->draw();
+		//if (!m_Pickup->isVisable)
+		//{
+		//	m_Goal2->draw();
+
+		//}
+		//m_Goal->draw();
+		//m_pTheMonster->draw();
+		//m_pTheHero->draw();	// The sequence of which the bitmaps are drawn is important
+		//				// bitmaps drawn first are behind anything drawn after them!
 
 
 		SDL_Point mousePoint = { io->MousePos.x, io->MousePos.y };
 		SDL_Rect spriteHeroRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
-		SDL_Rect spriteMonsterRect = { m_pTheMonster->GetX(), m_pTheMonster->GetY(), m_pTheMonster->GetW(), m_pTheMonster->GetH() };
-		SDL_Rect spritePickupRect = { m_Pickup->GetX(), m_Pickup->GetY(), m_Pickup->GetW(), m_Pickup->GetH() };
-		SDL_Rect spriteGoalRect = { m_Goal->GetX(), m_Goal->GetY(), m_Goal->GetW(), m_Goal->GetH() };
 		SDL_Rect spriteGoal2Rect = { m_Goal2->GetX(), m_Goal2->GetY(), m_Goal2->GetW(), m_Goal2->GetH() };
 
 
-		// Implement pcikup update
-		if (m_Pickup->isVisable)
-			m_Pickup->Update();
-
-
 		// Implement chase function
-		m_pTheMonster->Chase();
+		//m_pTheMonster->Chase();
 		RenderObjectsWindow();
 
-
-
-		//ImGui Window for Hero
-		bool isMouseOverHero = SDL_PointInRect(&mousePoint, &spriteHeroRect);
-		
-		ImGui::SetNextWindowSize(ImVec2(300, 200));
-		if (showHeroImgui)
+		if (showSelectionGui && m_SelectedObject != nullptr)
 		{
-			ImGui::Begin("Hero");
-			
-			bool checkboxValue = applyGravityHero;
+			ImGui::Begin("Object Properties");
+
+			bool checkboxValue = m_SelectedObject->applyGravity;
 			if (ImGui::Checkbox("Apply Gravity", &checkboxValue))
 			{
-				applyGravityHero = checkboxValue;
-			}
-			
-
-			if (ImGui::Button("Close Window", ImVec2(100, 30)))
-			{
-				showHeroImgui = false;
-			}
-			ImGui::End();
-		}
-		if (isMouseOverHero && io->MouseDown[0])
-		{
-			showHeroImgui = true;
-		}
-		if (isMouseOverHero && io->MouseReleased[0])
-		{
-			showHeroImgui = true;
-		}
-
-		// ImGui window for Monster
-		bool isMouseOverMonster = SDL_PointInRect(&mousePoint, &spriteMonsterRect);
-		ImGui::SetNextWindowSize(ImVec2(300, 200));
-
-		if (showMonsterImgui)
-		{
-			ImGui::Begin("Monster");
-
-			bool checkboxValue = applyGravityMonster;
-			if (ImGui::Checkbox("Apply Gravity", &checkboxValue))
-			{
-				applyGravityMonster = checkboxValue;
+				m_SelectedObject->applyGravity = checkboxValue;
 			}
 
-			if (ImGui::Button("Close Window", ImVec2(100, 30)))
+			const char* type_names[(int)ObjectType::Object_Count] = { "Static", "Hero", "Monster", "Pickup" };
+			int current_type = (int)m_SelectedObject->type;
+			if (ImGui::Combo("combo", &current_type, type_names, IM_ARRAYSIZE(type_names)))
 			{
-				showMonsterImgui = false;
-			};
-			ImGui::End();
-		}
-		if (isMouseOverMonster && io->MouseDown[0])
-		{
-			showMonsterImgui = true;
-		}
-		if (isMouseOverMonster && io->MouseReleased[0])
-		{
-			showMonsterImgui = true;
-		}
-
-		//IMGui window for pickup
-		bool isMouseOverPickup = SDL_PointInRect(&mousePoint, &spritePickupRect);
-		ImGui::SetNextWindowSize(ImVec2(300, 200));
-
-		if (showPickupImgui)
-		{
-			ImGui::Begin("Pickup");
-
-			bool checkboxValue = applyGravityPickup;
-			if (ImGui::Checkbox("Apply Gravity", &checkboxValue))
-			{
-				applyGravityPickup = checkboxValue;
+				m_SelectedObject->type = (ObjectType)current_type;
 			}
 
 			if (ImGui::Button("Close Window", ImVec2(100, 30)))
@@ -425,42 +484,75 @@ void Game::Update(void)
 			};
 			ImGui::End();
 		}
-		if (isMouseOverPickup && io->MouseDown[0])
-		{
-			showPickupImgui = true;
-		}
-		if (isMouseOverPickup && io->MouseReleased[0])
-		{
-			showPickupImgui = true;
-		}
 
-
+		/*for (auto bitmap : ObjectsInScene)
+		{
+			// check if the mouse is over any bitmaps
+			SDL_Rect objectRect = { bitmap->GetX(),bitmap->GetY(),bitmap->GetW(), bitmap->GetH() };
+			if (SDL_PointInRect(&mousePoint, &objectRect))
+			{
+				// if so, make that bitmap selection
+				m_SelectedObject = bitmap;
+				break;
+			}
+		}*/
 
 		AssetManager();
 		RenderSceneHierarchy();
+	
+		// If mouse is down and nothing is selected
+		if (ImGui::IsMouseDown(ImGuiMouseButton_Left) && m_SelectedObject == nullptr)
+		{
+			for (auto bitmap : ObjectsInScene)
+			{
+				// check if the mouse is over any bitmaps
+				SDL_Rect objectRect = { bitmap->GetX(),bitmap->GetY(),bitmap->GetW(), bitmap->GetH() };
+				if (SDL_PointInRect(&mousePoint, &objectRect))
+				{
+					// if so, make that bitmap selection
+					m_SelectedObject = bitmap;
+					showSelectionGui = true;
+					break;
+				}
+			}
+		}
 
+		// if bitmap is selected
+		if (m_SelectedObject)
+		{
+			// move to mouse position
+			m_SelectedObject->SetPosition(mousePoint.x - m_SelectedObject->GetW() / 2.0f, mousePoint.y - m_SelectedObject->GetH() / 2.0f);
+		}
+
+		// if mouse is released and bitmap is selected
+		if (ImGui::IsMouseReleased(ImGuiMouseButton_Right) && m_SelectedObject != nullptr)
+		{
+			// clear bitmap selection
+			m_SelectedObject = nullptr;
+		}
+
+		if (ImGui::IsMouseReleased(ImGuiMouseButton_Left) && AssetMousDrag != nullptr)
+		{
+			cout << "Test" << endl;
+			int x, y;
+			SDL_GetMouseState(&x, &y);
+
+			Bitmap* bitmap = new Bitmap(m_Renderer, AssetMousDrag->path, x, y, AssetMousDrag->Name, AssetMousDrag->transparent);
+			ObjectsInScene.push_back(bitmap);
+
+			//Sprite* s = new Sprite(pRenderer, AssetMousDrag->FileName, x, y, true, &io, AssetMousDrag->);
+			//s->Transfrom.ParentSet(GameWindow::Instance().GetHirarcy());
+			//sceneRoot.Children.push_back(&s->M_Transform);
+
+			AssetMousDrag = nullptr;
+		}
 		
 	}
 
-	if (applyGravityHero)
+	for (auto object : ObjectsInScene)
 	{
-		m_pTheHero->addoffset(0, 2); // add a constant value to the Y coordinate
-	}
-	if (applyGravityMonster)
-	{
-		m_pTheMonster->addoffset(0, 2);
-	}
-	if (applyGravityPickup)
-	{
-		m_Pickup->addoffset(0, 2);
-	}
-	if (applyGravityGoal)
-	{
-		m_Goal->addoffset(0, 2);
-	}
-	if (applyGravityGoal2)
-	{
-		m_Goal2->addoffset(0, 2);
+		if (object->applyGravity)
+			object->addoffset(0, 2);
 	}
 
 	SDL_Point mousePoint = { io->MousePos.x, io->MousePos.y };
@@ -470,6 +562,37 @@ void Game::Update(void)
 	{
 		showGravityWindow = true;
 	}
+
+	int pickupCount = 0;
+	int totalPickups = 0;
+
+	for (auto object : ObjectsInScene)
+	{
+		if (object->type != ObjectType::Pickup || object->isEnd) continue;
+
+		totalPickups++;
+
+		if (!object->isVisable) pickupCount++;
+	}
+
+	bool hasCompleted = (pickupCount == totalPickups);
+
+	if (hasCompleted)
+	{
+		SDL_Rect spriteHeroRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
+		SDL_Rect spriteGoal2Rect = { m_Goal2->GetX(), m_Goal2->GetY(), m_Goal2->GetW(), m_Goal2->GetH() };
+		SDL_Point heroPos{ m_pTheHero->GetX() + (m_pTheHero->GetW() / 2), m_pTheHero->GetY() + (m_pTheHero->GetH() / 2) };
+		//SDL_Rect spritePickupRect = { GetX(), GetY(), GetW(), GetH() };
+
+		if (SDL_PointInRect(&heroPos, &spriteGoal2Rect)&& State !=Game::ENDGAME)
+		{
+			State = Game::ENDGAME;
+			cout << "Reached Goal" << endl;
+		}
+		
+	}
+
+	
 
 
 	ImGui::Render();
@@ -527,12 +650,69 @@ void Game::MoveObject(SDL_Rect& rect)
 	}
 }
 
+void Game::FindAssets()
+{
+	
+	std::string path = "../Assets";
+	for (const auto& entry : std::filesystem::directory_iterator(path)) //directory_iterator(path) //recursive_
+	{
+		if (entry.path().extension() == ".bmp" || entry.path().extension() == ".jpg" || entry.path().extension() == ".png")
+		{
+			Bitmap* Asset = new Bitmap(m_Renderer, entry.path().string(), 0, 0, entry.path().string(), true);
+			content.push_back(Asset);
+
+		}
+		else if (entry.is_directory())
+		{
+			std::cout << "dir " << entry << std::endl;
+		}
+		//debug
+		std::cout << entry.path() << std::endl;
+	}
+}
+
+void Game::SaveWorldData()
+{
+	json world;
+
+	/*  {
+    "type": 1,
+    "x": 358,
+    "y": 400,
+    "file": "deadpool.bmp",
+    "end": false
+  },*/
+
+	for (auto object : ObjectsInScene)
+	{
+		json obj;
+		obj["type"] = (int)object->type;
+		obj["x"] = object->m_x;
+		obj["y"] = object->m_y;
+		obj["file"] = object->path;
+		obj["end"] = object->isEnd;
+		world.push_back(obj);
+	}
+
+	std::ofstream stream{ "../assets/world.json" };
+	stream << world;
+	stream.close();
+}
+
 void Game::RenderObjectsWindow()
 {
 	//ImGui::NewFrame();
 	ImGui::Begin("Objects");
 
-	if (ImGui::Button("Select Hero"))
+	for (auto bitmap : ObjectsInScene)
+	{
+		if (ImGui::Button(bitmap->GetName().c_str()))
+		{
+			m_SelectedObject = bitmap;
+		}
+	}
+
+	/*if (ImGui::Button("Select Hero"))
 	{
 		m_SelectedObject = m_pTheHero;
 	}
@@ -551,7 +731,7 @@ void Game::RenderObjectsWindow()
 	if (ImGui::Button("Select Goal"))
 	{
 		m_SelectedObject = m_Goal;
-	}
+	}*/
 
 	ImGui::End();
 
@@ -574,62 +754,95 @@ void Game::RenderObjectsWindow()
 
 void Game::AssetManager()
 {
-	ImGui::Begin("Asset Manager");
-
-	// Refresh button
-	if (ImGui::Button("Refresh"))
+	ImGui::Begin("Editor");
+	ImGui::BeginChild("Content Window", ImVec2(), true);
+	//ImGui::BeginTable("Content browser", 3);
+	;
+	for (int i = 0; i < content.size(); i++)
 	{
-		// Reload the asset folder
+		ImGui::PushID(i);
+
+		ImGui::ImageButton((ImTextureID)content[i]->GetTextureRef(), { 100,100 });
+
+
+		/////////////////////////////////For Draging
+		if (ImGui::BeginDragDropSource())
+		{
+			AssetMousDrag = content[i];
+			ImGui::Image((ImTextureID)content[i]->GetTextureRef(), { 100,100 });
+			ImGui::EndDragDropSource();
+		}
+		/////////////////////////////////For Draging
+		ImGui::PopID();
 	}
 
-	// Create a collapsible tree structure for the file explorer
-	ImGui::PushStyleVar(ImGuiStyleVar_IndentSpacing, ImGui::GetFontSize() * 3);
-	for (const auto& file : std::filesystem::directory_iterator("../assets"))
-	{
-		if (file.is_directory())
-		{
-			bool node_open = ImGui::TreeNode(file.path().filename().string().c_str());
-			if (node_open)
-			{
-				// Recursively display the subdirectory
-				for (const auto& subfile : std::filesystem::directory_iterator(file.path()))
-				{
-					if (ImGui::Selectable(subfile.path().string().c_str()))
-					{
-						// Set the drag and drop payload when a file is selected
-						//ImGui::BeginDragDropSource();
-						//ImGui::SetDragDropPayload("ASSET", subfile.path().string().c_str(), sizeof(char) * subfile.path().string().size(), ImGuiCond_Once);
-					}
-				}
-				ImGui::TreePop();
-			}
-		}
-		else
-		{
-			if (ImGui::Selectable(file.path().string().c_str()))
-			{
-				// Set the drag and drop payload when a file is selected
-				//ImGui::BeginDragDropSource();
-				//ImGui::SetDragDropPayload("ASSET", file.path().string().c_str(), sizeof(char) * file.path().string().size(), ImGuiCond_Once);
-			}
-		}
-	}
-	ImGui::PopStyleVar();
+	//ImGui::EndTabItem();
 
-	// Drag and drop target
-	if (ImGui::BeginDragDropTarget())
-	{
-		if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("ASSET"))
-		{
-			// Get the dropped asset path
-			std::string assetPath(reinterpret_cast<const char*>(payload->Data), payload->DataSize);
-
-			// Load asset into the game
-		}
-		ImGui::EndDragDropTarget();
-	}
-
+	ImGui::EndChild();
 	ImGui::End();
+
+	//ImGui::Begin("Asset Manager");
+
+	//// Refresh button
+	//if (ImGui::Button("Refresh"))
+	//{
+	//	// Reload the asset folder
+	//}
+
+	//// Create a collapsible tree structure for the file explorer
+	//ImGui::PushStyleVar(ImGuiStyleVar_IndentSpacing, ImGui::GetFontSize() * 3);
+	//for (const auto& file : std::filesystem::directory_iterator("../assets"))
+	//{
+	//	if (file.is_directory())
+	//	{
+	//		bool node_open = ImGui::TreeNode(file.path().filename().string().c_str());
+	//		if (node_open)
+	//		{
+	//			// Recursively display the subdirectory
+	//			for (const auto& subfile : std::filesystem::directory_iterator(file.path()))
+	//			{
+	//				if (ImGui::Selectable(subfile.path().string().c_str()))
+	//				{
+	//					// Set the drag and drop payload when a file is selected
+	//					if (ImGui::BeginDragDropSource())
+	//					{
+	//						ImGui::SetDragDropPayload("ASSET", subfile.path().string().c_str(), sizeof(char) * subfile.path().string().size(), ImGuiCond_Once);
+	//						ImGui::EndDragDropSource();
+	//					}
+	//				}
+	//			}
+	//			ImGui::TreePop();
+	//		}
+	//	}
+	//	else
+	//	{
+	//		if (ImGui::Selectable(file.path().string().c_str()))
+	//		{
+	//			// Set the drag and drop payload when a file is selected
+	//			if (ImGui::BeginDragDropSource())
+	//			{
+	//				ImGui::SetDragDropPayload("ASSET", file.path().string().c_str(), sizeof(char) * file.path().string().size(), ImGuiCond_Once);
+	//				ImGui::EndDragDropSource();
+	//			}
+	//		}
+	//	}
+	//}
+	//ImGui::PopStyleVar();
+
+	//// Drag and drop target
+	//if (ImGui::BeginDragDropTarget())
+	//{
+	//	if (const ImGuiPayload* payload = ImGui::AcceptDragDropPayload("ASSET"))
+	//	{
+	//		// Get the dropped asset path
+	//		std::string assetPath(reinterpret_cast<const char*>(payload->Data), payload->DataSize);
+
+	//		// Load asset into the game
+	//	}
+	//	ImGui::EndDragDropTarget();
+	//}
+
+	//ImGui::End();
 }
 
 

@@ -35,9 +35,10 @@ void Bitmap::SetPosition(int x, int y)
 Bitmap::Bitmap(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency)// : deltaTime(0.0f) // initialize deltaTime to 0
 {
 	Name = name;
+	path = filename;
+	transparent = useTransparency;
 	//store the renderer for future configuring and drawing
 	m_pRenderer = renderer;
-
 	//create the bitmap surface
 	m_pbitmapSurface = SDL_LoadBMP(filename.c_str());
 	if (!m_pbitmapSurface)
@@ -74,6 +75,7 @@ Bitmap::Bitmap(SDL_Renderer* renderer, std::string filename, int xpos, int ypos,
 
 void Bitmap::draw()
 {
+	if (!isVisable) return;
 	// update the object's position based on its velocity and acceleration
 	m_vx += m_ax * deltaTime; // deltaTime is the time elapsed since the last frame
 	m_vy += m_ay * deltaTime;

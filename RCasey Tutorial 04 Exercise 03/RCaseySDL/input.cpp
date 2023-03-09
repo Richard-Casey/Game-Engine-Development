@@ -73,8 +73,8 @@ void Input::Update(SDL_Event m_event)
 				m_keysPressed[KEY_RETURN] = true;
 				break;
 
-			case SDL_MOUSEBUTTONDOWN:
-				m_keysPressed[KEY_MOUSE] = true;
+			case SDLK_q:
+				m_keysPressed[KEY_Q] = true;
 				break;
 			}
 		}
@@ -134,8 +134,8 @@ void Input::Update(SDL_Event m_event)
 				m_keysPressed[KEY_RETURN] = false;
 				break;
 
-			case SDL_MOUSEBUTTONDOWN:
-				m_keysPressed[KEY_MOUSE] = false;
+			case SDLK_q:
+				m_keysPressed[KEY_Q] = false;
 				break;
 			}
 		}

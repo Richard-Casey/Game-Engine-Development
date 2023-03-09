@@ -7,6 +7,7 @@
 Hero::Hero(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency)
     : Creature(renderer, filename, xpos, ypos, name, useTransparency)
 {
+    type = ObjectType::Hero;
     this->Update(); // Use update function from Hero instead of Creature
 }
 

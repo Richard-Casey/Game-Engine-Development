@@ -7,11 +7,14 @@
 Pickup::Pickup(Hero* hero, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency)
     : Bitmap(renderer, filename, xpos, ypos, name, useTransparency)
 {
+    type = ObjectType::Pickup;
     m_hero = hero;
 }
 
 void Pickup::Update()
 {
+    if (isEnd) return;
+
     SDL_Point heroPos{ m_hero->GetX() + (m_hero->GetW() / 2), m_hero->GetY() + (m_hero->GetH() / 2) };
     SDL_Rect spritePickupRect = { GetX(), GetY(), GetW(), GetH() };
 

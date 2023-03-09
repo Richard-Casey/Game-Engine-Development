@@ -41,18 +41,17 @@ public :
 	Bitmap* m_SelectedBitmap = nullptr;
 	void RenderSceneHierarchy();
 private:
-	bool applyGravityHero;
-	bool applyGravityMonster;
-	bool applyGravityPickup;
-	bool applyGravityGoal;
-	bool applyGravityGoal2;
+
 	bool showGravityWindow;
 	Bitmap* m_SelectedObject = nullptr;
+
+	bool showSelectionGui;
 
 	enum GameState
 	{
 		GAME,
-		SPLASH
+		SPLASH,
+		ENDGAME
 
 	};
 
@@ -84,9 +83,14 @@ private:
 	void RenderObjectsWindow();
 	void MoveObject(SDL_Rect& rect);
 	
+	void FindAssets();
+	vector<Bitmap*> content;
+
 	const float GRAVITY = 500.0f;
 	float m_ay = 9.81f; // default value for m_ay
 
+
+	void SaveWorldData();
 
 	Uint8 r = 127, g = 127, b = 127, a = 255;
 	int xpos;
@@ -124,8 +128,8 @@ public:
 	int heroXpos = 930;
 	int heroYpos = 680;
 
-	int pickupXPos = 600;
-	int pickupYPos = 600;
+	int pickupXPos = ScreenWidth / 2;
+	int pickupYPos = ScreenHeight / 2;
 
 	int MHomeXPos = 450;
 	int MHomeYPos = 450;
@@ -139,7 +143,7 @@ public:
 	bool showPickupImgui = false;
 	bool showGoalImgui = false;
 	bool isGoalActive = false;
-	bool AssetMousDrag = false;
+	Bitmap* AssetMousDrag = nullptr;
 	
 
 	SDL_Rect GetSpriteHeroRect()

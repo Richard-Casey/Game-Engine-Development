@@ -17,7 +17,6 @@ public:
 
 	}
 
-private:
 	Hero* m_HeroToChase;
 	Pickup* pickup;
 	

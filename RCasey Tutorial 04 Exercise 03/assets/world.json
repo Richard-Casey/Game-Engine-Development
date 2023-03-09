@@ -1,0 +1,31 @@
+[
+  {
+    "end": false,
+    "file": "../assets/monster.bmp",
+    "type": 0,
+    "x": 300,
+    "y": 400
+  },
+  {
+    "end": false,
+    "file": "../assets/deadpool.bmp",
+    "type": 1,
+    "x": 358,
+    "y": 400
+  },
+  {
+    "end": true,
+    "file": "../assets/goal2.bmp",
+    "type": 3,
+    "x": 358,
+    "y": 400
+  },
+  {
+    "end": false,
+    "file": "../assets/pickup1.bmp",
+    "type": 3,
+    "x": 200,
+    "y": 400
+  }
+
+]
