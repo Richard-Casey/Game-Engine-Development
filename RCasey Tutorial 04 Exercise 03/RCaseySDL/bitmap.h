@@ -48,6 +48,10 @@ public:
 	std::string Name;
 	std::string path;
 	bool transparent;
+	void SetParent(Bitmap* parent) { m_parent = parent; }
+	Bitmap* GetParent() const { return m_parent; }
+	void AddChild(Bitmap* child) { m_children.push_back(child); }
+	std::vector<Bitmap*>& GetChildren() { return m_children; }
 
 	ObjectType type{ ObjectType::Static };
 
@@ -61,6 +65,9 @@ public:
 	void addoffset(int x, int y);
 
 	virtual void Update() {}
+
+	Bitmap* m_parent;
+	std::vector<Bitmap*> m_children;
 
 	int GetX() { return m_x; }
 	int GetY() { return m_y; }

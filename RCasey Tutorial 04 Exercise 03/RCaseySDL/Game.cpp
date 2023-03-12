@@ -432,7 +432,7 @@ void Game::Update(void)
 
 
 		// Implement chase function
-		m_pTheMonster->Chase();
+		
 		RenderObjectsWindow();
 
 		if (showSelectionGui && m_SelectedObject != nullptr)
@@ -558,51 +558,35 @@ void Game::Update(void)
 	
 }
 
-void Game::RenderSceneHierarchy()
-{
-	ImGui::SetNextWindowSize(ImVec2(300, 200));
-	ImGui::Begin("Scene Hierarchy");
-	// Window content here
-	for (int i = 0; i < ObjectsInScene.size(); i++)
-	{
-
-		// Add scene hierarchy nodes here
-		if (ImGui::TreeNode(ObjectsInScene[i]->GetName().c_str()))
-		{
-			// Add child nodes here
-			ImGui::TreePop();
-		}
-	}
-
-	ImGui::End();
-}
 
 
-void Game::MoveObject(SDL_Rect& rect)
-{
-	ImGuiIO& io = ImGui::GetIO();
-	float speed = 100.0f * io.DeltaTime;
 
-	if (ImGui::IsKeyDown(SDL_SCANCODE_UP))
-	{
-		rect.y -= (int)speed;
-	}
 
-	if (ImGui::IsKeyDown(SDL_SCANCODE_DOWN))
-	{
-		rect.y += (int)speed;
-	}
-
-	if (ImGui::IsKeyDown(SDL_SCANCODE_LEFT))
-	{
-		rect.x -= (int)speed;
-	}
-
-	if (ImGui::IsKeyDown(SDL_SCANCODE_RIGHT))
-	{
-		rect.x += (int)speed;
-	}
-}
+//void Game::MoveObject(SDL_Rect& rect)
+//{
+//	ImGuiIO& io = ImGui::GetIO();
+//	float speed = 100.0f * io.DeltaTime;
+//
+//	if (ImGui::IsKeyDown(SDL_SCANCODE_UP))
+//	{
+//		rect.y -= (int)speed;
+//	}
+//
+//	if (ImGui::IsKeyDown(SDL_SCANCODE_DOWN))
+//	{
+//		rect.y += (int)speed;
+//	}
+//
+//	if (ImGui::IsKeyDown(SDL_SCANCODE_LEFT))
+//	{
+//		rect.x -= (int)speed;
+//	}
+//
+//	if (ImGui::IsKeyDown(SDL_SCANCODE_RIGHT))
+//	{
+//		rect.x += (int)speed;
+//	}
+//}
 
 void Game::FindAssets()
 {
@@ -643,6 +627,31 @@ void Game::SaveWorldData()
 	std::ofstream stream{ "../assets/world.json" };
 	stream << world;
 	stream.close();
+}
+
+void Game::RenderSceneHierarchy()
+{
+	ImGui::Begin("Scene Hierarchy", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar);
+	ImGui::SetNextWindowSize(ImVec2(300, 200));
+	ImGui::Begin("Scene Hierarchy");
+	// Window content here
+
+	// Add scene hierarchy nodes here
+	if (ImGui::TreeNode(m_pTheHero->GetName().c_str()))
+		for (int i = 0; i < ObjectsInScene.size(); i++)
+		{
+			// Add child nodes here
+			ImGui::TreePop();
+
+			// Add scene hierarchy nodes here
+			if (ImGui::TreeNode(ObjectsInScene[i]->GetName().c_str()))
+			{
+				// Add child nodes here
+				ImGui::TreePop();
+			}
+		}
+
+	ImGui::End();
 }
 
 void Game::RenderObjectsWindow()

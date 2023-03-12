@@ -14,7 +14,7 @@ public:
 	void Chase();
 	void Update()
 	{
-
+		Chase();
 	}
 
 	Hero* m_HeroToChase;
