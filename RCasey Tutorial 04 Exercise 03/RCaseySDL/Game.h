@@ -35,39 +35,99 @@ class Game
 public :
 	static Uint32 ResetEvent;
 	static Uint32 PickupEvent;
+	/// <summary>
+	/// The filename
+	/// </summary>
 	struct AssetData { std::string filename; };
+	/// <summary>
+	/// The asset list
+	/// </summary>
 	std::vector<AssetData> assetList;
+	/// <summary>
+	/// The m bitmaps
+	/// </summary>
 	std::vector<Bitmap*> m_Bitmaps;
+	/// <summary>
+	/// The m selected bitmap
+	/// </summary>
 	Bitmap* m_SelectedBitmap = nullptr;
 	void RenderSceneHierarchy();
+	/// <summary>
+	/// The objects in scene
+	/// </summary>
 	std::vector<Bitmap*> ObjectsInScene;
 	
 private:
 
+	/// <summary>
+	/// The show gravity window
+	/// </summary>
 	bool showGravityWindow;
+	/// <summary>
+	/// The m selected object
+	/// </summary>
 	Bitmap* m_SelectedObject = nullptr;
 
+	/// <summary>
+	/// The show selection GUI
+	/// </summary>
 	bool showSelectionGui;
 
 	enum GameState
 	{
+		/// <summary>
+		/// The game
+		/// </summary>
 		GAME,
+		/// <summary>
+		/// The splash
+		/// </summary>
 		SPLASH,
+		/// <summary>
+		/// The endgame
+		/// </summary>
 		ENDGAME
 
 	};
 
+	/// <summary>
+	/// The state
+	/// </summary>
 	GameState State = SPLASH;
 
+	/// <summary>
+	/// The m running
+	/// </summary>
 	bool m_running;
+	/// <summary>
+	/// The m use gravity
+	/// </summary>
 	bool m_useGravity = true;
-	//bitmaps!
+	
+	/// <summary>
+	/// The m monster
+	/// </summary>
 	Creature* m_monster; //04-01
+	/// <summary>
+	/// The m monster trans
+	/// </summary>
 	Creature* m_monsterTrans; //04-01
+	/// <summary>
+	/// The m monster trans keyed
+	/// </summary>
 	Creature* m_monsterTransKeyed; //04-01
 
+	/// <summary>
+	/// The m p the monster
+	/// </summary>
 	Monster* m_pTheMonster; // Created monster
+	/// <summary>
+	/// The monsters
+	/// </summary>
 	std::vector<Monster*> monsters; // A vector to store Monster objects
+	/// <summary>
+	/// The pickups
+	/// </summary>
 	std::vector<Pickup*> pickups; // A vector to store Pickup objects
 
 	/// <summary>
@@ -184,25 +244,25 @@ public:
 	/// <summary>
 	/// Coordinates for mouse pointer
 	/// </summary>
-	SDL_Point mousePoint; 
+	SDL_Point mousePoint;
 
 	/// <summary>
 	/// SDL Rectangle for Hero
 	/// </summary>
-	SDL_Rect spriteHeroRect; 
+	SDL_Rect spriteHeroRect;
 
 	/// <summary>
-	/// 	/// SDL Rectangle for Monster
+	/// /// SDL Rectangle for Monster
 	/// </summary>
-	SDL_Rect spriteMonsterRect; 
+	SDL_Rect spriteMonsterRect;
 
 	/// <summary>
-	/// 	/// SDL Rectangle for Pickup (Key)
+	/// /// SDL Rectangle for Pickup (Key)
 	/// </summary>
-	SDL_Rect spritePickupRect; 
+	SDL_Rect spritePickupRect;
 
 	/// <summary>
-	/// 	/// SDL Rectangle for Goal
+	/// /// SDL Rectangle for Goal
 	/// </summary>
 	SDL_Rect spriteGoalRect;
 
@@ -214,7 +274,7 @@ public:
 	/// <summary>
 	/// SDL Renderer for window
 	/// </summary>
-	SDL_Renderer *m_Renderer;
+	SDL_Renderer* m_Renderer;
 	
 	/// <summary>
 	/// Screen Width for SDL Window
@@ -306,9 +366,6 @@ public:
 	/// </summary>
 	int pickupYPos = ScreenHeight / 2;
 
-	//int MHomeXPos = 450;
-	//int MHomeYPos = 450;
-
 	/// <summary>
 	/// X Position of Goal
 	/// </summary>
@@ -349,19 +406,25 @@ public:
 	/// </summary>
 	Bitmap* AssetMousDrag = nullptr;
 	
+
 	/// <summary>
 	/// Gets SDL_Rect coordinates for Hero
 	/// </summary>
-	/// <returns>Returns Hero coordinates (which are private)</returns>
+	/// <returns>
+	/// Returns Hero coordinates (which are private)
+	/// </returns>
 	SDL_Rect GetSpriteHeroRect()
 	{
 		return spriteHeroRect;
 	}
 
+
 	/// <summary>
 	/// Gets SDL_Rect coordinates for Pickup
 	/// </summary>
-	/// <returns>Returns Hero coordinates (which are private)</returns>
+	/// <returns>
+	/// Returns Hero coordinates (which are private)
+	/// </returns>
 	SDL_Rect GetPickupRect()
 	{
 		return spritePickupRect;

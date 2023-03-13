@@ -98,6 +98,7 @@ void Game::CheckEvents()
 		{
 			UnLoadObjects();
 			LoadObjects();
+			m_SelectedObject = nullptr;
 		}
 
 		// Pickup event
