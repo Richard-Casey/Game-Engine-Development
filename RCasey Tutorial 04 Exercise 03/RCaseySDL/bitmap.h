@@ -37,7 +37,6 @@ private:
 	SDL_Renderer* m_pRenderer;
 	SDL_Texture* m_texture;
 	
-	
 public:
 	bool isVisable = true;
 	bool isEnd = false;
@@ -52,6 +51,8 @@ public:
 	ObjectType type{ ObjectType::Static };
 
 	bool applyGravity{ false };
+
+	std::vector<Bitmap*> children;
 
 public:
 	Bitmap(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency = false);

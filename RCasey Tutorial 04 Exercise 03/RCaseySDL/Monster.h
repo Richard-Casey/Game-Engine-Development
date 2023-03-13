@@ -12,9 +12,9 @@ public:
 	Monster(Hero* HeroToChase, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency = false);
 	~Monster();
 	void Chase();
-	void Update()
+	void Update() override
 	{
-
+		Chase();
 	}
 
 	Hero* m_HeroToChase;

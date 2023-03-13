@@ -36,7 +36,7 @@ void Game::SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 }
 
 // Update text on screen
-void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour)
+void Game::UpdateText(std::string msg, int x, int y, TTF_Font* font, SDL_Color colour)
 {
 	SDL_Surface* surface = TTF_RenderText_Solid(font, msg.c_str(), colour);
 	if (!surface)
@@ -81,6 +81,8 @@ void Game::CheckEvents()
 		if (e.type == Game::ResetEvent && e.user.code == 1)
 		{
 			UnLoadObjects();
+			monsters.clear();
+			pickups.clear();
 			LoadObjects();
 		}
 
@@ -185,6 +187,143 @@ Game::Game()
 	// Register the ResetEvent
 	Game::ResetEvent = SDL_RegisterEvents(1);
 
+	//ImGui::Begin("Profiler");
+
+	//static FrameMap* Snapshot;
+	//static vector<float>* FrameTimes;
+	////take snapshot of all current frame data.
+	//if (ImGui::Button("take snapshot"))
+	//{
+	//	//mem copy?
+	//	Snapshot = &(ProfilerSystem::Instance().GetFrameDate());
+	//	FrameTimes = &(ProfilerSystem::Instance().GetFrameTimes());
+	//}
+	//ImGui::SameLine();
+	//static bool LiveFlameGraph = true;
+	//ImGui::Checkbox("Live Flame Graph", &LiveFlameGraph);
+	//if (LiveFlameGraph)
+	//{
+	//	selectedFrame = -1;
+	//}
+	//static int range[2] = { 0, 100 };
+
+	//if (FrameTimes && FrameTimes->size() > 100)
+	//{
+	//	ImGui::SliderInt2("Frame Range", range, 0, FrameTimes->size());
+	//	if (range[0] >= range[1])
+	//		range[0] = range[1] - 1;
+	//	/*ImGui::SliderInt("Frame Range", &range[0], 0, FrameTimes->size());
+	//	if (range[0] <10)
+	//		range[0] =10;*/
+	//	vector<float> subData(FrameTimes->cbegin() + range[0], FrameTimes->cbegin() + range[1]);
+	//	//vector<float> subData(FrameTimes->cbegin() + range[0]-10, FrameTimes->cbegin() + range[0]);
+
+	//	int tempHistSelection = ImGui::MyPlotHistogram("Frame data", subData.data(), subData.size());
+	//	if (tempHistSelection != -1)
+	//	{
+	//		LiveFlameGraph = false;
+	//		selectedFrame = tempHistSelection;
+	//	}
+
+	//	//cout << t << endl;
+	//	//get mouse in hostogram
+	//	ImRect rect = { ImGui::GetItemRectMin(), ImGui::GetItemRectMax() };
+	//	if (rect.Contains(io.MousePos))
+	//	{
+	//		if (ImGui::IsMouseClicked(ImGuiMouseButton_Left))
+	//		{
+	//			cout << selectedFrame << endl;
+	//		}
+	//	}
+
+	//}
+
+
+	////float GraphWindowWidth = ImGui::CalcItemWidth();
+	//FrameMap& previousFrame = ProfilerSystem::Instance().GetLastFrameData();
+	//if (!LiveFlameGraph && selectedFrame != -1)
+	//{
+	//	previousFrame.clear();
+	//	for (auto const [SampleName, samples] : *Snapshot)
+	//	{
+	//		previousFrame[SampleName].push_back(samples[range[0] + selectedFrame]);
+	//	}
+	//}
+	//else
+	//{
+	//	LiveFlameGraph = false;
+	//}
+	////ImGui::PlotHistogram("FrameTimes")
+	//ImGui::LabelText("Frame Date Count", std::to_string(previousFrame.size()).c_str());
+	////ImGui::LabelText("Graph Window Width", std::to_string(GraphWindowWidth).c_str());
+	////ImGui::RenderFrame({ 10,20 }, { 100,50 }, ImGui::GetColorU32(ImGuiCol_FrameBg), true, GImGui->Style.FrameRounding);
+	//ImDrawList* drawlist = ImGui::GetCurrentWindow()->DrawList;
+	//ImVec2 canvas_p0 = ImGui::GetCursorScreenPos();//pos of screen top left
+	//ImVec2 canvas_sz = ImGui::GetContentRegionAvail();   // Resize canvas to what's available
+	//if (canvas_sz.x < 50.0f) canvas_sz.x = 50.0f;
+	//if (canvas_sz.y < 50.0f) canvas_sz.y = 50.0f;
+	//ImVec2 canvas_p1 = ImVec2(canvas_p0.x + canvas_sz.x, canvas_p0.y + canvas_sz.y);
+	//drawlist->PushClipRect(canvas_p0, canvas_p1, true);
+
+
+	//uint64_t totalframeTime = 0;
+	//vector<uint64_t> SampleTimes;
+	//vector<float> SampleWidths;
+	//vector<string> SampleNames;
+	//for (auto const& [SampleName, samples] : previousFrame)
+	//{
+	//	totalframeTime += samples[0]->frameTime + 1;
+	//	SampleTimes.push_back(samples[0]->frameTime + 1);
+	//	SampleNames.push_back(SampleName);
+	//}
+	//float MinBlockWith = canvas_sz.x / totalframeTime;// GraphWindowWidth / totalframeTime;
+	//for (int i = 0; i < SampleTimes.size(); i++)
+	//{
+	//	SampleWidths.push_back(SampleTimes[i] * MinBlockWith);
+	//}
+
+	////ImGui::LabelText("Total window width", std::to_string(GraphWindowWidth).c_str());
+	//ImGui::LabelText("Total Frame Time", std::to_string(totalframeTime).c_str());
+	//ImGui::LabelText("Window Width / total frame Time", std::to_string(MinBlockWith).c_str());
+	//float TotalBlockWidthSoFar = 0;
+
+	//int sampleCount = previousFrame.size();
+	////ImGui::SliderInt("Iterations", &sampleCount, 1, 10);
+	////sampleCount = 2;
+	////MinBlockWith = GraphWindowWidth / sampleCount;
+
+	//const ImU32 col_outline_base = ImGui::GetColorU32(ImGuiCol_PlotHistogram) & 0x7FFFFFFF;
+	//const ImU32 col_base = ImGui::GetColorU32(ImGuiCol_PlotHistogram) & 0x77FFFFFF;
+
+	//float f = 5.0f + 5.0f;
+
+	//for (int i = 0; i < sampleCount; i++)
+	//{
+	//	float ThisBlockWidth = SampleWidths[i];
+	//	//if (ThisBlockWidth == 0)
+	//		//ThisBlockWidth = MinBlockWith;
+
+	//	const ImVec2 minPos = ImVec2(canvas_p0.x + TotalBlockWidthSoFar, canvas_p0.y + 100);
+	//	//float a = canvas_sz.x - (canvas_p1.x - (canvas_p1.x*i))
+	//	const ImVec2 maxPos = ImVec2(canvas_p0.x + TotalBlockWidthSoFar + ThisBlockWidth, canvas_p0.y + 200);
+	//	drawlist->AddRectFilled(
+	//		minPos,
+	//		maxPos,
+	//		col_base,
+	//		GImGui->Style.FrameRounding);
+
+	//	drawlist->AddRect(minPos, maxPos, col_outline_base);
+
+	//	ImGui::RenderText(ImVec2(minPos.x + 10, minPos.y + 10), SampleNames[i].c_str());
+	//	ImGui::RenderText(ImVec2(minPos.x + 10, minPos.y + 20), std::to_string(SampleTimes[i] - 1).c_str());
+
+
+	//	TotalBlockWidthSoFar += ThisBlockWidth;
+	//}
+	//drawlist->PopClipRect();
+
+	//ImGui::End();
+
 }
 
 // This function is used to convert a Bitmap object into a JSON object.
@@ -208,8 +347,7 @@ void from_json(const json& j, Bitmap& p) {
 // This function is used to load objects from a JSON file.
 void Game::LoadObjects()
 {
-	std::vector<Monster*> monsters; // A vector to store Monster objects
-	std::vector<Pickup*> pickups; // A vector to store Pickup objects
+	
 
 	// Open the JSON file containing the game object data
 	std::ifstream f("../assets/world.json");
@@ -336,6 +474,14 @@ void Game::Update(void)
 	ImGui::NewFrame();  // Start a new GUI frame
 	ImGui_ImplSDL2_NewFrame(m_Window);  // Start a new SDL2 frame
 
+
+	for (const auto x : monsters) {
+
+		
+		x->Update();
+	
+	}
+
 	// SPLASH state
 	if (State == Game::SPLASH)
 	{
@@ -432,7 +578,7 @@ void Game::Update(void)
 
 
 		// Implement chase function
-		m_pTheMonster->Chase();
+		//m_pTheMonster->Chase();
 		RenderObjectsWindow();
 
 		if (showSelectionGui && m_SelectedObject != nullptr)
@@ -478,7 +624,6 @@ void Game::Update(void)
 				}
 			}
 		}
-
 		// if bitmap is selected
 		if (m_SelectedObject)
 		{
@@ -495,7 +640,7 @@ void Game::Update(void)
 
 		if (ImGui::IsMouseReleased(ImGuiMouseButton_Left) && AssetMousDrag != nullptr)
 		{
-			cout << "Test" << endl;
+			std::cout << "Test" <<std::endl;
 			int x, y;
 			SDL_GetMouseState(&x, &y);
 
@@ -544,7 +689,7 @@ void Game::Update(void)
 		if (SDL_PointInRect(&heroPos, &spriteGoal2Rect)&& State !=Game::ENDGAME)
 		{
 			State = Game::ENDGAME;
-			cout << "Reached Goal" << endl;
+			std::cout << "Reached Goal" << std::endl;
 		}
 		
 	}
@@ -558,6 +703,7 @@ void Game::Update(void)
 	
 }
 
+
 void Game::RenderSceneHierarchy()
 {
 	ImGui::SetNextWindowSize(ImVec2(300, 200));
@@ -570,38 +716,12 @@ void Game::RenderSceneHierarchy()
 		if (ImGui::TreeNode(ObjectsInScene[i]->GetName().c_str()))
 		{
 			// Add child nodes here
+			//ObjectsInScene[i].
 			ImGui::TreePop();
 		}
 	}
 
 	ImGui::End();
-}
-
-
-void Game::MoveObject(SDL_Rect& rect)
-{
-	ImGuiIO& io = ImGui::GetIO();
-	float speed = 100.0f * io.DeltaTime;
-
-	if (ImGui::IsKeyDown(SDL_SCANCODE_UP))
-	{
-		rect.y -= (int)speed;
-	}
-
-	if (ImGui::IsKeyDown(SDL_SCANCODE_DOWN))
-	{
-		rect.y += (int)speed;
-	}
-
-	if (ImGui::IsKeyDown(SDL_SCANCODE_LEFT))
-	{
-		rect.x -= (int)speed;
-	}
-
-	if (ImGui::IsKeyDown(SDL_SCANCODE_RIGHT))
-	{
-		rect.x += (int)speed;
-	}
 }
 
 void Game::FindAssets()
@@ -655,6 +775,7 @@ void Game::RenderObjectsWindow()
 		{
 			m_SelectedObject = bitmap;
 		}
+		
 	}
 
 	ImGui::End();
@@ -673,6 +794,15 @@ void Game::RenderObjectsWindow()
 
 		ImGui::End();
 	}
+
+	ImGui::Begin("Save World State");
+		if (ImGui::Button("Save World"))
+		{
+			SaveWorldData();
+		}
+		ImGui::End();
+	
+	
 }
 
 void Game::AssetManager()

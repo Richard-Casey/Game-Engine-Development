@@ -13,7 +13,7 @@ public:
 	{
 
 	}
-
+    
     // Getters and setters
     float getX() const { return m_x; }
     void setX(float x) { m_x = x; }
