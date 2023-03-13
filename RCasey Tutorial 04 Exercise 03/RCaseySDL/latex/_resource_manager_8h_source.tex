@@ -1,0 +1,25 @@
+\hypertarget{_resource_manager_8h_source}{}\doxysection{Resource\+Manager.\+h}
+\mbox{\hyperlink{_resource_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}SDL.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_resource_manager}{ResourceManager}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_resource_manager}{ResourceManager}}();}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_resource_manager}{ResourceManager}}(\mbox{\hyperlink{class_resource_manager}{ResourceManager}}\ \textcolor{keyword}{const}\&);}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_resource_manager}{ResourceManager}}\ operator\ =\ (\mbox{\hyperlink{class_resource_manager}{ResourceManager}}\ \textcolor{keyword}{const}\&);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \ \ \ \ std::unordered\_map<std::string,\ SDL\_Surface*>\ m\_Surfaces;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_resource_manager}{ResourceManager}}\&\ \mbox{\hyperlink{class_resource_manager_a98b11a6302bf0db4ffc81eea70512ee2}{GetInstance}}();}
+\DoxyCodeLine{00020\ \ \ \ \ SDL\_Surface*\ \mbox{\hyperlink{class_resource_manager_a31d758ae7d5a972154ccc7dae2144166}{GetSurface}}(std::string\ filepath);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_resource_manager}{ResourceManager}}*\ \mbox{\hyperlink{class_resource_manager_a24f6a69b540daf3c370a41c81a4d2269}{s\_instance}};}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+
+\end{DoxyCode}

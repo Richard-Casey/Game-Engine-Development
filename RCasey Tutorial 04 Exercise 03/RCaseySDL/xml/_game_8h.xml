@@ -1,0 +1,440 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_game_8h" kind="file" language="C++">
+    <compoundname>Game.h</compoundname>
+    <includes local="no">SDL.h</includes>
+    <includes local="no">SDL_ttf.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes refid="input_8h" local="yes">input.h</includes>
+    <includes local="no">string</includes>
+    <includes refid="_creature_8h" local="yes">Creature.h</includes>
+    <includes refid="_monster_8h" local="yes">Monster.h</includes>
+    <includes refid="_hero_8h" local="yes">hero.h</includes>
+    <includes local="yes">imgui.h</includes>
+    <includes local="yes">backends/imgui_impl_sdl.h</includes>
+    <includes local="yes">imgui_sdl.h</includes>
+    <includes local="yes">imgui_internal.h</includes>
+    <includes refid="_pickup_8h" local="yes">Pickup.h</includes>
+    <includes local="no">cmath</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">unordered_map</includes>
+    <includes local="no">filesystem</includes>
+    <includedby refid="_game_8cpp" local="yes">Game.cpp</includedby>
+    <includedby refid="_monster_8h" local="yes">Monster.h</includedby>
+    <includedby refid="_pickup_8cpp" local="yes">Pickup.cpp</includedby>
+    <includedby refid="_profiler_8h" local="yes">Profiler.h</includedby>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <incdepgraph>
+      <node id="7">
+        <label>Creature.h</label>
+        <link refid="_creature_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Game.h</label>
+        <link refid="_game_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Hero.h</label>
+        <link refid="_hero_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Monster.h</label>
+        <link refid="_monster_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Pickup.h</label>
+        <link refid="_pickup_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>bitmap.h</label>
+        <link refid="bitmap_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>input.h</label>
+        <link refid="input_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SDL.h</label>
+      </node>
+      <node id="3">
+        <label>SDL_ttf.h</label>
+      </node>
+      <node id="15">
+        <label>backends/imgui_impl_sdl.h</label>
+      </node>
+      <node id="18">
+        <label>cmath</label>
+      </node>
+      <node id="21">
+        <label>filesystem</label>
+      </node>
+      <node id="14">
+        <label>imgui.h</label>
+      </node>
+      <node id="17">
+        <label>imgui_internal.h</label>
+      </node>
+      <node id="16">
+        <label>imgui_sdl.h</label>
+      </node>
+      <node id="9">
+        <label>iostream</label>
+      </node>
+      <node id="10">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="4">
+        <label>stdio.h</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="20">
+        <label>unordered_map</label>
+      </node>
+      <node id="19">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Game.h</label>
+        <link refid="_game_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Hero.cpp</label>
+        <link refid="_hero_8cpp"/>
+      </node>
+      <node id="5">
+        <label>Monster.cpp</label>
+        <link refid="_monster_8cpp"/>
+      </node>
+      <node id="3">
+        <label>Monster.h</label>
+        <link refid="_monster_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>Pickup.cpp</label>
+        <link refid="_pickup_8cpp"/>
+      </node>
+      <node id="8">
+        <label>Profiler.cpp</label>
+        <link refid="_profiler_8cpp"/>
+      </node>
+      <node id="7">
+        <label>Profiler.h</label>
+        <link refid="_profiler_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_game" prot="public">Game</innerclass>
+    <innerclass refid="struct_game_1_1_asset_data" prot="public">Game::AssetData</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>GAME_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GAME_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL_ttf.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="input_8h" kindref="compound">input.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_creature_8h" kindref="compound">Creature.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_monster_8h" kindref="compound">Monster.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hero_8h" kindref="compound">hero.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;imgui.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;backends/imgui_impl_sdl.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;imgui_sdl.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;imgui_internal.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_pickup_8h" kindref="compound">Pickup.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//using<sp/>namespace<sp/>std;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SDL_Window;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SDL_Renderer;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_bitmap" kindref="compound">Bitmap</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_monster" kindref="compound">Monster</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_game" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_game" kindref="compound">Game</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">public<sp/>:</highlight></codeline>
+<codeline lineno="36" refid="class_game_1a68c305cc4209d3766a853e0dadbdb146" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Uint32<sp/><ref refid="class_game_1a68c305cc4209d3766a853e0dadbdb146" kindref="member">ResetEvent</ref>;</highlight></codeline>
+<codeline lineno="37" refid="class_game_1a75fa771386c223c674d257ea0251f116" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Uint32<sp/><ref refid="class_game_1a75fa771386c223c674d257ea0251f116" kindref="member">PickupEvent</ref>;</highlight></codeline>
+<codeline lineno="41" refid="struct_game_1_1_asset_data_1ad43abc213fc47daee3ae979af3f46778" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_game_1_1_asset_data" kindref="compound">AssetData</ref><sp/>{<sp/>std::string<sp/><ref refid="struct_game_1_1_asset_data_1ad43abc213fc47daee3ae979af3f46778" kindref="member">filename</ref>;<sp/>};</highlight></codeline>
+<codeline lineno="45" refid="class_game_1ae657f5cef92c6208e1c1c905fcc42c06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AssetData&gt;<sp/><ref refid="class_game_1ae657f5cef92c6208e1c1c905fcc42c06" kindref="member">assetList</ref>;</highlight></codeline>
+<codeline lineno="49" refid="class_game_1ae7561893b367eab06b22e764c71363ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Bitmap*&gt;<sp/><ref refid="class_game_1ae7561893b367eab06b22e764c71363ca" kindref="member">m_Bitmaps</ref>;</highlight></codeline>
+<codeline lineno="53" refid="class_game_1a86b8703f2f4b3b5702778d5194b461b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap" kindref="compound">Bitmap</ref>*<sp/><ref refid="class_game_1a86b8703f2f4b3b5702778d5194b461b6" kindref="member">m_SelectedBitmap</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_game_1aae0472df3a9a5ff0b2df25ba9465fd03" kindref="member">RenderSceneHierarchy</ref>();</highlight></codeline>
+<codeline lineno="58" refid="class_game_1a6ab2dc6023585c4c93ef2b8120358eb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Bitmap*&gt;<sp/><ref refid="class_game_1a6ab2dc6023585c4c93ef2b8120358eb9" kindref="member">ObjectsInScene</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>showGravityWindow;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap" kindref="compound">Bitmap</ref>*<sp/>m_SelectedObject<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>showSelectionGui;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>GameState</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GAME,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SPLASH,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ENDGAME</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>GameState<sp/>State<sp/>=<sp/>SPLASH;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_running;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_useGravity<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_creature" kindref="compound">Creature</ref>*<sp/>m_monster;<sp/></highlight><highlight class="comment">//04-01</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_creature" kindref="compound">Creature</ref>*<sp/>m_monsterTrans;<sp/></highlight><highlight class="comment">//04-01</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_creature" kindref="compound">Creature</ref>*<sp/>m_monsterTransKeyed;<sp/></highlight><highlight class="comment">//04-01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_monster" kindref="compound">Monster</ref>*<sp/>m_pTheMonster;<sp/></highlight><highlight class="comment">//<sp/>Created<sp/>monster</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Monster*&gt;<sp/>monsters;<sp/></highlight><highlight class="comment">//<sp/>A<sp/>vector<sp/>to<sp/>store<sp/>Monster<sp/>objects</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Pickup*&gt;<sp/>pickups;<sp/></highlight><highlight class="comment">//<sp/>A<sp/>vector<sp/>to<sp/>store<sp/>Pickup<sp/>objects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_hero" kindref="compound">Hero</ref>*<sp/>m_pTheHero;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_pickup" kindref="compound">Pickup</ref>*<sp/>m_Pickup;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_pickup" kindref="compound">Pickup</ref>*<sp/>m_Goal;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_pickup" kindref="compound">Pickup</ref>*<sp/>m_Goal2;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>TTF_Font*<sp/>m_pSmallFont;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>TTF_Font*<sp/>m_pBigFont;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>TTF_Font*<sp/>m_pInfoFont;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>AssetManager();</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CheckEvents();</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>UpdateText(std::string<sp/>msg,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/>TTF_Font*<sp/>font,<sp/>SDL_Color<sp/>colour);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Render();</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>RenderObjectsWindow();</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FindAssets();</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Bitmap*&gt;<sp/>content;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//const<sp/>float<sp/>GRAVITY<sp/>=<sp/>500.0f;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//float<sp/>m_ay<sp/>=<sp/>9.81f;<sp/>//<sp/>default<sp/>value<sp/>for<sp/>m_ay</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SaveWorldData();</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>Uint8<sp/>r<sp/>=<sp/>127,<sp/>g<sp/>=<sp/>127,<sp/>b<sp/>=<sp/>127,<sp/>a<sp/>=<sp/>255;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xpos;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ypos;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>ImGuiIO*<sp/>io;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="241" refid="class_game_1a8b824de9b95e8b882e7cde3bc3c45f0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Point<sp/><ref refid="class_game_1a8b824de9b95e8b882e7cde3bc3c45f0a" kindref="member">mousePoint</ref>;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246" refid="class_game_1a397f8a701af3f05e5f972c84f0f29062" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Rect<sp/><ref refid="class_game_1a397f8a701af3f05e5f972c84f0f29062" kindref="member">spriteHeroRect</ref>;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251" refid="class_game_1a96c2da745983d6f3d25bc7e0fd4af129" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Rect<sp/><ref refid="class_game_1a96c2da745983d6f3d25bc7e0fd4af129" kindref="member">spriteMonsterRect</ref>;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256" refid="class_game_1ad0c11d34bcd7055014481f1b8691322f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Rect<sp/><ref refid="class_game_1ad0c11d34bcd7055014481f1b8691322f" kindref="member">spritePickupRect</ref>;</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261" refid="class_game_1a8414683ae26f601e99efd0f0cfdb5f9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Rect<sp/><ref refid="class_game_1a8414683ae26f601e99efd0f0cfdb5f9e" kindref="member">spriteGoalRect</ref>;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266" refid="class_game_1a37957a6b5594fe172ac19917907425d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Window*<sp/><ref refid="class_game_1a37957a6b5594fe172ac19917907425d4" kindref="member">m_Window</ref>;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271" refid="class_game_1a5d9fb92360e0225766e7f0f9c03ca8ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Renderer*<sp/><ref refid="class_game_1a5d9fb92360e0225766e7f0f9c03ca8ce" kindref="member">m_Renderer</ref>;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="276" refid="class_game_1a0b279644d881de510fea467235531816" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_game_1a0b279644d881de510fea467235531816" kindref="member">ScreenWidth</ref><sp/>=<sp/>1024;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281" refid="class_game_1afc638bbbc544814dfe471ec6f3c7f9f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_game_1afc638bbbc544814dfe471ec6f3c7f9f9" kindref="member">ScreenHeight</ref><sp/>=<sp/>768;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_game_1ad59df6562a58a614fda24622d3715b65" kindref="member">Game</ref>();</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_game_1acd4a0faf4e7210c53a88e8c1cb90281f" kindref="member">LoadObjects</ref>();</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_game_1a770b062e3ff36ddacf78d6625f3162f1" kindref="member">UnLoadObjects</ref>();</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_game_1ae3d112ca6e0e55150d2fdbc704474530" kindref="member">~Game</ref>();</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_game_1a06d91a56a4b25d9b959559e4faa0d84a" kindref="member">SetDisplayColour</ref>(Uint8<sp/>r,<sp/>Uint8<sp/>g,<sp/>Uint8<sp/>b,<sp/>Uint8<sp/>a);</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" kindref="member">Update</ref>();</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><ref refid="class_game_1a695c2fb1f7148c102a88c9fb809aa7e3" kindref="member">randomNumber</ref>();</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326" refid="class_game_1a00f29917ded5952ad4649c4ab7a4b411" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_game_1a00f29917ded5952ad4649c4ab7a4b411" kindref="member">directory</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;../assets/&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331" refid="class_game_1ae0a40e7e00700005e891206dfeafff38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_input" kindref="compound">Input</ref>*<sp/><ref refid="class_game_1ae0a40e7e00700005e891206dfeafff38" kindref="member">input</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_input" kindref="compound">Input</ref>();</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336" refid="class_game_1a8de491bf7f776e728ce6363e1618e9a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_game_1a8de491bf7f776e728ce6363e1618e9a0" kindref="member">themonsterXpos</ref><sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341" refid="class_game_1aef742be3739bfb33b828863f825281cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_game_1aef742be3739bfb33b828863f825281cd" kindref="member">themonsterYpos</ref><sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346" refid="class_game_1a46f6f69aab0e42120ab524364836cea5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_game_1a46f6f69aab0e42120ab524364836cea5" kindref="member">heroXpos</ref><sp/>=<sp/>930;</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351" refid="class_game_1ace7481b79db3066f11d27ccc95d5f7a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_game_1ace7481b79db3066f11d27ccc95d5f7a8" kindref="member">heroYpos</ref><sp/>=<sp/>680;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356" refid="class_game_1a20122c27af5d1d69dea53fe299f844bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_game_1a20122c27af5d1d69dea53fe299f844bb" kindref="member">pickupXPos</ref><sp/>=<sp/><ref refid="class_game_1a0b279644d881de510fea467235531816" kindref="member">ScreenWidth</ref><sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361" refid="class_game_1a6e65e06452a9015b1166d56ce85f4a79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_game_1a6e65e06452a9015b1166d56ce85f4a79" kindref="member">pickupYPos</ref><sp/>=<sp/><ref refid="class_game_1afc638bbbc544814dfe471ec6f3c7f9f9" kindref="member">ScreenHeight</ref><sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366" refid="class_game_1a53216c596117084979dfbf36bedc7ae0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_game_1a53216c596117084979dfbf36bedc7ae0" kindref="member">goalXPos</ref><sp/>=<sp/>930;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371" refid="class_game_1a326b704bfd15c42a414f67e80708f620" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_game_1a326b704bfd15c42a414f67e80708f620" kindref="member">goalYPos</ref><sp/>=<sp/>680;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="376" refid="class_game_1a693b6e70f7df4f7ec0ac9e8aa2423b39" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_game_1a693b6e70f7df4f7ec0ac9e8aa2423b39" kindref="member">showMonsterImgui</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="381" refid="class_game_1af782c06384b366d4f70e249ce19c57bd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_game_1af782c06384b366d4f70e249ce19c57bd" kindref="member">showHeroImgui</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386" refid="class_game_1a6b27c92c6378bed6e11c338f50396e6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_game_1a6b27c92c6378bed6e11c338f50396e6a" kindref="member">showPickupImgui</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="391" refid="class_game_1aade428ec84cbae8b4106b4c16cff96a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_game_1aade428ec84cbae8b4106b4c16cff96a6" kindref="member">showGoalImgui</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396" refid="class_game_1a6973ef45cca79aac80ecde5fef620044" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_game_1a6973ef45cca79aac80ecde5fef620044" kindref="member">isGoalActive</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401" refid="class_game_1ad5175b5a3fa6b417ac1e960b0476b19e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap" kindref="compound">Bitmap</ref>*<sp/><ref refid="class_game_1ad5175b5a3fa6b417ac1e960b0476b19e" kindref="member">AssetMousDrag</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight></codeline>
+<codeline lineno="410" refid="class_game_1abd9c6ffdbf89613513913a12b245e768" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Rect<sp/><ref refid="class_game_1abd9c6ffdbf89613513913a12b245e768" kindref="member">GetSpriteHeroRect</ref>()</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_game_1a397f8a701af3f05e5f972c84f0f29062" kindref="member">spriteHeroRect</ref>;</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight></codeline>
+<codeline lineno="422" refid="class_game_1a6a2ecdf258404952d8901591ed17db30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Rect<sp/><ref refid="class_game_1a6a2ecdf258404952d8901591ed17db30" kindref="member">GetPickupRect</ref>()</highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_game_1ad0c11d34bcd7055014481f1b8691322f" kindref="member">spritePickupRect</ref>;</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="426"><highlight class="normal"></highlight></codeline>
+<codeline lineno="427"><highlight class="normal"></highlight></codeline>
+<codeline lineno="428"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="429"><highlight class="normal"></highlight></codeline>
+<codeline lineno="430"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Game.h"/>
+  </compounddef>
+</doxygen>

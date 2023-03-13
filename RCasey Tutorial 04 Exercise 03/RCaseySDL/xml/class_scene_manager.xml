@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_scene_manager" kind="class" language="C++" prot="public">
+    <compoundname>SceneManager</compoundname>
+    <includes refid="_scene_manager_8h" local="no">SceneManager.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Status</name>
+        <qualifiedname>SceneManager::Status</qualifiedname>
+        <enumvalue id="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a79351df3b08b59ce054c8081488c0a3e" prot="public">
+          <name>Menu</name>
+          <briefdescription>
+<para>The menu. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a353ec594a91555ba2f44575562de3f5f" prot="public">
+          <name>Game</name>
+          <briefdescription>
+<para>The game. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a7f5b05daeb91bd6883e74126232d73be" prot="public">
+          <name>End</name>
+          <briefdescription>
+<para>The end. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="SceneManager.h" line="9" column="1" bodyfile="SceneManager.h" bodystart="10" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_scene_manager_1a52085e6737c23b491c228e86781af808" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SceneManager::SceneManager</definition>
+        <argsstring>()</argsstring>
+        <name>SceneManager</name>
+        <qualifiedname>SceneManager::SceneManager</qualifiedname>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_scene_manager" kindref="compound">SceneManager</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="SceneManager.h" line="6" column="1" bodyfile="SceneManager.cpp" bodystart="6" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_scene_manager_1a2bb376a85d29e85f47753e26c7539229" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SceneManager::~SceneManager</definition>
+        <argsstring>()</argsstring>
+        <name>~SceneManager</name>
+        <qualifiedname>SceneManager::~SceneManager</qualifiedname>
+        <briefdescription>
+<para>Finalizes an instance of the <ref refid="class_scene_manager" kindref="compound">SceneManager</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="SceneManager.h" line="7" column="1" bodyfile="SceneManager.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_scene_manager_1a63dcf65832d6a2c190bf496d9a3b00a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SceneManager::Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>SceneManager::Update</qualifiedname>
+        <briefdescription>
+<para>Updates this instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="SceneManager.h" line="25" column="6" bodyfile="SceneManager.cpp" bodystart="22" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>SceneManager</label>
+        <link refid="class_scene_manager"/>
+      </node>
+    </collaborationgraph>
+    <location file="SceneManager.h" line="2" column="1" bodyfile="SceneManager.h" bodystart="3" bodyend="27"/>
+    <listofallmembers>
+      <member refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a7f5b05daeb91bd6883e74126232d73be" prot="public" virt="non-virtual"><scope>SceneManager</scope><name>End</name></member>
+      <member refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a353ec594a91555ba2f44575562de3f5f" prot="public" virt="non-virtual"><scope>SceneManager</scope><name>Game</name></member>
+      <member refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a79351df3b08b59ce054c8081488c0a3e" prot="public" virt="non-virtual"><scope>SceneManager</scope><name>Menu</name></member>
+      <member refid="class_scene_manager_1a52085e6737c23b491c228e86781af808" prot="public" virt="non-virtual"><scope>SceneManager</scope><name>SceneManager</name></member>
+      <member refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3" prot="public" virt="non-virtual"><scope>SceneManager</scope><name>Status</name></member>
+      <member refid="class_scene_manager_1a63dcf65832d6a2c190bf496d9a3b00a3" prot="public" virt="non-virtual"><scope>SceneManager</scope><name>Update</name></member>
+      <member refid="class_scene_manager_1a2bb376a85d29e85f47753e26c7539229" prot="public" virt="non-virtual"><scope>SceneManager</scope><name>~SceneManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

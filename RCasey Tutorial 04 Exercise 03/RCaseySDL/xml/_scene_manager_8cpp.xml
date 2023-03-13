@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_scene_manager_8cpp" kind="file" language="C++">
+    <compoundname>SceneManager.cpp</compoundname>
+    <includes refid="_scene_manager_8h" local="yes">SceneManager.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>SceneManager.cpp</label>
+        <link refid="_scene_manager_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SceneManager.h</label>
+        <link refid="_scene_manager_8h"/>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_scene_manager_8h" kindref="compound">SceneManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="class_scene_manager_1a52085e6737c23b491c228e86781af808" refkind="member"><highlight class="normal"><ref refid="class_scene_manager_1a52085e6737c23b491c228e86781af808" kindref="member">SceneManager::SceneManager</ref>()</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="class_scene_manager_1a2bb376a85d29e85f47753e26c7539229" refkind="member"><highlight class="normal"><ref refid="class_scene_manager_1a2bb376a85d29e85f47753e26c7539229" kindref="member">SceneManager::~SceneManager</ref>()</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="class_scene_manager_1a63dcf65832d6a2c190bf496d9a3b00a3" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_scene_manager_1a63dcf65832d6a2c190bf496d9a3b00a3" kindref="member">SceneManager::Update</ref>()</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="SceneManager.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1523 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_game" kind="class" language="C++" prot="public">
+    <compoundname>Game</compoundname>
+    <includes refid="_game_8h" local="no">Game.h</includes>
+    <innerclass refid="struct_game_1_1_asset_data" prot="public">Game::AssetData</innerclass>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="class_game_1a7f57a7a8408e554d0a72882c287e1d04" prot="private" static="no" strong="no">
+        <type></type>
+        <name>GameState</name>
+        <qualifiedname>Game::GameState</qualifiedname>
+        <enumvalue id="class_game_1a7f57a7a8408e554d0a72882c287e1d04ac7901621f8e804cc3edab886693941b0" prot="private">
+          <name>GAME</name>
+          <briefdescription>
+<para>The game. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_game_1a7f57a7a8408e554d0a72882c287e1d04a467bd13398add05f7113f5e87fe2143d" prot="private">
+          <name>SPLASH</name>
+          <briefdescription>
+<para>The splash. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_game_1a7f57a7a8408e554d0a72882c287e1d04acff616a5d827c0cd609413cacf093eec" prot="private">
+          <name>ENDGAME</name>
+          <briefdescription>
+<para>The endgame. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="76" column="1" bodyfile="Game.h" bodystart="77" bodyend="91"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_game_1a68c305cc4209d3766a853e0dadbdb146" prot="public" static="yes" mutable="no">
+        <type>Uint32</type>
+        <definition>Uint32 Game::ResetEvent</definition>
+        <argsstring></argsstring>
+        <name>ResetEvent</name>
+        <qualifiedname>Game::ResetEvent</qualifiedname>
+        <initializer>= SDL_RegisterEvents(1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="36" column="15" bodyfile="Game.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="class_monster_1a460c74794d4f04977ebf39d912ab3ff3" compoundref="_monster_8cpp" startline="32" endline="66">Monster::Chase</referencedby>
+        <referencedby refid="class_game_1ad59df6562a58a614fda24622d3715b65" compoundref="_game_8cpp" startline="138" endline="212">Game</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a75fa771386c223c674d257ea0251f116" prot="public" static="yes" mutable="no">
+        <type>Uint32</type>
+        <definition>Uint32 Game::PickupEvent</definition>
+        <argsstring></argsstring>
+        <name>PickupEvent</name>
+        <qualifiedname>Game::PickupEvent</qualifiedname>
+        <initializer>= SDL_RegisterEvents(1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="37" column="15" bodyfile="Game.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="class_pickup_1a47d91d989a2beafaa497779ab892bcc8" compoundref="_pickup_8cpp" startline="27" endline="48">Pickup::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_game_1ae657f5cef92c6208e1c1c905fcc42c06" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="struct_game_1_1_asset_data" kindref="compound">AssetData</ref> &gt;</type>
+        <definition>std::vector&lt;AssetData&gt; Game::assetList</definition>
+        <argsstring></argsstring>
+        <name>assetList</name>
+        <qualifiedname>Game::assetList</qualifiedname>
+        <briefdescription>
+<para>The asset list. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="45" column="13" bodyfile="Game.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1ae7561893b367eab06b22e764c71363ca" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_bitmap" kindref="compound">Bitmap</ref> * &gt;</type>
+        <definition>std::vector&lt;Bitmap*&gt; Game::m_Bitmaps</definition>
+        <argsstring></argsstring>
+        <name>m_Bitmaps</name>
+        <qualifiedname>Game::m_Bitmaps</qualifiedname>
+        <briefdescription>
+<para>The m bitmaps. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="49" column="13" bodyfile="Game.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a86b8703f2f4b3b5702778d5194b461b6" prot="public" static="no" mutable="no">
+        <type><ref refid="class_bitmap" kindref="compound">Bitmap</ref> *</type>
+        <definition>Bitmap* Game::m_SelectedBitmap</definition>
+        <argsstring></argsstring>
+        <name>m_SelectedBitmap</name>
+        <qualifiedname>Game::m_SelectedBitmap</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>The m selected bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="53" column="8" bodyfile="Game.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a6ab2dc6023585c4c93ef2b8120358eb9" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_bitmap" kindref="compound">Bitmap</ref> * &gt;</type>
+        <definition>std::vector&lt;Bitmap*&gt; Game::ObjectsInScene</definition>
+        <argsstring></argsstring>
+        <name>ObjectsInScene</name>
+        <qualifiedname>Game::ObjectsInScene</qualifiedname>
+        <briefdescription>
+<para>The objects in scene. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="58" column="13" bodyfile="Game.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="class_game_1acd4a0faf4e7210c53a88e8c1cb90281f" compoundref="_game_8cpp" startline="245" endline="312">LoadObjects</referencedby>
+        <referencedby refid="class_game_1aae0472df3a9a5ff0b2df25ba9465fd03" compoundref="_game_8cpp" startline="648" endline="666">RenderSceneHierarchy</referencedby>
+        <referencedby refid="class_game_1a770b062e3ff36ddacf78d6625f3162f1" compoundref="_game_8cpp" startline="318" endline="331">UnLoadObjects</referencedby>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a8b824de9b95e8b882e7cde3bc3c45f0a" prot="public" static="no" mutable="no">
+        <type>SDL_Point</type>
+        <definition>SDL_Point Game::mousePoint</definition>
+        <argsstring></argsstring>
+        <name>mousePoint</name>
+        <qualifiedname>Game::mousePoint</qualifiedname>
+        <briefdescription>
+<para>Coordinates for mouse pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="241" column="11" bodyfile="Game.h" bodystart="241" bodyend="-1"/>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a397f8a701af3f05e5f972c84f0f29062" prot="public" static="no" mutable="no">
+        <type>SDL_Rect</type>
+        <definition>SDL_Rect Game::spriteHeroRect</definition>
+        <argsstring></argsstring>
+        <name>spriteHeroRect</name>
+        <qualifiedname>Game::spriteHeroRect</qualifiedname>
+        <briefdescription>
+<para>SDL Rectangle for <ref refid="class_hero" kindref="compound">Hero</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="246" column="10" bodyfile="Game.h" bodystart="246" bodyend="-1"/>
+        <referencedby refid="class_game_1abd9c6ffdbf89613513913a12b245e768" compoundref="_game_8h" startline="410" endline="413">GetSpriteHeroRect</referencedby>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a96c2da745983d6f3d25bc7e0fd4af129" prot="public" static="no" mutable="no">
+        <type>SDL_Rect</type>
+        <definition>SDL_Rect Game::spriteMonsterRect</definition>
+        <argsstring></argsstring>
+        <name>spriteMonsterRect</name>
+        <qualifiedname>Game::spriteMonsterRect</qualifiedname>
+        <briefdescription>
+<para>/// SDL Rectangle for <ref refid="class_monster" kindref="compound">Monster</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="251" column="10" bodyfile="Game.h" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1ad0c11d34bcd7055014481f1b8691322f" prot="public" static="no" mutable="no">
+        <type>SDL_Rect</type>
+        <definition>SDL_Rect Game::spritePickupRect</definition>
+        <argsstring></argsstring>
+        <name>spritePickupRect</name>
+        <qualifiedname>Game::spritePickupRect</qualifiedname>
+        <briefdescription>
+<para>/// SDL Rectangle for <ref refid="class_pickup" kindref="compound">Pickup</ref> (Key) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="256" column="10" bodyfile="Game.h" bodystart="256" bodyend="-1"/>
+        <referencedby refid="class_game_1a6a2ecdf258404952d8901591ed17db30" compoundref="_game_8h" startline="422" endline="425">GetPickupRect</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a8414683ae26f601e99efd0f0cfdb5f9e" prot="public" static="no" mutable="no">
+        <type>SDL_Rect</type>
+        <definition>SDL_Rect Game::spriteGoalRect</definition>
+        <argsstring></argsstring>
+        <name>spriteGoalRect</name>
+        <qualifiedname>Game::spriteGoalRect</qualifiedname>
+        <briefdescription>
+<para>/// SDL Rectangle for Goal </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="261" column="10" bodyfile="Game.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a37957a6b5594fe172ac19917907425d4" prot="public" static="no" mutable="no">
+        <type>SDL_Window *</type>
+        <definition>SDL_Window* Game::m_Window</definition>
+        <argsstring></argsstring>
+        <name>m_Window</name>
+        <qualifiedname>Game::m_Window</qualifiedname>
+        <briefdescription>
+<para>SDL Window for <ref refid="class_game" kindref="compound">Game</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="266" column="12" bodyfile="Game.h" bodystart="266" bodyend="-1"/>
+        <referencedby refid="class_game_1ad59df6562a58a614fda24622d3715b65" compoundref="_game_8cpp" startline="138" endline="212">Game</referencedby>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Update</referencedby>
+        <referencedby refid="class_game_1ae3d112ca6e0e55150d2fdbc704474530" compoundref="_game_8cpp" startline="336" endline="374">~Game</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a5d9fb92360e0225766e7f0f9c03ca8ce" prot="public" static="no" mutable="no">
+        <type>SDL_Renderer *</type>
+        <definition>SDL_Renderer* Game::m_Renderer</definition>
+        <argsstring></argsstring>
+        <name>m_Renderer</name>
+        <qualifiedname>Game::m_Renderer</qualifiedname>
+        <briefdescription>
+<para>SDL Renderer for window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="271" column="14" bodyfile="Game.h" bodystart="271" bodyend="-1"/>
+        <referencedby refid="class_game_1ad59df6562a58a614fda24622d3715b65" compoundref="_game_8cpp" startline="138" endline="212">Game</referencedby>
+        <referencedby refid="class_game_1acd4a0faf4e7210c53a88e8c1cb90281f" compoundref="_game_8cpp" startline="245" endline="312">LoadObjects</referencedby>
+        <referencedby refid="class_game_1a06d91a56a4b25d9b959559e4faa0d84a" compoundref="_game_8cpp" startline="28" endline="43">SetDisplayColour</referencedby>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Update</referencedby>
+        <referencedby refid="class_game_1ae3d112ca6e0e55150d2fdbc704474530" compoundref="_game_8cpp" startline="336" endline="374">~Game</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a0b279644d881de510fea467235531816" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Game::ScreenWidth</definition>
+        <argsstring></argsstring>
+        <name>ScreenWidth</name>
+        <qualifiedname>Game::ScreenWidth</qualifiedname>
+        <initializer>= 1024</initializer>
+        <briefdescription>
+<para>Screen Width for SDL Window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="276" column="5" bodyfile="Game.h" bodystart="276" bodyend="-1"/>
+        <referencedby refid="class_game_1ad59df6562a58a614fda24622d3715b65" compoundref="_game_8cpp" startline="138" endline="212">Game</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1afc638bbbc544814dfe471ec6f3c7f9f9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Game::ScreenHeight</definition>
+        <argsstring></argsstring>
+        <name>ScreenHeight</name>
+        <qualifiedname>Game::ScreenHeight</qualifiedname>
+        <initializer>= 768</initializer>
+        <briefdescription>
+<para>Screen height for SDL Window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="281" column="5" bodyfile="Game.h" bodystart="281" bodyend="-1"/>
+        <referencedby refid="class_game_1ad59df6562a58a614fda24622d3715b65" compoundref="_game_8cpp" startline="138" endline="212">Game</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a00f29917ded5952ad4649c4ab7a4b411" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Game::directory</definition>
+        <argsstring></argsstring>
+        <name>directory</name>
+        <qualifiedname>Game::directory</qualifiedname>
+        <initializer>= &quot;../assets/&quot;</initializer>
+        <briefdescription>
+<para>String directory for assets folder. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="326" column="13" bodyfile="Game.h" bodystart="326" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1ae0a40e7e00700005e891206dfeafff38" prot="public" static="no" mutable="no">
+        <type><ref refid="class_input" kindref="compound">Input</ref> *</type>
+        <definition>Input* Game::input</definition>
+        <argsstring></argsstring>
+        <name>input</name>
+        <qualifiedname>Game::input</qualifiedname>
+        <initializer>= new <ref refid="class_input" kindref="compound">Input</ref>()</initializer>
+        <briefdescription>
+<para><ref refid="class_input" kindref="compound">Input</ref> for WASD (<ref refid="class_hero" kindref="compound">Hero</ref> Control) and RGB fader for background colour. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="331" column="7" bodyfile="Game.h" bodystart="331" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="11" endline="22">main</referencedby>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Update</referencedby>
+        <referencedby refid="class_game_1ae3d112ca6e0e55150d2fdbc704474530" compoundref="_game_8cpp" startline="336" endline="374">~Game</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a8de491bf7f776e728ce6363e1618e9a0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Game::themonsterXpos</definition>
+        <argsstring></argsstring>
+        <name>themonsterXpos</name>
+        <qualifiedname>Game::themonsterXpos</qualifiedname>
+        <initializer>= 10</initializer>
+        <briefdescription>
+<para>Initial Starting X coordinate for <ref refid="class_monster" kindref="compound">Monster</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="336" column="5" bodyfile="Game.h" bodystart="336" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1aef742be3739bfb33b828863f825281cd" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Game::themonsterYpos</definition>
+        <argsstring></argsstring>
+        <name>themonsterYpos</name>
+        <qualifiedname>Game::themonsterYpos</qualifiedname>
+        <initializer>= 10</initializer>
+        <briefdescription>
+<para>Initial Starting Y coordinate for <ref refid="class_monster" kindref="compound">Monster</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="341" column="5" bodyfile="Game.h" bodystart="341" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a46f6f69aab0e42120ab524364836cea5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Game::heroXpos</definition>
+        <argsstring></argsstring>
+        <name>heroXpos</name>
+        <qualifiedname>Game::heroXpos</qualifiedname>
+        <initializer>= 930</initializer>
+        <briefdescription>
+<para>Initial Starting X coordinate for <ref refid="class_hero" kindref="compound">Hero</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="346" column="5" bodyfile="Game.h" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1ace7481b79db3066f11d27ccc95d5f7a8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Game::heroYpos</definition>
+        <argsstring></argsstring>
+        <name>heroYpos</name>
+        <qualifiedname>Game::heroYpos</qualifiedname>
+        <initializer>= 680</initializer>
+        <briefdescription>
+<para>Initial Starting Y coordinate for <ref refid="class_hero" kindref="compound">Hero</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="351" column="5" bodyfile="Game.h" bodystart="351" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a20122c27af5d1d69dea53fe299f844bb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Game::pickupXPos</definition>
+        <argsstring></argsstring>
+        <name>pickupXPos</name>
+        <qualifiedname>Game::pickupXPos</qualifiedname>
+        <initializer>= <ref refid="class_game_1a0b279644d881de510fea467235531816" kindref="member">ScreenWidth</ref> / 2</initializer>
+        <briefdescription>
+<para>Initial starting X coordinate for <ref refid="class_pickup" kindref="compound">Pickup</ref> (Key) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="356" column="5" bodyfile="Game.h" bodystart="356" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a6e65e06452a9015b1166d56ce85f4a79" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Game::pickupYPos</definition>
+        <argsstring></argsstring>
+        <name>pickupYPos</name>
+        <qualifiedname>Game::pickupYPos</qualifiedname>
+        <initializer>= <ref refid="class_game_1afc638bbbc544814dfe471ec6f3c7f9f9" kindref="member">ScreenHeight</ref> / 2</initializer>
+        <briefdescription>
+<para>Initial starting Y coordinate for <ref refid="class_pickup" kindref="compound">Pickup</ref> (Key) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="361" column="5" bodyfile="Game.h" bodystart="361" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a53216c596117084979dfbf36bedc7ae0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Game::goalXPos</definition>
+        <argsstring></argsstring>
+        <name>goalXPos</name>
+        <qualifiedname>Game::goalXPos</qualifiedname>
+        <initializer>= 930</initializer>
+        <briefdescription>
+<para>X Position of Goal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="366" column="5" bodyfile="Game.h" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a326b704bfd15c42a414f67e80708f620" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Game::goalYPos</definition>
+        <argsstring></argsstring>
+        <name>goalYPos</name>
+        <qualifiedname>Game::goalYPos</qualifiedname>
+        <initializer>= 680</initializer>
+        <briefdescription>
+<para>Y Positiuon of Goal. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="371" column="5" bodyfile="Game.h" bodystart="371" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a693b6e70f7df4f7ec0ac9e8aa2423b39" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Game::showMonsterImgui</definition>
+        <argsstring></argsstring>
+        <name>showMonsterImgui</name>
+        <qualifiedname>Game::showMonsterImgui</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Boolean to show <ref refid="class_monster" kindref="compound">Monster</ref> ImGui when clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="376" column="6" bodyfile="Game.h" bodystart="376" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1af782c06384b366d4f70e249ce19c57bd" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Game::showHeroImgui</definition>
+        <argsstring></argsstring>
+        <name>showHeroImgui</name>
+        <qualifiedname>Game::showHeroImgui</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Boolean to show <ref refid="class_hero" kindref="compound">Hero</ref> ImGui when clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="381" column="6" bodyfile="Game.h" bodystart="381" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a6b27c92c6378bed6e11c338f50396e6a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Game::showPickupImgui</definition>
+        <argsstring></argsstring>
+        <name>showPickupImgui</name>
+        <qualifiedname>Game::showPickupImgui</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Boolean to show <ref refid="class_pickup" kindref="compound">Pickup</ref> ImGui when clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="386" column="6" bodyfile="Game.h" bodystart="386" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1aade428ec84cbae8b4106b4c16cff96a6" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Game::showGoalImgui</definition>
+        <argsstring></argsstring>
+        <name>showGoalImgui</name>
+        <qualifiedname>Game::showGoalImgui</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Boolean to show Goal ImGui when clicked. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="391" column="6" bodyfile="Game.h" bodystart="391" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a6973ef45cca79aac80ecde5fef620044" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Game::isGoalActive</definition>
+        <argsstring></argsstring>
+        <name>isGoalActive</name>
+        <qualifiedname>Game::isGoalActive</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Boolean to track if the Goal is active (retrusn true when key is collected) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="396" column="6" bodyfile="Game.h" bodystart="396" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1ad5175b5a3fa6b417ac1e960b0476b19e" prot="public" static="no" mutable="no">
+        <type><ref refid="class_bitmap" kindref="compound">Bitmap</ref> *</type>
+        <definition>Bitmap* Game::AssetMousDrag</definition>
+        <argsstring></argsstring>
+        <name>AssetMousDrag</name>
+        <qualifiedname>Game::AssetMousDrag</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Initialised nullptr for AssetMousDrag for Drag and drop. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="401" column="8" bodyfile="Game.h" bodystart="401" bodyend="-1"/>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_game_1ae8240437e21e190e11212d51be31b522" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Game::showGravityWindow</definition>
+        <argsstring></argsstring>
+        <name>showGravityWindow</name>
+        <qualifiedname>Game::showGravityWindow</qualifiedname>
+        <briefdescription>
+<para>The show gravity window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="65" column="6" bodyfile="Game.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a0d59a177560d30255b7eb844d5aa0c6e" prot="private" static="no" mutable="no">
+        <type><ref refid="class_bitmap" kindref="compound">Bitmap</ref> *</type>
+        <definition>Bitmap* Game::m_SelectedObject</definition>
+        <argsstring></argsstring>
+        <name>m_SelectedObject</name>
+        <qualifiedname>Game::m_SelectedObject</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>The m selected object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="69" column="8" bodyfile="Game.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a502ddc7ce853ecf1987e77cfffb8c517" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Game::showSelectionGui</definition>
+        <argsstring></argsstring>
+        <name>showSelectionGui</name>
+        <qualifiedname>Game::showSelectionGui</qualifiedname>
+        <briefdescription>
+<para>The show selection GUI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="74" column="6" bodyfile="Game.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a207e8cf3f8c24e594b95e47ae5df0796" prot="private" static="no" mutable="no">
+        <type>GameState</type>
+        <definition>GameState Game::State</definition>
+        <argsstring></argsstring>
+        <name>State</name>
+        <qualifiedname>Game::State</qualifiedname>
+        <initializer>= SPLASH</initializer>
+        <briefdescription>
+<para>The state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="96" column="11" bodyfile="Game.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a1277572667b79c889457e724707d859f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Game::m_running</definition>
+        <argsstring></argsstring>
+        <name>m_running</name>
+        <qualifiedname>Game::m_running</qualifiedname>
+        <briefdescription>
+<para>The m running. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="101" column="6" bodyfile="Game.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a947eac3914720433686ff9d47ea22d51" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Game::m_useGravity</definition>
+        <argsstring></argsstring>
+        <name>m_useGravity</name>
+        <qualifiedname>Game::m_useGravity</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>The m use gravity. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="105" column="6" bodyfile="Game.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a89f5178322d72548ff2be4c9d4c4a5b7" prot="private" static="no" mutable="no">
+        <type><ref refid="class_creature" kindref="compound">Creature</ref> *</type>
+        <definition>Creature* Game::m_monster</definition>
+        <argsstring></argsstring>
+        <name>m_monster</name>
+        <qualifiedname>Game::m_monster</qualifiedname>
+        <briefdescription>
+<para>The m monster. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="110" column="10" bodyfile="Game.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a94bc151f0a7ab3e74065931218fd1905" prot="private" static="no" mutable="no">
+        <type><ref refid="class_creature" kindref="compound">Creature</ref> *</type>
+        <definition>Creature* Game::m_monsterTrans</definition>
+        <argsstring></argsstring>
+        <name>m_monsterTrans</name>
+        <qualifiedname>Game::m_monsterTrans</qualifiedname>
+        <briefdescription>
+<para>The m monster trans. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="114" column="10" bodyfile="Game.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1af791568933a54188274812eb69a5fb7b" prot="private" static="no" mutable="no">
+        <type><ref refid="class_creature" kindref="compound">Creature</ref> *</type>
+        <definition>Creature* Game::m_monsterTransKeyed</definition>
+        <argsstring></argsstring>
+        <name>m_monsterTransKeyed</name>
+        <qualifiedname>Game::m_monsterTransKeyed</qualifiedname>
+        <briefdescription>
+<para>The m monster trans keyed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="118" column="10" bodyfile="Game.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1ad871aeac39e24e85f6bd5beeaa021731" prot="private" static="no" mutable="no">
+        <type><ref refid="class_monster" kindref="compound">Monster</ref> *</type>
+        <definition>Monster* Game::m_pTheMonster</definition>
+        <argsstring></argsstring>
+        <name>m_pTheMonster</name>
+        <qualifiedname>Game::m_pTheMonster</qualifiedname>
+        <briefdescription>
+<para>The m p the monster. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="123" column="9" bodyfile="Game.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a80bc1fdd13519a660792f9f0534dcb76" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_monster" kindref="compound">Monster</ref> * &gt;</type>
+        <definition>std::vector&lt;Monster*&gt; Game::monsters</definition>
+        <argsstring></argsstring>
+        <name>monsters</name>
+        <qualifiedname>Game::monsters</qualifiedname>
+        <briefdescription>
+<para>The monsters. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="127" column="13" bodyfile="Game.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a36b55d6ad464c14b54e77542a14719ed" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_pickup" kindref="compound">Pickup</ref> * &gt;</type>
+        <definition>std::vector&lt;Pickup*&gt; Game::pickups</definition>
+        <argsstring></argsstring>
+        <name>pickups</name>
+        <qualifiedname>Game::pickups</qualifiedname>
+        <briefdescription>
+<para>The pickups. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="131" column="13" bodyfile="Game.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1ae48da803c387f3ad97bdc49401e2f1d9" prot="private" static="no" mutable="no">
+        <type><ref refid="class_hero" kindref="compound">Hero</ref> *</type>
+        <definition>Hero* Game::m_pTheHero</definition>
+        <argsstring></argsstring>
+        <name>m_pTheHero</name>
+        <qualifiedname>Game::m_pTheHero</qualifiedname>
+        <briefdescription>
+<para>A Pointer to <ref refid="class_hero" kindref="compound">Hero</ref> <ref refid="class_bitmap" kindref="compound">Bitmap</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="136" column="6" bodyfile="Game.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a72d8274f544b3940aa9c0a25390e86cb" prot="private" static="no" mutable="no">
+        <type><ref refid="class_pickup" kindref="compound">Pickup</ref> *</type>
+        <definition>Pickup* Game::m_Pickup</definition>
+        <argsstring></argsstring>
+        <name>m_Pickup</name>
+        <qualifiedname>Game::m_Pickup</qualifiedname>
+        <briefdescription>
+<para>A Pointer to <ref refid="class_pickup" kindref="compound">Pickup</ref> <ref refid="class_bitmap" kindref="compound">Bitmap</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="141" column="8" bodyfile="Game.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1ad4e783f90ffa9bc400998c36029dbe4a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_pickup" kindref="compound">Pickup</ref> *</type>
+        <definition>Pickup* Game::m_Goal</definition>
+        <argsstring></argsstring>
+        <name>m_Goal</name>
+        <qualifiedname>Game::m_Goal</qualifiedname>
+        <briefdescription>
+<para>A Pointer to Goal <ref refid="class_bitmap" kindref="compound">Bitmap</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="146" column="8" bodyfile="Game.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1ae5f695f2b4852e78ea9e840c888ecec2" prot="private" static="no" mutable="no">
+        <type><ref refid="class_pickup" kindref="compound">Pickup</ref> *</type>
+        <definition>Pickup* Game::m_Goal2</definition>
+        <argsstring></argsstring>
+        <name>m_Goal2</name>
+        <qualifiedname>Game::m_Goal2</qualifiedname>
+        <briefdescription>
+<para>A Pointer to Goal2 <ref refid="class_bitmap" kindref="compound">Bitmap</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="151" column="8" bodyfile="Game.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a7f015757b6f7271c2a5386221ecdd2d8" prot="private" static="no" mutable="no">
+        <type>TTF_Font *</type>
+        <definition>TTF_Font* Game::m_pSmallFont</definition>
+        <argsstring></argsstring>
+        <name>m_pSmallFont</name>
+        <qualifiedname>Game::m_pSmallFont</qualifiedname>
+        <briefdescription>
+<para>A Pointer to allocated Small Font. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="156" column="10" bodyfile="Game.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1aebd4ad131471a9bb4b1d2da6924e2a7e" prot="private" static="no" mutable="no">
+        <type>TTF_Font *</type>
+        <definition>TTF_Font* Game::m_pBigFont</definition>
+        <argsstring></argsstring>
+        <name>m_pBigFont</name>
+        <qualifiedname>Game::m_pBigFont</qualifiedname>
+        <briefdescription>
+<para>A pointer to allocated Big Font. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="161" column="10" bodyfile="Game.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a39ed2eb7d5e1efafe25073ffca3f7092" prot="private" static="no" mutable="no">
+        <type>TTF_Font *</type>
+        <definition>TTF_Font* Game::m_pInfoFont</definition>
+        <argsstring></argsstring>
+        <name>m_pInfoFont</name>
+        <qualifiedname>Game::m_pInfoFont</qualifiedname>
+        <briefdescription>
+<para>A Pointer to informative text font. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="166" column="10" bodyfile="Game.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a9d7b76ebf2ba9cb6efb233a77cbe2125" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_bitmap" kindref="compound">Bitmap</ref> * &gt;</type>
+        <definition>std::vector&lt;Bitmap*&gt; Game::content</definition>
+        <argsstring></argsstring>
+        <name>content</name>
+        <qualifiedname>Game::content</qualifiedname>
+        <briefdescription>
+<para>Vector of Bitmaps. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="206" column="13" bodyfile="Game.h" bodystart="206" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a423ed3bfb635f8ab44571e72e5e82f11" prot="private" static="no" mutable="no">
+        <type>Uint8</type>
+        <definition>Uint8 Game::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <qualifiedname>Game::r</qualifiedname>
+        <initializer>= 127</initializer>
+        <briefdescription>
+<para>Red, Green, Blue and alpha levels (min = 0, max = 255) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="219" column="7" bodyfile="Game.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1ae57bf1c496c60342ff90eaf64fb3c79c" prot="private" static="no" mutable="no">
+        <type>Uint8</type>
+        <definition>Uint8 Game::g</definition>
+        <argsstring></argsstring>
+        <name>g</name>
+        <qualifiedname>Game::g</qualifiedname>
+        <initializer>= 127</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="219" column="10" bodyfile="Game.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a0e057a8fa18fa83b7639f61ef957716a" prot="private" static="no" mutable="no">
+        <type>Uint8</type>
+        <definition>Uint8 Game::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <qualifiedname>Game::b</qualifiedname>
+        <initializer>= 127</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="219" column="13" bodyfile="Game.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1ab659faadf37bd8c7cd06f35819fe7f72" prot="private" static="no" mutable="no">
+        <type>Uint8</type>
+        <definition>Uint8 Game::a</definition>
+        <argsstring></argsstring>
+        <name>a</name>
+        <qualifiedname>Game::a</qualifiedname>
+        <initializer>= 255</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="219" column="16" bodyfile="Game.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a0cce71dd59ba8429786e2ce863e3cf94" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Game::xpos</definition>
+        <argsstring></argsstring>
+        <name>xpos</name>
+        <qualifiedname>Game::xpos</qualifiedname>
+        <briefdescription>
+<para>X position in coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="224" column="5" bodyfile="Game.h" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a0c01ab46e1c18543492c38b3cde6e3d4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Game::ypos</definition>
+        <argsstring></argsstring>
+        <name>ypos</name>
+        <qualifiedname>Game::ypos</qualifiedname>
+        <briefdescription>
+<para>Y Position in coordinates. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="229" column="5" bodyfile="Game.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_game_1a731dc0c3996eee91cc3b1c2f4acb073e" prot="private" static="no" mutable="no">
+        <type>ImGuiIO *</type>
+        <definition>ImGuiIO* Game::io</definition>
+        <argsstring></argsstring>
+        <name>io</name>
+        <qualifiedname>Game::io</qualifiedname>
+        <briefdescription>
+<para>Inputs and Outputs for ImGui. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="234" column="9" bodyfile="Game.h" bodystart="234" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_game_1aae0472df3a9a5ff0b2df25ba9465fd03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Game::RenderSceneHierarchy</definition>
+        <argsstring>()</argsstring>
+        <name>RenderSceneHierarchy</name>
+        <qualifiedname>Game::RenderSceneHierarchy</qualifiedname>
+        <briefdescription>
+<para>Renders the scene hierarchy. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="54" column="6" bodyfile="Game.cpp" bodystart="648" bodyend="666"/>
+        <references refid="class_game_1a6ab2dc6023585c4c93ef2b8120358eb9" compoundref="_game_8h" startline="58">ObjectsInScene</references>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1ad59df6562a58a614fda24622d3715b65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Game::Game</definition>
+        <argsstring>()</argsstring>
+        <name>Game</name>
+        <qualifiedname>Game::Game</qualifiedname>
+        <briefdescription>
+<para><ref refid="class_game" kindref="compound">Game</ref> Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="286" column="1" bodyfile="Game.cpp" bodystart="138" bodyend="212"/>
+        <references refid="class_game_1acd4a0faf4e7210c53a88e8c1cb90281f" compoundref="_game_8cpp" startline="245" endline="312">LoadObjects</references>
+        <references refid="class_game_1a5d9fb92360e0225766e7f0f9c03ca8ce" compoundref="_game_8h" startline="271">m_Renderer</references>
+        <references refid="class_game_1a37957a6b5594fe172ac19917907425d4" compoundref="_game_8h" startline="266">m_Window</references>
+        <references refid="class_game_1a68c305cc4209d3766a853e0dadbdb146" compoundref="_game_8h" startline="36">ResetEvent</references>
+        <references refid="class_game_1afc638bbbc544814dfe471ec6f3c7f9f9" compoundref="_game_8h" startline="281">ScreenHeight</references>
+        <references refid="class_game_1a0b279644d881de510fea467235531816" compoundref="_game_8h" startline="276">ScreenWidth</references>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1acd4a0faf4e7210c53a88e8c1cb90281f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Game::LoadObjects</definition>
+        <argsstring>()</argsstring>
+        <name>LoadObjects</name>
+        <qualifiedname>Game::LoadObjects</qualifiedname>
+        <briefdescription>
+<para>Function for loading all game objects. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="291" column="6" bodyfile="Game.cpp" bodystart="245" bodyend="312"/>
+        <references refid="class_bitmap_1ad1e358e487367d573758cb713f046028" compoundref="bitmap_8h" startline="78">Bitmap::isEnd</references>
+        <references refid="class_game_1a5d9fb92360e0225766e7f0f9c03ca8ce" compoundref="_game_8h" startline="271">m_Renderer</references>
+        <references refid="class_game_1a6ab2dc6023585c4c93ef2b8120358eb9" compoundref="_game_8h" startline="58">ObjectsInScene</references>
+        <referencedby refid="class_game_1ad59df6562a58a614fda24622d3715b65" compoundref="_game_8cpp" startline="138" endline="212">Game</referencedby>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1a770b062e3ff36ddacf78d6625f3162f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Game::UnLoadObjects</definition>
+        <argsstring>()</argsstring>
+        <name>UnLoadObjects</name>
+        <qualifiedname>Game::UnLoadObjects</qualifiedname>
+        <briefdescription>
+<para>Function for unloading all game objects. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="296" column="6" bodyfile="Game.cpp" bodystart="318" bodyend="331"/>
+        <references refid="class_game_1a6ab2dc6023585c4c93ef2b8120358eb9" compoundref="_game_8h" startline="58">ObjectsInScene</references>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1ae3d112ca6e0e55150d2fdbc704474530" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Game::~Game</definition>
+        <argsstring>()</argsstring>
+        <name>~Game</name>
+        <qualifiedname>Game::~Game</qualifiedname>
+        <briefdescription>
+<para><ref refid="class_game" kindref="compound">Game</ref> Deconstructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="301" column="1" bodyfile="Game.cpp" bodystart="336" bodyend="374"/>
+        <references refid="class_game_1ae0a40e7e00700005e891206dfeafff38" compoundref="_game_8h" startline="331">input</references>
+        <references refid="class_game_1a5d9fb92360e0225766e7f0f9c03ca8ce" compoundref="_game_8h" startline="271">m_Renderer</references>
+        <references refid="class_game_1a37957a6b5594fe172ac19917907425d4" compoundref="_game_8h" startline="266">m_Window</references>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1a06d91a56a4b25d9b959559e4faa0d84a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Game::SetDisplayColour</definition>
+        <argsstring>(Uint8 r, Uint8 g, Uint8 b, Uint8 a)</argsstring>
+        <name>SetDisplayColour</name>
+        <qualifiedname>Game::SetDisplayColour</qualifiedname>
+        <param>
+          <type>Uint8</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>Uint8</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>Uint8</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>Uint8</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+<para>Set Display Colour for SDL Window Background. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set Red Level (0 - 255)</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>g</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set Green Level (0 - 255)</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set Blue Level (0 - 255)</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set Alpha Level (0 - 255)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="310" column="6" bodyfile="Game.cpp" bodystart="28" bodyend="43"/>
+        <references refid="class_game_1a5d9fb92360e0225766e7f0f9c03ca8ce" compoundref="_game_8h" startline="271">m_Renderer</references>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1a1c5373c68261c54aff03e6abe40fee52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Game::Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>Game::Update</qualifiedname>
+        <briefdescription>
+<para>Update Function for <ref refid="class_game" kindref="compound">Game</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="315" column="6" bodyfile="Game.cpp" bodystart="379" bodyend="594"/>
+        <references refid="class_bitmap_1afdc4f28cf1a32e587153be4012aa058f" compoundref="bitmap_8cpp" startline="131" endline="135">Bitmap::addoffset</references>
+        <references refid="class_game_1ad5175b5a3fa6b417ac1e960b0476b19e" compoundref="_game_8h" startline="401">AssetMousDrag</references>
+        <references refid="class_profiler_system_1aa73e8057f424a729ec4f37d49fef3fa4" compoundref="_profiler_8cpp" startline="55" endline="67">ProfilerSystem::endFrame</references>
+        <references refid="_profiler_8cpp_1a6f00dbbe483432624a7b14bc8f72379a" compoundref="_profiler_8cpp" startline="69">g_profileManager</references>
+        <references refid="class_bitmap_1a7e398a0f351b6747ac85e24368fb9ad5" compoundref="bitmap_8cpp" startline="20" endline="23">Bitmap::GetH</references>
+        <references refid="class_bitmap_1a2619a68555872d52f324ec110c78e5e3" compoundref="bitmap_8cpp" startline="11" endline="14">Bitmap::GetW</references>
+        <references refid="class_bitmap_1a8dcb2592cf1a834c0c4864d03597eb0f" compoundref="bitmap_8h" startline="139" endline="139">Bitmap::GetX</references>
+        <references refid="class_bitmap_1ab7481fba70b483315b9bcee6007c0e7d" compoundref="bitmap_8h" startline="140" endline="140">Bitmap::GetY</references>
+        <references refid="class_game_1ae0a40e7e00700005e891206dfeafff38" compoundref="_game_8h" startline="331">input</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaa7b3a3d0503a46bec51c6e3da95747cc" compoundref="input_8h" startline="6">KEY_A</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa10072b5ee7aa1faf316434ecc9e2bb3a" compoundref="input_8h" startline="6">KEY_B</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa2fd73a4d527efe137e8f259db2092766" compoundref="input_8h" startline="6">KEY_D</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa4ec980867be1d5bded2bccdee2ebd601" compoundref="input_8h" startline="6">KEY_G</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aac8234231b36474d3666ad56752fe6f5e" compoundref="input_8h" startline="6">KEY_Q</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaa3ec8a2ffd5b0e200db5ebe7b65515ff" compoundref="input_8h" startline="6">KEY_R</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaaefd064b1e5d75c429bed314ac18eba0" compoundref="input_8h" startline="6">KEY_RETURN</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aabb2f0ce8efc3067757dbf091437f89f5" compoundref="input_8h" startline="6">KEY_S</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa2e6a652ccd7afc5ce75ac4d902b6a60a" compoundref="input_8h" startline="6">KEY_W</references>
+        <references refid="class_input_1a637918b2b2f09a0b405e9d699bb4c334" compoundref="input_8cpp" startline="153" endline="156">Input::KeyIsPressed</references>
+        <references refid="class_game_1acd4a0faf4e7210c53a88e8c1cb90281f" compoundref="_game_8cpp" startline="245" endline="312">LoadObjects</references>
+        <references refid="class_game_1a5d9fb92360e0225766e7f0f9c03ca8ce" compoundref="_game_8h" startline="271">m_Renderer</references>
+        <references refid="class_game_1a37957a6b5594fe172ac19917907425d4" compoundref="_game_8h" startline="266">m_Window</references>
+        <references refid="class_game_1a8b824de9b95e8b882e7cde3bc3c45f0a" compoundref="_game_8h" startline="241">mousePoint</references>
+        <references refid="class_bitmap_1a04bad4d42d3f7724226815b3163306fb" compoundref="bitmap_8h" startline="103">Bitmap::Name</references>
+        <references refid="class_game_1a6ab2dc6023585c4c93ef2b8120358eb9" compoundref="_game_8h" startline="58">ObjectsInScene</references>
+        <references refid="class_bitmap_1a909cb95a3129c4bf8d3a9a75e636bc32" compoundref="bitmap_8h" startline="108">Bitmap::path</references>
+        <references refid="class_game_1aae0472df3a9a5ff0b2df25ba9465fd03" compoundref="_game_8cpp" startline="648" endline="666">RenderSceneHierarchy</references>
+        <references refid="class_game_1a06d91a56a4b25d9b959559e4faa0d84a" compoundref="_game_8cpp" startline="28" endline="43">SetDisplayColour</references>
+        <references refid="class_bitmap_1a15fe29c1b4fc1f00716c9dd422abc4c1" compoundref="bitmap_8cpp" startline="48" endline="52">Bitmap::SetPosition</references>
+        <references refid="class_game_1a397f8a701af3f05e5f972c84f0f29062" compoundref="_game_8h" startline="246">spriteHeroRect</references>
+        <references refid="class_profiler_system_1a498888d536a6d82d12d2b58703e80505" compoundref="_profiler_8cpp" startline="33" endline="36">ProfilerSystem::startFrame</references>
+        <references refid="class_bitmap_1af7ac93fbbb6dd80dfa2a5b60564fcac4" compoundref="bitmap_8h" startline="113">Bitmap::transparent</references>
+        <references refid="class_game_1a770b062e3ff36ddacf78d6625f3162f1" compoundref="_game_8cpp" startline="318" endline="331">UnLoadObjects</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="11" endline="22">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1a695c2fb1f7148c102a88c9fb809aa7e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Game::randomNumber</definition>
+        <argsstring>()</argsstring>
+        <name>randomNumber</name>
+        <qualifiedname>Game::randomNumber</qualifiedname>
+        <briefdescription>
+<para>Random number generator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns random number</para>
+</simplesect>
+</para>
+<para><simplesect kind="return"><para>Returns random number </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="321" column="9" bodyfile="Game.cpp" bodystart="119" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1abd9c6ffdbf89613513913a12b245e768" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SDL_Rect</type>
+        <definition>SDL_Rect Game::GetSpriteHeroRect</definition>
+        <argsstring>()</argsstring>
+        <name>GetSpriteHeroRect</name>
+        <qualifiedname>Game::GetSpriteHeroRect</qualifiedname>
+        <briefdescription>
+<para>Gets SDL_Rect coordinates for <ref refid="class_hero" kindref="compound">Hero</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns <ref refid="class_hero" kindref="compound">Hero</ref> coordinates (which are private) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="410" column="10" bodyfile="Game.h" bodystart="410" bodyend="413"/>
+        <references refid="class_game_1a397f8a701af3f05e5f972c84f0f29062" compoundref="_game_8h" startline="246">spriteHeroRect</references>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1a6a2ecdf258404952d8901591ed17db30" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SDL_Rect</type>
+        <definition>SDL_Rect Game::GetPickupRect</definition>
+        <argsstring>()</argsstring>
+        <name>GetPickupRect</name>
+        <qualifiedname>Game::GetPickupRect</qualifiedname>
+        <briefdescription>
+<para>Gets SDL_Rect coordinates for <ref refid="class_pickup" kindref="compound">Pickup</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns <ref refid="class_hero" kindref="compound">Hero</ref> coordinates (which are private) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="422" column="10" bodyfile="Game.h" bodystart="422" bodyend="425"/>
+        <references refid="class_game_1ad0c11d34bcd7055014481f1b8691322f" compoundref="_game_8h" startline="256">spritePickupRect</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_game_1a4498c8e574f29ac5714299b7de2917a9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Game::AssetManager</definition>
+        <argsstring>()</argsstring>
+        <name>AssetManager</name>
+        <qualifiedname>Game::AssetManager</qualifiedname>
+        <briefdescription>
+<para>This is a summery of Asset manager. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="171" column="6" bodyfile="Game.cpp" bodystart="784" bodyend="824"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1a4c6e213afd7a79acdaf53225b9b6eaae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Game::CheckEvents</definition>
+        <argsstring>()</argsstring>
+        <name>CheckEvents</name>
+        <qualifiedname>Game::CheckEvents</qualifiedname>
+        <briefdescription>
+<para>The CheckEvents Function looks for in game events. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="176" column="6" bodyfile="Game.cpp" bodystart="88" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1ac87f4f3efbf13dded7f7c597f1d7e033" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Game::UpdateText</definition>
+        <argsstring>(std::string msg, int x, int y, TTF_Font *font, SDL_Color colour)</argsstring>
+        <name>UpdateText</name>
+        <qualifiedname>Game::UpdateText</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>TTF_Font *</type>
+          <declname>font</declname>
+        </param>
+        <param>
+          <type>SDL_Color</type>
+          <declname>colour</declname>
+        </param>
+        <briefdescription>
+<para>Updates the text to be displayed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string the message to display</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>X Coordinate of text</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Y Coordinate of text</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>font</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Font Name</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>colour</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Colour of font displayed</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="186" column="6" bodyfile="Game.cpp" bodystart="53" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1a0897730fc9fed789f6c0f11d21a0c14a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Game::Render</definition>
+        <argsstring>()</argsstring>
+        <name>Render</name>
+        <qualifiedname>Game::Render</qualifiedname>
+        <briefdescription>
+<para>Call to Render ImGui. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="191" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1ada349d8fffe8483d44cd1f4c65a5e7da" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Game::RenderObjectsWindow</definition>
+        <argsstring>()</argsstring>
+        <name>RenderObjectsWindow</name>
+        <qualifiedname>Game::RenderObjectsWindow</qualifiedname>
+        <briefdescription>
+<para>Call to Render Objects in scene and provide X and Y coordinate for each. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="196" column="6" bodyfile="Game.cpp" bodystart="704" bodyend="775"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1a9a982b6c91ec858800d6ba5c50fda58d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Game::FindAssets</definition>
+        <argsstring>()</argsstring>
+        <name>FindAssets</name>
+        <qualifiedname>Game::FindAssets</qualifiedname>
+        <briefdescription>
+<para>Finds and loads contents of asset folder. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="201" column="6" bodyfile="Game.cpp" bodystart="600" bodyend="619"/>
+      </memberdef>
+      <memberdef kind="function" id="class_game_1a9bde0194fa855d8a63420df05cad54ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Game::SaveWorldData</definition>
+        <argsstring>()</argsstring>
+        <name>SaveWorldData</name>
+        <qualifiedname>Game::SaveWorldData</qualifiedname>
+        <briefdescription>
+<para>Save Function using JSON. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="214" column="6" bodyfile="Game.cpp" bodystart="624" bodyend="642"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>Bitmap</label>
+        <link refid="class_bitmap"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+m_parent</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Game</label>
+        <link refid="class_game"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+AssetMousDrag</edgelabel>
+          <edgelabel>+m_SelectedBitmap</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+input</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Input</label>
+        <link refid="class_input"/>
+      </node>
+    </collaborationgraph>
+    <location file="Game.h" line="33" column="1" bodyfile="Game.h" bodystart="34" bodyend="428"/>
+    <listofallmembers>
+      <member refid="class_game_1ab659faadf37bd8c7cd06f35819fe7f72" prot="private" virt="non-virtual"><scope>Game</scope><name>a</name></member>
+      <member refid="class_game_1ae657f5cef92c6208e1c1c905fcc42c06" prot="public" virt="non-virtual"><scope>Game</scope><name>assetList</name></member>
+      <member refid="class_game_1a4498c8e574f29ac5714299b7de2917a9" prot="private" virt="non-virtual"><scope>Game</scope><name>AssetManager</name></member>
+      <member refid="class_game_1ad5175b5a3fa6b417ac1e960b0476b19e" prot="public" virt="non-virtual"><scope>Game</scope><name>AssetMousDrag</name></member>
+      <member refid="class_game_1a0e057a8fa18fa83b7639f61ef957716a" prot="private" virt="non-virtual"><scope>Game</scope><name>b</name></member>
+      <member refid="class_game_1a4c6e213afd7a79acdaf53225b9b6eaae" prot="private" virt="non-virtual"><scope>Game</scope><name>CheckEvents</name></member>
+      <member refid="class_game_1a9d7b76ebf2ba9cb6efb233a77cbe2125" prot="private" virt="non-virtual"><scope>Game</scope><name>content</name></member>
+      <member refid="class_game_1a00f29917ded5952ad4649c4ab7a4b411" prot="public" virt="non-virtual"><scope>Game</scope><name>directory</name></member>
+      <member refid="class_game_1a7f57a7a8408e554d0a72882c287e1d04acff616a5d827c0cd609413cacf093eec" prot="private" virt="non-virtual"><scope>Game</scope><name>ENDGAME</name></member>
+      <member refid="class_game_1a9a982b6c91ec858800d6ba5c50fda58d" prot="private" virt="non-virtual"><scope>Game</scope><name>FindAssets</name></member>
+      <member refid="class_game_1ae57bf1c496c60342ff90eaf64fb3c79c" prot="private" virt="non-virtual"><scope>Game</scope><name>g</name></member>
+      <member refid="class_game_1a7f57a7a8408e554d0a72882c287e1d04ac7901621f8e804cc3edab886693941b0" prot="private" virt="non-virtual"><scope>Game</scope><name>GAME</name></member>
+      <member refid="class_game_1ad59df6562a58a614fda24622d3715b65" prot="public" virt="non-virtual"><scope>Game</scope><name>Game</name></member>
+      <member refid="class_game_1a7f57a7a8408e554d0a72882c287e1d04" prot="private" virt="non-virtual"><scope>Game</scope><name>GameState</name></member>
+      <member refid="class_game_1a6a2ecdf258404952d8901591ed17db30" prot="public" virt="non-virtual"><scope>Game</scope><name>GetPickupRect</name></member>
+      <member refid="class_game_1abd9c6ffdbf89613513913a12b245e768" prot="public" virt="non-virtual"><scope>Game</scope><name>GetSpriteHeroRect</name></member>
+      <member refid="class_game_1a53216c596117084979dfbf36bedc7ae0" prot="public" virt="non-virtual"><scope>Game</scope><name>goalXPos</name></member>
+      <member refid="class_game_1a326b704bfd15c42a414f67e80708f620" prot="public" virt="non-virtual"><scope>Game</scope><name>goalYPos</name></member>
+      <member refid="class_game_1a46f6f69aab0e42120ab524364836cea5" prot="public" virt="non-virtual"><scope>Game</scope><name>heroXpos</name></member>
+      <member refid="class_game_1ace7481b79db3066f11d27ccc95d5f7a8" prot="public" virt="non-virtual"><scope>Game</scope><name>heroYpos</name></member>
+      <member refid="class_game_1ae0a40e7e00700005e891206dfeafff38" prot="public" virt="non-virtual"><scope>Game</scope><name>input</name></member>
+      <member refid="class_game_1a731dc0c3996eee91cc3b1c2f4acb073e" prot="private" virt="non-virtual"><scope>Game</scope><name>io</name></member>
+      <member refid="class_game_1a6973ef45cca79aac80ecde5fef620044" prot="public" virt="non-virtual"><scope>Game</scope><name>isGoalActive</name></member>
+      <member refid="class_game_1acd4a0faf4e7210c53a88e8c1cb90281f" prot="public" virt="non-virtual"><scope>Game</scope><name>LoadObjects</name></member>
+      <member refid="class_game_1ae7561893b367eab06b22e764c71363ca" prot="public" virt="non-virtual"><scope>Game</scope><name>m_Bitmaps</name></member>
+      <member refid="class_game_1ad4e783f90ffa9bc400998c36029dbe4a" prot="private" virt="non-virtual"><scope>Game</scope><name>m_Goal</name></member>
+      <member refid="class_game_1ae5f695f2b4852e78ea9e840c888ecec2" prot="private" virt="non-virtual"><scope>Game</scope><name>m_Goal2</name></member>
+      <member refid="class_game_1a89f5178322d72548ff2be4c9d4c4a5b7" prot="private" virt="non-virtual"><scope>Game</scope><name>m_monster</name></member>
+      <member refid="class_game_1a94bc151f0a7ab3e74065931218fd1905" prot="private" virt="non-virtual"><scope>Game</scope><name>m_monsterTrans</name></member>
+      <member refid="class_game_1af791568933a54188274812eb69a5fb7b" prot="private" virt="non-virtual"><scope>Game</scope><name>m_monsterTransKeyed</name></member>
+      <member refid="class_game_1aebd4ad131471a9bb4b1d2da6924e2a7e" prot="private" virt="non-virtual"><scope>Game</scope><name>m_pBigFont</name></member>
+      <member refid="class_game_1a72d8274f544b3940aa9c0a25390e86cb" prot="private" virt="non-virtual"><scope>Game</scope><name>m_Pickup</name></member>
+      <member refid="class_game_1a39ed2eb7d5e1efafe25073ffca3f7092" prot="private" virt="non-virtual"><scope>Game</scope><name>m_pInfoFont</name></member>
+      <member refid="class_game_1a7f015757b6f7271c2a5386221ecdd2d8" prot="private" virt="non-virtual"><scope>Game</scope><name>m_pSmallFont</name></member>
+      <member refid="class_game_1ae48da803c387f3ad97bdc49401e2f1d9" prot="private" virt="non-virtual"><scope>Game</scope><name>m_pTheHero</name></member>
+      <member refid="class_game_1ad871aeac39e24e85f6bd5beeaa021731" prot="private" virt="non-virtual"><scope>Game</scope><name>m_pTheMonster</name></member>
+      <member refid="class_game_1a5d9fb92360e0225766e7f0f9c03ca8ce" prot="public" virt="non-virtual"><scope>Game</scope><name>m_Renderer</name></member>
+      <member refid="class_game_1a1277572667b79c889457e724707d859f" prot="private" virt="non-virtual"><scope>Game</scope><name>m_running</name></member>
+      <member refid="class_game_1a86b8703f2f4b3b5702778d5194b461b6" prot="public" virt="non-virtual"><scope>Game</scope><name>m_SelectedBitmap</name></member>
+      <member refid="class_game_1a0d59a177560d30255b7eb844d5aa0c6e" prot="private" virt="non-virtual"><scope>Game</scope><name>m_SelectedObject</name></member>
+      <member refid="class_game_1a947eac3914720433686ff9d47ea22d51" prot="private" virt="non-virtual"><scope>Game</scope><name>m_useGravity</name></member>
+      <member refid="class_game_1a37957a6b5594fe172ac19917907425d4" prot="public" virt="non-virtual"><scope>Game</scope><name>m_Window</name></member>
+      <member refid="class_game_1a80bc1fdd13519a660792f9f0534dcb76" prot="private" virt="non-virtual"><scope>Game</scope><name>monsters</name></member>
+      <member refid="class_game_1a8b824de9b95e8b882e7cde3bc3c45f0a" prot="public" virt="non-virtual"><scope>Game</scope><name>mousePoint</name></member>
+      <member refid="class_game_1a6ab2dc6023585c4c93ef2b8120358eb9" prot="public" virt="non-virtual"><scope>Game</scope><name>ObjectsInScene</name></member>
+      <member refid="class_game_1a75fa771386c223c674d257ea0251f116" prot="public" virt="non-virtual"><scope>Game</scope><name>PickupEvent</name></member>
+      <member refid="class_game_1a36b55d6ad464c14b54e77542a14719ed" prot="private" virt="non-virtual"><scope>Game</scope><name>pickups</name></member>
+      <member refid="class_game_1a20122c27af5d1d69dea53fe299f844bb" prot="public" virt="non-virtual"><scope>Game</scope><name>pickupXPos</name></member>
+      <member refid="class_game_1a6e65e06452a9015b1166d56ce85f4a79" prot="public" virt="non-virtual"><scope>Game</scope><name>pickupYPos</name></member>
+      <member refid="class_game_1a423ed3bfb635f8ab44571e72e5e82f11" prot="private" virt="non-virtual"><scope>Game</scope><name>r</name></member>
+      <member refid="class_game_1a695c2fb1f7148c102a88c9fb809aa7e3" prot="public" virt="non-virtual"><scope>Game</scope><name>randomNumber</name></member>
+      <member refid="class_game_1a0897730fc9fed789f6c0f11d21a0c14a" prot="private" virt="non-virtual"><scope>Game</scope><name>Render</name></member>
+      <member refid="class_game_1ada349d8fffe8483d44cd1f4c65a5e7da" prot="private" virt="non-virtual"><scope>Game</scope><name>RenderObjectsWindow</name></member>
+      <member refid="class_game_1aae0472df3a9a5ff0b2df25ba9465fd03" prot="public" virt="non-virtual"><scope>Game</scope><name>RenderSceneHierarchy</name></member>
+      <member refid="class_game_1a68c305cc4209d3766a853e0dadbdb146" prot="public" virt="non-virtual"><scope>Game</scope><name>ResetEvent</name></member>
+      <member refid="class_game_1a9bde0194fa855d8a63420df05cad54ed" prot="private" virt="non-virtual"><scope>Game</scope><name>SaveWorldData</name></member>
+      <member refid="class_game_1afc638bbbc544814dfe471ec6f3c7f9f9" prot="public" virt="non-virtual"><scope>Game</scope><name>ScreenHeight</name></member>
+      <member refid="class_game_1a0b279644d881de510fea467235531816" prot="public" virt="non-virtual"><scope>Game</scope><name>ScreenWidth</name></member>
+      <member refid="class_game_1a06d91a56a4b25d9b959559e4faa0d84a" prot="public" virt="non-virtual"><scope>Game</scope><name>SetDisplayColour</name></member>
+      <member refid="class_game_1aade428ec84cbae8b4106b4c16cff96a6" prot="public" virt="non-virtual"><scope>Game</scope><name>showGoalImgui</name></member>
+      <member refid="class_game_1ae8240437e21e190e11212d51be31b522" prot="private" virt="non-virtual"><scope>Game</scope><name>showGravityWindow</name></member>
+      <member refid="class_game_1af782c06384b366d4f70e249ce19c57bd" prot="public" virt="non-virtual"><scope>Game</scope><name>showHeroImgui</name></member>
+      <member refid="class_game_1a693b6e70f7df4f7ec0ac9e8aa2423b39" prot="public" virt="non-virtual"><scope>Game</scope><name>showMonsterImgui</name></member>
+      <member refid="class_game_1a6b27c92c6378bed6e11c338f50396e6a" prot="public" virt="non-virtual"><scope>Game</scope><name>showPickupImgui</name></member>
+      <member refid="class_game_1a502ddc7ce853ecf1987e77cfffb8c517" prot="private" virt="non-virtual"><scope>Game</scope><name>showSelectionGui</name></member>
+      <member refid="class_game_1a7f57a7a8408e554d0a72882c287e1d04a467bd13398add05f7113f5e87fe2143d" prot="private" virt="non-virtual"><scope>Game</scope><name>SPLASH</name></member>
+      <member refid="class_game_1a8414683ae26f601e99efd0f0cfdb5f9e" prot="public" virt="non-virtual"><scope>Game</scope><name>spriteGoalRect</name></member>
+      <member refid="class_game_1a397f8a701af3f05e5f972c84f0f29062" prot="public" virt="non-virtual"><scope>Game</scope><name>spriteHeroRect</name></member>
+      <member refid="class_game_1a96c2da745983d6f3d25bc7e0fd4af129" prot="public" virt="non-virtual"><scope>Game</scope><name>spriteMonsterRect</name></member>
+      <member refid="class_game_1ad0c11d34bcd7055014481f1b8691322f" prot="public" virt="non-virtual"><scope>Game</scope><name>spritePickupRect</name></member>
+      <member refid="class_game_1a207e8cf3f8c24e594b95e47ae5df0796" prot="private" virt="non-virtual"><scope>Game</scope><name>State</name></member>
+      <member refid="class_game_1a8de491bf7f776e728ce6363e1618e9a0" prot="public" virt="non-virtual"><scope>Game</scope><name>themonsterXpos</name></member>
+      <member refid="class_game_1aef742be3739bfb33b828863f825281cd" prot="public" virt="non-virtual"><scope>Game</scope><name>themonsterYpos</name></member>
+      <member refid="class_game_1a770b062e3ff36ddacf78d6625f3162f1" prot="public" virt="non-virtual"><scope>Game</scope><name>UnLoadObjects</name></member>
+      <member refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" prot="public" virt="non-virtual"><scope>Game</scope><name>Update</name></member>
+      <member refid="class_game_1ac87f4f3efbf13dded7f7c597f1d7e033" prot="private" virt="non-virtual"><scope>Game</scope><name>UpdateText</name></member>
+      <member refid="class_game_1a0cce71dd59ba8429786e2ce863e3cf94" prot="private" virt="non-virtual"><scope>Game</scope><name>xpos</name></member>
+      <member refid="class_game_1a0c01ab46e1c18543492c38b3cde6e3d4" prot="private" virt="non-virtual"><scope>Game</scope><name>ypos</name></member>
+      <member refid="class_game_1ae3d112ca6e0e55150d2fdbc704474530" prot="public" virt="non-virtual"><scope>Game</scope><name>~Game</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

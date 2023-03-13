@@ -104,7 +104,7 @@ void Game::CheckEvents()
 		// Pickup event
 		if (e.type == Game::PickupEvent && e.user.code == 2)
 		{
-			// m_Goal->isVisable = false;
+			//m_Goal->isVisable = false;
 			m_Goal2->isVisable = true;
 		}
 	}
@@ -771,8 +771,16 @@ void Game::RenderObjectsWindow()
 		SaveWorldData();
 	}
 
+	// Information window
+	ImGui::Begin("Information");
+
+	ImGui::TextColored(ImVec4(1, 0, 0, 1), "Left-Click to select, Right-Click to drop");
+	ImGui::TextColored(ImVec4(1, 1, 0, 1), "Collect the key and get to the goal (Green Circle) - Avoid Grim Reaper!");
+	ImGui::End();
+
 	ImGui::End();
 }
+
 
 
 

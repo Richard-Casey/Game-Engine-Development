@@ -1,0 +1,194 @@
+\hypertarget{class_pickup}{}\doxysection{Pickup Class Reference}
+\label{class_pickup}\index{Pickup@{Pickup}}
+
+
+{\ttfamily \#include $<$Pickup.\+h$>$}
+
+
+
+Inheritance diagram for Pickup\+:
+% FIG 0
+
+
+Collaboration diagram for Pickup\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pickup_a3710ec2b3f09abeebf099a6af1b4615d}{Pickup}} (\mbox{\hyperlink{class_hero}{Hero}} $\ast$hero, SDL\+\_\+\+Renderer $\ast$renderer, std\+::string filename, int xpos, int ypos, std\+::string name, bool use\+Transparency)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_pickup}{Pickup}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pickup_a47d91d989a2beafaa497779ab892bcc8}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_bitmap}{Bitmap}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_bitmap_a581872fa25c5dd41ed6729d33e611293}{Set\+Parent}} (\mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$parent)
+\item 
+\mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ \mbox{\hyperlink{class_bitmap_a48981bb560ef8f3f3172ae4c7fe31ca7}{Get\+Parent}} () const
+\item 
+void \mbox{\hyperlink{class_bitmap_a5725c4483a8a1f0a71c901c76c7a10ed}{Add\+Child}} (\mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$child)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ $>$ \& \mbox{\hyperlink{class_bitmap_aeb7d1b03c0d830759448d8bf12a108b9}{Get\+Children}} ()
+\item 
+\mbox{\hyperlink{class_bitmap_a7d2d9d8a55c6bd55696d812f8defe011}{Bitmap}} (SDL\+\_\+\+Renderer $\ast$renderer, std\+::string filename, int xpos, int ypos, std\+::string name, bool use\+Transparency=false)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_bitmap}{Bitmap}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bitmap_a72d2a301ec1eb1c8d0f3d64823659a8e}{$\sim$\+Bitmap}} ()
+\begin{DoxyCompactList}\small\item\em Finalizes an instance of the \mbox{\hyperlink{class_bitmap}{Bitmap}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bitmap_a69ff46a0ca29680ab41813f2a8990f93}{draw}} ()
+\begin{DoxyCompactList}\small\item\em Draws this instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bitmap_afdc4f28cf1a32e587153be4012aa058f}{addoffset}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Addoffsets the specified x. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_bitmap_ae93c29792fc2ef318c2de91e2dffacf0}{Update}} ()
+\item 
+int \mbox{\hyperlink{class_bitmap_a8dcb2592cf1a834c0c4864d03597eb0f}{GetX}} ()
+\item 
+int \mbox{\hyperlink{class_bitmap_ab7481fba70b483315b9bcee6007c0e7d}{GetY}} ()
+\item 
+int \mbox{\hyperlink{class_bitmap_a2619a68555872d52f324ec110c78e5e3}{GetW}} ()
+\begin{DoxyCompactList}\small\item\em Gets the w. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bitmap_a7e398a0f351b6747ac85e24368fb9ad5}{GetH}} ()
+\begin{DoxyCompactList}\small\item\em Gets the h. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bitmap_a4277bd01af52a99971bc83d1cf628288}{Get\+PositionX}} ()
+\begin{DoxyCompactList}\small\item\em Gets the position x. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bitmap_a3fd62baa60e6a8747a3a152cab5eeff3}{Get\+PositionY}} ()
+\begin{DoxyCompactList}\small\item\em Gets the position y. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bitmap_a15fe29c1b4fc1f00716c9dd422abc4c1}{Set\+Position}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Sets the position. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_bitmap_a19585ce54ee6f21d8a9a6b1d8b86cc04}{Get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_bitmap_a2285c1d3b89c5434e1d5b8e4dabd42d9}{Get\+Filepath}} () const
+\item 
+SDL\+\_\+\+Texture $\ast$ \mbox{\hyperlink{class_bitmap_af4631b38bd1790b3db5180c216cb58f3}{Get\+Texture\+Ref}} ()
+\item 
+bool \mbox{\hyperlink{class_bitmap_a68697e385eb9ff10c5296f411e90d68a}{Contains\+Point}} (int x, int y) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hero}{Hero}} $\ast$ \mbox{\hyperlink{class_pickup_a2b7e8d13584987aaa47fa06bbc0c4659}{m\+\_\+hero}}
+\begin{DoxyCompactList}\small\item\em The m hero. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_pickup_ae45c377faad9281d2f5bf2be02a54efc}{directory}} = \char`\"{}../assets/\char`\"{}
+\begin{DoxyCompactList}\small\item\em The directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_bitmap}{Bitmap}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_bitmap_a66dec28bd4fd7df4b5f9c68ddc6e07dd}{is\+Visable}} = true
+\begin{DoxyCompactList}\small\item\em Boolean used for end goal (\mbox{\hyperlink{class_bitmap}{Bitmap}} is visable -\/ collecting key results in false) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bitmap_ad1e358e487367d573758cb713f046028}{is\+End}} = false
+\begin{DoxyCompactList}\small\item\em Boolean used for JSON save. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bitmap_a7ade805194dabe9d4ac1051fb7b44075}{m\+\_\+x}} = 0
+\begin{DoxyCompactList}\small\item\em Used withing bitmap.\+cpop to set the x, y, width and height of the bitmap. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bitmap_af4eee64e60c65393ee7c13f65824dff4}{m\+\_\+y}} = 0
+\item 
+int \mbox{\hyperlink{class_bitmap_a9bf3bc4f22d7dfd239b650c256401937}{m\+\_\+w}} =0
+\item 
+int \mbox{\hyperlink{class_bitmap_a9e5b8cf456c4c9c8cdd0b2db0aa7f47d}{m\+\_\+h}} = 0
+\item 
+int \mbox{\hyperlink{class_bitmap_a35d5bfdeb0071f4c00a29f03dd60fc5a}{sprite\+Width}} = 69
+\begin{DoxyCompactList}\small\item\em Width of sprite. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_bitmap_ad737c8f2f088a650fd4bcb8d67d2ec14}{delta\+Time}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Initialise Delta Time to 0. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_bitmap_addac8e49990e141f9ecd7722b4c4c664}{m\+\_\+vx}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Used in the draw function of \mbox{\hyperlink{class_bitmap}{Bitmap}} to calculate delta time. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_bitmap_a115f25bf7f32a12e6d51916cbb33e151}{m\+\_\+vy}} = 0.\+0f
+\item 
+float \mbox{\hyperlink{class_bitmap_a2d7dacb014fb8e9b636618eaf850d666}{m\+\_\+ax}} = 0.\+0f
+\item 
+float \mbox{\hyperlink{class_bitmap_a433654d519140b96b98b69dbd1a930ce}{m\+\_\+ay}} = 9.\+81f
+\item 
+std\+::string \mbox{\hyperlink{class_bitmap_a04bad4d42d3f7724226815b3163306fb}{Name}}
+\begin{DoxyCompactList}\small\item\em Used in bitmap constructor for name and to return Name for \mbox{\hyperlink{class_bitmap_a19585ce54ee6f21d8a9a6b1d8b86cc04}{Get\+Name()}} function. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_bitmap_a909cb95a3129c4bf8d3a9a75e636bc32}{path}}
+\begin{DoxyCompactList}\small\item\em Used in bitmap constructor for filepath. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bitmap_af7ac93fbbb6dd80dfa2a5b60564fcac4}{transparent}}
+\begin{DoxyCompactList}\small\item\em Used in bitmap constructor for usetransparency. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type}} \mbox{\hyperlink{class_bitmap_a529c67ada83b851eceec531dcaa5e8f8}{type}} \{ Object\+Type\+::\+Static \}
+\item 
+bool \mbox{\hyperlink{class_bitmap_a9af473f70e06ad318e6eaf4033da058e}{apply\+Gravity}} \{ false \}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ $>$ \mbox{\hyperlink{class_bitmap_a33b8ef81a8b9510677cfc02623de5c7c}{children}}
+\item 
+\mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ \mbox{\hyperlink{class_bitmap_aac08a6ab8d0907ff5eaccd153a612293}{m\+\_\+parent}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ $>$ \mbox{\hyperlink{class_bitmap_a365f44ae92df65e23d830224690aaedf}{m\+\_\+children}}
+\item 
+bool \mbox{\hyperlink{class_bitmap_a82518a87ccc66a67913b1376c4f87efe}{Is\+Dragged}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pickup_a3710ec2b3f09abeebf099a6af1b4615d}\label{class_pickup_a3710ec2b3f09abeebf099a6af1b4615d}} 
+\index{Pickup@{Pickup}!Pickup@{Pickup}}
+\index{Pickup@{Pickup}!Pickup@{Pickup}}
+\doxysubsubsection{\texorpdfstring{Pickup()}{Pickup()}}
+{\footnotesize\ttfamily Pickup\+::\+Pickup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hero}{Hero}} $\ast$}]{hero,  }\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{std\+::string}]{filename,  }\item[{int}]{xpos,  }\item[{int}]{ypos,  }\item[{std\+::string}]{name,  }\item[{bool}]{use\+Transparency }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_pickup}{Pickup}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hero} & The hero.\\
+\hline
+{\em renderer} & The renderer.\\
+\hline
+{\em filename} & The filename.\\
+\hline
+{\em xpos} & The xpos.\\
+\hline
+{\em ypos} & The ypos.\\
+\hline
+{\em name} & The name.\\
+\hline
+{\em use\+Transparency} & if set to {\ttfamily true} \mbox{[}use transparency\mbox{]}.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pickup_a47d91d989a2beafaa497779ab892bcc8}\label{class_pickup_a47d91d989a2beafaa497779ab892bcc8}} 
+\index{Pickup@{Pickup}!Update@{Update}}
+\index{Update@{Update}!Pickup@{Pickup}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Pickup\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates this instance. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_bitmap_ae93c29792fc2ef318c2de91e2dffacf0}{Bitmap}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_pickup_ae45c377faad9281d2f5bf2be02a54efc}\label{class_pickup_ae45c377faad9281d2f5bf2be02a54efc}} 
+\index{Pickup@{Pickup}!directory@{directory}}
+\index{directory@{directory}!Pickup@{Pickup}}
+\doxysubsubsection{\texorpdfstring{directory}{directory}}
+{\footnotesize\ttfamily std\+::string Pickup\+::directory = \char`\"{}../assets/\char`\"{}}
+
+
+
+The directory. 
+
+\mbox{\Hypertarget{class_pickup_a2b7e8d13584987aaa47fa06bbc0c4659}\label{class_pickup_a2b7e8d13584987aaa47fa06bbc0c4659}} 
+\index{Pickup@{Pickup}!m\_hero@{m\_hero}}
+\index{m\_hero@{m\_hero}!Pickup@{Pickup}}
+\doxysubsubsection{\texorpdfstring{m\_hero}{m\_hero}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hero}{Hero}}$\ast$ Pickup\+::m\+\_\+hero}
+
+
+
+The m hero. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_pickup_8h}{Pickup.\+h}}\item 
+\mbox{\hyperlink{_pickup_8cpp}{Pickup.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,104 @@
+\hypertarget{class_texture_manager}{}\doxysection{Texture\+Manager Class Reference}
+\label{class_texture_manager}\index{TextureManager@{TextureManager}}
+
+
+{\ttfamily \#include $<$Texture\+Manager.\+h$>$}
+
+
+
+Collaboration diagram for Texture\+Manager\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_texture_manager_ad76abb178b37cedf4514eb0154349935}{Texture\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_manager_a001d6d74674961db79987e3222682576}{$\sim$\+Texture\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Finalizes an instance of the \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} class. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Texture $\ast$ \mbox{\hyperlink{class_texture_manager_ac6fb81774b7741984e3f9f3c965492f4}{Load}} (const std\+::string file\+Name, bool use\+Transparancy, SDL\+\_\+\+Renderer $\ast$PRenderer)
+\begin{DoxyCompactList}\small\item\em Loads the specified file name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_texture_manager_a0b6428ac20e7495ec2e3e8a0c4c869ee}{Unload}} (const std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em Unloads the specified file name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, SDL\+\_\+\+Texture $\ast$ $>$ \mbox{\hyperlink{class_texture_manager_ab78a1ae0477b016569b32ac4ceaeaaef}{m\+\_\+texture\+Map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_texture_manager_ad76abb178b37cedf4514eb0154349935}\label{class_texture_manager_ad76abb178b37cedf4514eb0154349935}} 
+\index{TextureManager@{TextureManager}!TextureManager@{TextureManager}}
+\index{TextureManager@{TextureManager}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{TextureManager()}{TextureManager()}}
+{\footnotesize\ttfamily Texture\+Manager\+::\+Texture\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} class. 
+
+\mbox{\Hypertarget{class_texture_manager_a001d6d74674961db79987e3222682576}\label{class_texture_manager_a001d6d74674961db79987e3222682576}} 
+\index{TextureManager@{TextureManager}!````~TextureManager@{$\sim$TextureManager}}
+\index{````~TextureManager@{$\sim$TextureManager}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$TextureManager()}{~TextureManager()}}
+{\footnotesize\ttfamily Texture\+Manager\+::$\sim$\+Texture\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Finalizes an instance of the \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_texture_manager_ac6fb81774b7741984e3f9f3c965492f4}\label{class_texture_manager_ac6fb81774b7741984e3f9f3c965492f4}} 
+\index{TextureManager@{TextureManager}!Load@{Load}}
+\index{Load@{Load}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Texture $\ast$ Texture\+Manager\+::\+Load (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+Name,  }\item[{bool}]{use\+Transparancy,  }\item[{SDL\+\_\+\+Renderer $\ast$}]{PRenderer }\end{DoxyParamCaption})}
+
+
+
+Loads the specified file name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Name of the file.\\
+\hline
+{\em use\+Transparancy} & if set to {\ttfamily true} \mbox{[}use transparancy\mbox{]}.\\
+\hline
+{\em PRenderer} & The p renderer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_texture_manager_a0b6428ac20e7495ec2e3e8a0c4c869ee}\label{class_texture_manager_a0b6428ac20e7495ec2e3e8a0c4c869ee}} 
+\index{TextureManager@{TextureManager}!Unload@{Unload}}
+\index{Unload@{Unload}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{Unload()}{Unload()}}
+{\footnotesize\ttfamily void Texture\+Manager\+::\+Unload (\begin{DoxyParamCaption}\item[{const std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Unloads the specified file name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Name of the file.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_texture_manager_ab78a1ae0477b016569b32ac4ceaeaaef}\label{class_texture_manager_ab78a1ae0477b016569b32ac4ceaeaaef}} 
+\index{TextureManager@{TextureManager}!m\_textureMap@{m\_textureMap}}
+\index{m\_textureMap@{m\_textureMap}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{m\_textureMap}{m\_textureMap}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, SDL\+\_\+\+Texture$\ast$$>$ Texture\+Manager\+::m\+\_\+texture\+Map}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_texture_manager_8h}{Texture\+Manager.\+h}}\item 
+\mbox{\hyperlink{_texture_manager_8cpp}{Texture\+Manager.\+cpp}}\end{DoxyCompactItemize}

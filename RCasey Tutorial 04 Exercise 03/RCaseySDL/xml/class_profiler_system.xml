@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_profiler_system" kind="class" language="C++" prot="public">
+    <compoundname>ProfilerSystem</compoundname>
+    <includes refid="_profiler_8h" local="no">Profiler.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_profiler_system_1a66a0a4ffd4e33b961ee54517d71b4b81" prot="public" static="no" mutable="no">
+        <type>__int64</type>
+        <definition>__int64 ProfilerSystem::currentFrameTime</definition>
+        <argsstring></argsstring>
+        <name>currentFrameTime</name>
+        <qualifiedname>ProfilerSystem::currentFrameTime</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="35" column="13" bodyfile="Profiler.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="class_profiler_system_1aa73e8057f424a729ec4f37d49fef3fa4" compoundref="_profiler_8cpp" startline="55" endline="67">endFrame</referencedby>
+        <referencedby refid="class_profiler_system_1aa7e3ea767c34204f9ff3c700388cfa45" compoundref="_profiler_8cpp" startline="8" endline="13">ProfilerSystem</referencedby>
+        <referencedby refid="class_profiler_system_1a498888d536a6d82d12d2b58703e80505" compoundref="_profiler_8cpp" startline="33" endline="36">startFrame</referencedby>
+        <referencedby refid="class_profiler_system_1a730a549816e2e48f092576b1f08f3962" compoundref="_profiler_8cpp" startline="43" endline="50">storeSample</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_profiler_system_1a19f6c5ea6d80e70534415807e3e0c59b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ProfilerSystem::currentFrame</definition>
+        <argsstring></argsstring>
+        <name>currentFrame</name>
+        <qualifiedname>ProfilerSystem::currentFrame</qualifiedname>
+        <briefdescription>
+<para>The current frame. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="42" column="9" bodyfile="Profiler.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_profiler_system_1a56069c359e449b7404d3b57198fa4427" prot="private" static="no" mutable="no">
+        <type><ref refid="_profiler_8h_1ab1b49ac083856f4fb48add947394a13a" kindref="member">FrameMap</ref></type>
+        <definition>FrameMap ProfilerSystem::frameData</definition>
+        <argsstring></argsstring>
+        <name>frameData</name>
+        <qualifiedname>ProfilerSystem::frameData</qualifiedname>
+        <briefdescription>
+<para>The frame data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="46" column="14" bodyfile="Profiler.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_profiler_system_1aed612931c13b24bf15e8be5b348a8aea" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ProfilerSystem::frameCount</definition>
+        <argsstring></argsstring>
+        <name>frameCount</name>
+        <qualifiedname>ProfilerSystem::frameCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="47" column="9" bodyfile="Profiler.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_profiler_system_1a1c25bb97c09889d9056a8f3b5e2b8393" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float ProfilerSystem::totalFrameTime</definition>
+        <argsstring></argsstring>
+        <name>totalFrameTime</name>
+        <qualifiedname>ProfilerSystem::totalFrameTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="48" column="11" bodyfile="Profiler.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_profiler_system_1aa7e3ea767c34204f9ff3c700388cfa45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ProfilerSystem::ProfilerSystem</definition>
+        <argsstring>()</argsstring>
+        <name>ProfilerSystem</name>
+        <qualifiedname>ProfilerSystem::ProfilerSystem</qualifiedname>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_profiler_system" kindref="compound">ProfilerSystem</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="28" column="5" bodyfile="Profiler.cpp" bodystart="8" bodyend="13"/>
+        <references refid="class_profiler_system_1a66a0a4ffd4e33b961ee54517d71b4b81" compoundref="_profiler_8h" startline="35">currentFrameTime</references>
+      </memberdef>
+      <memberdef kind="function" id="class_profiler_system_1a6828f2c94031f607cad96f1f92a42ab9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ProfilerSystem::~ProfilerSystem</definition>
+        <argsstring>()</argsstring>
+        <name>~ProfilerSystem</name>
+        <qualifiedname>ProfilerSystem::~ProfilerSystem</qualifiedname>
+        <briefdescription>
+<para>Finalizes an instance of the <ref refid="class_profiler_system" kindref="compound">ProfilerSystem</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="29" column="5" bodyfile="Profiler.cpp" bodystart="18" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_profiler_system_1a498888d536a6d82d12d2b58703e80505" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ProfilerSystem::startFrame</definition>
+        <argsstring>()</argsstring>
+        <name>startFrame</name>
+        <qualifiedname>ProfilerSystem::startFrame</qualifiedname>
+        <briefdescription>
+<para>Starts the frame. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="31" column="10" bodyfile="Profiler.cpp" bodystart="33" bodyend="36"/>
+        <references refid="class_profiler_system_1a66a0a4ffd4e33b961ee54517d71b4b81" compoundref="_profiler_8h" startline="35">currentFrameTime</references>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Game::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_profiler_system_1a730a549816e2e48f092576b1f08f3962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ProfilerSystem::storeSample</definition>
+        <argsstring>(const char *name, __int64 elapsedTime)</argsstring>
+        <name>storeSample</name>
+        <qualifiedname>ProfilerSystem::storeSample</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>__int64</type>
+          <declname>elapsedTime</declname>
+        </param>
+        <briefdescription>
+<para>Stores the sample. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>elapsedTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The elapsed time.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="32" column="10" bodyfile="Profiler.cpp" bodystart="43" bodyend="50"/>
+        <references refid="class_profiler_system_1a66a0a4ffd4e33b961ee54517d71b4b81" compoundref="_profiler_8h" startline="35">currentFrameTime</references>
+        <references refid="struct_sample_data_1acab5c4bbe349d1f216e84deceb803046" compoundref="_profiler_8h" startline="20">SampleData::frameReference</references>
+        <references refid="struct_sample_data_1a0a5c38dd40d80e48e96dd0dfba8d4353" compoundref="_profiler_8h" startline="16">SampleData::functionTime</references>
+        <referencedby refid="struct_profile_1a58fa758a59bc4ee3c1a9980e360e4e98" compoundref="_profiler_8h" startline="72" endline="79">Profile::~Profile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_profiler_system_1aa73e8057f424a729ec4f37d49fef3fa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ProfilerSystem::endFrame</definition>
+        <argsstring>()</argsstring>
+        <name>endFrame</name>
+        <qualifiedname>ProfilerSystem::endFrame</qualifiedname>
+        <briefdescription>
+<para>Ends the frame. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="33" column="10" bodyfile="Profiler.cpp" bodystart="55" bodyend="67"/>
+        <references refid="class_profiler_system_1a66a0a4ffd4e33b961ee54517d71b4b81" compoundref="_profiler_8h" startline="35">currentFrameTime</references>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Game::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ProfilerSystem</label>
+        <link refid="class_profiler_system"/>
+      </node>
+    </collaborationgraph>
+    <location file="Profiler.h" line="25" column="1" bodyfile="Profiler.h" bodystart="26" bodyend="49"/>
+    <listofallmembers>
+      <member refid="class_profiler_system_1a19f6c5ea6d80e70534415807e3e0c59b" prot="private" virt="non-virtual"><scope>ProfilerSystem</scope><name>currentFrame</name></member>
+      <member refid="class_profiler_system_1a66a0a4ffd4e33b961ee54517d71b4b81" prot="public" virt="non-virtual"><scope>ProfilerSystem</scope><name>currentFrameTime</name></member>
+      <member refid="class_profiler_system_1aa73e8057f424a729ec4f37d49fef3fa4" prot="public" virt="non-virtual"><scope>ProfilerSystem</scope><name>endFrame</name></member>
+      <member refid="class_profiler_system_1aed612931c13b24bf15e8be5b348a8aea" prot="private" virt="non-virtual"><scope>ProfilerSystem</scope><name>frameCount</name></member>
+      <member refid="class_profiler_system_1a56069c359e449b7404d3b57198fa4427" prot="private" virt="non-virtual"><scope>ProfilerSystem</scope><name>frameData</name></member>
+      <member refid="class_profiler_system_1aa7e3ea767c34204f9ff3c700388cfa45" prot="public" virt="non-virtual"><scope>ProfilerSystem</scope><name>ProfilerSystem</name></member>
+      <member refid="class_profiler_system_1a498888d536a6d82d12d2b58703e80505" prot="public" virt="non-virtual"><scope>ProfilerSystem</scope><name>startFrame</name></member>
+      <member refid="class_profiler_system_1a730a549816e2e48f092576b1f08f3962" prot="public" virt="non-virtual"><scope>ProfilerSystem</scope><name>storeSample</name></member>
+      <member refid="class_profiler_system_1a1c25bb97c09889d9056a8f3b5e2b8393" prot="private" virt="non-virtual"><scope>ProfilerSystem</scope><name>totalFrameTime</name></member>
+      <member refid="class_profiler_system_1a6828f2c94031f607cad96f1f92a42ab9" prot="public" virt="non-virtual"><scope>ProfilerSystem</scope><name>~ProfilerSystem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

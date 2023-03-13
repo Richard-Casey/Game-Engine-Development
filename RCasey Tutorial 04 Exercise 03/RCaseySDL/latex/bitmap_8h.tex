@@ -1,0 +1,80 @@
+\hypertarget{bitmap_8h}{}\doxysection{bitmap.\+h File Reference}
+\label{bitmap_8h}\index{bitmap.h@{bitmap.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$SDL.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}nlohmann/json.\+hpp\char`\"{}}\newline
+Include dependency graph for bitmap.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_bitmap}{Bitmap}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_bitmap}{Bitmap}} Class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{bitmap_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} = nlohmann\+::json
+\begin{DoxyCompactList}\small\item\em JSON is used to save the x,y, style and filename of the Bitmaps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type}} \{ \newline
+\mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980a84a8921b25f505d0d2077aeb5db4bc16}{Static}}
+, \mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980ae0a67c8c63f8f7362917abef6ca24c6b}{Hero}}
+, \mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980a243a3afa44aed85d504dbd53fd9804e9}{Monster}}
+, \mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980a96fd07f8244c1d8b9a38930ea4bdec97}{Pickup}}
+, \newline
+\mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980ae64fb9f0ee2bda394d88c14aaa19b06b}{Object\+\_\+\+Count}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum for type of bitmaps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{bitmap_8h_ab701e3ac61a85b337ec5c1abaad6742d}\label{bitmap_8h_ab701e3ac61a85b337ec5c1abaad6742d}} 
+\index{bitmap.h@{bitmap.h}!json@{json}}
+\index{json@{json}!bitmap.h@{bitmap.h}}
+\doxysubsubsection{\texorpdfstring{json}{json}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{bitmap_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} =  nlohmann\+::json}
+
+
+
+JSON is used to save the x,y, style and filename of the Bitmaps. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{bitmap_8h_a842c5e2e69277690b064bf363c017980}\label{bitmap_8h_a842c5e2e69277690b064bf363c017980}} 
+\index{bitmap.h@{bitmap.h}!ObjectType@{ObjectType}}
+\index{ObjectType@{ObjectType}!bitmap.h@{bitmap.h}}
+\doxysubsubsection{\texorpdfstring{ObjectType}{ObjectType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enum for type of bitmaps. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Static@{Static}!bitmap.h@{bitmap.h}}\index{bitmap.h@{bitmap.h}!Static@{Static}}}\mbox{\Hypertarget{bitmap_8h_a842c5e2e69277690b064bf363c017980a84a8921b25f505d0d2077aeb5db4bc16}\label{bitmap_8h_a842c5e2e69277690b064bf363c017980a84a8921b25f505d0d2077aeb5db4bc16}} 
+Static&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hero@{Hero}!bitmap.h@{bitmap.h}}\index{bitmap.h@{bitmap.h}!Hero@{Hero}}}\mbox{\Hypertarget{bitmap_8h_a842c5e2e69277690b064bf363c017980ae0a67c8c63f8f7362917abef6ca24c6b}\label{bitmap_8h_a842c5e2e69277690b064bf363c017980ae0a67c8c63f8f7362917abef6ca24c6b}} 
+Hero&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Monster@{Monster}!bitmap.h@{bitmap.h}}\index{bitmap.h@{bitmap.h}!Monster@{Monster}}}\mbox{\Hypertarget{bitmap_8h_a842c5e2e69277690b064bf363c017980a243a3afa44aed85d504dbd53fd9804e9}\label{bitmap_8h_a842c5e2e69277690b064bf363c017980a243a3afa44aed85d504dbd53fd9804e9}} 
+Monster&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Pickup@{Pickup}!bitmap.h@{bitmap.h}}\index{bitmap.h@{bitmap.h}!Pickup@{Pickup}}}\mbox{\Hypertarget{bitmap_8h_a842c5e2e69277690b064bf363c017980a96fd07f8244c1d8b9a38930ea4bdec97}\label{bitmap_8h_a842c5e2e69277690b064bf363c017980a96fd07f8244c1d8b9a38930ea4bdec97}} 
+Pickup&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Object\_Count@{Object\_Count}!bitmap.h@{bitmap.h}}\index{bitmap.h@{bitmap.h}!Object\_Count@{Object\_Count}}}\mbox{\Hypertarget{bitmap_8h_a842c5e2e69277690b064bf363c017980ae64fb9f0ee2bda394d88c14aaa19b06b}\label{bitmap_8h_a842c5e2e69277690b064bf363c017980ae64fb9f0ee2bda394d88c14aaa19b06b}} 
+Object\+\_\+\+Count&\\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,112 @@
+\hypertarget{class_profiler_system}{}\doxysection{Profiler\+System Class Reference}
+\label{class_profiler_system}\index{ProfilerSystem@{ProfilerSystem}}
+
+
+{\ttfamily \#include $<$Profiler.\+h$>$}
+
+
+
+Collaboration diagram for Profiler\+System\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_profiler_system_aa7e3ea767c34204f9ff3c700388cfa45}{Profiler\+System}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_profiler_system}{Profiler\+System}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_profiler_system_a6828f2c94031f607cad96f1f92a42ab9}{$\sim$\+Profiler\+System}} ()
+\begin{DoxyCompactList}\small\item\em Finalizes an instance of the \mbox{\hyperlink{class_profiler_system}{Profiler\+System}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_profiler_system_a498888d536a6d82d12d2b58703e80505}{start\+Frame}} ()
+\begin{DoxyCompactList}\small\item\em Starts the frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_profiler_system_a730a549816e2e48f092576b1f08f3962}{store\+Sample}} (const char $\ast$name, \+\_\+\+\_\+int64 elapsed\+Time)
+\begin{DoxyCompactList}\small\item\em Stores the sample. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_profiler_system_aa73e8057f424a729ec4f37d49fef3fa4}{end\+Frame}} ()
+\begin{DoxyCompactList}\small\item\em Ends the frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+int64 \mbox{\hyperlink{class_profiler_system_a66a0a4ffd4e33b961ee54517d71b4b81}{current\+Frame\+Time}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_profiler_system_aa7e3ea767c34204f9ff3c700388cfa45}\label{class_profiler_system_aa7e3ea767c34204f9ff3c700388cfa45}} 
+\index{ProfilerSystem@{ProfilerSystem}!ProfilerSystem@{ProfilerSystem}}
+\index{ProfilerSystem@{ProfilerSystem}!ProfilerSystem@{ProfilerSystem}}
+\doxysubsubsection{\texorpdfstring{ProfilerSystem()}{ProfilerSystem()}}
+{\footnotesize\ttfamily Profiler\+System\+::\+Profiler\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_profiler_system}{Profiler\+System}} class. 
+
+\mbox{\Hypertarget{class_profiler_system_a6828f2c94031f607cad96f1f92a42ab9}\label{class_profiler_system_a6828f2c94031f607cad96f1f92a42ab9}} 
+\index{ProfilerSystem@{ProfilerSystem}!````~ProfilerSystem@{$\sim$ProfilerSystem}}
+\index{````~ProfilerSystem@{$\sim$ProfilerSystem}!ProfilerSystem@{ProfilerSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$ProfilerSystem()}{~ProfilerSystem()}}
+{\footnotesize\ttfamily Profiler\+System\+::$\sim$\+Profiler\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Finalizes an instance of the \mbox{\hyperlink{class_profiler_system}{Profiler\+System}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_profiler_system_aa73e8057f424a729ec4f37d49fef3fa4}\label{class_profiler_system_aa73e8057f424a729ec4f37d49fef3fa4}} 
+\index{ProfilerSystem@{ProfilerSystem}!endFrame@{endFrame}}
+\index{endFrame@{endFrame}!ProfilerSystem@{ProfilerSystem}}
+\doxysubsubsection{\texorpdfstring{endFrame()}{endFrame()}}
+{\footnotesize\ttfamily void Profiler\+System\+::end\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Ends the frame. 
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_profiler_system_a498888d536a6d82d12d2b58703e80505}\label{class_profiler_system_a498888d536a6d82d12d2b58703e80505}} 
+\index{ProfilerSystem@{ProfilerSystem}!startFrame@{startFrame}}
+\index{startFrame@{startFrame}!ProfilerSystem@{ProfilerSystem}}
+\doxysubsubsection{\texorpdfstring{startFrame()}{startFrame()}}
+{\footnotesize\ttfamily void Profiler\+System\+::start\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the frame. 
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_profiler_system_a730a549816e2e48f092576b1f08f3962}\label{class_profiler_system_a730a549816e2e48f092576b1f08f3962}} 
+\index{ProfilerSystem@{ProfilerSystem}!storeSample@{storeSample}}
+\index{storeSample@{storeSample}!ProfilerSystem@{ProfilerSystem}}
+\doxysubsubsection{\texorpdfstring{storeSample()}{storeSample()}}
+{\footnotesize\ttfamily void Profiler\+System\+::store\+Sample (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\+\_\+\+\_\+int64}]{elapsed\+Time }\end{DoxyParamCaption})}
+
+
+
+Stores the sample. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name.\\
+\hline
+{\em elapsed\+Time} & The elapsed time.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_profiler_system_a66a0a4ffd4e33b961ee54517d71b4b81}\label{class_profiler_system_a66a0a4ffd4e33b961ee54517d71b4b81}} 
+\index{ProfilerSystem@{ProfilerSystem}!currentFrameTime@{currentFrameTime}}
+\index{currentFrameTime@{currentFrameTime}!ProfilerSystem@{ProfilerSystem}}
+\doxysubsubsection{\texorpdfstring{currentFrameTime}{currentFrameTime}}
+{\footnotesize\ttfamily \+\_\+\+\_\+int64 Profiler\+System\+::current\+Frame\+Time = 0}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_profiler_8h}{Profiler.\+h}}\item 
+\mbox{\hyperlink{_profiler_8cpp}{Profiler.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,102 @@
+\hypertarget{bitmap_8h_source}{}\doxysection{bitmap.\+h}
+\mbox{\hyperlink{bitmap_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BITMAP\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BITMAP\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}nlohmann/json.hpp"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{using\ }\mbox{\hyperlink{bitmap_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}\ =\ nlohmann::json;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }SDL\_Surface;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }SDL\_Texture;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{struct\ }SDL\_Renderer;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980}{ObjectType}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980a84a8921b25f505d0d2077aeb5db4bc16}{Static}},}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980ae0a67c8c63f8f7362917abef6ca24c6b}{Hero}},}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980a243a3afa44aed85d504dbd53fd9804e9}{Monster}},}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980a96fd07f8244c1d8b9a38930ea4bdec97}{Pickup}},}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980ae64fb9f0ee2bda394d88c14aaa19b06b}{Object\_Count}}}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bitmap}{Bitmap}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ \ \ SDL\_Surface*\ m\_pbitmapSurface;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ SDL\_Texture*\ m\_pbitmapTexture\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ SDL\_Renderer*\ m\_pRenderer;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ SDL\_Texture*\ m\_texture;}
+\DoxyCodeLine{00067\ \ \ \ \ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bitmap_a66dec28bd4fd7df4b5f9c68ddc6e07dd}{isVisable}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bitmap_ad1e358e487367d573758cb713f046028}{isEnd}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bitmap_a7ade805194dabe9d4ac1051fb7b44075}{m\_x}}\ =\ 0,\ \mbox{\hyperlink{class_bitmap_af4eee64e60c65393ee7c13f65824dff4}{m\_y}}\ =\ 0,\ \mbox{\hyperlink{class_bitmap_a9bf3bc4f22d7dfd239b650c256401937}{m\_w}}\ =0,\ \mbox{\hyperlink{class_bitmap_a9e5b8cf456c4c9c8cdd0b2db0aa7f47d}{m\_h}}\ =\ 0;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bitmap_a35d5bfdeb0071f4c00a29f03dd60fc5a}{spriteWidth}}\ =\ 69;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bitmap_ad737c8f2f088a650fd4bcb8d67d2ec14}{deltaTime}}\ =\ 0.0f;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_bitmap_addac8e49990e141f9ecd7722b4c4c664}{m\_vx}}\ =\ 0.0f,\ \mbox{\hyperlink{class_bitmap_a115f25bf7f32a12e6d51916cbb33e151}{m\_vy}}\ =\ 0.0f,\ \mbox{\hyperlink{class_bitmap_a2d7dacb014fb8e9b636618eaf850d666}{m\_ax}}\ =\ 0.0f,\ \mbox{\hyperlink{class_bitmap_a433654d519140b96b98b69dbd1a930ce}{m\_ay}}\ =\ 9.81f;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00103\ \ \ \ \ std::string\ \mbox{\hyperlink{class_bitmap_a04bad4d42d3f7724226815b3163306fb}{Name}};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00108\ \ \ \ \ std::string\ \mbox{\hyperlink{class_bitmap_a909cb95a3129c4bf8d3a9a75e636bc32}{path}};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bitmap_af7ac93fbbb6dd80dfa2a5b60564fcac4}{transparent}};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bitmap_a581872fa25c5dd41ed6729d33e611293}{SetParent}}(\mbox{\hyperlink{class_bitmap}{Bitmap}}*\ parent)\ \{\ \mbox{\hyperlink{class_bitmap_aac08a6ab8d0907ff5eaccd153a612293}{m\_parent}}\ =\ parent;\ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{class_bitmap}{Bitmap}}*\ \mbox{\hyperlink{class_bitmap_a48981bb560ef8f3f3172ae4c7fe31ca7}{GetParent}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bitmap_aac08a6ab8d0907ff5eaccd153a612293}{m\_parent}};\ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bitmap_a5725c4483a8a1f0a71c901c76c7a10ed}{AddChild}}(\mbox{\hyperlink{class_bitmap}{Bitmap}}*\ child)\ \{\ \mbox{\hyperlink{class_bitmap_a365f44ae92df65e23d830224690aaedf}{m\_children}}.push\_back(child);\ \}}
+\DoxyCodeLine{00119\ \ \ \ \ std::vector<Bitmap*>\&\ \mbox{\hyperlink{class_bitmap_aeb7d1b03c0d830759448d8bf12a108b9}{GetChildren}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bitmap_a365f44ae92df65e23d830224690aaedf}{m\_children}};\ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980}{ObjectType}}\ \mbox{\hyperlink{class_bitmap_a529c67ada83b851eceec531dcaa5e8f8}{type}}\{\ ObjectType::Static\ \};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bitmap_a9af473f70e06ad318e6eaf4033da058e}{applyGravity}}\{\ \textcolor{keyword}{false}\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ std::vector<Bitmap*>\ \mbox{\hyperlink{class_bitmap_a33b8ef81a8b9510677cfc02623de5c7c}{children}};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{class_bitmap}{Bitmap}}(SDL\_Renderer*\ renderer,\ std::string\ filename,\ \textcolor{keywordtype}{int}\ xpos,\ \textcolor{keywordtype}{int}\ ypos,\ std::string\ name,\ \textcolor{keywordtype}{bool}\ useTransparency\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00129\ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{class_bitmap_a72d2a301ec1eb1c8d0f3d64823659a8e}{\string~Bitmap}}();}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bitmap_a69ff46a0ca29680ab41813f2a8990f93}{draw}}();}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bitmap_afdc4f28cf1a32e587153be4012aa058f}{addoffset}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bitmap_ae93c29792fc2ef318c2de91e2dffacf0}{Update}}()\ \{\}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{class_bitmap}{Bitmap}}*\ \mbox{\hyperlink{class_bitmap_aac08a6ab8d0907ff5eaccd153a612293}{m\_parent}};}
+\DoxyCodeLine{00137\ \ \ \ \ std::vector<Bitmap*>\ \mbox{\hyperlink{class_bitmap_a365f44ae92df65e23d830224690aaedf}{m\_children}};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bitmap_a8dcb2592cf1a834c0c4864d03597eb0f}{GetX}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bitmap_a7ade805194dabe9d4ac1051fb7b44075}{m\_x}};\ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bitmap_ab7481fba70b483315b9bcee6007c0e7d}{GetY}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bitmap_af4eee64e60c65393ee7c13f65824dff4}{m\_y}};\ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bitmap_a2619a68555872d52f324ec110c78e5e3}{GetW}}();}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bitmap_a7e398a0f351b6747ac85e24368fb9ad5}{GetH}}();}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bitmap_a4277bd01af52a99971bc83d1cf628288}{GetPositionX}}();}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bitmap_a3fd62baa60e6a8747a3a152cab5eeff3}{GetPositionY}}();}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bitmap_a15fe29c1b4fc1f00716c9dd422abc4c1}{SetPosition}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00146\ \ \ \ \ std::string\ \mbox{\hyperlink{class_bitmap_a19585ce54ee6f21d8a9a6b1d8b86cc04}{GetName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00147\ \ \ \ \ std::string\ \mbox{\hyperlink{class_bitmap_a2285c1d3b89c5434e1d5b8e4dabd42d9}{GetFilepath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00148\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{class_bitmap_af4631b38bd1790b3db5180c216cb58f3}{GetTextureRef}}()\ \{\ \textcolor{keywordflow}{return}\ m\_pbitmapTexture;\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bitmap_a82518a87ccc66a67913b1376c4f87efe}{IsDragged}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bitmap_a68697e385eb9ff10c5296f411e90d68a}{ContainsPoint}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \};}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_scene_manager_8h" kind="file" language="C++">
+    <compoundname>SceneManager.h</compoundname>
+    <includedby refid="_scene_manager_8cpp" local="yes">SceneManager.cpp</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>SceneManager.cpp</label>
+        <link refid="_scene_manager_8cpp"/>
+      </node>
+      <node id="1">
+        <label>SceneManager.h</label>
+        <link refid="_scene_manager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_scene_manager" prot="public">SceneManager</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2" refid="class_scene_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_scene_manager" kindref="compound">SceneManager</ref></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_scene_manager_1a52085e6737c23b491c228e86781af808" kindref="member">SceneManager</ref>();</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_scene_manager_1a2bb376a85d29e85f47753e26c7539229" kindref="member">~SceneManager</ref>();</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3" kindref="member">Status</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14" refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a79351df3b08b59ce054c8081488c0a3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a79351df3b08b59ce054c8081488c0a3e" kindref="member">Menu</ref>,</highlight></codeline>
+<codeline lineno="18" refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a353ec594a91555ba2f44575562de3f5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a353ec594a91555ba2f44575562de3f5f" kindref="member">Game</ref>,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a7f5b05daeb91bd6883e74126232d73be" kindref="member">End</ref></highlight></codeline>
+<codeline lineno="23" refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a7f5b05daeb91bd6883e74126232d73be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_scene_manager_1a63dcf65832d6a2c190bf496d9a3b00a3" kindref="member">Update</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="SceneManager.h"/>
+  </compounddef>
+</doxygen>

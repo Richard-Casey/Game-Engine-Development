@@ -1,0 +1,24 @@
+\hypertarget{_pickup_8h_source}{}\doxysection{Pickup.\+h}
+\mbox{\hyperlink{_pickup_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_creature_8h}{Creature.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bitmap_8h}{bitmap.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_hero_8h}{Hero.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}SDL.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pickup}{Pickup}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_bitmap}{Bitmap}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_pickup}{Pickup}}(\mbox{\hyperlink{class_hero}{Hero}}*\ hero,\ SDL\_Renderer*\ renderer,\ std::string\ filename,\ \textcolor{keywordtype}{int}\ xpos,\ \textcolor{keywordtype}{int}\ ypos,\ std::string\ name,\ \textcolor{keywordtype}{bool}\ useTransparency);}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pickup_a47d91d989a2beafaa497779ab892bcc8}{Update}}();}
+\DoxyCodeLine{00013\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_hero}{Hero}}*\ \mbox{\hyperlink{class_pickup_a2b7e8d13584987aaa47fa06bbc0c4659}{m\_hero}};}
+\DoxyCodeLine{00021\ \ \ \ \ std::string\ \mbox{\hyperlink{class_pickup_ae45c377faad9281d2f5bf2be02a54efc}{directory}}\ =\ \textcolor{stringliteral}{"{}../assets/"{}};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//int\ m\_x,\ m\_y;}}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+
+\end{DoxyCode}

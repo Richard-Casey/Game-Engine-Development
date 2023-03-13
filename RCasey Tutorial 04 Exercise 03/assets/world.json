@@ -1,1 +1,31 @@
-[{"end":false,"file":"../assets/GrimReaper.bmp","type":2,"x":84,"y":85},{"end":false,"file":"../assets/deadpool.bmp","type":1,"x":879,"y":681},{"end":true,"file":"../assets/goal2.bmp","type":3,"x":6,"y":693},{"end":false,"file":"../assets/pickup1.bmp","type":3,"x":401,"y":496}]
+[
+  {
+    "end": false,
+    "file": "../assets/GrimReaper.bmp",
+    "type": 2,
+    "x": 84,
+    "y": 85
+  },
+  {
+    "end": false,
+    "file": "../assets/deadpool.bmp",
+    "type": 1,
+    "x": 879,
+    "y": 681
+  },
+  {
+    "end": true,
+    "file": "../assets/goal2.bmp",
+    "type": 3,
+    "x": 930,
+    "y": 680
+  },
+  {
+    "end": false,
+    "file": "../assets/pickup1.bmp",
+    "type": 3,
+    "x": 401,
+    "y": 496
+  }
+
+]

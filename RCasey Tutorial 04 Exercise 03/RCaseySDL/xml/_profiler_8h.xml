@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_profiler_8h" kind="file" language="C++">
+    <compoundname>Profiler.h</compoundname>
+    <includes local="no">map</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">vector</includes>
+    <includes refid="_game_8h" local="yes">Game.h</includes>
+    <includes local="no">Windows.h</includes>
+    <includes local="no">string</includes>
+    <includedby refid="_game_8cpp" local="yes">Game.cpp</includedby>
+    <includedby refid="_profiler_8cpp" local="yes">Profiler.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <incdepgraph>
+      <node id="11">
+        <label>Creature.h</label>
+        <link refid="_creature_8h"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Game.h</label>
+        <link refid="_game_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Hero.h</label>
+        <link refid="_hero_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Monster.h</label>
+        <link refid="_monster_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>Pickup.h</label>
+        <link refid="_pickup_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Profiler.h</label>
+        <link refid="_profiler_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>bitmap.h</label>
+        <link refid="bitmap_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>input.h</label>
+        <link refid="input_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>SDL.h</label>
+      </node>
+      <node id="7">
+        <label>SDL_ttf.h</label>
+      </node>
+      <node id="24">
+        <label>Windows.h</label>
+      </node>
+      <node id="18">
+        <label>backends/imgui_impl_sdl.h</label>
+      </node>
+      <node id="21">
+        <label>cmath</label>
+      </node>
+      <node id="23">
+        <label>filesystem</label>
+      </node>
+      <node id="17">
+        <label>imgui.h</label>
+      </node>
+      <node id="20">
+        <label>imgui_internal.h</label>
+      </node>
+      <node id="19">
+        <label>imgui_sdl.h</label>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="2">
+        <label>map</label>
+      </node>
+      <node id="13">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="8">
+        <label>stdio.h</label>
+      </node>
+      <node id="10">
+        <label>string</label>
+      </node>
+      <node id="22">
+        <label>unordered_map</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="3">
+        <label>Profiler.cpp</label>
+        <link refid="_profiler_8cpp"/>
+      </node>
+      <node id="1">
+        <label>Profiler.h</label>
+        <link refid="_profiler_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_sample_data" prot="public">SampleData</innerclass>
+    <innerclass refid="class_profiler_system" prot="public">ProfilerSystem</innerclass>
+    <innerclass refid="struct_profile" prot="public">Profile</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_profiler_8h_1a6766aaa4b64ace39c242f179d917c746" prot="public" static="no">
+        <name>PROFILE</name>
+        <param><defname>name</defname></param>
+        <initializer><ref refid="struct_profile" kindref="compound">Profile</ref> p(name)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="90" column="9" bodyfile="Profiler.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_profiler_8h_1ab1b49ac083856f4fb48add947394a13a" prot="public" static="no">
+        <type>std::map&lt; const char *, std::vector&lt; <ref refid="struct_sample_data" kindref="compound">SampleData</ref> * &gt; &gt;</type>
+        <definition>typedef std::map&lt;const char*, std::vector&lt;SampleData*&gt; &gt; FrameMap</definition>
+        <argsstring></argsstring>
+        <name>FrameMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="23" column="18" bodyfile="Profiler.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_profiler_8h_1a6f00dbbe483432624a7b14bc8f72379a" prot="public" static="no" mutable="no">
+        <type><ref refid="class_profiler_system" kindref="compound">ProfilerSystem</ref></type>
+        <definition>ProfilerSystem g_profileManager</definition>
+        <argsstring></argsstring>
+        <name>g_profileManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="52" column="23" bodyfile="Profiler.cpp" bodystart="69" bodyend="-1" declfile="Profiler.h" declline="52" declcolumn="23"/>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Game::Update</referencedby>
+        <referencedby refid="struct_profile_1a58fa758a59bc4ee3c1a9980e360e4e98" compoundref="_profiler_8h" startline="72" endline="79">Profile::~Profile</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_game_8h" kindref="compound">Game.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="struct_sample_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_sample_data" kindref="compound">SampleData</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16" refid="struct_sample_data_1a0a5c38dd40d80e48e96dd0dfba8d4353" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>__int64<sp/><ref refid="struct_sample_data_1a0a5c38dd40d80e48e96dd0dfba8d4353" kindref="member">functionTime</ref>;</highlight></codeline>
+<codeline lineno="20" refid="struct_sample_data_1acab5c4bbe349d1f216e84deceb803046" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_sample_data_1acab5c4bbe349d1f216e84deceb803046" kindref="member">frameReference</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="_profiler_8h_1ab1b49ac083856f4fb48add947394a13a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::map&lt;const<sp/>char*,<sp/>std::vector&lt;SampleData*&gt;&gt;<sp/><ref refid="_profiler_8h_1ab1b49ac083856f4fb48add947394a13a" kindref="member">FrameMap</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_profiler_system" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_profiler_system" kindref="compound">ProfilerSystem</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_profiler_system_1aa7e3ea767c34204f9ff3c700388cfa45" kindref="member">ProfilerSystem</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_profiler_system_1a6828f2c94031f607cad96f1f92a42ab9" kindref="member">~ProfilerSystem</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_profiler_system_1a498888d536a6d82d12d2b58703e80505" kindref="member">startFrame</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_profiler_system_1a730a549816e2e48f092576b1f08f3962" kindref="member">storeSample</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name,<sp/>__int64<sp/>elapsedTime);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_profiler_system_1aa73e8057f424a729ec4f37d49fef3fa4" kindref="member">endFrame</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_profiler_system_1a66a0a4ffd4e33b961ee54517d71b4b81" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>__int64<sp/><ref refid="class_profiler_system_1a66a0a4ffd4e33b961ee54517d71b4b81" kindref="member">currentFrameTime</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>currentFrame;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_profiler_8h_1ab1b49ac083856f4fb48add947394a13a" kindref="member">FrameMap</ref><sp/>frameData;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>frameCount;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>totalFrameTime;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="class_profiler_system" kindref="compound">ProfilerSystem</ref><sp/><ref refid="_profiler_8h_1a6f00dbbe483432624a7b14bc8f72379a" kindref="member">g_profileManager</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="struct_profile" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_profile" kindref="compound">Profile</ref></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61" refid="struct_profile_1a2187c1c354a2095ea925093163a9b247" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_profile_1a2187c1c354a2095ea925093163a9b247" kindref="member">Profile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_profile_1a0e7c2707a0db7a00d4a0cb278a4ad803" kindref="member">_name</ref><sp/>=<sp/>name;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LARGE_INTEGER<sp/>li;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QueryPerformanceCounter(&amp;li);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_profile_1a2034eac7c13860ce5a0156495a9c9b9c" kindref="member">startTime</ref><sp/>=<sp/>li.QuadPart;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="struct_profile_1a58fa758a59bc4ee3c1a9980e360e4e98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_profile_1a58fa758a59bc4ee3c1a9980e360e4e98" kindref="member">~Profile</ref>()</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LARGE_INTEGER<sp/>li;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QueryPerformanceCounter(&amp;li);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__int64<sp/>endTime<sp/>=<sp/>li.QuadPart;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__int64<sp/>elapsedTime<sp/>=<sp/>endTime<sp/>-<sp/><ref refid="struct_profile_1a2034eac7c13860ce5a0156495a9c9b9c" kindref="member">startTime</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_profiler_8h_1a6f00dbbe483432624a7b14bc8f72379a" kindref="member">g_profileManager</ref>.<ref refid="class_profiler_system_1a730a549816e2e48f092576b1f08f3962" kindref="member">storeSample</ref>(<ref refid="struct_profile_1a0e7c2707a0db7a00d4a0cb278a4ad803" kindref="member">_name</ref>,<sp/>elapsedTime);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="struct_profile_1a0e7c2707a0db7a00d4a0cb278a4ad803" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="struct_profile_1a0e7c2707a0db7a00d4a0cb278a4ad803" kindref="member">_name</ref>;</highlight></codeline>
+<codeline lineno="88" refid="struct_profile_1a2034eac7c13860ce5a0156495a9c9b9c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>__int64<sp/><ref refid="struct_profile_1a2034eac7c13860ce5a0156495a9c9b9c" kindref="member">startTime</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="90" refid="_profiler_8h_1a6766aaa4b64ace39c242f179d917c746" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PROFILE(name)<sp/>Profile<sp/>p(name)</highlight></codeline>
+    </programlisting>
+    <location file="Profiler.h"/>
+  </compounddef>
+</doxygen>

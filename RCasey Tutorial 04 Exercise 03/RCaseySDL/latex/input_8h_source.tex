@@ -1,0 +1,24 @@
+\hypertarget{input_8h_source}{}\doxysection{input.\+h}
+\mbox{\hyperlink{input_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80a}{KEYS\_PRESSED\_LIST}}}
+\DoxyCodeLine{00005\ \{}
+\DoxyCodeLine{00006\ \ \ \ \ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aa3a471c8b61a5f730dcbdd50fe53f3ab7}{KEY\_ESCAPE}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aaa3ec8a2ffd5b0e200db5ebe7b65515ff}{KEY\_R}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aa4ec980867be1d5bded2bccdee2ebd601}{KEY\_G}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aa10072b5ee7aa1faf316434ecc9e2bb3a}{KEY\_B}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aa2e6a652ccd7afc5ce75ac4d902b6a60a}{KEY\_W}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aabb2f0ce8efc3067757dbf091437f89f5}{KEY\_S}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aaa7b3a3d0503a46bec51c6e3da95747cc}{KEY\_A}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aa2fd73a4d527efe137e8f259db2092766}{KEY\_D}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aad4961a6c7ea9d008812aaaa8c4ea9730}{KEY\_U}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aabb3108883bee68e265b554542484c5d7}{KEY\_J}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aa41d1aa573d29ca6a9eb429a680dc53cd}{KEY\_H}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aa6b0799a9923c55f8a73550a371ea69f6}{KEY\_K}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aaaefd064b1e5d75c429bed314ac18eba0}{KEY\_RETURN}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aac8234231b36474d3666ad56752fe6f5e}{KEY\_Q}},\ \mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aa908d10d502d4e5b1c21cf41d32c9758d}{SIZE\_OF\_KEYS\_PRESSED\_ENUM}}}
+\DoxyCodeLine{00007\ \};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_input}{Input}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ SDL\_Event\ \mbox{\hyperlink{class_input_a30181d3abe4b3d73c41f055ebe9e38cc}{m\_event}};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_a6a311e7183da0e8c8f8865a653629350}{Update}}(SDL\_Event\ \mbox{\hyperlink{class_input_a30181d3abe4b3d73c41f055ebe9e38cc}{m\_event}});}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_input_abae3f379d3f157cf42dc857309832dba}{Input}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_input_af2db35ba67c8a8ccd23bef6a482fc291}{\string~Input}}();\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_a58de8333d8464b1948d3e7612e38bf2d}{m\_keysPressed}}[\mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80aa908d10d502d4e5b1c21cf41d32c9758d}{SIZE\_OF\_KEYS\_PRESSED\_ENUM}}]\ =\ \{\};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_a637918b2b2f09a0b405e9d699bb4c334}{KeyIsPressed}}(\mbox{\hyperlink{input_8h_a4d0279c09abb9f2f3d9059b01562f80a}{KEYS\_PRESSED\_LIST}}\ key);}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+
+\end{DoxyCode}

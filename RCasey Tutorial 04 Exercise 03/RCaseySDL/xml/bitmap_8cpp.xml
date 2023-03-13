@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="bitmap_8cpp" kind="file" language="C++">
+    <compoundname>bitmap.cpp</compoundname>
+    <includes local="no">string</includes>
+    <includes refid="bitmap_8h" local="yes">bitmap.h</includes>
+    <includes local="yes">SDL.h</includes>
+    <includes local="yes">SDL_render.h</includes>
+    <includes refid="_resource_manager_8h" local="yes">ResourceManager.h</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>ResourceManager.h</label>
+        <link refid="_resource_manager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>bitmap.cpp</label>
+        <link refid="bitmap_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>bitmap.h</label>
+        <link refid="bitmap_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>SDL.h</label>
+      </node>
+      <node id="7">
+        <label>SDL_render.h</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="6">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="9">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bitmap_8h" kindref="compound">bitmap.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SDL.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SDL_render.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_resource_manager_8h" kindref="compound">ResourceManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="class_bitmap_1a2619a68555872d52f324ec110c78e5e3" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a2619a68555872d52f324ec110c78e5e3" kindref="member">Bitmap::GetW</ref>()</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;m_pbitmapSurface-&gt;w;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="class_bitmap_1a7e398a0f351b6747ac85e24368fb9ad5" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a7e398a0f351b6747ac85e24368fb9ad5" kindref="member">Bitmap::GetH</ref>()</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;m_pbitmapSurface-&gt;h;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_bitmap_1a4277bd01af52a99971bc83d1cf628288" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a4277bd01af52a99971bc83d1cf628288" kindref="member">Bitmap::GetPositionX</ref>()</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" kindref="member">m_x</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_bitmap_1a3fd62baa60e6a8747a3a152cab5eeff3" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a3fd62baa60e6a8747a3a152cab5eeff3" kindref="member">Bitmap::GetPositionY</ref>()</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" kindref="member">m_y</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="class_bitmap_1a15fe29c1b4fc1f00716c9dd422abc4c1" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a15fe29c1b4fc1f00716c9dd422abc4c1" kindref="member">Bitmap::SetPosition</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" kindref="member">m_x</ref><sp/>=<sp/>x;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" kindref="member">m_y</ref><sp/>=<sp/>y;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="class_bitmap_1a7d2d9d8a55c6bd55696d812f8defe011" refkind="member"><highlight class="normal"><ref refid="class_bitmap_1a7d2d9d8a55c6bd55696d812f8defe011" kindref="member">Bitmap::Bitmap</ref>(SDL_Renderer*<sp/>renderer,<sp/>std::string<sp/>filename,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xpos,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ypos,<sp/>std::string<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useTransparency)</highlight><highlight class="comment">//<sp/>:<sp/>deltaTime(0.0f)<sp/>//<sp/>initialize<sp/>deltaTime<sp/>to<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1a04bad4d42d3f7724226815b3163306fb" kindref="member">Name</ref><sp/>=<sp/>name;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1a909cb95a3129c4bf8d3a9a75e636bc32" kindref="member">path</ref><sp/>=<sp/>filename;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1af7ac93fbbb6dd80dfa2a5b60564fcac4" kindref="member">transparent</ref><sp/>=<sp/>useTransparency;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//store<sp/>the<sp/>renderer<sp/>for<sp/>future<sp/>configuring<sp/>and<sp/>drawing</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>m_pRenderer<sp/>=<sp/>renderer;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//create<sp/>the<sp/>bitmap<sp/>surface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>m_pbitmapSurface<sp/>=<sp/>SDL_LoadBMP(filename.c_str());</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_pbitmapSurface)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//bitmap<sp/>not<sp/>loaded?<sp/>output<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;SURFACE<sp/>for<sp/>bitmap<sp/>&apos;%s&apos;<sp/>not<sp/>loaded!<sp/>\n&quot;</highlight><highlight class="normal">,<sp/>filename.c_str());</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/>SDL_GetError());</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>we<sp/>are<sp/>to<sp/>use<sp/>the<sp/>transparency,<sp/>going<sp/>to<sp/>assume</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//the<sp/>colour<sp/>key<sp/>is<sp/>magenta<sp/>(r=255,<sp/>g=0,<sp/>b=255)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(useTransparency)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Uint32<sp/>colourKey<sp/>=<sp/>SDL_MapRGB(m_pbitmapSurface-&gt;format,<sp/>255,<sp/>0,<sp/>255);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_SetColorKey(m_pbitmapSurface,<sp/>SDL_TRUE,<sp/>colourKey);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//create<sp/>the<sp/>texture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Surface*<sp/>retrieveSurface1<sp/>=<sp/><ref refid="class_resource_manager_1a98b11a6302bf0db4ffc81eea70512ee2" kindref="member">ResourceManager::GetInstance</ref>().<ref refid="class_resource_manager_1a31d758ae7d5a972154ccc7dae2144166" kindref="member">GetSurface</ref>(filename);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_pbitmapTexture<sp/>=<sp/>SDL_CreateTextureFromSurface(m_pRenderer,<sp/>retrieveSurface1);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!m_pbitmapTexture)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//texture<sp/>not<sp/>loaded?<sp/>Output<sp/>an<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;TEXTURE<sp/>for<sp/>bitmap<sp/>&apos;%s&apos;<sp/>not<sp/>loaded!<sp/>\n&quot;</highlight><highlight class="normal">,<sp/>filename.c_str());</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s\n&quot;</highlight><highlight class="normal">,<sp/>SDL_GetError());</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//store<sp/>the<sp/>position<sp/>vals</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" kindref="member">m_x</ref><sp/>=<sp/>xpos;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" kindref="member">m_y</ref><sp/>=<sp/>ypos;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" kindref="member">Bitmap::draw</ref>()</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_bitmap_1a66dec28bd4fd7df4b5f9c68ddc6e07dd" kindref="member">isVisable</ref>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>update<sp/>the<sp/>object&apos;s<sp/>position<sp/>based<sp/>on<sp/>its<sp/>velocity<sp/>and<sp/>acceleration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1addac8e49990e141f9ecd7722b4c4c664" kindref="member">m_vx</ref><sp/>+=<sp/><ref refid="class_bitmap_1a2d7dacb014fb8e9b636618eaf850d666" kindref="member">m_ax</ref><sp/>*<sp/><ref refid="class_bitmap_1ad737c8f2f088a650fd4bcb8d67d2ec14" kindref="member">deltaTime</ref>;<sp/></highlight><highlight class="comment">//<sp/>deltaTime<sp/>is<sp/>the<sp/>time<sp/>elapsed<sp/>since<sp/>the<sp/>last<sp/>frame</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1a115f25bf7f32a12e6d51916cbb33e151" kindref="member">m_vy</ref><sp/>+=<sp/><ref refid="class_bitmap_1a433654d519140b96b98b69dbd1a930ce" kindref="member">m_ay</ref><sp/>*<sp/><ref refid="class_bitmap_1ad737c8f2f088a650fd4bcb8d67d2ec14" kindref="member">deltaTime</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" kindref="member">m_x</ref><sp/>+=<sp/><ref refid="class_bitmap_1addac8e49990e141f9ecd7722b4c4c664" kindref="member">m_vx</ref><sp/>*<sp/><ref refid="class_bitmap_1ad737c8f2f088a650fd4bcb8d67d2ec14" kindref="member">deltaTime</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" kindref="member">m_y</ref><sp/>+=<sp/><ref refid="class_bitmap_1a115f25bf7f32a12e6d51916cbb33e151" kindref="member">m_vy</ref><sp/>*<sp/><ref refid="class_bitmap_1ad737c8f2f088a650fd4bcb8d67d2ec14" kindref="member">deltaTime</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//render<sp/>the<sp/>bitmap<sp/>at<sp/>the<sp/>updated<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_pbitmapTexture)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Rect<sp/>destRect<sp/>=<sp/>{<sp/><ref refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" kindref="member">m_x</ref>,<sp/><ref refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" kindref="member">m_y</ref>,<sp/>m_pbitmapSurface-&gt;w,<sp/><ref refid="class_bitmap_1a35d5bfdeb0071f4c00a29f03dd60fc5a" kindref="member">spriteWidth</ref>,<sp/>};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_RenderCopy(m_pRenderer,<sp/>m_pbitmapTexture,<sp/>NULL,<sp/>&amp;destRect);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="class_bitmap_1afdc4f28cf1a32e587153be4012aa058f" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1afdc4f28cf1a32e587153be4012aa058f" kindref="member">Bitmap::addoffset</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" kindref="member">m_x</ref><sp/>+=<sp/>x;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" kindref="member">m_y</ref><sp/>+=<sp/>y;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="class_bitmap_1a72d2a301ec1eb1c8d0f3d64823659a8e" refkind="member"><highlight class="normal"><ref refid="class_bitmap_1a72d2a301ec1eb1c8d0f3d64823659a8e" kindref="member">Bitmap::~Bitmap</ref>()</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_pbitmapTexture)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_DestroyTexture(m_pbitmapTexture);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_pbitmapSurface)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_FreeSurface(m_pbitmapSurface);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment">//<sp/>function<sp/>definition<sp/>for<sp/>GetName()</highlight></codeline>
+<codeline lineno="154" refid="class_bitmap_1a19585ce54ee6f21d8a9a6b1d8b86cc04" refkind="member"><highlight class="comment"></highlight><highlight class="normal">std::string<sp/><ref refid="class_bitmap_1a19585ce54ee6f21d8a9a6b1d8b86cc04" kindref="member">Bitmap::GetName</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="155"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a04bad4d42d3f7724226815b3163306fb" kindref="member">Name</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="class_bitmap_1a2285c1d3b89c5434e1d5b8e4dabd42d9" refkind="member"><highlight class="normal">std::string<sp/><ref refid="class_bitmap_1a2285c1d3b89c5434e1d5b8e4dabd42d9" kindref="member">Bitmap::GetFilepath</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="160"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a909cb95a3129c4bf8d3a9a75e636bc32" kindref="member">path</ref>;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="bitmap.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,17 @@
+digraph "Pickup::Update"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="Pickup::Update",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Updates this instance."];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="Bitmap::GetH",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_bitmap.html#a7e398a0f351b6747ac85e24368fb9ad5",tooltip="Gets the h."];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="Bitmap::GetW",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_bitmap.html#a2619a68555872d52f324ec110c78e5e3",tooltip="Gets the w."];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="Bitmap::GetX",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_bitmap.html#a8dcb2592cf1a834c0c4864d03597eb0f",tooltip=" "];
+  Node1 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="Bitmap::GetY",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_bitmap.html#ab7481fba70b483315b9bcee6007c0e7d",tooltip=" "];
+}

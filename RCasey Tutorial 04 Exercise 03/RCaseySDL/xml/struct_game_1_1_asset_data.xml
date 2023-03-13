@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_game_1_1_asset_data" kind="struct" language="C++" prot="public">
+    <compoundname>Game::AssetData</compoundname>
+    <includes refid="_game_8h" local="no">Game.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_game_1_1_asset_data_1ad43abc213fc47daee3ae979af3f46778" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Game::AssetData::filename</definition>
+        <argsstring></argsstring>
+        <name>filename</name>
+        <qualifiedname>Game::AssetData::filename</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Game.h" line="41" column="28" bodyfile="Game.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The filename. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Game::AssetData</label>
+        <link refid="struct_game_1_1_asset_data"/>
+      </node>
+    </collaborationgraph>
+    <location file="Game.h" line="41" column="1" bodyfile="Game.h" bodystart="41" bodyend="41"/>
+    <listofallmembers>
+      <member refid="struct_game_1_1_asset_data_1ad43abc213fc47daee3ae979af3f46778" prot="public" virt="non-virtual"><scope>Game::AssetData</scope><name>filename</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

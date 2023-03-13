@@ -1,0 +1,564 @@
+\hypertarget{class_game}{}\doxysection{Game Class Reference}
+\label{class_game}\index{Game@{Game}}
+
+
+{\ttfamily \#include $<$Game.\+h$>$}
+
+
+
+Collaboration diagram for Game\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_game_1_1_asset_data}{Asset\+Data}}
+\begin{DoxyCompactList}\small\item\em The filename. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_aae0472df3a9a5ff0b2df25ba9465fd03}{Render\+Scene\+Hierarchy}} ()
+\begin{DoxyCompactList}\small\item\em Renders the scene hierarchy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_game}{Game}} Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_acd4a0faf4e7210c53a88e8c1cb90281f}{Load\+Objects}} ()
+\begin{DoxyCompactList}\small\item\em Function for loading all game objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a770b062e3ff36ddacf78d6625f3162f1}{Un\+Load\+Objects}} ()
+\begin{DoxyCompactList}\small\item\em Function for unloading all game objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{$\sim$\+Game}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_game}{Game}} Deconstructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a06d91a56a4b25d9b959559e4faa0d84a}{Set\+Display\+Colour}} (Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+\begin{DoxyCompactList}\small\item\em Set Display Colour for SDL Window Background. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_a1c5373c68261c54aff03e6abe40fee52}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Update Function for \mbox{\hyperlink{class_game}{Game}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_game_a695c2fb1f7148c102a88c9fb809aa7e3}{random\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Random number generator. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{class_game_abd9c6ffdbf89613513913a12b245e768}{Get\+Sprite\+Hero\+Rect}} ()
+\begin{DoxyCompactList}\small\item\em Gets SDL\+\_\+\+Rect coordinates for \mbox{\hyperlink{class_hero}{Hero}}. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{class_game_a6a2ecdf258404952d8901591ed17db30}{Get\+Pickup\+Rect}} ()
+\begin{DoxyCompactList}\small\item\em Gets SDL\+\_\+\+Rect coordinates for \mbox{\hyperlink{class_pickup}{Pickup}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_game_1_1_asset_data}{Asset\+Data}} $>$ \mbox{\hyperlink{class_game_ae657f5cef92c6208e1c1c905fcc42c06}{asset\+List}}
+\begin{DoxyCompactList}\small\item\em The asset list. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ $>$ \mbox{\hyperlink{class_game_ae7561893b367eab06b22e764c71363ca}{m\+\_\+\+Bitmaps}}
+\begin{DoxyCompactList}\small\item\em The m bitmaps. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ \mbox{\hyperlink{class_game_a86b8703f2f4b3b5702778d5194b461b6}{m\+\_\+\+Selected\+Bitmap}} = nullptr
+\begin{DoxyCompactList}\small\item\em The m selected bitmap. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ $>$ \mbox{\hyperlink{class_game_a6ab2dc6023585c4c93ef2b8120358eb9}{Objects\+In\+Scene}}
+\begin{DoxyCompactList}\small\item\em The objects in scene. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Point \mbox{\hyperlink{class_game_a8b824de9b95e8b882e7cde3bc3c45f0a}{mouse\+Point}}
+\begin{DoxyCompactList}\small\item\em Coordinates for mouse pointer. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{class_game_a397f8a701af3f05e5f972c84f0f29062}{sprite\+Hero\+Rect}}
+\begin{DoxyCompactList}\small\item\em SDL Rectangle for \mbox{\hyperlink{class_hero}{Hero}}. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{class_game_a96c2da745983d6f3d25bc7e0fd4af129}{sprite\+Monster\+Rect}}
+\begin{DoxyCompactList}\small\item\em /// SDL Rectangle for \mbox{\hyperlink{class_monster}{Monster}} \end{DoxyCompactList}\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{class_game_ad0c11d34bcd7055014481f1b8691322f}{sprite\+Pickup\+Rect}}
+\begin{DoxyCompactList}\small\item\em /// SDL Rectangle for \mbox{\hyperlink{class_pickup}{Pickup}} (Key) \end{DoxyCompactList}\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{class_game_a8414683ae26f601e99efd0f0cfdb5f9e}{sprite\+Goal\+Rect}}
+\begin{DoxyCompactList}\small\item\em /// SDL Rectangle for Goal \end{DoxyCompactList}\item 
+SDL\+\_\+\+Window $\ast$ \mbox{\hyperlink{class_game_a37957a6b5594fe172ac19917907425d4}{m\+\_\+\+Window}}
+\begin{DoxyCompactList}\small\item\em SDL Window for \mbox{\hyperlink{class_game}{Game}}. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{class_game_a5d9fb92360e0225766e7f0f9c03ca8ce}{m\+\_\+\+Renderer}}
+\begin{DoxyCompactList}\small\item\em SDL Renderer for window. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_a0b279644d881de510fea467235531816}{Screen\+Width}} = 1024
+\begin{DoxyCompactList}\small\item\em Screen Width for SDL Window. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_afc638bbbc544814dfe471ec6f3c7f9f9}{Screen\+Height}} = 768
+\begin{DoxyCompactList}\small\item\em Screen height for SDL Window. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_game_a00f29917ded5952ad4649c4ab7a4b411}{directory}} = \char`\"{}../assets/\char`\"{}
+\begin{DoxyCompactList}\small\item\em String directory for assets folder. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_input}{Input}} $\ast$ \mbox{\hyperlink{class_game_ae0a40e7e00700005e891206dfeafff38}{input}} = new \mbox{\hyperlink{class_input}{Input}}()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_input}{Input}} for WASD (\mbox{\hyperlink{class_hero}{Hero}} Control) and RGB fader for background colour. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_a8de491bf7f776e728ce6363e1618e9a0}{themonster\+Xpos}} = 10
+\begin{DoxyCompactList}\small\item\em Initial Starting X coordinate for \mbox{\hyperlink{class_monster}{Monster}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_aef742be3739bfb33b828863f825281cd}{themonster\+Ypos}} = 10
+\begin{DoxyCompactList}\small\item\em Initial Starting Y coordinate for \mbox{\hyperlink{class_monster}{Monster}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_a46f6f69aab0e42120ab524364836cea5}{hero\+Xpos}} = 930
+\begin{DoxyCompactList}\small\item\em Initial Starting X coordinate for \mbox{\hyperlink{class_hero}{Hero}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_ace7481b79db3066f11d27ccc95d5f7a8}{hero\+Ypos}} = 680
+\begin{DoxyCompactList}\small\item\em Initial Starting Y coordinate for \mbox{\hyperlink{class_hero}{Hero}}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_a20122c27af5d1d69dea53fe299f844bb}{pickup\+XPos}} = \mbox{\hyperlink{class_game_a0b279644d881de510fea467235531816}{Screen\+Width}} / 2
+\begin{DoxyCompactList}\small\item\em Initial starting X coordinate for \mbox{\hyperlink{class_pickup}{Pickup}} (Key) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_a6e65e06452a9015b1166d56ce85f4a79}{pickup\+YPos}} = \mbox{\hyperlink{class_game_afc638bbbc544814dfe471ec6f3c7f9f9}{Screen\+Height}} / 2
+\begin{DoxyCompactList}\small\item\em Initial starting Y coordinate for \mbox{\hyperlink{class_pickup}{Pickup}} (Key) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_a53216c596117084979dfbf36bedc7ae0}{goal\+XPos}} = 930
+\begin{DoxyCompactList}\small\item\em X Position of Goal. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_game_a326b704bfd15c42a414f67e80708f620}{goal\+YPos}} = 680
+\begin{DoxyCompactList}\small\item\em Y Positiuon of Goal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_a693b6e70f7df4f7ec0ac9e8aa2423b39}{show\+Monster\+Imgui}} = false
+\begin{DoxyCompactList}\small\item\em Boolean to show \mbox{\hyperlink{class_monster}{Monster}} Im\+Gui when clicked. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_af782c06384b366d4f70e249ce19c57bd}{show\+Hero\+Imgui}} = false
+\begin{DoxyCompactList}\small\item\em Boolean to show \mbox{\hyperlink{class_hero}{Hero}} Im\+Gui when clicked. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_a6b27c92c6378bed6e11c338f50396e6a}{show\+Pickup\+Imgui}} = false
+\begin{DoxyCompactList}\small\item\em Boolean to show \mbox{\hyperlink{class_pickup}{Pickup}} Im\+Gui when clicked. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_aade428ec84cbae8b4106b4c16cff96a6}{show\+Goal\+Imgui}} = false
+\begin{DoxyCompactList}\small\item\em Boolean to show Goal Im\+Gui when clicked. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_a6973ef45cca79aac80ecde5fef620044}{is\+Goal\+Active}} = false
+\begin{DoxyCompactList}\small\item\em Boolean to track if the Goal is active (retrusn true when key is collected) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ \mbox{\hyperlink{class_game_ad5175b5a3fa6b417ac1e960b0476b19e}{Asset\+Mous\+Drag}} = nullptr
+\begin{DoxyCompactList}\small\item\em Initialised nullptr for Asset\+Mous\+Drag for Drag and drop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Uint32 \mbox{\hyperlink{class_game_a68c305cc4209d3766a853e0dadbdb146}{Reset\+Event}} = SDL\+\_\+\+Register\+Events(1)
+\item 
+static Uint32 \mbox{\hyperlink{class_game_a75fa771386c223c674d257ea0251f116}{Pickup\+Event}} = SDL\+\_\+\+Register\+Events(1)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game_ad59df6562a58a614fda24622d3715b65}\label{class_game_ad59df6562a58a614fda24622d3715b65}} 
+\index{Game@{Game}!Game@{Game}}
+\index{Game@{Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily Game\+::\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_game}{Game}} Constructor. 
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{class_game_ae3d112ca6e0e55150d2fdbc704474530}\label{class_game_ae3d112ca6e0e55150d2fdbc704474530}} 
+\index{Game@{Game}!````~Game@{$\sim$Game}}
+\index{````~Game@{$\sim$Game}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{$\sim$Game()}{~Game()}}
+{\footnotesize\ttfamily Game\+::$\sim$\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_game}{Game}} Deconstructor. 
+
+~\newline
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_a6a2ecdf258404952d8901591ed17db30}\label{class_game_a6a2ecdf258404952d8901591ed17db30}} 
+\index{Game@{Game}!GetPickupRect@{GetPickupRect}}
+\index{GetPickupRect@{GetPickupRect}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{GetPickupRect()}{GetPickupRect()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Game\+::\+Get\+Pickup\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets SDL\+\_\+\+Rect coordinates for \mbox{\hyperlink{class_pickup}{Pickup}}. 
+
+\begin{DoxyReturn}{Returns}
+Returns \mbox{\hyperlink{class_hero}{Hero}} coordinates (which are private) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_abd9c6ffdbf89613513913a12b245e768}\label{class_game_abd9c6ffdbf89613513913a12b245e768}} 
+\index{Game@{Game}!GetSpriteHeroRect@{GetSpriteHeroRect}}
+\index{GetSpriteHeroRect@{GetSpriteHeroRect}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{GetSpriteHeroRect()}{GetSpriteHeroRect()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Game\+::\+Get\+Sprite\+Hero\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets SDL\+\_\+\+Rect coordinates for \mbox{\hyperlink{class_hero}{Hero}}. 
+
+\begin{DoxyReturn}{Returns}
+Returns \mbox{\hyperlink{class_hero}{Hero}} coordinates (which are private) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_acd4a0faf4e7210c53a88e8c1cb90281f}\label{class_game_acd4a0faf4e7210c53a88e8c1cb90281f}} 
+\index{Game@{Game}!LoadObjects@{LoadObjects}}
+\index{LoadObjects@{LoadObjects}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{LoadObjects()}{LoadObjects()}}
+{\footnotesize\ttfamily void Game\+::\+Load\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function for loading all game objects. 
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_game_a695c2fb1f7148c102a88c9fb809aa7e3}\label{class_game_a695c2fb1f7148c102a88c9fb809aa7e3}} 
+\index{Game@{Game}!randomNumber@{randomNumber}}
+\index{randomNumber@{randomNumber}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{randomNumber()}{randomNumber()}}
+{\footnotesize\ttfamily double Game\+::random\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Random number generator. 
+
+\begin{DoxyReturn}{Returns}
+Returns random number
+\end{DoxyReturn}
+
+
+\begin{DoxyReturn}{Returns}
+Returns random number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game_aae0472df3a9a5ff0b2df25ba9465fd03}\label{class_game_aae0472df3a9a5ff0b2df25ba9465fd03}} 
+\index{Game@{Game}!RenderSceneHierarchy@{RenderSceneHierarchy}}
+\index{RenderSceneHierarchy@{RenderSceneHierarchy}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{RenderSceneHierarchy()}{RenderSceneHierarchy()}}
+{\footnotesize\ttfamily void Game\+::\+Render\+Scene\+Hierarchy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Renders the scene hierarchy. 
+
+~\newline
+ Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_game_a06d91a56a4b25d9b959559e4faa0d84a}\label{class_game_a06d91a56a4b25d9b959559e4faa0d84a}} 
+\index{Game@{Game}!SetDisplayColour@{SetDisplayColour}}
+\index{SetDisplayColour@{SetDisplayColour}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{SetDisplayColour()}{SetDisplayColour()}}
+{\footnotesize\ttfamily void Game\+::\+Set\+Display\+Colour (\begin{DoxyParamCaption}\item[{Uint8}]{r,  }\item[{Uint8}]{g,  }\item[{Uint8}]{b,  }\item[{Uint8}]{a }\end{DoxyParamCaption})}
+
+
+
+Set Display Colour for SDL Window Background. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Set Red Level (0 -\/ 255)\\
+\hline
+{\em g} & Set Green Level (0 -\/ 255)\\
+\hline
+{\em b} & Set Blue Level (0 -\/ 255)\\
+\hline
+{\em a} & Set Alpha Level (0 -\/ 255)\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_game_a770b062e3ff36ddacf78d6625f3162f1}\label{class_game_a770b062e3ff36ddacf78d6625f3162f1}} 
+\index{Game@{Game}!UnLoadObjects@{UnLoadObjects}}
+\index{UnLoadObjects@{UnLoadObjects}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{UnLoadObjects()}{UnLoadObjects()}}
+{\footnotesize\ttfamily void Game\+::\+Un\+Load\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function for unloading all game objects. 
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_game_a1c5373c68261c54aff03e6abe40fee52}\label{class_game_a1c5373c68261c54aff03e6abe40fee52}} 
+\index{Game@{Game}!Update@{Update}}
+\index{Update@{Update}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Game\+::\+Update (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Update Function for \mbox{\hyperlink{class_game}{Game}}. 
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_ae657f5cef92c6208e1c1c905fcc42c06}\label{class_game_ae657f5cef92c6208e1c1c905fcc42c06}} 
+\index{Game@{Game}!assetList@{assetList}}
+\index{assetList@{assetList}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{assetList}{assetList}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_game_1_1_asset_data}{Asset\+Data}}$>$ Game\+::asset\+List}
+
+
+
+The asset list. 
+
+\mbox{\Hypertarget{class_game_ad5175b5a3fa6b417ac1e960b0476b19e}\label{class_game_ad5175b5a3fa6b417ac1e960b0476b19e}} 
+\index{Game@{Game}!AssetMousDrag@{AssetMousDrag}}
+\index{AssetMousDrag@{AssetMousDrag}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{AssetMousDrag}{AssetMousDrag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bitmap}{Bitmap}}$\ast$ Game\+::\+Asset\+Mous\+Drag = nullptr}
+
+
+
+Initialised nullptr for Asset\+Mous\+Drag for Drag and drop. 
+
+\mbox{\Hypertarget{class_game_a00f29917ded5952ad4649c4ab7a4b411}\label{class_game_a00f29917ded5952ad4649c4ab7a4b411}} 
+\index{Game@{Game}!directory@{directory}}
+\index{directory@{directory}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{directory}{directory}}
+{\footnotesize\ttfamily std\+::string Game\+::directory = \char`\"{}../assets/\char`\"{}}
+
+
+
+String directory for assets folder. 
+
+\mbox{\Hypertarget{class_game_a53216c596117084979dfbf36bedc7ae0}\label{class_game_a53216c596117084979dfbf36bedc7ae0}} 
+\index{Game@{Game}!goalXPos@{goalXPos}}
+\index{goalXPos@{goalXPos}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{goalXPos}{goalXPos}}
+{\footnotesize\ttfamily int Game\+::goal\+XPos = 930}
+
+
+
+X Position of Goal. 
+
+\mbox{\Hypertarget{class_game_a326b704bfd15c42a414f67e80708f620}\label{class_game_a326b704bfd15c42a414f67e80708f620}} 
+\index{Game@{Game}!goalYPos@{goalYPos}}
+\index{goalYPos@{goalYPos}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{goalYPos}{goalYPos}}
+{\footnotesize\ttfamily int Game\+::goal\+YPos = 680}
+
+
+
+Y Positiuon of Goal. 
+
+\mbox{\Hypertarget{class_game_a46f6f69aab0e42120ab524364836cea5}\label{class_game_a46f6f69aab0e42120ab524364836cea5}} 
+\index{Game@{Game}!heroXpos@{heroXpos}}
+\index{heroXpos@{heroXpos}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{heroXpos}{heroXpos}}
+{\footnotesize\ttfamily int Game\+::hero\+Xpos = 930}
+
+
+
+Initial Starting X coordinate for \mbox{\hyperlink{class_hero}{Hero}}. 
+
+\mbox{\Hypertarget{class_game_ace7481b79db3066f11d27ccc95d5f7a8}\label{class_game_ace7481b79db3066f11d27ccc95d5f7a8}} 
+\index{Game@{Game}!heroYpos@{heroYpos}}
+\index{heroYpos@{heroYpos}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{heroYpos}{heroYpos}}
+{\footnotesize\ttfamily int Game\+::hero\+Ypos = 680}
+
+
+
+Initial Starting Y coordinate for \mbox{\hyperlink{class_hero}{Hero}}. 
+
+\mbox{\Hypertarget{class_game_ae0a40e7e00700005e891206dfeafff38}\label{class_game_ae0a40e7e00700005e891206dfeafff38}} 
+\index{Game@{Game}!input@{input}}
+\index{input@{input}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{input}{input}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_input}{Input}}$\ast$ Game\+::input = new \mbox{\hyperlink{class_input}{Input}}()}
+
+
+
+\mbox{\hyperlink{class_input}{Input}} for WASD (\mbox{\hyperlink{class_hero}{Hero}} Control) and RGB fader for background colour. 
+
+\mbox{\Hypertarget{class_game_a6973ef45cca79aac80ecde5fef620044}\label{class_game_a6973ef45cca79aac80ecde5fef620044}} 
+\index{Game@{Game}!isGoalActive@{isGoalActive}}
+\index{isGoalActive@{isGoalActive}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{isGoalActive}{isGoalActive}}
+{\footnotesize\ttfamily bool Game\+::is\+Goal\+Active = false}
+
+
+
+Boolean to track if the Goal is active (retrusn true when key is collected) 
+
+\mbox{\Hypertarget{class_game_ae7561893b367eab06b22e764c71363ca}\label{class_game_ae7561893b367eab06b22e764c71363ca}} 
+\index{Game@{Game}!m\_Bitmaps@{m\_Bitmaps}}
+\index{m\_Bitmaps@{m\_Bitmaps}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_Bitmaps}{m\_Bitmaps}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_bitmap}{Bitmap}}$\ast$$>$ Game\+::m\+\_\+\+Bitmaps}
+
+
+
+The m bitmaps. 
+
+\mbox{\Hypertarget{class_game_a5d9fb92360e0225766e7f0f9c03ca8ce}\label{class_game_a5d9fb92360e0225766e7f0f9c03ca8ce}} 
+\index{Game@{Game}!m\_Renderer@{m\_Renderer}}
+\index{m\_Renderer@{m\_Renderer}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_Renderer}{m\_Renderer}}
+{\footnotesize\ttfamily SDL\+\_\+\+Renderer$\ast$ Game\+::m\+\_\+\+Renderer}
+
+
+
+SDL Renderer for window. 
+
+\mbox{\Hypertarget{class_game_a86b8703f2f4b3b5702778d5194b461b6}\label{class_game_a86b8703f2f4b3b5702778d5194b461b6}} 
+\index{Game@{Game}!m\_SelectedBitmap@{m\_SelectedBitmap}}
+\index{m\_SelectedBitmap@{m\_SelectedBitmap}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_SelectedBitmap}{m\_SelectedBitmap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bitmap}{Bitmap}}$\ast$ Game\+::m\+\_\+\+Selected\+Bitmap = nullptr}
+
+
+
+The m selected bitmap. 
+
+\mbox{\Hypertarget{class_game_a37957a6b5594fe172ac19917907425d4}\label{class_game_a37957a6b5594fe172ac19917907425d4}} 
+\index{Game@{Game}!m\_Window@{m\_Window}}
+\index{m\_Window@{m\_Window}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{m\_Window}{m\_Window}}
+{\footnotesize\ttfamily SDL\+\_\+\+Window$\ast$ Game\+::m\+\_\+\+Window}
+
+
+
+SDL Window for \mbox{\hyperlink{class_game}{Game}}. 
+
+\mbox{\Hypertarget{class_game_a8b824de9b95e8b882e7cde3bc3c45f0a}\label{class_game_a8b824de9b95e8b882e7cde3bc3c45f0a}} 
+\index{Game@{Game}!mousePoint@{mousePoint}}
+\index{mousePoint@{mousePoint}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{mousePoint}{mousePoint}}
+{\footnotesize\ttfamily SDL\+\_\+\+Point Game\+::mouse\+Point}
+
+
+
+Coordinates for mouse pointer. 
+
+\mbox{\Hypertarget{class_game_a6ab2dc6023585c4c93ef2b8120358eb9}\label{class_game_a6ab2dc6023585c4c93ef2b8120358eb9}} 
+\index{Game@{Game}!ObjectsInScene@{ObjectsInScene}}
+\index{ObjectsInScene@{ObjectsInScene}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{ObjectsInScene}{ObjectsInScene}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_bitmap}{Bitmap}}$\ast$$>$ Game\+::\+Objects\+In\+Scene}
+
+
+
+The objects in scene. 
+
+\mbox{\Hypertarget{class_game_a75fa771386c223c674d257ea0251f116}\label{class_game_a75fa771386c223c674d257ea0251f116}} 
+\index{Game@{Game}!PickupEvent@{PickupEvent}}
+\index{PickupEvent@{PickupEvent}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{PickupEvent}{PickupEvent}}
+{\footnotesize\ttfamily Uint32 Game\+::\+Pickup\+Event = SDL\+\_\+\+Register\+Events(1)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_game_a20122c27af5d1d69dea53fe299f844bb}\label{class_game_a20122c27af5d1d69dea53fe299f844bb}} 
+\index{Game@{Game}!pickupXPos@{pickupXPos}}
+\index{pickupXPos@{pickupXPos}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{pickupXPos}{pickupXPos}}
+{\footnotesize\ttfamily int Game\+::pickup\+XPos = \mbox{\hyperlink{class_game_a0b279644d881de510fea467235531816}{Screen\+Width}} / 2}
+
+
+
+Initial starting X coordinate for \mbox{\hyperlink{class_pickup}{Pickup}} (Key) 
+
+\mbox{\Hypertarget{class_game_a6e65e06452a9015b1166d56ce85f4a79}\label{class_game_a6e65e06452a9015b1166d56ce85f4a79}} 
+\index{Game@{Game}!pickupYPos@{pickupYPos}}
+\index{pickupYPos@{pickupYPos}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{pickupYPos}{pickupYPos}}
+{\footnotesize\ttfamily int Game\+::pickup\+YPos = \mbox{\hyperlink{class_game_afc638bbbc544814dfe471ec6f3c7f9f9}{Screen\+Height}} / 2}
+
+
+
+Initial starting Y coordinate for \mbox{\hyperlink{class_pickup}{Pickup}} (Key) 
+
+\mbox{\Hypertarget{class_game_a68c305cc4209d3766a853e0dadbdb146}\label{class_game_a68c305cc4209d3766a853e0dadbdb146}} 
+\index{Game@{Game}!ResetEvent@{ResetEvent}}
+\index{ResetEvent@{ResetEvent}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{ResetEvent}{ResetEvent}}
+{\footnotesize\ttfamily Uint32 Game\+::\+Reset\+Event = SDL\+\_\+\+Register\+Events(1)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_game_afc638bbbc544814dfe471ec6f3c7f9f9}\label{class_game_afc638bbbc544814dfe471ec6f3c7f9f9}} 
+\index{Game@{Game}!ScreenHeight@{ScreenHeight}}
+\index{ScreenHeight@{ScreenHeight}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{ScreenHeight}{ScreenHeight}}
+{\footnotesize\ttfamily int Game\+::\+Screen\+Height = 768}
+
+
+
+Screen height for SDL Window. 
+
+\mbox{\Hypertarget{class_game_a0b279644d881de510fea467235531816}\label{class_game_a0b279644d881de510fea467235531816}} 
+\index{Game@{Game}!ScreenWidth@{ScreenWidth}}
+\index{ScreenWidth@{ScreenWidth}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{ScreenWidth}{ScreenWidth}}
+{\footnotesize\ttfamily int Game\+::\+Screen\+Width = 1024}
+
+
+
+Screen Width for SDL Window. 
+
+\mbox{\Hypertarget{class_game_aade428ec84cbae8b4106b4c16cff96a6}\label{class_game_aade428ec84cbae8b4106b4c16cff96a6}} 
+\index{Game@{Game}!showGoalImgui@{showGoalImgui}}
+\index{showGoalImgui@{showGoalImgui}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{showGoalImgui}{showGoalImgui}}
+{\footnotesize\ttfamily bool Game\+::show\+Goal\+Imgui = false}
+
+
+
+Boolean to show Goal Im\+Gui when clicked. 
+
+\mbox{\Hypertarget{class_game_af782c06384b366d4f70e249ce19c57bd}\label{class_game_af782c06384b366d4f70e249ce19c57bd}} 
+\index{Game@{Game}!showHeroImgui@{showHeroImgui}}
+\index{showHeroImgui@{showHeroImgui}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{showHeroImgui}{showHeroImgui}}
+{\footnotesize\ttfamily bool Game\+::show\+Hero\+Imgui = false}
+
+
+
+Boolean to show \mbox{\hyperlink{class_hero}{Hero}} Im\+Gui when clicked. 
+
+\mbox{\Hypertarget{class_game_a693b6e70f7df4f7ec0ac9e8aa2423b39}\label{class_game_a693b6e70f7df4f7ec0ac9e8aa2423b39}} 
+\index{Game@{Game}!showMonsterImgui@{showMonsterImgui}}
+\index{showMonsterImgui@{showMonsterImgui}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{showMonsterImgui}{showMonsterImgui}}
+{\footnotesize\ttfamily bool Game\+::show\+Monster\+Imgui = false}
+
+
+
+Boolean to show \mbox{\hyperlink{class_monster}{Monster}} Im\+Gui when clicked. 
+
+\mbox{\Hypertarget{class_game_a6b27c92c6378bed6e11c338f50396e6a}\label{class_game_a6b27c92c6378bed6e11c338f50396e6a}} 
+\index{Game@{Game}!showPickupImgui@{showPickupImgui}}
+\index{showPickupImgui@{showPickupImgui}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{showPickupImgui}{showPickupImgui}}
+{\footnotesize\ttfamily bool Game\+::show\+Pickup\+Imgui = false}
+
+
+
+Boolean to show \mbox{\hyperlink{class_pickup}{Pickup}} Im\+Gui when clicked. 
+
+\mbox{\Hypertarget{class_game_a8414683ae26f601e99efd0f0cfdb5f9e}\label{class_game_a8414683ae26f601e99efd0f0cfdb5f9e}} 
+\index{Game@{Game}!spriteGoalRect@{spriteGoalRect}}
+\index{spriteGoalRect@{spriteGoalRect}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{spriteGoalRect}{spriteGoalRect}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Game\+::sprite\+Goal\+Rect}
+
+
+
+/// SDL Rectangle for Goal 
+
+\mbox{\Hypertarget{class_game_a397f8a701af3f05e5f972c84f0f29062}\label{class_game_a397f8a701af3f05e5f972c84f0f29062}} 
+\index{Game@{Game}!spriteHeroRect@{spriteHeroRect}}
+\index{spriteHeroRect@{spriteHeroRect}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{spriteHeroRect}{spriteHeroRect}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Game\+::sprite\+Hero\+Rect}
+
+
+
+SDL Rectangle for \mbox{\hyperlink{class_hero}{Hero}}. 
+
+\mbox{\Hypertarget{class_game_a96c2da745983d6f3d25bc7e0fd4af129}\label{class_game_a96c2da745983d6f3d25bc7e0fd4af129}} 
+\index{Game@{Game}!spriteMonsterRect@{spriteMonsterRect}}
+\index{spriteMonsterRect@{spriteMonsterRect}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{spriteMonsterRect}{spriteMonsterRect}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Game\+::sprite\+Monster\+Rect}
+
+
+
+/// SDL Rectangle for \mbox{\hyperlink{class_monster}{Monster}} 
+
+\mbox{\Hypertarget{class_game_ad0c11d34bcd7055014481f1b8691322f}\label{class_game_ad0c11d34bcd7055014481f1b8691322f}} 
+\index{Game@{Game}!spritePickupRect@{spritePickupRect}}
+\index{spritePickupRect@{spritePickupRect}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{spritePickupRect}{spritePickupRect}}
+{\footnotesize\ttfamily SDL\+\_\+\+Rect Game\+::sprite\+Pickup\+Rect}
+
+
+
+/// SDL Rectangle for \mbox{\hyperlink{class_pickup}{Pickup}} (Key) 
+
+\mbox{\Hypertarget{class_game_a8de491bf7f776e728ce6363e1618e9a0}\label{class_game_a8de491bf7f776e728ce6363e1618e9a0}} 
+\index{Game@{Game}!themonsterXpos@{themonsterXpos}}
+\index{themonsterXpos@{themonsterXpos}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{themonsterXpos}{themonsterXpos}}
+{\footnotesize\ttfamily int Game\+::themonster\+Xpos = 10}
+
+
+
+Initial Starting X coordinate for \mbox{\hyperlink{class_monster}{Monster}}. 
+
+\mbox{\Hypertarget{class_game_aef742be3739bfb33b828863f825281cd}\label{class_game_aef742be3739bfb33b828863f825281cd}} 
+\index{Game@{Game}!themonsterYpos@{themonsterYpos}}
+\index{themonsterYpos@{themonsterYpos}!Game@{Game}}
+\doxysubsubsection{\texorpdfstring{themonsterYpos}{themonsterYpos}}
+{\footnotesize\ttfamily int Game\+::themonster\+Ypos = 10}
+
+
+
+Initial Starting Y coordinate for \mbox{\hyperlink{class_monster}{Monster}}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_8h}{Game.\+h}}\item 
+\mbox{\hyperlink{_game_8cpp}{Game.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,429 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_hero" kind="class" language="C++" prot="public">
+    <compoundname>Hero</compoundname>
+    <basecompoundref refid="class_creature" prot="public" virt="non-virtual">Creature</basecompoundref>
+    <includes refid="_hero_8h" local="no">Hero.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_hero_1a046debb5d98f2f33ed92640b380fe3df" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Hero::m_x</definition>
+        <argsstring></argsstring>
+        <name>m_x</name>
+        <qualifiedname>Hero::m_x</qualifiedname>
+        <briefdescription>
+<para>The m x. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Hero.h" line="57" column="11" bodyfile="Hero.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="class_hero_1a98bf0ef70a3b2c7833b8905f2012f0cd" compoundref="_hero_8h" startline="25" endline="25">getX</referencedby>
+        <referencedby refid="class_hero_1a9553f36a96e777c47f5883da0692f55e" compoundref="_hero_8h" startline="30" endline="30">setX</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_hero_1a5848458055e00536b29e145f41341122" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Hero::m_y</definition>
+        <argsstring></argsstring>
+        <name>m_y</name>
+        <qualifiedname>Hero::m_y</qualifiedname>
+        <briefdescription>
+<para>The m y. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Hero.h" line="61" column="11" bodyfile="Hero.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="class_hero_1a53e89ba45f1680871cd1938431d0bda3" compoundref="_hero_8h" startline="36" endline="36">getY</referencedby>
+        <referencedby refid="class_hero_1adc0946e33dddca3d34ccb17b03eb0d2a" compoundref="_hero_8h" startline="41" endline="41">setY</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_hero_1a7abf77fa225e9e0cd56674895117865c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Hero::m_speed</definition>
+        <argsstring></argsstring>
+        <name>m_speed</name>
+        <qualifiedname>Hero::m_speed</qualifiedname>
+        <briefdescription>
+<para>The m speed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Hero.h" line="68" column="9" bodyfile="Hero.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hero_1ad760a7aac060b27d8702c83ceeb233ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Hero::Hero</definition>
+        <argsstring>(SDL_Renderer *renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency)</argsstring>
+        <name>Hero</name>
+        <qualifiedname>Hero::Hero</qualifiedname>
+        <param>
+          <type>SDL_Renderer *</type>
+          <declname>renderer</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xpos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ypos</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useTransparency</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_hero" kindref="compound">Hero</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>renderer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The renderer.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The filename.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xpos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The xpos.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ypos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ypos.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>useTransparency</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if set to <computeroutput>true</computeroutput> [use transparency].</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Hero.h" line="10" column="1" bodyfile="Hero.cpp" bodystart="16" bodyend="21"/>
+        <references refid="class_bitmap_1a529c67ada83b851eceec531dcaa5e8f8" compoundref="bitmap_8h" startline="121">Bitmap::type</references>
+        <references refid="class_hero_1aede83081901c78ba82c0cceb005a6b36" compoundref="_hero_8h" startline="15" endline="18">Update</references>
+      </memberdef>
+      <memberdef kind="function" id="class_hero_1a5aeef41ede5a80dc29c5acd7b553c4da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Hero::~Hero</definition>
+        <argsstring>()</argsstring>
+        <name>~Hero</name>
+        <qualifiedname>Hero::~Hero</qualifiedname>
+        <briefdescription>
+<para>Finalizes an instance of the <ref refid="class_hero" kindref="compound">Hero</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Hero.h" line="11" column="1" bodyfile="Hero.cpp" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hero_1aede83081901c78ba82c0cceb005a6b36" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Hero::Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>Hero::Update</qualifiedname>
+        <reimplements refid="class_bitmap_1ae93c29792fc2ef318c2de91e2dffacf0">Update</reimplements>
+        <briefdescription>
+<para>Updates this instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Hero.h" line="15" column="10" bodyfile="Hero.h" bodystart="15" bodyend="18"/>
+        <referencedby refid="class_hero_1ad760a7aac060b27d8702c83ceeb233ba" compoundref="_hero_8cpp" startline="16" endline="21">Hero</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_hero_1a98bf0ef70a3b2c7833b8905f2012f0cd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Hero::getX</definition>
+        <argsstring>() const</argsstring>
+        <name>getX</name>
+        <qualifiedname>Hero::getX</qualifiedname>
+        <briefdescription>
+<para>Gets the x. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Hero.h" line="25" column="11" bodyfile="Hero.h" bodystart="25" bodyend="25"/>
+        <references refid="class_hero_1a046debb5d98f2f33ed92640b380fe3df" compoundref="_hero_8h" startline="57">m_x</references>
+      </memberdef>
+      <memberdef kind="function" id="class_hero_1a9553f36a96e777c47f5883da0692f55e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Hero::setX</definition>
+        <argsstring>(float x)</argsstring>
+        <name>setX</name>
+        <qualifiedname>Hero::setX</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+<para>Sets the x. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Hero.h" line="30" column="10" bodyfile="Hero.h" bodystart="30" bodyend="30"/>
+        <references refid="class_hero_1a046debb5d98f2f33ed92640b380fe3df" compoundref="_hero_8h" startline="57">m_x</references>
+      </memberdef>
+      <memberdef kind="function" id="class_hero_1a53e89ba45f1680871cd1938431d0bda3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Hero::getY</definition>
+        <argsstring>() const</argsstring>
+        <name>getY</name>
+        <qualifiedname>Hero::getY</qualifiedname>
+        <briefdescription>
+<para>Gets the y. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Hero.h" line="36" column="11" bodyfile="Hero.h" bodystart="36" bodyend="36"/>
+        <references refid="class_hero_1a5848458055e00536b29e145f41341122" compoundref="_hero_8h" startline="61">m_y</references>
+      </memberdef>
+      <memberdef kind="function" id="class_hero_1adc0946e33dddca3d34ccb17b03eb0d2a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Hero::setY</definition>
+        <argsstring>(float y)</argsstring>
+        <name>setY</name>
+        <qualifiedname>Hero::setY</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Sets the y. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The y.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Hero.h" line="41" column="10" bodyfile="Hero.h" bodystart="41" bodyend="41"/>
+        <references refid="class_hero_1a5848458055e00536b29e145f41341122" compoundref="_hero_8h" startline="61">m_y</references>
+      </memberdef>
+      <memberdef kind="function" id="class_hero_1abbab59565f4689f0bef8d40372504a5f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Hero::getSpeed</definition>
+        <argsstring>() const</argsstring>
+        <name>getSpeed</name>
+        <qualifiedname>Hero::getSpeed</qualifiedname>
+        <briefdescription>
+<para>Gets the speed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Hero.h" line="47" column="11" bodyfile="Hero.h" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hero_1a269ff444173c922b2a2ee644ff4e4104" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Hero::setSpeed</definition>
+        <argsstring>(float speed)</argsstring>
+        <name>setSpeed</name>
+        <qualifiedname>Hero::setSpeed</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+<para>Sets the speed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The speed.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Hero.h" line="52" column="10" bodyfile="Hero.h" bodystart="52" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>Bitmap</label>
+        <link refid="class_bitmap"/>
+      </node>
+      <node id="2">
+        <label>Creature</label>
+        <link refid="class_creature"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Hero</label>
+        <link refid="class_hero"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>Bitmap</label>
+        <link refid="class_bitmap"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+m_parent</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Creature</label>
+        <link refid="class_creature"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Hero</label>
+        <link refid="class_hero"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Hero.h" line="7" column="1" bodyfile="Hero.h" bodystart="8" bodyend="70"/>
+    <listofallmembers>
+      <member refid="class_bitmap_1a5725c4483a8a1f0a71c901c76c7a10ed" prot="public" virt="non-virtual"><scope>Hero</scope><name>AddChild</name></member>
+      <member refid="class_bitmap_1afdc4f28cf1a32e587153be4012aa058f" prot="public" virt="non-virtual"><scope>Hero</scope><name>addoffset</name></member>
+      <member refid="class_bitmap_1a9af473f70e06ad318e6eaf4033da058e" prot="public" virt="non-virtual"><scope>Hero</scope><name>applyGravity</name></member>
+      <member refid="class_bitmap_1a7d2d9d8a55c6bd55696d812f8defe011" prot="public" virt="non-virtual"><scope>Hero</scope><name>Bitmap</name></member>
+      <member refid="class_bitmap_1a33b8ef81a8b9510677cfc02623de5c7c" prot="public" virt="non-virtual"><scope>Hero</scope><name>children</name></member>
+      <member refid="class_bitmap_1a68697e385eb9ff10c5296f411e90d68a" prot="public" virt="non-virtual"><scope>Hero</scope><name>ContainsPoint</name></member>
+      <member refid="class_creature_1a11001933620cbb41bc749281a2f7b95e" prot="public" virt="non-virtual"><scope>Hero</scope><name>Creature</name></member>
+      <member refid="class_bitmap_1ad737c8f2f088a650fd4bcb8d67d2ec14" prot="public" virt="non-virtual"><scope>Hero</scope><name>deltaTime</name></member>
+      <member refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" prot="public" virt="non-virtual"><scope>Hero</scope><name>draw</name></member>
+      <member refid="class_bitmap_1aeb7d1b03c0d830759448d8bf12a108b9" prot="public" virt="non-virtual"><scope>Hero</scope><name>GetChildren</name></member>
+      <member refid="class_bitmap_1a2285c1d3b89c5434e1d5b8e4dabd42d9" prot="public" virt="non-virtual"><scope>Hero</scope><name>GetFilepath</name></member>
+      <member refid="class_bitmap_1a7e398a0f351b6747ac85e24368fb9ad5" prot="public" virt="non-virtual"><scope>Hero</scope><name>GetH</name></member>
+      <member refid="class_bitmap_1a19585ce54ee6f21d8a9a6b1d8b86cc04" prot="public" virt="non-virtual"><scope>Hero</scope><name>GetName</name></member>
+      <member refid="class_bitmap_1a48981bb560ef8f3f3172ae4c7fe31ca7" prot="public" virt="non-virtual"><scope>Hero</scope><name>GetParent</name></member>
+      <member refid="class_bitmap_1a4277bd01af52a99971bc83d1cf628288" prot="public" virt="non-virtual"><scope>Hero</scope><name>GetPositionX</name></member>
+      <member refid="class_bitmap_1a3fd62baa60e6a8747a3a152cab5eeff3" prot="public" virt="non-virtual"><scope>Hero</scope><name>GetPositionY</name></member>
+      <member refid="class_hero_1abbab59565f4689f0bef8d40372504a5f" prot="public" virt="non-virtual"><scope>Hero</scope><name>getSpeed</name></member>
+      <member refid="class_bitmap_1af4631b38bd1790b3db5180c216cb58f3" prot="public" virt="non-virtual"><scope>Hero</scope><name>GetTextureRef</name></member>
+      <member refid="class_bitmap_1a2619a68555872d52f324ec110c78e5e3" prot="public" virt="non-virtual"><scope>Hero</scope><name>GetW</name></member>
+      <member refid="class_hero_1a98bf0ef70a3b2c7833b8905f2012f0cd" prot="public" virt="non-virtual"><scope>Hero</scope><name>getX</name></member>
+      <member refid="class_bitmap_1a8dcb2592cf1a834c0c4864d03597eb0f" prot="public" virt="non-virtual"><scope>Hero</scope><name>GetX</name></member>
+      <member refid="class_hero_1a53e89ba45f1680871cd1938431d0bda3" prot="public" virt="non-virtual"><scope>Hero</scope><name>getY</name></member>
+      <member refid="class_bitmap_1ab7481fba70b483315b9bcee6007c0e7d" prot="public" virt="non-virtual"><scope>Hero</scope><name>GetY</name></member>
+      <member refid="class_hero_1ad760a7aac060b27d8702c83ceeb233ba" prot="public" virt="non-virtual"><scope>Hero</scope><name>Hero</name></member>
+      <member refid="class_bitmap_1a82518a87ccc66a67913b1376c4f87efe" prot="public" virt="non-virtual"><scope>Hero</scope><name>IsDragged</name></member>
+      <member refid="class_bitmap_1ad1e358e487367d573758cb713f046028" prot="public" virt="non-virtual"><scope>Hero</scope><name>isEnd</name></member>
+      <member refid="class_bitmap_1a66dec28bd4fd7df4b5f9c68ddc6e07dd" prot="public" virt="non-virtual"><scope>Hero</scope><name>isVisable</name></member>
+      <member refid="class_bitmap_1a2d7dacb014fb8e9b636618eaf850d666" prot="public" virt="non-virtual"><scope>Hero</scope><name>m_ax</name></member>
+      <member refid="class_bitmap_1a433654d519140b96b98b69dbd1a930ce" prot="public" virt="non-virtual"><scope>Hero</scope><name>m_ay</name></member>
+      <member refid="class_bitmap_1a365f44ae92df65e23d830224690aaedf" prot="public" virt="non-virtual"><scope>Hero</scope><name>m_children</name></member>
+      <member refid="class_bitmap_1a9e5b8cf456c4c9c8cdd0b2db0aa7f47d" prot="public" virt="non-virtual"><scope>Hero</scope><name>m_h</name></member>
+      <member refid="class_bitmap_1aac08a6ab8d0907ff5eaccd153a612293" prot="public" virt="non-virtual"><scope>Hero</scope><name>m_parent</name></member>
+      <member refid="class_hero_1a7abf77fa225e9e0cd56674895117865c" prot="private" virt="non-virtual"><scope>Hero</scope><name>m_speed</name></member>
+      <member refid="class_bitmap_1addac8e49990e141f9ecd7722b4c4c664" prot="public" virt="non-virtual"><scope>Hero</scope><name>m_vx</name></member>
+      <member refid="class_bitmap_1a115f25bf7f32a12e6d51916cbb33e151" prot="public" virt="non-virtual"><scope>Hero</scope><name>m_vy</name></member>
+      <member refid="class_bitmap_1a9bf3bc4f22d7dfd239b650c256401937" prot="public" virt="non-virtual"><scope>Hero</scope><name>m_w</name></member>
+      <member refid="class_hero_1a046debb5d98f2f33ed92640b380fe3df" prot="public" virt="non-virtual"><scope>Hero</scope><name>m_x</name></member>
+      <member refid="class_hero_1a5848458055e00536b29e145f41341122" prot="public" virt="non-virtual"><scope>Hero</scope><name>m_y</name></member>
+      <member refid="class_bitmap_1a04bad4d42d3f7724226815b3163306fb" prot="public" virt="non-virtual"><scope>Hero</scope><name>Name</name></member>
+      <member refid="class_bitmap_1a909cb95a3129c4bf8d3a9a75e636bc32" prot="public" virt="non-virtual"><scope>Hero</scope><name>path</name></member>
+      <member refid="class_bitmap_1a581872fa25c5dd41ed6729d33e611293" prot="public" virt="non-virtual"><scope>Hero</scope><name>SetParent</name></member>
+      <member refid="class_bitmap_1a15fe29c1b4fc1f00716c9dd422abc4c1" prot="public" virt="non-virtual"><scope>Hero</scope><name>SetPosition</name></member>
+      <member refid="class_hero_1a269ff444173c922b2a2ee644ff4e4104" prot="public" virt="non-virtual"><scope>Hero</scope><name>setSpeed</name></member>
+      <member refid="class_hero_1a9553f36a96e777c47f5883da0692f55e" prot="public" virt="non-virtual"><scope>Hero</scope><name>setX</name></member>
+      <member refid="class_hero_1adc0946e33dddca3d34ccb17b03eb0d2a" prot="public" virt="non-virtual"><scope>Hero</scope><name>setY</name></member>
+      <member refid="class_bitmap_1a35d5bfdeb0071f4c00a29f03dd60fc5a" prot="public" virt="non-virtual"><scope>Hero</scope><name>spriteWidth</name></member>
+      <member refid="class_bitmap_1af7ac93fbbb6dd80dfa2a5b60564fcac4" prot="public" virt="non-virtual"><scope>Hero</scope><name>transparent</name></member>
+      <member refid="class_bitmap_1a529c67ada83b851eceec531dcaa5e8f8" prot="public" virt="non-virtual"><scope>Hero</scope><name>type</name></member>
+      <member refid="class_hero_1aede83081901c78ba82c0cceb005a6b36" prot="public" virt="virtual"><scope>Hero</scope><name>Update</name></member>
+      <member refid="class_bitmap_1a72d2a301ec1eb1c8d0f3d64823659a8e" prot="public" virt="non-virtual"><scope>Hero</scope><name>~Bitmap</name></member>
+      <member refid="class_creature_1aa991b23f4813fbdb6f875204ed49814d" prot="public" virt="non-virtual"><scope>Hero</scope><name>~Creature</name></member>
+      <member refid="class_hero_1a5aeef41ede5a80dc29c5acd7b553c4da" prot="public" virt="non-virtual"><scope>Hero</scope><name>~Hero</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

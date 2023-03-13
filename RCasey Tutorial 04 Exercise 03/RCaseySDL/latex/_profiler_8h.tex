@@ -1,0 +1,63 @@
+\hypertarget{_profiler_8h}{}\doxysection{Profiler.\+h File Reference}
+\label{_profiler_8h}\index{Profiler.h@{Profiler.h}}
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Game.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Windows.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Profiler.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_sample_data}{Sample\+Data}}
+\item 
+class \mbox{\hyperlink{class_profiler_system}{Profiler\+System}}
+\item 
+struct \mbox{\hyperlink{struct_profile}{Profile}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_profiler_8h_a6766aaa4b64ace39c242f179d917c746}{PROFILE}}(name)~\mbox{\hyperlink{struct_profile}{Profile}} p(name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ const char $\ast$, std\+::vector$<$ \mbox{\hyperlink{struct_sample_data}{Sample\+Data}} $\ast$ $>$ $>$ \mbox{\hyperlink{_profiler_8h_ab1b49ac083856f4fb48add947394a13a}{Frame\+Map}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_profiler_system}{Profiler\+System}} \mbox{\hyperlink{_profiler_8h_a6f00dbbe483432624a7b14bc8f72379a}{g\+\_\+profile\+Manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_profiler_8h_a6766aaa4b64ace39c242f179d917c746}\label{_profiler_8h_a6766aaa4b64ace39c242f179d917c746}} 
+\index{Profiler.h@{Profiler.h}!PROFILE@{PROFILE}}
+\index{PROFILE@{PROFILE}!Profiler.h@{Profiler.h}}
+\doxysubsubsection{\texorpdfstring{PROFILE}{PROFILE}}
+{\footnotesize\ttfamily \#define PROFILE(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~\mbox{\hyperlink{struct_profile}{Profile}} p(name)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_profiler_8h_ab1b49ac083856f4fb48add947394a13a}\label{_profiler_8h_ab1b49ac083856f4fb48add947394a13a}} 
+\index{Profiler.h@{Profiler.h}!FrameMap@{FrameMap}}
+\index{FrameMap@{FrameMap}!Profiler.h@{Profiler.h}}
+\doxysubsubsection{\texorpdfstring{FrameMap}{FrameMap}}
+{\footnotesize\ttfamily typedef std\+::map$<$const char$\ast$, std\+::vector$<$\mbox{\hyperlink{struct_sample_data}{Sample\+Data}}$\ast$$>$ $>$ \mbox{\hyperlink{_profiler_8h_ab1b49ac083856f4fb48add947394a13a}{Frame\+Map}}}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_profiler_8h_a6f00dbbe483432624a7b14bc8f72379a}\label{_profiler_8h_a6f00dbbe483432624a7b14bc8f72379a}} 
+\index{Profiler.h@{Profiler.h}!g\_profileManager@{g\_profileManager}}
+\index{g\_profileManager@{g\_profileManager}!Profiler.h@{Profiler.h}}
+\doxysubsubsection{\texorpdfstring{g\_profileManager}{g\_profileManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_profiler_system}{Profiler\+System}} g\+\_\+profile\+Manager\hspace{0.3cm}{\ttfamily [extern]}}
+

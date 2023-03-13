@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_pickup_8cpp" kind="file" language="C++">
+    <compoundname>Pickup.cpp</compoundname>
+    <includes refid="_creature_8h" local="yes">Creature.h</includes>
+    <includes refid="bitmap_8h" local="yes">bitmap.h</includes>
+    <includes refid="_hero_8h" local="yes">Hero.h</includes>
+    <includes refid="_pickup_8h" local="yes">Pickup.h</includes>
+    <includes refid="_game_8h" local="yes">Game.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>Creature.h</label>
+        <link refid="_creature_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Game.h</label>
+        <link refid="_game_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Hero.h</label>
+        <link refid="_hero_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Monster.h</label>
+        <link refid="_monster_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Pickup.cpp</label>
+        <link refid="_pickup_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Pickup.h</label>
+        <link refid="_pickup_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>bitmap.h</label>
+        <link refid="bitmap_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>input.h</label>
+        <link refid="input_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>SDL.h</label>
+      </node>
+      <node id="11">
+        <label>SDL_ttf.h</label>
+      </node>
+      <node id="16">
+        <label>backends/imgui_impl_sdl.h</label>
+      </node>
+      <node id="19">
+        <label>cmath</label>
+      </node>
+      <node id="22">
+        <label>filesystem</label>
+      </node>
+      <node id="15">
+        <label>imgui.h</label>
+      </node>
+      <node id="18">
+        <label>imgui_internal.h</label>
+      </node>
+      <node id="17">
+        <label>imgui_sdl.h</label>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
+      <node id="7">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="12">
+        <label>stdio.h</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="21">
+        <label>unordered_map</label>
+      </node>
+      <node id="20">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_creature_8h" kindref="compound">Creature.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bitmap_8h" kindref="compound">bitmap.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hero_8h" kindref="compound">Hero.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_pickup_8h" kindref="compound">Pickup.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_game_8h" kindref="compound">Game.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_pickup_1a3710ec2b3f09abeebf099a6af1b4615d" refkind="member"><highlight class="normal"><ref refid="class_pickup_1a3710ec2b3f09abeebf099a6af1b4615d" kindref="member">Pickup::Pickup</ref>(<ref refid="class_hero" kindref="compound">Hero</ref>*<sp/>hero,<sp/>SDL_Renderer*<sp/>renderer,<sp/>std::string<sp/>filename,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xpos,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ypos,<sp/>std::string<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useTransparency)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_bitmap" kindref="compound">Bitmap</ref>(renderer,<sp/>filename,<sp/>xpos,<sp/>ypos,<sp/>name,<sp/>useTransparency)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1a529c67ada83b851eceec531dcaa5e8f8" kindref="member">type</ref><sp/>=<sp/>ObjectType::Pickup;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_pickup_1a2b7e8d13584987aaa47fa06bbc0c4659" kindref="member">m_hero</ref><sp/>=<sp/>hero;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_pickup_1a47d91d989a2beafaa497779ab892bcc8" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_pickup_1a47d91d989a2beafaa497779ab892bcc8" kindref="member">Pickup::Update</ref>()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_bitmap_1ad1e358e487367d573758cb713f046028" kindref="member">isEnd</ref>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Point<sp/>heroPos{<sp/><ref refid="class_pickup_1a2b7e8d13584987aaa47fa06bbc0c4659" kindref="member">m_hero</ref>-&gt;<ref refid="class_bitmap_1a8dcb2592cf1a834c0c4864d03597eb0f" kindref="member">GetX</ref>()<sp/>+<sp/>(<ref refid="class_pickup_1a2b7e8d13584987aaa47fa06bbc0c4659" kindref="member">m_hero</ref>-&gt;<ref refid="class_bitmap_1a2619a68555872d52f324ec110c78e5e3" kindref="member">GetW</ref>()<sp/>/<sp/>2),<sp/><ref refid="class_pickup_1a2b7e8d13584987aaa47fa06bbc0c4659" kindref="member">m_hero</ref>-&gt;<ref refid="class_bitmap_1ab7481fba70b483315b9bcee6007c0e7d" kindref="member">GetY</ref>()<sp/>+<sp/>(<ref refid="class_pickup_1a2b7e8d13584987aaa47fa06bbc0c4659" kindref="member">m_hero</ref>-&gt;<ref refid="class_bitmap_1a7e398a0f351b6747ac85e24368fb9ad5" kindref="member">GetH</ref>()<sp/>/<sp/>2)<sp/>};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Rect<sp/>spritePickupRect<sp/>=<sp/>{<sp/><ref refid="class_bitmap_1a8dcb2592cf1a834c0c4864d03597eb0f" kindref="member">GetX</ref>(),<sp/><ref refid="class_bitmap_1ab7481fba70b483315b9bcee6007c0e7d" kindref="member">GetY</ref>(),<sp/><ref refid="class_bitmap_1a2619a68555872d52f324ec110c78e5e3" kindref="member">GetW</ref>(),<sp/><ref refid="class_bitmap_1a7e398a0f351b6747ac85e24368fb9ad5" kindref="member">GetH</ref>()<sp/>};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(SDL_PointInRect(&amp;heroPos,<sp/>&amp;spritePickupRect))</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1a66dec28bd4fd7df4b5f9c68ddc6e07dd" kindref="member">isVisable</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Item<sp/>collected\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_game_1a75fa771386c223c674d257ea0251f116" kindref="member">Game::PickupEvent</ref><sp/>!=<sp/>((Uint32)-1))<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_Event<sp/>event;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_memset(&amp;event,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(event));</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.type<sp/>=<sp/><ref refid="class_game_1a75fa771386c223c674d257ea0251f116" kindref="member">Game::PickupEvent</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.user.code<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.user.data1<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.user.data2<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SDL_PushEvent(&amp;event);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Pickup.cpp"/>
+  </compounddef>
+</doxygen>

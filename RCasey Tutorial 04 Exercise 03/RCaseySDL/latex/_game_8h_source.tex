@@ -1,0 +1,200 @@
+\hypertarget{_game_8h_source}{}\doxysection{Game.\+h}
+\mbox{\hyperlink{_game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GAME\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GAME\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL\_ttf.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{input_8h}{input.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_creature_8h}{Creature.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_monster_8h}{Monster.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_hero_8h}{hero.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}imgui.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}backends/imgui\_impl\_sdl.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}imgui\_sdl.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}imgui\_internal.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_pickup_8h}{Pickup.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//using\ namespace\ std;}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }SDL\_Window;}
+\DoxyCodeLine{00028\ \textcolor{keyword}{struct\ }SDL\_Renderer;}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bitmap}{Bitmap}};}
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_monster}{Monster}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game}{Game}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ public\ :}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ Uint32\ \mbox{\hyperlink{class_game_a68c305cc4209d3766a853e0dadbdb146}{ResetEvent}};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ Uint32\ \mbox{\hyperlink{class_game_a75fa771386c223c674d257ea0251f116}{PickupEvent}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_game_1_1_asset_data}{AssetData}}\ \{\ std::string\ \mbox{\hyperlink{struct_game_1_1_asset_data_ad43abc213fc47daee3ae979af3f46778}{filename}};\ \};}
+\DoxyCodeLine{00045\ \ \ \ \ std::vector<AssetData>\ \mbox{\hyperlink{class_game_ae657f5cef92c6208e1c1c905fcc42c06}{assetList}};}
+\DoxyCodeLine{00049\ \ \ \ \ std::vector<Bitmap*>\ \mbox{\hyperlink{class_game_ae7561893b367eab06b22e764c71363ca}{m\_Bitmaps}};}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_bitmap}{Bitmap}}*\ \mbox{\hyperlink{class_game_a86b8703f2f4b3b5702778d5194b461b6}{m\_SelectedBitmap}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_aae0472df3a9a5ff0b2df25ba9465fd03}{RenderSceneHierarchy}}();}
+\DoxyCodeLine{00058\ \ \ \ \ std::vector<Bitmap*>\ \mbox{\hyperlink{class_game_a6ab2dc6023585c4c93ef2b8120358eb9}{ObjectsInScene}};}
+\DoxyCodeLine{00059\ \ \ \ \ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ showGravityWindow;}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_bitmap}{Bitmap}}*\ m\_SelectedObject\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ showSelectionGui;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{enum}\ GameState}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ GAME,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ SPLASH,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ ENDGAME}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00096\ \ \ \ \ GameState\ State\ =\ SPLASH;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_running;}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_useGravity\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00106\ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{class_creature}{Creature}}*\ m\_monster;\ \textcolor{comment}{//04-\/01}}
+\DoxyCodeLine{00114\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{class_creature}{Creature}}*\ m\_monsterTrans;\ \textcolor{comment}{//04-\/01}}
+\DoxyCodeLine{00118\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{class_creature}{Creature}}*\ m\_monsterTransKeyed;\ \textcolor{comment}{//04-\/01}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{class_monster}{Monster}}*\ m\_pTheMonster;\ \textcolor{comment}{//\ Created\ monster}}
+\DoxyCodeLine{00127\ \textcolor{comment}{}\ \ \ \ std::vector<Monster*>\ monsters;\ \textcolor{comment}{//\ A\ vector\ to\ store\ Monster\ objects}}
+\DoxyCodeLine{00131\ \textcolor{comment}{}\ \ \ \ std::vector<Pickup*>\ pickups;\ \textcolor{comment}{//\ A\ vector\ to\ store\ Pickup\ objects}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{class_hero}{Hero}}*\ m\_pTheHero;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{class_pickup}{Pickup}}*\ m\_Pickup;}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{class_pickup}{Pickup}}*\ m\_Goal;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{class_pickup}{Pickup}}*\ m\_Goal2;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00156\ \ \ \ \ TTF\_Font*\ m\_pSmallFont;}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00161\ \ \ \ \ TTF\_Font*\ m\_pBigFont;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00166\ \ \ \ \ TTF\_Font*\ m\_pInfoFont;}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ AssetManager();}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ CheckEvents();}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ UpdateText(std::string\ msg,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ TTF\_Font*\ font,\ SDL\_Color\ colour);}
+\DoxyCodeLine{00187\ \ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{void}\ Render();}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ RenderObjectsWindow();}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{void}\ FindAssets();}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00206\ \ \ \ \ std::vector<Bitmap*>\ content;}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{comment}{//const\ float\ GRAVITY\ =\ 500.0f;}}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{comment}{//float\ m\_ay\ =\ 9.81f;\ //\ default\ value\ for\ m\_ay}}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{void}\ SaveWorldData();}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00219\ \ \ \ \ Uint8\ r\ =\ 127,\ g\ =\ 127,\ b\ =\ 127,\ a\ =\ 255;}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{int}\ xpos;}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordtype}{int}\ ypos;}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00234\ \ \ \ \ ImGuiIO*\ io;}
+\DoxyCodeLine{00235\ \ \ \ \ }
+\DoxyCodeLine{00236\ \ \ \ \ }
+\DoxyCodeLine{00237\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00241\ \ \ \ \ SDL\_Point\ \mbox{\hyperlink{class_game_a8b824de9b95e8b882e7cde3bc3c45f0a}{mousePoint}};}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00246\ \ \ \ \ SDL\_Rect\ \mbox{\hyperlink{class_game_a397f8a701af3f05e5f972c84f0f29062}{spriteHeroRect}};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00251\ \ \ \ \ SDL\_Rect\ \mbox{\hyperlink{class_game_a96c2da745983d6f3d25bc7e0fd4af129}{spriteMonsterRect}};}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00256\ \ \ \ \ SDL\_Rect\ \mbox{\hyperlink{class_game_ad0c11d34bcd7055014481f1b8691322f}{spritePickupRect}};}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00261\ \ \ \ \ SDL\_Rect\ \mbox{\hyperlink{class_game_a8414683ae26f601e99efd0f0cfdb5f9e}{spriteGoalRect}};}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00266\ \ \ \ \ SDL\_Window*\ \mbox{\hyperlink{class_game_a37957a6b5594fe172ac19917907425d4}{m\_Window}};}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00271\ \ \ \ \ SDL\_Renderer*\ \mbox{\hyperlink{class_game_a5d9fb92360e0225766e7f0f9c03ca8ce}{m\_Renderer}};}
+\DoxyCodeLine{00272\ \ \ \ \ }
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_a0b279644d881de510fea467235531816}{ScreenWidth}}\ =\ 1024;}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_afc638bbbc544814dfe471ec6f3c7f9f9}{ScreenHeight}}\ =\ 768;}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00286\ \ \ \ \ \mbox{\hyperlink{class_game_ad59df6562a58a614fda24622d3715b65}{Game}}();}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_acd4a0faf4e7210c53a88e8c1cb90281f}{LoadObjects}}();}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a770b062e3ff36ddacf78d6625f3162f1}{UnLoadObjects}}();}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00301\ \ \ \ \ \mbox{\hyperlink{class_game_ae3d112ca6e0e55150d2fdbc704474530}{\string~Game}}();}
+\DoxyCodeLine{00302\ \ \ \ \ }
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a06d91a56a4b25d9b959559e4faa0d84a}{SetDisplayColour}}(Uint8\ r,\ Uint8\ g,\ Uint8\ b,\ Uint8\ a);}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_a1c5373c68261c54aff03e6abe40fee52}{Update}}();}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{class_game_a695c2fb1f7148c102a88c9fb809aa7e3}{randomNumber}}();}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00326\ \ \ \ \ std::string\ \mbox{\hyperlink{class_game_a00f29917ded5952ad4649c4ab7a4b411}{directory}}\ =\ \textcolor{stringliteral}{"{}../assets/"{}};}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00331\ \ \ \ \ \mbox{\hyperlink{class_input}{Input}}*\ \mbox{\hyperlink{class_game_ae0a40e7e00700005e891206dfeafff38}{input}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_input}{Input}}();}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_a8de491bf7f776e728ce6363e1618e9a0}{themonsterXpos}}\ =\ 10;}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_aef742be3739bfb33b828863f825281cd}{themonsterYpos}}\ =\ 10;}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_a46f6f69aab0e42120ab524364836cea5}{heroXpos}}\ =\ 930;}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00351\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_ace7481b79db3066f11d27ccc95d5f7a8}{heroYpos}}\ =\ 680;}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_a20122c27af5d1d69dea53fe299f844bb}{pickupXPos}}\ =\ \mbox{\hyperlink{class_game_a0b279644d881de510fea467235531816}{ScreenWidth}}\ /\ 2;}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00361\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_a6e65e06452a9015b1166d56ce85f4a79}{pickupYPos}}\ =\ \mbox{\hyperlink{class_game_afc638bbbc544814dfe471ec6f3c7f9f9}{ScreenHeight}}\ /\ 2;}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_a53216c596117084979dfbf36bedc7ae0}{goalXPos}}\ =\ 930;}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_a326b704bfd15c42a414f67e80708f620}{goalYPos}}\ =\ 680;}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_a693b6e70f7df4f7ec0ac9e8aa2423b39}{showMonsterImgui}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00377\ \ \ \ \ }
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_af782c06384b366d4f70e249ce19c57bd}{showHeroImgui}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_a6b27c92c6378bed6e11c338f50396e6a}{showPickupImgui}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00391\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_aade428ec84cbae8b4106b4c16cff96a6}{showGoalImgui}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00392\ }
+\DoxyCodeLine{00396\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_a6973ef45cca79aac80ecde5fef620044}{isGoalActive}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00401\ \ \ \ \ \mbox{\hyperlink{class_bitmap}{Bitmap}}*\ \mbox{\hyperlink{class_game_ad5175b5a3fa6b417ac1e960b0476b19e}{AssetMousDrag}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00402\ \ \ \ \ }
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00410\ \ \ \ \ SDL\_Rect\ \mbox{\hyperlink{class_game_abd9c6ffdbf89613513913a12b245e768}{GetSpriteHeroRect}}()}
+\DoxyCodeLine{00411\ \ \ \ \ \{}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_game_a397f8a701af3f05e5f972c84f0f29062}{spriteHeroRect}};}
+\DoxyCodeLine{00413\ \ \ \ \ \}}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00422\ \ \ \ \ SDL\_Rect\ \mbox{\hyperlink{class_game_a6a2ecdf258404952d8901591ed17db30}{GetPickupRect}}()}
+\DoxyCodeLine{00423\ \ \ \ \ \{}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_game_ad0c11d34bcd7055014481f1b8691322f}{spritePickupRect}};}
+\DoxyCodeLine{00425\ \ \ \ \ \}}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00428\ \};}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

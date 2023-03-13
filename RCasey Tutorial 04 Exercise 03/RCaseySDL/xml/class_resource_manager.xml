@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_resource_manager" kind="class" language="C++" prot="public">
+    <compoundname>ResourceManager</compoundname>
+    <includes refid="_resource_manager_8h" local="no">ResourceManager.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_resource_manager_1a037f8c3b6ccd499422a2c9950eb65c18" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, SDL_Surface * &gt;</type>
+        <definition>std::unordered_map&lt;std::string, SDL_Surface*&gt; ResourceManager::m_Surfaces</definition>
+        <argsstring></argsstring>
+        <name>m_Surfaces</name>
+        <qualifiedname>ResourceManager::m_Surfaces</qualifiedname>
+        <briefdescription>
+<para>The m surfaces. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ResourceManager.h" line="16" column="20" bodyfile="ResourceManager.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_resource_manager_1a24f6a69b540daf3c370a41c81a4d2269" prot="public" static="yes" mutable="no">
+        <type><ref refid="class_resource_manager" kindref="compound">ResourceManager</ref> *</type>
+        <definition>ResourceManager * ResourceManager::s_instance</definition>
+        <argsstring></argsstring>
+        <name>s_instance</name>
+        <qualifiedname>ResourceManager::s_instance</qualifiedname>
+        <initializer>= new <ref refid="class_resource_manager" kindref="compound">ResourceManager</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ResourceManager.h" line="21" column="24" bodyfile="ResourceManager.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="class_resource_manager_1a98b11a6302bf0db4ffc81eea70512ee2" compoundref="_resource_manager_8cpp" startline="37" endline="40">GetInstance</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_resource_manager_1a3b32babd2e81909bbd90d7f2d566fadb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResourceManager::ResourceManager</definition>
+        <argsstring>()</argsstring>
+        <name>ResourceManager</name>
+        <qualifiedname>ResourceManager::ResourceManager</qualifiedname>
+        <briefdescription>
+<para>Prevents a default instance of the <ref refid="class_resource_manager" kindref="compound">ResourceManager</ref> class from being created. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ResourceManager.h" line="9" column="1" bodyfile="ResourceManager.cpp" bodystart="7" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_resource_manager_1af7a286275ba537839da512d9d000af01" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ResourceManager::ResourceManager</definition>
+        <argsstring>(ResourceManager const &amp;)</argsstring>
+        <name>ResourceManager</name>
+        <qualifiedname>ResourceManager::ResourceManager</qualifiedname>
+        <param>
+          <type><ref refid="class_resource_manager" kindref="compound">ResourceManager</ref> const &amp;</type>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_resource_manager" kindref="compound">ResourceManager</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The .</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ResourceManager.h" line="10" column="1" bodyfile="ResourceManager.cpp" bodystart="16" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_resource_manager_1a43dc1d5891e06160a7e7dcab67d12d3e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_resource_manager" kindref="compound">ResourceManager</ref></type>
+        <definition>ResourceManager ResourceManager::operator=</definition>
+        <argsstring>(ResourceManager const &amp;)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>ResourceManager::operator=</qualifiedname>
+        <param>
+          <type><ref refid="class_resource_manager" kindref="compound">ResourceManager</ref> const &amp;</type>
+          <defname>rhs</defname>
+        </param>
+        <briefdescription>
+<para>Operator=s the specified RHS. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rhs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The RHS.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ResourceManager.h" line="11" column="17" bodyfile="ResourceManager.cpp" bodystart="26" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_resource_manager_1a98b11a6302bf0db4ffc81eea70512ee2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_resource_manager" kindref="compound">ResourceManager</ref> &amp;</type>
+        <definition>ResourceManager &amp; ResourceManager::GetInstance</definition>
+        <argsstring>()</argsstring>
+        <name>GetInstance</name>
+        <qualifiedname>ResourceManager::GetInstance</qualifiedname>
+        <briefdescription>
+<para>Gets the instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ResourceManager.h" line="19" column="24" bodyfile="ResourceManager.cpp" bodystart="37" bodyend="40"/>
+        <references refid="class_resource_manager_1a24f6a69b540daf3c370a41c81a4d2269" compoundref="_resource_manager_8h" startline="21">s_instance</references>
+        <referencedby refid="class_bitmap_1a7d2d9d8a55c6bd55696d812f8defe011" compoundref="bitmap_8cpp" startline="65" endline="104">Bitmap::Bitmap</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_resource_manager_1a31d758ae7d5a972154ccc7dae2144166" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SDL_Surface *</type>
+        <definition>SDL_Surface * ResourceManager::GetSurface</definition>
+        <argsstring>(std::string filepath)</argsstring>
+        <name>GetSurface</name>
+        <qualifiedname>ResourceManager::GetSurface</qualifiedname>
+        <param>
+          <type>std::string</type>
+          <declname>filepath</declname>
+        </param>
+        <briefdescription>
+<para>Gets the surface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filepath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The filepath.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ResourceManager.h" line="20" column="13" bodyfile="ResourceManager.cpp" bodystart="47" bodyend="61"/>
+        <referencedby refid="class_bitmap_1a7d2d9d8a55c6bd55696d812f8defe011" compoundref="bitmap_8cpp" startline="65" endline="104">Bitmap::Bitmap</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ResourceManager</label>
+        <link refid="class_resource_manager"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>+s_instance</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ResourceManager.h" line="6" column="1" bodyfile="ResourceManager.h" bodystart="7" bodyend="22"/>
+    <listofallmembers>
+      <member refid="class_resource_manager_1a98b11a6302bf0db4ffc81eea70512ee2" prot="public" virt="non-virtual"><scope>ResourceManager</scope><name>GetInstance</name></member>
+      <member refid="class_resource_manager_1a31d758ae7d5a972154ccc7dae2144166" prot="public" virt="non-virtual"><scope>ResourceManager</scope><name>GetSurface</name></member>
+      <member refid="class_resource_manager_1a037f8c3b6ccd499422a2c9950eb65c18" prot="private" virt="non-virtual"><scope>ResourceManager</scope><name>m_Surfaces</name></member>
+      <member refid="class_resource_manager_1a43dc1d5891e06160a7e7dcab67d12d3e" prot="private" virt="non-virtual"><scope>ResourceManager</scope><name>operator=</name></member>
+      <member refid="class_resource_manager_1a3b32babd2e81909bbd90d7f2d566fadb" prot="private" virt="non-virtual"><scope>ResourceManager</scope><name>ResourceManager</name></member>
+      <member refid="class_resource_manager_1af7a286275ba537839da512d9d000af01" prot="private" virt="non-virtual"><scope>ResourceManager</scope><name>ResourceManager</name></member>
+      <member refid="class_resource_manager_1a24f6a69b540daf3c370a41c81a4d2269" prot="public" virt="non-virtual"><scope>ResourceManager</scope><name>s_instance</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

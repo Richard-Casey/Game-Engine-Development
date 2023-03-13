@@ -1,0 +1,21 @@
+\hypertarget{_texture_manager_8h_source}{}\doxysection{Texture\+Manager.\+h}
+\mbox{\hyperlink{_texture_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_texture_manager}{TextureManager}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ std::map<std::string,\ SDL\_Texture*>\ \mbox{\hyperlink{class_texture_manager_ab78a1ae0477b016569b32ac4ceaeaaef}{m\_textureMap}};}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_texture_manager_ad76abb178b37cedf4514eb0154349935}{TextureManager}}();}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_texture_manager_a001d6d74674961db79987e3222682576}{\string~TextureManager}}();}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{class_texture_manager_ac6fb81774b7741984e3f9f3c965492f4}{Load}}(\textcolor{keyword}{const}\ std::string\ fileName,\ \textcolor{keywordtype}{bool}\ useTransparancy,\ SDL\_Renderer*\ PRenderer);}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_manager_a0b6428ac20e7495ec2e3e8a0c4c869ee}{Unload}}(\textcolor{keyword}{const}\ std::string\ fileName);}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+
+\end{DoxyCode}

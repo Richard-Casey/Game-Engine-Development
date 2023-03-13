@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="input_8h" kind="file" language="C++">
+    <compoundname>input.h</compoundname>
+    <includes local="no">SDL.h</includes>
+    <includedby refid="_game_8cpp" local="yes">Game.cpp</includedby>
+    <includedby refid="_game_8h" local="yes">Game.h</includedby>
+    <includedby refid="input_8cpp" local="yes">input.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>input.h</label>
+        <link refid="input_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SDL.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="3">
+        <label>Game.h</label>
+        <link refid="_game_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Hero.cpp</label>
+        <link refid="_hero_8cpp"/>
+      </node>
+      <node id="6">
+        <label>Monster.cpp</label>
+        <link refid="_monster_8cpp"/>
+      </node>
+      <node id="4">
+        <label>Monster.h</label>
+        <link refid="_monster_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Pickup.cpp</label>
+        <link refid="_pickup_8cpp"/>
+      </node>
+      <node id="9">
+        <label>Profiler.cpp</label>
+        <link refid="_profiler_8cpp"/>
+      </node>
+      <node id="8">
+        <label>Profiler.h</label>
+        <link refid="_profiler_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>input.cpp</label>
+        <link refid="input_8cpp"/>
+      </node>
+      <node id="1">
+        <label>input.h</label>
+        <link refid="input_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_input" prot="public">Input</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>KEYS_PRESSED_LIST</name>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa3a471c8b61a5f730dcbdd50fe53f3ab7" prot="public">
+          <name>KEY_ESCAPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaa3ec8a2ffd5b0e200db5ebe7b65515ff" prot="public">
+          <name>KEY_R</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa4ec980867be1d5bded2bccdee2ebd601" prot="public">
+          <name>KEY_G</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa10072b5ee7aa1faf316434ecc9e2bb3a" prot="public">
+          <name>KEY_B</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa2e6a652ccd7afc5ce75ac4d902b6a60a" prot="public">
+          <name>KEY_W</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aabb2f0ce8efc3067757dbf091437f89f5" prot="public">
+          <name>KEY_S</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaa7b3a3d0503a46bec51c6e3da95747cc" prot="public">
+          <name>KEY_A</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa2fd73a4d527efe137e8f259db2092766" prot="public">
+          <name>KEY_D</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aad4961a6c7ea9d008812aaaa8c4ea9730" prot="public">
+          <name>KEY_U</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aabb3108883bee68e265b554542484c5d7" prot="public">
+          <name>KEY_J</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa41d1aa573d29ca6a9eb429a680dc53cd" prot="public">
+          <name>KEY_H</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa6b0799a9923c55f8a73550a371ea69f6" prot="public">
+          <name>KEY_K</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaaefd064b1e5d75c429bed314ac18eba0" prot="public">
+          <name>KEY_RETURN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aac8234231b36474d3666ad56752fe6f5e" prot="public">
+          <name>KEY_Q</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa908d10d502d4e5b1c21cf41d32c9758d" prot="public">
+          <name>SIZE_OF_KEYS_PRESSED_ENUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="input.h" line="4" column="1" bodyfile="input.h" bodystart="5" bodyend="7"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80a" kindref="member">KEYS_PRESSED_LIST</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6" refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaa7b3a3d0503a46bec51c6e3da95747cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa3a471c8b61a5f730dcbdd50fe53f3ab7" kindref="member">KEY_ESCAPE</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaa3ec8a2ffd5b0e200db5ebe7b65515ff" kindref="member">KEY_R</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa4ec980867be1d5bded2bccdee2ebd601" kindref="member">KEY_G</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa10072b5ee7aa1faf316434ecc9e2bb3a" kindref="member">KEY_B</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa2e6a652ccd7afc5ce75ac4d902b6a60a" kindref="member">KEY_W</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aabb2f0ce8efc3067757dbf091437f89f5" kindref="member">KEY_S</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaa7b3a3d0503a46bec51c6e3da95747cc" kindref="member">KEY_A</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa2fd73a4d527efe137e8f259db2092766" kindref="member">KEY_D</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aad4961a6c7ea9d008812aaaa8c4ea9730" kindref="member">KEY_U</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aabb3108883bee68e265b554542484c5d7" kindref="member">KEY_J</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa41d1aa573d29ca6a9eb429a680dc53cd" kindref="member">KEY_H</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa6b0799a9923c55f8a73550a371ea69f6" kindref="member">KEY_K</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaaefd064b1e5d75c429bed314ac18eba0" kindref="member">KEY_RETURN</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aac8234231b36474d3666ad56752fe6f5e" kindref="member">KEY_Q</ref>,<sp/><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa908d10d502d4e5b1c21cf41d32c9758d" kindref="member">SIZE_OF_KEYS_PRESSED_ENUM</ref></highlight></codeline>
+<codeline lineno="7" refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa908d10d502d4e5b1c21cf41d32c9758d" refkind="member"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="class_input" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_input" kindref="compound">Input</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12" refid="class_input_1a30181d3abe4b3d73c41f055ebe9e38cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Event<sp/><ref refid="class_input_1a30181d3abe4b3d73c41f055ebe9e38cc" kindref="member">m_event</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_input_1a6a311e7183da0e8c8f8865a653629350" kindref="member">Update</ref>(SDL_Event<sp/><ref refid="class_input_1a30181d3abe4b3d73c41f055ebe9e38cc" kindref="member">m_event</ref>);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_input_1abae3f379d3f157cf42dc857309832dba" kindref="member">Input</ref>();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_input_1af2db35ba67c8a8ccd23bef6a482fc291" kindref="member">~Input</ref>();<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16" refid="class_input_1a58de8333d8464b1948d3e7612e38bf2d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_input_1a58de8333d8464b1948d3e7612e38bf2d" kindref="member">m_keysPressed</ref>[<ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa908d10d502d4e5b1c21cf41d32c9758d" kindref="member">SIZE_OF_KEYS_PRESSED_ENUM</ref>]<sp/>=<sp/>{};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_input_1a637918b2b2f09a0b405e9d699bb4c334" kindref="member">KeyIsPressed</ref>(<ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80a" kindref="member">KEYS_PRESSED_LIST</ref><sp/>key);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="input.h"/>
+  </compounddef>
+</doxygen>

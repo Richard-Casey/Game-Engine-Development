@@ -1,0 +1,11 @@
+digraph "ResourceManager::GetInstance"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="ResourceManager::GetInstance",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Gets the instance."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Bitmap::Bitmap",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_bitmap.html#a7d2d9d8a55c6bd55696d812f8defe011",tooltip="Initializes a new instance of the Bitmap class."];
+}

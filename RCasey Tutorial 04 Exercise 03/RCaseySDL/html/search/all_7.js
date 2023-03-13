@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['g_5fprofilemanager_0',['g_profileManager',['../_profiler_8cpp.html#a6f00dbbe483432624a7b14bc8f72379a',1,'g_profileManager():&#160;Profiler.cpp'],['../_profiler_8h.html#a6f00dbbe483432624a7b14bc8f72379a',1,'g_profileManager():&#160;Profiler.cpp']]],
+  ['game_1',['Game',['../class_game.html',1,'Game'],['../class_scene_manager.html#add126e4b634e8d378ce4f1a9ac661bd3a353ec594a91555ba2f44575562de3f5f',1,'SceneManager::Game()'],['../class_game.html#ad59df6562a58a614fda24622d3715b65',1,'Game::Game()']]],
+  ['game_2ecpp_2',['Game.cpp',['../_game_8cpp.html',1,'']]],
+  ['game_2eh_3',['Game.h',['../_game_8h.html',1,'']]],
+  ['getchildren_4',['GetChildren',['../class_bitmap.html#aeb7d1b03c0d830759448d8bf12a108b9',1,'Bitmap']]],
+  ['getfilepath_5',['GetFilepath',['../class_bitmap.html#a2285c1d3b89c5434e1d5b8e4dabd42d9',1,'Bitmap']]],
+  ['geth_6',['GetH',['../class_bitmap.html#a7e398a0f351b6747ac85e24368fb9ad5',1,'Bitmap']]],
+  ['getinstance_7',['GetInstance',['../class_resource_manager.html#a98b11a6302bf0db4ffc81eea70512ee2',1,'ResourceManager']]],
+  ['getname_8',['GetName',['../class_bitmap.html#a19585ce54ee6f21d8a9a6b1d8b86cc04',1,'Bitmap']]],
+  ['getparent_9',['GetParent',['../class_bitmap.html#a48981bb560ef8f3f3172ae4c7fe31ca7',1,'Bitmap']]],
+  ['getpickuprect_10',['GetPickupRect',['../class_game.html#a6a2ecdf258404952d8901591ed17db30',1,'Game']]],
+  ['getpositionx_11',['GetPositionX',['../class_bitmap.html#a4277bd01af52a99971bc83d1cf628288',1,'Bitmap']]],
+  ['getpositiony_12',['GetPositionY',['../class_bitmap.html#a3fd62baa60e6a8747a3a152cab5eeff3',1,'Bitmap']]],
+  ['getspeed_13',['getSpeed',['../class_hero.html#abbab59565f4689f0bef8d40372504a5f',1,'Hero']]],
+  ['getspriteherorect_14',['GetSpriteHeroRect',['../class_game.html#abd9c6ffdbf89613513913a12b245e768',1,'Game']]],
+  ['getsurface_15',['GetSurface',['../class_resource_manager.html#a31d758ae7d5a972154ccc7dae2144166',1,'ResourceManager']]],
+  ['gettextureref_16',['GetTextureRef',['../class_bitmap.html#af4631b38bd1790b3db5180c216cb58f3',1,'Bitmap']]],
+  ['getw_17',['GetW',['../class_bitmap.html#a2619a68555872d52f324ec110c78e5e3',1,'Bitmap']]],
+  ['getx_18',['getX',['../class_hero.html#a98bf0ef70a3b2c7833b8905f2012f0cd',1,'Hero']]],
+  ['getx_19',['GetX',['../class_bitmap.html#a8dcb2592cf1a834c0c4864d03597eb0f',1,'Bitmap']]],
+  ['gety_20',['getY',['../class_hero.html#a53e89ba45f1680871cd1938431d0bda3',1,'Hero']]],
+  ['gety_21',['GetY',['../class_bitmap.html#ab7481fba70b483315b9bcee6007c0e7d',1,'Bitmap']]],
+  ['goalxpos_22',['goalXPos',['../class_game.html#a53216c596117084979dfbf36bedc7ae0',1,'Game']]],
+  ['goalypos_23',['goalYPos',['../class_game.html#a326b704bfd15c42a414f67e80708f620',1,'Game']]]
+];

@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_input" kind="class" language="C++" prot="public">
+    <compoundname>Input</compoundname>
+    <includes refid="input_8h" local="no">input.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_input_1a30181d3abe4b3d73c41f055ebe9e38cc" prot="public" static="no" mutable="no">
+        <type>SDL_Event</type>
+        <definition>SDL_Event Input::m_event</definition>
+        <argsstring></argsstring>
+        <name>m_event</name>
+        <qualifiedname>Input::m_event</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="input.h" line="12" column="11" bodyfile="input.h" bodystart="12" bodyend="-1"/>
+        <referencedby refid="class_input_1a6a311e7183da0e8c8f8865a653629350" compoundref="input_8cpp" startline="6" endline="143">Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_input_1a58de8333d8464b1948d3e7612e38bf2d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Input::m_keysPressed[SIZE_OF_KEYS_PRESSED_ENUM]</definition>
+        <argsstring>[SIZE_OF_KEYS_PRESSED_ENUM]</argsstring>
+        <name>m_keysPressed</name>
+        <qualifiedname>Input::m_keysPressed</qualifiedname>
+        <initializer>= {}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="input.h" line="16" column="6" bodyfile="input.h" bodystart="16" bodyend="-1"/>
+        <referencedby refid="class_input_1a637918b2b2f09a0b405e9d699bb4c334" compoundref="input_8cpp" startline="153" endline="156">KeyIsPressed</referencedby>
+        <referencedby refid="class_input_1a6a311e7183da0e8c8f8865a653629350" compoundref="input_8cpp" startline="6" endline="143">Update</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_input_1a6a311e7183da0e8c8f8865a653629350" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Input::Update</definition>
+        <argsstring>(SDL_Event m_event)</argsstring>
+        <name>Update</name>
+        <qualifiedname>Input::Update</qualifiedname>
+        <param>
+          <type>SDL_Event</type>
+          <declname>m_event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="input.h" line="13" column="6" bodyfile="input.cpp" bodystart="6" bodyend="143"/>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaa7b3a3d0503a46bec51c6e3da95747cc" compoundref="input_8h" startline="6">KEY_A</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa10072b5ee7aa1faf316434ecc9e2bb3a" compoundref="input_8h" startline="6">KEY_B</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa2fd73a4d527efe137e8f259db2092766" compoundref="input_8h" startline="6">KEY_D</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa3a471c8b61a5f730dcbdd50fe53f3ab7" compoundref="input_8h" startline="6">KEY_ESCAPE</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa4ec980867be1d5bded2bccdee2ebd601" compoundref="input_8h" startline="6">KEY_G</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa41d1aa573d29ca6a9eb429a680dc53cd" compoundref="input_8h" startline="6">KEY_H</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aabb3108883bee68e265b554542484c5d7" compoundref="input_8h" startline="6">KEY_J</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa6b0799a9923c55f8a73550a371ea69f6" compoundref="input_8h" startline="6">KEY_K</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aac8234231b36474d3666ad56752fe6f5e" compoundref="input_8h" startline="6">KEY_Q</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaa3ec8a2ffd5b0e200db5ebe7b65515ff" compoundref="input_8h" startline="6">KEY_R</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaaefd064b1e5d75c429bed314ac18eba0" compoundref="input_8h" startline="6">KEY_RETURN</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aabb2f0ce8efc3067757dbf091437f89f5" compoundref="input_8h" startline="6">KEY_S</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aad4961a6c7ea9d008812aaaa8c4ea9730" compoundref="input_8h" startline="6">KEY_U</references>
+        <references refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa2e6a652ccd7afc5ce75ac4d902b6a60a" compoundref="input_8h" startline="6">KEY_W</references>
+        <references refid="class_input_1a30181d3abe4b3d73c41f055ebe9e38cc" compoundref="input_8h" startline="12">m_event</references>
+        <references refid="class_input_1a58de8333d8464b1948d3e7612e38bf2d" compoundref="input_8h" startline="16">m_keysPressed</references>
+      </memberdef>
+      <memberdef kind="function" id="class_input_1abae3f379d3f157cf42dc857309832dba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Input::Input</definition>
+        <argsstring>()</argsstring>
+        <name>Input</name>
+        <qualifiedname>Input::Input</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="input.h" line="14" column="1" bodyfile="input.cpp" bodystart="145" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_input_1af2db35ba67c8a8ccd23bef6a482fc291" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Input::~Input</definition>
+        <argsstring>()</argsstring>
+        <name>~Input</name>
+        <qualifiedname>Input::~Input</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="input.h" line="15" column="1" bodyfile="input.cpp" bodystart="149" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="class_input_1a637918b2b2f09a0b405e9d699bb4c334" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Input::KeyIsPressed</definition>
+        <argsstring>(KEYS_PRESSED_LIST key)</argsstring>
+        <name>KeyIsPressed</name>
+        <qualifiedname>Input::KeyIsPressed</qualifiedname>
+        <param>
+          <type><ref refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80a" kindref="member">KEYS_PRESSED_LIST</ref></type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="input.h" line="17" column="6" bodyfile="input.cpp" bodystart="153" bodyend="156"/>
+        <references refid="class_input_1a58de8333d8464b1948d3e7612e38bf2d" compoundref="input_8h" startline="16">m_keysPressed</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="11" endline="22">main</referencedby>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Game::Update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Input</label>
+        <link refid="class_input"/>
+      </node>
+    </collaborationgraph>
+    <location file="input.h" line="9" column="1" bodyfile="input.h" bodystart="10" bodyend="18"/>
+    <listofallmembers>
+      <member refid="class_input_1abae3f379d3f157cf42dc857309832dba" prot="public" virt="non-virtual"><scope>Input</scope><name>Input</name></member>
+      <member refid="class_input_1a637918b2b2f09a0b405e9d699bb4c334" prot="public" virt="non-virtual"><scope>Input</scope><name>KeyIsPressed</name></member>
+      <member refid="class_input_1a30181d3abe4b3d73c41f055ebe9e38cc" prot="public" virt="non-virtual"><scope>Input</scope><name>m_event</name></member>
+      <member refid="class_input_1a58de8333d8464b1948d3e7612e38bf2d" prot="public" virt="non-virtual"><scope>Input</scope><name>m_keysPressed</name></member>
+      <member refid="class_input_1a6a311e7183da0e8c8f8865a653629350" prot="public" virt="non-virtual"><scope>Input</scope><name>Update</name></member>
+      <member refid="class_input_1af2db35ba67c8a8ccd23bef6a482fc291" prot="public" virt="non-virtual"><scope>Input</scope><name>~Input</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

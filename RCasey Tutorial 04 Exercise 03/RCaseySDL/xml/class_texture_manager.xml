@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_texture_manager" kind="class" language="C++" prot="public">
+    <compoundname>TextureManager</compoundname>
+    <includes refid="_texture_manager_8h" local="no">TextureManager.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_texture_manager_1ab78a1ae0477b016569b32ac4ceaeaaef" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, SDL_Texture * &gt;</type>
+        <definition>std::map&lt;std::string, SDL_Texture*&gt; TextureManager::m_textureMap</definition>
+        <argsstring></argsstring>
+        <name>m_textureMap</name>
+        <qualifiedname>TextureManager::m_textureMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="TextureManager.h" line="9" column="10" bodyfile="TextureManager.h" bodystart="9" bodyend="-1"/>
+        <referencedby refid="class_texture_manager_1ac6fb81774b7741984e3f9f3c965492f4" compoundref="_texture_manager_8cpp" startline="47" endline="85">Load</referencedby>
+        <referencedby refid="class_texture_manager_1a0b6428ac20e7495ec2e3e8a0c4c869ee" compoundref="_texture_manager_8cpp" startline="29" endline="38">Unload</referencedby>
+        <referencedby refid="class_texture_manager_1a001d6d74674961db79987e3222682576" compoundref="_texture_manager_8cpp" startline="16" endline="23">~TextureManager</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_texture_manager_1ad76abb178b37cedf4514eb0154349935" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TextureManager::TextureManager</definition>
+        <argsstring>()</argsstring>
+        <name>TextureManager</name>
+        <qualifiedname>TextureManager::TextureManager</qualifiedname>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_texture_manager" kindref="compound">TextureManager</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="TextureManager.h" line="10" column="1" bodyfile="TextureManager.cpp" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_texture_manager_1a001d6d74674961db79987e3222682576" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TextureManager::~TextureManager</definition>
+        <argsstring>()</argsstring>
+        <name>~TextureManager</name>
+        <qualifiedname>TextureManager::~TextureManager</qualifiedname>
+        <briefdescription>
+<para>Finalizes an instance of the <ref refid="class_texture_manager" kindref="compound">TextureManager</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="TextureManager.h" line="11" column="1" bodyfile="TextureManager.cpp" bodystart="16" bodyend="23"/>
+        <references refid="class_texture_manager_1ab78a1ae0477b016569b32ac4ceaeaaef" compoundref="_texture_manager_8h" startline="9">m_textureMap</references>
+      </memberdef>
+      <memberdef kind="function" id="class_texture_manager_1ac6fb81774b7741984e3f9f3c965492f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>SDL_Texture *</type>
+        <definition>SDL_Texture * TextureManager::Load</definition>
+        <argsstring>(const std::string fileName, bool useTransparancy, SDL_Renderer *PRenderer)</argsstring>
+        <name>Load</name>
+        <qualifiedname>TextureManager::Load</qualifiedname>
+        <param>
+          <type>const std::string</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useTransparancy</declname>
+        </param>
+        <param>
+          <type>SDL_Renderer *</type>
+          <declname>PRenderer</declname>
+        </param>
+        <briefdescription>
+<para>Loads the specified file name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the file.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>useTransparancy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if set to <computeroutput>true</computeroutput> [use transparancy].</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PRenderer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The p renderer.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="TextureManager.h" line="13" column="13" bodyfile="TextureManager.cpp" bodystart="47" bodyend="85"/>
+        <references refid="class_texture_manager_1ab78a1ae0477b016569b32ac4ceaeaaef" compoundref="_texture_manager_8h" startline="9">m_textureMap</references>
+      </memberdef>
+      <memberdef kind="function" id="class_texture_manager_1a0b6428ac20e7495ec2e3e8a0c4c869ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TextureManager::Unload</definition>
+        <argsstring>(const std::string fileName)</argsstring>
+        <name>Unload</name>
+        <qualifiedname>TextureManager::Unload</qualifiedname>
+        <param>
+          <type>const std::string</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+<para>Unloads the specified file name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the file.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="TextureManager.h" line="14" column="6" bodyfile="TextureManager.cpp" bodystart="29" bodyend="38"/>
+        <references refid="class_texture_manager_1ab78a1ae0477b016569b32ac4ceaeaaef" compoundref="_texture_manager_8h" startline="9">m_textureMap</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>TextureManager</label>
+        <link refid="class_texture_manager"/>
+      </node>
+    </collaborationgraph>
+    <location file="TextureManager.h" line="6" column="1" bodyfile="TextureManager.h" bodystart="7" bodyend="15"/>
+    <listofallmembers>
+      <member refid="class_texture_manager_1ac6fb81774b7741984e3f9f3c965492f4" prot="public" virt="non-virtual"><scope>TextureManager</scope><name>Load</name></member>
+      <member refid="class_texture_manager_1ab78a1ae0477b016569b32ac4ceaeaaef" prot="public" virt="non-virtual"><scope>TextureManager</scope><name>m_textureMap</name></member>
+      <member refid="class_texture_manager_1ad76abb178b37cedf4514eb0154349935" prot="public" virt="non-virtual"><scope>TextureManager</scope><name>TextureManager</name></member>
+      <member refid="class_texture_manager_1a0b6428ac20e7495ec2e3e8a0c4c869ee" prot="public" virt="non-virtual"><scope>TextureManager</scope><name>Unload</name></member>
+      <member refid="class_texture_manager_1a001d6d74674961db79987e3222682576" prot="public" virt="non-virtual"><scope>TextureManager</scope><name>~TextureManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

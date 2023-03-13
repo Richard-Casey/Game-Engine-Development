@@ -1,0 +1,509 @@
+\hypertarget{class_bitmap}{}\doxysection{Bitmap Class Reference}
+\label{class_bitmap}\index{Bitmap@{Bitmap}}
+
+
+\mbox{\hyperlink{class_bitmap}{Bitmap}} Class.  
+
+
+
+
+{\ttfamily \#include $<$bitmap.\+h$>$}
+
+
+
+Inheritance diagram for Bitmap\+:
+% FIG 0
+
+
+Collaboration diagram for Bitmap\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_bitmap_a581872fa25c5dd41ed6729d33e611293}{Set\+Parent}} (\mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$parent)
+\item 
+\mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ \mbox{\hyperlink{class_bitmap_a48981bb560ef8f3f3172ae4c7fe31ca7}{Get\+Parent}} () const
+\item 
+void \mbox{\hyperlink{class_bitmap_a5725c4483a8a1f0a71c901c76c7a10ed}{Add\+Child}} (\mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$child)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ $>$ \& \mbox{\hyperlink{class_bitmap_aeb7d1b03c0d830759448d8bf12a108b9}{Get\+Children}} ()
+\item 
+\mbox{\hyperlink{class_bitmap_a7d2d9d8a55c6bd55696d812f8defe011}{Bitmap}} (SDL\+\_\+\+Renderer $\ast$renderer, std\+::string filename, int xpos, int ypos, std\+::string name, bool use\+Transparency=false)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_bitmap}{Bitmap}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bitmap_a72d2a301ec1eb1c8d0f3d64823659a8e}{$\sim$\+Bitmap}} ()
+\begin{DoxyCompactList}\small\item\em Finalizes an instance of the \mbox{\hyperlink{class_bitmap}{Bitmap}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bitmap_a69ff46a0ca29680ab41813f2a8990f93}{draw}} ()
+\begin{DoxyCompactList}\small\item\em Draws this instance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bitmap_afdc4f28cf1a32e587153be4012aa058f}{addoffset}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Addoffsets the specified x. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_bitmap_ae93c29792fc2ef318c2de91e2dffacf0}{Update}} ()
+\item 
+int \mbox{\hyperlink{class_bitmap_a8dcb2592cf1a834c0c4864d03597eb0f}{GetX}} ()
+\item 
+int \mbox{\hyperlink{class_bitmap_ab7481fba70b483315b9bcee6007c0e7d}{GetY}} ()
+\item 
+int \mbox{\hyperlink{class_bitmap_a2619a68555872d52f324ec110c78e5e3}{GetW}} ()
+\begin{DoxyCompactList}\small\item\em Gets the w. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bitmap_a7e398a0f351b6747ac85e24368fb9ad5}{GetH}} ()
+\begin{DoxyCompactList}\small\item\em Gets the h. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bitmap_a4277bd01af52a99971bc83d1cf628288}{Get\+PositionX}} ()
+\begin{DoxyCompactList}\small\item\em Gets the position x. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bitmap_a3fd62baa60e6a8747a3a152cab5eeff3}{Get\+PositionY}} ()
+\begin{DoxyCompactList}\small\item\em Gets the position y. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bitmap_a15fe29c1b4fc1f00716c9dd422abc4c1}{Set\+Position}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Sets the position. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_bitmap_a19585ce54ee6f21d8a9a6b1d8b86cc04}{Get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_bitmap_a2285c1d3b89c5434e1d5b8e4dabd42d9}{Get\+Filepath}} () const
+\item 
+SDL\+\_\+\+Texture $\ast$ \mbox{\hyperlink{class_bitmap_af4631b38bd1790b3db5180c216cb58f3}{Get\+Texture\+Ref}} ()
+\item 
+bool \mbox{\hyperlink{class_bitmap_a68697e385eb9ff10c5296f411e90d68a}{Contains\+Point}} (int x, int y) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_bitmap_a66dec28bd4fd7df4b5f9c68ddc6e07dd}{is\+Visable}} = true
+\begin{DoxyCompactList}\small\item\em Boolean used for end goal (\mbox{\hyperlink{class_bitmap}{Bitmap}} is visable -\/ collecting key results in false) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bitmap_ad1e358e487367d573758cb713f046028}{is\+End}} = false
+\begin{DoxyCompactList}\small\item\em Boolean used for JSON save. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bitmap_a7ade805194dabe9d4ac1051fb7b44075}{m\+\_\+x}} = 0
+\begin{DoxyCompactList}\small\item\em Used withing bitmap.\+cpop to set the x, y, width and height of the bitmap. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_bitmap_af4eee64e60c65393ee7c13f65824dff4}{m\+\_\+y}} = 0
+\item 
+int \mbox{\hyperlink{class_bitmap_a9bf3bc4f22d7dfd239b650c256401937}{m\+\_\+w}} =0
+\item 
+int \mbox{\hyperlink{class_bitmap_a9e5b8cf456c4c9c8cdd0b2db0aa7f47d}{m\+\_\+h}} = 0
+\item 
+int \mbox{\hyperlink{class_bitmap_a35d5bfdeb0071f4c00a29f03dd60fc5a}{sprite\+Width}} = 69
+\begin{DoxyCompactList}\small\item\em Width of sprite. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_bitmap_ad737c8f2f088a650fd4bcb8d67d2ec14}{delta\+Time}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Initialise Delta Time to 0. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_bitmap_addac8e49990e141f9ecd7722b4c4c664}{m\+\_\+vx}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Used in the draw function of \mbox{\hyperlink{class_bitmap}{Bitmap}} to calculate delta time. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_bitmap_a115f25bf7f32a12e6d51916cbb33e151}{m\+\_\+vy}} = 0.\+0f
+\item 
+float \mbox{\hyperlink{class_bitmap_a2d7dacb014fb8e9b636618eaf850d666}{m\+\_\+ax}} = 0.\+0f
+\item 
+float \mbox{\hyperlink{class_bitmap_a433654d519140b96b98b69dbd1a930ce}{m\+\_\+ay}} = 9.\+81f
+\item 
+std\+::string \mbox{\hyperlink{class_bitmap_a04bad4d42d3f7724226815b3163306fb}{Name}}
+\begin{DoxyCompactList}\small\item\em Used in bitmap constructor for name and to return Name for \mbox{\hyperlink{class_bitmap_a19585ce54ee6f21d8a9a6b1d8b86cc04}{Get\+Name()}} function. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_bitmap_a909cb95a3129c4bf8d3a9a75e636bc32}{path}}
+\begin{DoxyCompactList}\small\item\em Used in bitmap constructor for filepath. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bitmap_af7ac93fbbb6dd80dfa2a5b60564fcac4}{transparent}}
+\begin{DoxyCompactList}\small\item\em Used in bitmap constructor for usetransparency. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type}} \mbox{\hyperlink{class_bitmap_a529c67ada83b851eceec531dcaa5e8f8}{type}} \{ Object\+Type\+::\+Static \}
+\item 
+bool \mbox{\hyperlink{class_bitmap_a9af473f70e06ad318e6eaf4033da058e}{apply\+Gravity}} \{ false \}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ $>$ \mbox{\hyperlink{class_bitmap_a33b8ef81a8b9510677cfc02623de5c7c}{children}}
+\item 
+\mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ \mbox{\hyperlink{class_bitmap_aac08a6ab8d0907ff5eaccd153a612293}{m\+\_\+parent}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ $>$ \mbox{\hyperlink{class_bitmap_a365f44ae92df65e23d830224690aaedf}{m\+\_\+children}}
+\item 
+bool \mbox{\hyperlink{class_bitmap_a82518a87ccc66a67913b1376c4f87efe}{Is\+Dragged}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_bitmap}{Bitmap}} Class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_bitmap_a7d2d9d8a55c6bd55696d812f8defe011}\label{class_bitmap_a7d2d9d8a55c6bd55696d812f8defe011}} 
+\index{Bitmap@{Bitmap}!Bitmap@{Bitmap}}
+\index{Bitmap@{Bitmap}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{Bitmap()}{Bitmap()}}
+{\footnotesize\ttfamily Bitmap\+::\+Bitmap (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{std\+::string}]{filename,  }\item[{int}]{xpos,  }\item[{int}]{ypos,  }\item[{std\+::string}]{name,  }\item[{bool}]{use\+Transparency = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_bitmap}{Bitmap}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & The renderer.\\
+\hline
+{\em filename} & The filename.\\
+\hline
+{\em xpos} & The xpos.\\
+\hline
+{\em ypos} & The ypos.\\
+\hline
+{\em name} & The name.\\
+\hline
+{\em use\+Transparency} & if set to {\ttfamily true} \mbox{[}use transparency\mbox{]}.\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{class_bitmap_a72d2a301ec1eb1c8d0f3d64823659a8e}\label{class_bitmap_a72d2a301ec1eb1c8d0f3d64823659a8e}} 
+\index{Bitmap@{Bitmap}!````~Bitmap@{$\sim$Bitmap}}
+\index{````~Bitmap@{$\sim$Bitmap}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{$\sim$Bitmap()}{~Bitmap()}}
+{\footnotesize\ttfamily Bitmap\+::$\sim$\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Finalizes an instance of the \mbox{\hyperlink{class_bitmap}{Bitmap}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bitmap_a5725c4483a8a1f0a71c901c76c7a10ed}\label{class_bitmap_a5725c4483a8a1f0a71c901c76c7a10ed}} 
+\index{Bitmap@{Bitmap}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{AddChild()}{AddChild()}}
+{\footnotesize\ttfamily void Bitmap\+::\+Add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_bitmap_afdc4f28cf1a32e587153be4012aa058f}\label{class_bitmap_afdc4f28cf1a32e587153be4012aa058f}} 
+\index{Bitmap@{Bitmap}!addoffset@{addoffset}}
+\index{addoffset@{addoffset}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{addoffset()}{addoffset()}}
+{\footnotesize\ttfamily void Bitmap\+::addoffset (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Addoffsets the specified x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x.\\
+\hline
+{\em y} & The y.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_bitmap_a68697e385eb9ff10c5296f411e90d68a}\label{class_bitmap_a68697e385eb9ff10c5296f411e90d68a}} 
+\index{Bitmap@{Bitmap}!ContainsPoint@{ContainsPoint}}
+\index{ContainsPoint@{ContainsPoint}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{ContainsPoint()}{ContainsPoint()}}
+{\footnotesize\ttfamily bool Bitmap\+::\+Contains\+Point (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_bitmap_a69ff46a0ca29680ab41813f2a8990f93}\label{class_bitmap_a69ff46a0ca29680ab41813f2a8990f93}} 
+\index{Bitmap@{Bitmap}!draw@{draw}}
+\index{draw@{draw}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Bitmap\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws this instance. 
+
+\mbox{\Hypertarget{class_bitmap_aeb7d1b03c0d830759448d8bf12a108b9}\label{class_bitmap_aeb7d1b03c0d830759448d8bf12a108b9}} 
+\index{Bitmap@{Bitmap}!GetChildren@{GetChildren}}
+\index{GetChildren@{GetChildren}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{GetChildren()}{GetChildren()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ $>$ \& Bitmap\+::\+Get\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_bitmap_a2285c1d3b89c5434e1d5b8e4dabd42d9}\label{class_bitmap_a2285c1d3b89c5434e1d5b8e4dabd42d9}} 
+\index{Bitmap@{Bitmap}!GetFilepath@{GetFilepath}}
+\index{GetFilepath@{GetFilepath}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{GetFilepath()}{GetFilepath()}}
+{\footnotesize\ttfamily std\+::string Bitmap\+::\+Get\+Filepath (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_bitmap_a7e398a0f351b6747ac85e24368fb9ad5}\label{class_bitmap_a7e398a0f351b6747ac85e24368fb9ad5}} 
+\index{Bitmap@{Bitmap}!GetH@{GetH}}
+\index{GetH@{GetH}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{GetH()}{GetH()}}
+{\footnotesize\ttfamily int Bitmap\+::\+GetH (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the h. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{class_bitmap_a19585ce54ee6f21d8a9a6b1d8b86cc04}\label{class_bitmap_a19585ce54ee6f21d8a9a6b1d8b86cc04}} 
+\index{Bitmap@{Bitmap}!GetName@{GetName}}
+\index{GetName@{GetName}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily std\+::string Bitmap\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the name. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_bitmap_a48981bb560ef8f3f3172ae4c7fe31ca7}\label{class_bitmap_a48981bb560ef8f3f3172ae4c7fe31ca7}} 
+\index{Bitmap@{Bitmap}!GetParent@{GetParent}}
+\index{GetParent@{GetParent}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{GetParent()}{GetParent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$ Bitmap\+::\+Get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_bitmap_a4277bd01af52a99971bc83d1cf628288}\label{class_bitmap_a4277bd01af52a99971bc83d1cf628288}} 
+\index{Bitmap@{Bitmap}!GetPositionX@{GetPositionX}}
+\index{GetPositionX@{GetPositionX}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{GetPositionX()}{GetPositionX()}}
+{\footnotesize\ttfamily int Bitmap\+::\+Get\+PositionX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the position x. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_bitmap_a3fd62baa60e6a8747a3a152cab5eeff3}\label{class_bitmap_a3fd62baa60e6a8747a3a152cab5eeff3}} 
+\index{Bitmap@{Bitmap}!GetPositionY@{GetPositionY}}
+\index{GetPositionY@{GetPositionY}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{GetPositionY()}{GetPositionY()}}
+{\footnotesize\ttfamily int Bitmap\+::\+Get\+PositionY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the position y. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_bitmap_af4631b38bd1790b3db5180c216cb58f3}\label{class_bitmap_af4631b38bd1790b3db5180c216cb58f3}} 
+\index{Bitmap@{Bitmap}!GetTextureRef@{GetTextureRef}}
+\index{GetTextureRef@{GetTextureRef}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{GetTextureRef()}{GetTextureRef()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Texture $\ast$ Bitmap\+::\+Get\+Texture\+Ref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_bitmap_a2619a68555872d52f324ec110c78e5e3}\label{class_bitmap_a2619a68555872d52f324ec110c78e5e3}} 
+\index{Bitmap@{Bitmap}!GetW@{GetW}}
+\index{GetW@{GetW}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{GetW()}{GetW()}}
+{\footnotesize\ttfamily int Bitmap\+::\+GetW (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the w. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_bitmap_a8dcb2592cf1a834c0c4864d03597eb0f}\label{class_bitmap_a8dcb2592cf1a834c0c4864d03597eb0f}} 
+\index{Bitmap@{Bitmap}!GetX@{GetX}}
+\index{GetX@{GetX}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{GetX()}{GetX()}}
+{\footnotesize\ttfamily int Bitmap\+::\+GetX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_bitmap_ab7481fba70b483315b9bcee6007c0e7d}\label{class_bitmap_ab7481fba70b483315b9bcee6007c0e7d}} 
+\index{Bitmap@{Bitmap}!GetY@{GetY}}
+\index{GetY@{GetY}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{GetY()}{GetY()}}
+{\footnotesize\ttfamily int Bitmap\+::\+GetY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{class_bitmap_a581872fa25c5dd41ed6729d33e611293}\label{class_bitmap_a581872fa25c5dd41ed6729d33e611293}} 
+\index{Bitmap@{Bitmap}!SetParent@{SetParent}}
+\index{SetParent@{SetParent}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{SetParent()}{SetParent()}}
+{\footnotesize\ttfamily void Bitmap\+::\+Set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bitmap}{Bitmap}} $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_bitmap_a15fe29c1b4fc1f00716c9dd422abc4c1}\label{class_bitmap_a15fe29c1b4fc1f00716c9dd422abc4c1}} 
+\index{Bitmap@{Bitmap}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void Bitmap\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Sets the position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x.\\
+\hline
+{\em y} & The y.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{class_bitmap_ae93c29792fc2ef318c2de91e2dffacf0}\label{class_bitmap_ae93c29792fc2ef318c2de91e2dffacf0}} 
+\index{Bitmap@{Bitmap}!Update@{Update}}
+\index{Update@{Update}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Bitmap\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hero_aede83081901c78ba82c0cceb005a6b36}{Hero}}, \mbox{\hyperlink{class_pickup_a47d91d989a2beafaa497779ab892bcc8}{Pickup}}, and \mbox{\hyperlink{class_monster_a30d75e60a6cf10223b00e2fb1d58d485}{Monster}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_bitmap_a9af473f70e06ad318e6eaf4033da058e}\label{class_bitmap_a9af473f70e06ad318e6eaf4033da058e}} 
+\index{Bitmap@{Bitmap}!applyGravity@{applyGravity}}
+\index{applyGravity@{applyGravity}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{applyGravity}{applyGravity}}
+{\footnotesize\ttfamily bool Bitmap\+::apply\+Gravity \{ false \}}
+
+\mbox{\Hypertarget{class_bitmap_a33b8ef81a8b9510677cfc02623de5c7c}\label{class_bitmap_a33b8ef81a8b9510677cfc02623de5c7c}} 
+\index{Bitmap@{Bitmap}!children@{children}}
+\index{children@{children}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{children}{children}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_bitmap}{Bitmap}}$\ast$$>$ Bitmap\+::children}
+
+\mbox{\Hypertarget{class_bitmap_ad737c8f2f088a650fd4bcb8d67d2ec14}\label{class_bitmap_ad737c8f2f088a650fd4bcb8d67d2ec14}} 
+\index{Bitmap@{Bitmap}!deltaTime@{deltaTime}}
+\index{deltaTime@{deltaTime}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{deltaTime}{deltaTime}}
+{\footnotesize\ttfamily float Bitmap\+::delta\+Time = 0.\+0f}
+
+
+
+Initialise Delta Time to 0. 
+
+\mbox{\Hypertarget{class_bitmap_a82518a87ccc66a67913b1376c4f87efe}\label{class_bitmap_a82518a87ccc66a67913b1376c4f87efe}} 
+\index{Bitmap@{Bitmap}!IsDragged@{IsDragged}}
+\index{IsDragged@{IsDragged}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{IsDragged}{IsDragged}}
+{\footnotesize\ttfamily bool Bitmap\+::\+Is\+Dragged = false}
+
+\mbox{\Hypertarget{class_bitmap_ad1e358e487367d573758cb713f046028}\label{class_bitmap_ad1e358e487367d573758cb713f046028}} 
+\index{Bitmap@{Bitmap}!isEnd@{isEnd}}
+\index{isEnd@{isEnd}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{isEnd}{isEnd}}
+{\footnotesize\ttfamily bool Bitmap\+::is\+End = false}
+
+
+
+Boolean used for JSON save. 
+
+\mbox{\Hypertarget{class_bitmap_a66dec28bd4fd7df4b5f9c68ddc6e07dd}\label{class_bitmap_a66dec28bd4fd7df4b5f9c68ddc6e07dd}} 
+\index{Bitmap@{Bitmap}!isVisable@{isVisable}}
+\index{isVisable@{isVisable}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{isVisable}{isVisable}}
+{\footnotesize\ttfamily bool Bitmap\+::is\+Visable = true}
+
+
+
+Boolean used for end goal (\mbox{\hyperlink{class_bitmap}{Bitmap}} is visable -\/ collecting key results in false) 
+
+\mbox{\Hypertarget{class_bitmap_a2d7dacb014fb8e9b636618eaf850d666}\label{class_bitmap_a2d7dacb014fb8e9b636618eaf850d666}} 
+\index{Bitmap@{Bitmap}!m\_ax@{m\_ax}}
+\index{m\_ax@{m\_ax}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{m\_ax}{m\_ax}}
+{\footnotesize\ttfamily float Bitmap\+::m\+\_\+ax = 0.\+0f}
+
+\mbox{\Hypertarget{class_bitmap_a433654d519140b96b98b69dbd1a930ce}\label{class_bitmap_a433654d519140b96b98b69dbd1a930ce}} 
+\index{Bitmap@{Bitmap}!m\_ay@{m\_ay}}
+\index{m\_ay@{m\_ay}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{m\_ay}{m\_ay}}
+{\footnotesize\ttfamily float Bitmap\+::m\+\_\+ay = 9.\+81f}
+
+\mbox{\Hypertarget{class_bitmap_a365f44ae92df65e23d830224690aaedf}\label{class_bitmap_a365f44ae92df65e23d830224690aaedf}} 
+\index{Bitmap@{Bitmap}!m\_children@{m\_children}}
+\index{m\_children@{m\_children}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{m\_children}{m\_children}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_bitmap}{Bitmap}}$\ast$$>$ Bitmap\+::m\+\_\+children}
+
+\mbox{\Hypertarget{class_bitmap_a9e5b8cf456c4c9c8cdd0b2db0aa7f47d}\label{class_bitmap_a9e5b8cf456c4c9c8cdd0b2db0aa7f47d}} 
+\index{Bitmap@{Bitmap}!m\_h@{m\_h}}
+\index{m\_h@{m\_h}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{m\_h}{m\_h}}
+{\footnotesize\ttfamily int Bitmap\+::m\+\_\+h = 0}
+
+\mbox{\Hypertarget{class_bitmap_aac08a6ab8d0907ff5eaccd153a612293}\label{class_bitmap_aac08a6ab8d0907ff5eaccd153a612293}} 
+\index{Bitmap@{Bitmap}!m\_parent@{m\_parent}}
+\index{m\_parent@{m\_parent}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{m\_parent}{m\_parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bitmap}{Bitmap}}$\ast$ Bitmap\+::m\+\_\+parent}
+
+\mbox{\Hypertarget{class_bitmap_addac8e49990e141f9ecd7722b4c4c664}\label{class_bitmap_addac8e49990e141f9ecd7722b4c4c664}} 
+\index{Bitmap@{Bitmap}!m\_vx@{m\_vx}}
+\index{m\_vx@{m\_vx}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{m\_vx}{m\_vx}}
+{\footnotesize\ttfamily float Bitmap\+::m\+\_\+vx = 0.\+0f}
+
+
+
+Used in the draw function of \mbox{\hyperlink{class_bitmap}{Bitmap}} to calculate delta time. 
+
+\mbox{\Hypertarget{class_bitmap_a115f25bf7f32a12e6d51916cbb33e151}\label{class_bitmap_a115f25bf7f32a12e6d51916cbb33e151}} 
+\index{Bitmap@{Bitmap}!m\_vy@{m\_vy}}
+\index{m\_vy@{m\_vy}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{m\_vy}{m\_vy}}
+{\footnotesize\ttfamily float Bitmap\+::m\+\_\+vy = 0.\+0f}
+
+\mbox{\Hypertarget{class_bitmap_a9bf3bc4f22d7dfd239b650c256401937}\label{class_bitmap_a9bf3bc4f22d7dfd239b650c256401937}} 
+\index{Bitmap@{Bitmap}!m\_w@{m\_w}}
+\index{m\_w@{m\_w}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{m\_w}{m\_w}}
+{\footnotesize\ttfamily int Bitmap\+::m\+\_\+w =0}
+
+\mbox{\Hypertarget{class_bitmap_a7ade805194dabe9d4ac1051fb7b44075}\label{class_bitmap_a7ade805194dabe9d4ac1051fb7b44075}} 
+\index{Bitmap@{Bitmap}!m\_x@{m\_x}}
+\index{m\_x@{m\_x}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{m\_x}{m\_x}}
+{\footnotesize\ttfamily int Bitmap\+::m\+\_\+x = 0}
+
+
+
+Used withing bitmap.\+cpop to set the x, y, width and height of the bitmap. 
+
+\mbox{\Hypertarget{class_bitmap_af4eee64e60c65393ee7c13f65824dff4}\label{class_bitmap_af4eee64e60c65393ee7c13f65824dff4}} 
+\index{Bitmap@{Bitmap}!m\_y@{m\_y}}
+\index{m\_y@{m\_y}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{m\_y}{m\_y}}
+{\footnotesize\ttfamily int Bitmap\+::m\+\_\+y = 0}
+
+\mbox{\Hypertarget{class_bitmap_a04bad4d42d3f7724226815b3163306fb}\label{class_bitmap_a04bad4d42d3f7724226815b3163306fb}} 
+\index{Bitmap@{Bitmap}!Name@{Name}}
+\index{Name@{Name}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily std\+::string Bitmap\+::\+Name}
+
+
+
+Used in bitmap constructor for name and to return Name for \mbox{\hyperlink{class_bitmap_a19585ce54ee6f21d8a9a6b1d8b86cc04}{Get\+Name()}} function. 
+
+\mbox{\Hypertarget{class_bitmap_a909cb95a3129c4bf8d3a9a75e636bc32}\label{class_bitmap_a909cb95a3129c4bf8d3a9a75e636bc32}} 
+\index{Bitmap@{Bitmap}!path@{path}}
+\index{path@{path}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily std\+::string Bitmap\+::path}
+
+
+
+Used in bitmap constructor for filepath. 
+
+\mbox{\Hypertarget{class_bitmap_a35d5bfdeb0071f4c00a29f03dd60fc5a}\label{class_bitmap_a35d5bfdeb0071f4c00a29f03dd60fc5a}} 
+\index{Bitmap@{Bitmap}!spriteWidth@{spriteWidth}}
+\index{spriteWidth@{spriteWidth}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{spriteWidth}{spriteWidth}}
+{\footnotesize\ttfamily int Bitmap\+::sprite\+Width = 69}
+
+
+
+Width of sprite. 
+
+\mbox{\Hypertarget{class_bitmap_af7ac93fbbb6dd80dfa2a5b60564fcac4}\label{class_bitmap_af7ac93fbbb6dd80dfa2a5b60564fcac4}} 
+\index{Bitmap@{Bitmap}!transparent@{transparent}}
+\index{transparent@{transparent}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{transparent}{transparent}}
+{\footnotesize\ttfamily bool Bitmap\+::transparent}
+
+
+
+Used in bitmap constructor for usetransparency. 
+
+\mbox{\Hypertarget{class_bitmap_a529c67ada83b851eceec531dcaa5e8f8}\label{class_bitmap_a529c67ada83b851eceec531dcaa5e8f8}} 
+\index{Bitmap@{Bitmap}!type@{type}}
+\index{type@{type}!Bitmap@{Bitmap}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{bitmap_8h_a842c5e2e69277690b064bf363c017980}{Object\+Type}} Bitmap\+::type \{ Object\+Type\+::\+Static \}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{bitmap_8h}{bitmap.\+h}}\item 
+\mbox{\hyperlink{bitmap_8cpp}{bitmap.\+cpp}}\end{DoxyCompactItemize}

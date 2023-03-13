@@ -1,0 +1,13 @@
+digraph "Game"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [shape=record,label="{Game\n|+ assetList\l+ m_Bitmaps\l+ ObjectsInScene\l+ mousePoint\l+ spriteHeroRect\l+ spriteMonsterRect\l+ spritePickupRect\l+ spriteGoalRect\l+ m_Window\l+ m_Renderer\land 16 more...\l+ ResetEvent\l+ PickupEvent\l|+ RenderSceneHierarchy()\l+ Game()\l+ LoadObjects()\l+ UnLoadObjects()\l+ ~Game()\l+ SetDisplayColour()\l+ Update()\l+ randomNumber()\l+ GetSpriteHeroRect()\l+ GetPickupRect()\l}",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",style="solid",label=" +AssetMousDrag\n+m_SelectedBitmap" ,arrowhead="odiamond"];
+  Node2 [shape=record,label="{Bitmap\n|+ isVisable\l+ isEnd\l+ m_x\l+ m_y\l+ m_w\l+ m_h\l+ spriteWidth\l+ deltaTime\l+ m_vx\l+ m_vy\land 10 more...\l|+ SetParent()\l+ GetParent()\l+ AddChild()\l+ GetChildren()\l+ Bitmap()\l+ ~Bitmap()\l+ draw()\l+ addoffset()\l+ Update()\l+ GetX()\land 10 more...\l}",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_bitmap.html",tooltip="Bitmap Class."];
+  Node2 -> Node2 [color="grey25",style="solid",label=" +m_parent" ,arrowhead="odiamond"];
+  Node3 -> Node1 [color="grey25",style="solid",label=" +input" ,arrowhead="odiamond"];
+  Node3 [shape=record,label="{Input\n|+ m_event\l+ m_keysPressed\l|+ Update()\l+ Input()\l+ ~Input()\l+ KeyIsPressed()\l}",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_input.html",tooltip=" "];
+}

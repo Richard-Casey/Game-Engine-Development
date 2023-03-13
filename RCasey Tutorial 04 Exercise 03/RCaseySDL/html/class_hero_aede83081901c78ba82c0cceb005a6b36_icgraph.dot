@@ -1,0 +1,11 @@
+digraph "Hero::Update"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="Hero::Update",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Updates this instance."];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Hero::Hero",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_hero.html#ad760a7aac060b27d8702c83ceeb233ba",tooltip="Initializes a new instance of the Hero class."];
+}

@@ -1,0 +1,93 @@
+\hypertarget{_game_8cpp}{}\doxysection{Game.\+cpp File Reference}
+\label{_game_8cpp}\index{Game.cpp@{Game.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$imgui.\+h$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}nlohmann/json.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Game.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDL.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDL\+\_\+ttf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}input.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bitmap.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Hero.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Monster.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Resource\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Pickup.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Profiler.\+h\char`\"{}}\newline
+Include dependency graph for Game.\+cpp\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_game_8cpp_a6766aaa4b64ace39c242f179d917c746}{PROFILE}}(name)~\mbox{\hyperlink{struct_profile}{Profile}} p(name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{_game_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}{json}} = nlohmann\+::json
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_game_8cpp_a3dec0090b09a252dcc1ccdef420eef4a}{to\+\_\+json}} (\mbox{\hyperlink{bitmap_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&j, const \mbox{\hyperlink{class_bitmap}{Bitmap}} \&p)
+\begin{DoxyCompactList}\small\item\em To the json. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_game_8cpp_a782aa2f411468c6071fce20b49d4aabe}{from\+\_\+json}} (const \mbox{\hyperlink{bitmap_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&j, \mbox{\hyperlink{class_bitmap}{Bitmap}} \&p)
+\begin{DoxyCompactList}\small\item\em Froms the json. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_game_8cpp_a6766aaa4b64ace39c242f179d917c746}\label{_game_8cpp_a6766aaa4b64ace39c242f179d917c746}} 
+\index{Game.cpp@{Game.cpp}!PROFILE@{PROFILE}}
+\index{PROFILE@{PROFILE}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{PROFILE}{PROFILE}}
+{\footnotesize\ttfamily \#define PROFILE(\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})~\mbox{\hyperlink{struct_profile}{Profile}} p(name)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_game_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}\label{_game_8cpp_ab701e3ac61a85b337ec5c1abaad6742d}} 
+\index{Game.cpp@{Game.cpp}!json@{json}}
+\index{json@{json}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{json}{json}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{bitmap_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} =  nlohmann\+::json}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_game_8cpp_a782aa2f411468c6071fce20b49d4aabe}\label{_game_8cpp_a782aa2f411468c6071fce20b49d4aabe}} 
+\index{Game.cpp@{Game.cpp}!from\_json@{from\_json}}
+\index{from\_json@{from\_json}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{from\_json()}{from\_json()}}
+{\footnotesize\ttfamily void from\+\_\+json (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{bitmap_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{j,  }\item[{\mbox{\hyperlink{class_bitmap}{Bitmap}} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Froms the json. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & The j.\\
+\hline
+{\em p} & The p.\\
+\hline
+\end{DoxyParams}
+This function is used to convert a JSON object into a \mbox{\hyperlink{class_bitmap}{Bitmap}} object. \mbox{\Hypertarget{_game_8cpp_a3dec0090b09a252dcc1ccdef420eef4a}\label{_game_8cpp_a3dec0090b09a252dcc1ccdef420eef4a}} 
+\index{Game.cpp@{Game.cpp}!to\_json@{to\_json}}
+\index{to\_json@{to\_json}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{to\_json()}{to\_json()}}
+{\footnotesize\ttfamily void to\+\_\+json (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{bitmap_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}} \&}]{j,  }\item[{const \mbox{\hyperlink{class_bitmap}{Bitmap}} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+To the json. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & The j.\\
+\hline
+{\em p} & The p.\\
+\hline
+\end{DoxyParams}
+This function is used to convert a \mbox{\hyperlink{class_bitmap}{Bitmap}} object into a JSON object. 

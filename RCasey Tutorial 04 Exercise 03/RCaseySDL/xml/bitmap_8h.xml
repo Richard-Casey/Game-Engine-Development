@@ -1,0 +1,363 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="bitmap_8h" kind="file" language="C++">
+    <compoundname>bitmap.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">SDL.h</includes>
+    <includes local="yes">nlohmann/json.hpp</includes>
+    <includedby refid="_creature_8cpp" local="yes">Creature.cpp</includedby>
+    <includedby refid="_creature_8h" local="yes">Creature.h</includedby>
+    <includedby refid="_game_8cpp" local="yes">Game.cpp</includedby>
+    <includedby refid="_hero_8cpp" local="yes">Hero.cpp</includedby>
+    <includedby refid="_hero_8h" local="yes">Hero.h</includedby>
+    <includedby refid="_monster_8h" local="yes">Monster.h</includedby>
+    <includedby refid="_pickup_8cpp" local="yes">Pickup.cpp</includedby>
+    <includedby refid="_pickup_8h" local="yes">Pickup.h</includedby>
+    <includedby refid="bitmap_8cpp" local="yes">bitmap.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>bitmap.h</label>
+        <link refid="bitmap_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SDL.h</label>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="5">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Creature.cpp</label>
+        <link refid="_creature_8cpp"/>
+      </node>
+      <node id="3">
+        <label>Creature.h</label>
+        <link refid="_creature_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Game.cpp</label>
+        <link refid="_game_8cpp"/>
+      </node>
+      <node id="4">
+        <label>Game.h</label>
+        <link refid="_game_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Hero.cpp</label>
+        <link refid="_hero_8cpp"/>
+      </node>
+      <node id="13">
+        <label>Hero.h</label>
+        <link refid="_hero_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Monster.cpp</label>
+        <link refid="_monster_8cpp"/>
+      </node>
+      <node id="6">
+        <label>Monster.h</label>
+        <link refid="_monster_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Pickup.cpp</label>
+        <link refid="_pickup_8cpp"/>
+      </node>
+      <node id="14">
+        <label>Pickup.h</label>
+        <link refid="_pickup_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Profiler.cpp</label>
+        <link refid="_profiler_8cpp"/>
+      </node>
+      <node id="10">
+        <label>Profiler.h</label>
+        <link refid="_profiler_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>bitmap.cpp</label>
+        <link refid="bitmap_8cpp"/>
+      </node>
+      <node id="1">
+        <label>bitmap.h</label>
+        <link refid="bitmap_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_bitmap" prot="public">Bitmap</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="bitmap_8h_1a842c5e2e69277690b064bf363c017980" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>ObjectType</name>
+        <enumvalue id="bitmap_8h_1a842c5e2e69277690b064bf363c017980a84a8921b25f505d0d2077aeb5db4bc16" prot="public">
+          <name>Static</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bitmap_8h_1a842c5e2e69277690b064bf363c017980ae0a67c8c63f8f7362917abef6ca24c6b" prot="public">
+          <name>Hero</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bitmap_8h_1a842c5e2e69277690b064bf363c017980a243a3afa44aed85d504dbd53fd9804e9" prot="public">
+          <name>Monster</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bitmap_8h_1a842c5e2e69277690b064bf363c017980a96fd07f8244c1d8b9a38930ea4bdec97" prot="public">
+          <name>Pickup</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bitmap_8h_1a842c5e2e69277690b064bf363c017980ae64fb9f0ee2bda394d88c14aaa19b06b" prot="public">
+          <name>Object_Count</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum for type of bitmaps. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="33" column="1" bodyfile="bitmap.h" bodystart="34" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="bitmap_8h_1ab701e3ac61a85b337ec5c1abaad6742d" prot="public" static="no">
+        <type>nlohmann::json</type>
+        <definition>using json =  nlohmann::json</definition>
+        <argsstring></argsstring>
+        <name>json</name>
+        <briefdescription>
+<para>JSON is used to save the x,y, style and filename of the Bitmaps. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="13" column="1" bodyfile="bitmap.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>BITMAP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BITMAP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SDL.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;nlohmann/json.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="bitmap_8h_1ab701e3ac61a85b337ec5c1abaad6742d" refkind="member"><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="bitmap_8h_1ab701e3ac61a85b337ec5c1abaad6742d" kindref="member">json</ref><sp/>=<sp/>nlohmann::json;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SDL_Surface;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SDL_Texture;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SDL_Renderer;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980" refkind="member"><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980" kindref="member">ObjectType</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980a84a8921b25f505d0d2077aeb5db4bc16" kindref="member">Static</ref>,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980ae0a67c8c63f8f7362917abef6ca24c6b" kindref="member">Hero</ref>,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980a243a3afa44aed85d504dbd53fd9804e9" kindref="member">Monster</ref>,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980a96fd07f8244c1d8b9a38930ea4bdec97" kindref="member">Pickup</ref>,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980ae64fb9f0ee2bda394d88c14aaa19b06b" kindref="member">Object_Count</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="class_bitmap" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_bitmap" kindref="compound">Bitmap</ref></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Surface*<sp/>m_pbitmapSurface;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Texture*<sp/>m_pbitmapTexture<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Renderer*<sp/>m_pRenderer;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Texture*<sp/>m_texture;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="class_bitmap_1a66dec28bd4fd7df4b5f9c68ddc6e07dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a66dec28bd4fd7df4b5f9c68ddc6e07dd" kindref="member">isVisable</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="class_bitmap_1ad1e358e487367d573758cb713f046028" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1ad1e358e487367d573758cb713f046028" kindref="member">isEnd</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="class_bitmap_1a9e5b8cf456c4c9c8cdd0b2db0aa7f47d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" kindref="member">m_x</ref><sp/>=<sp/>0,<sp/><ref refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" kindref="member">m_y</ref><sp/>=<sp/>0,<sp/><ref refid="class_bitmap_1a9bf3bc4f22d7dfd239b650c256401937" kindref="member">m_w</ref><sp/>=0,<sp/><ref refid="class_bitmap_1a9e5b8cf456c4c9c8cdd0b2db0aa7f47d" kindref="member">m_h</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="class_bitmap_1a35d5bfdeb0071f4c00a29f03dd60fc5a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a35d5bfdeb0071f4c00a29f03dd60fc5a" kindref="member">spriteWidth</ref><sp/>=<sp/>69;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="class_bitmap_1ad737c8f2f088a650fd4bcb8d67d2ec14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1ad737c8f2f088a650fd4bcb8d67d2ec14" kindref="member">deltaTime</ref><sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="class_bitmap_1a2d7dacb014fb8e9b636618eaf850d666" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1addac8e49990e141f9ecd7722b4c4c664" kindref="member">m_vx</ref><sp/>=<sp/>0.0f,<sp/><ref refid="class_bitmap_1a115f25bf7f32a12e6d51916cbb33e151" kindref="member">m_vy</ref><sp/>=<sp/>0.0f,<sp/><ref refid="class_bitmap_1a2d7dacb014fb8e9b636618eaf850d666" kindref="member">m_ax</ref><sp/>=<sp/>0.0f,<sp/><ref refid="class_bitmap_1a433654d519140b96b98b69dbd1a930ce" kindref="member">m_ay</ref><sp/>=<sp/>9.81f;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="class_bitmap_1a04bad4d42d3f7724226815b3163306fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_bitmap_1a04bad4d42d3f7724226815b3163306fb" kindref="member">Name</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="class_bitmap_1a909cb95a3129c4bf8d3a9a75e636bc32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_bitmap_1a909cb95a3129c4bf8d3a9a75e636bc32" kindref="member">path</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="class_bitmap_1af7ac93fbbb6dd80dfa2a5b60564fcac4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1af7ac93fbbb6dd80dfa2a5b60564fcac4" kindref="member">transparent</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116" refid="class_bitmap_1a581872fa25c5dd41ed6729d33e611293" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a581872fa25c5dd41ed6729d33e611293" kindref="member">SetParent</ref>(<ref refid="class_bitmap" kindref="compound">Bitmap</ref>*<sp/>parent)<sp/>{<sp/><ref refid="class_bitmap_1aac08a6ab8d0907ff5eaccd153a612293" kindref="member">m_parent</ref><sp/>=<sp/>parent;<sp/>}</highlight></codeline>
+<codeline lineno="117" refid="class_bitmap_1a48981bb560ef8f3f3172ae4c7fe31ca7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap" kindref="compound">Bitmap</ref>*<sp/><ref refid="class_bitmap_1a48981bb560ef8f3f3172ae4c7fe31ca7" kindref="member">GetParent</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1aac08a6ab8d0907ff5eaccd153a612293" kindref="member">m_parent</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="118" refid="class_bitmap_1a5725c4483a8a1f0a71c901c76c7a10ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a5725c4483a8a1f0a71c901c76c7a10ed" kindref="member">AddChild</ref>(<ref refid="class_bitmap" kindref="compound">Bitmap</ref>*<sp/>child)<sp/>{<sp/><ref refid="class_bitmap_1a365f44ae92df65e23d830224690aaedf" kindref="member">m_children</ref>.push_back(child);<sp/>}</highlight></codeline>
+<codeline lineno="119" refid="class_bitmap_1aeb7d1b03c0d830759448d8bf12a108b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Bitmap*&gt;&amp;<sp/><ref refid="class_bitmap_1aeb7d1b03c0d830759448d8bf12a108b9" kindref="member">GetChildren</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a365f44ae92df65e23d830224690aaedf" kindref="member">m_children</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="class_bitmap_1a529c67ada83b851eceec531dcaa5e8f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980" kindref="member">ObjectType</ref><sp/><ref refid="class_bitmap_1a529c67ada83b851eceec531dcaa5e8f8" kindref="member">type</ref>{<sp/>ObjectType::Static<sp/>};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="class_bitmap_1a9af473f70e06ad318e6eaf4033da058e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a9af473f70e06ad318e6eaf4033da058e" kindref="member">applyGravity</ref>{<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"><sp/>};</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="class_bitmap_1a33b8ef81a8b9510677cfc02623de5c7c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Bitmap*&gt;<sp/><ref refid="class_bitmap_1a33b8ef81a8b9510677cfc02623de5c7c" kindref="member">children</ref>;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap" kindref="compound">Bitmap</ref>(SDL_Renderer*<sp/>renderer,<sp/>std::string<sp/>filename,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xpos,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ypos,<sp/>std::string<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useTransparency<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1a72d2a301ec1eb1c8d0f3d64823659a8e" kindref="member">~Bitmap</ref>();</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" kindref="member">draw</ref>();</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1afdc4f28cf1a32e587153be4012aa058f" kindref="member">addoffset</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="class_bitmap_1ae93c29792fc2ef318c2de91e2dffacf0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1ae93c29792fc2ef318c2de91e2dffacf0" kindref="member">Update</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="class_bitmap_1aac08a6ab8d0907ff5eaccd153a612293" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap" kindref="compound">Bitmap</ref>*<sp/><ref refid="class_bitmap_1aac08a6ab8d0907ff5eaccd153a612293" kindref="member">m_parent</ref>;</highlight></codeline>
+<codeline lineno="137" refid="class_bitmap_1a365f44ae92df65e23d830224690aaedf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Bitmap*&gt;<sp/><ref refid="class_bitmap_1a365f44ae92df65e23d830224690aaedf" kindref="member">m_children</ref>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="class_bitmap_1a8dcb2592cf1a834c0c4864d03597eb0f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a8dcb2592cf1a834c0c4864d03597eb0f" kindref="member">GetX</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" kindref="member">m_x</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="140" refid="class_bitmap_1ab7481fba70b483315b9bcee6007c0e7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1ab7481fba70b483315b9bcee6007c0e7d" kindref="member">GetY</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" kindref="member">m_y</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a2619a68555872d52f324ec110c78e5e3" kindref="member">GetW</ref>();</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a7e398a0f351b6747ac85e24368fb9ad5" kindref="member">GetH</ref>();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a4277bd01af52a99971bc83d1cf628288" kindref="member">GetPositionX</ref>();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a3fd62baa60e6a8747a3a152cab5eeff3" kindref="member">GetPositionY</ref>();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a15fe29c1b4fc1f00716c9dd422abc4c1" kindref="member">SetPosition</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_bitmap_1a19585ce54ee6f21d8a9a6b1d8b86cc04" kindref="member">GetName</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_bitmap_1a2285c1d3b89c5434e1d5b8e4dabd42d9" kindref="member">GetFilepath</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="148" refid="class_bitmap_1af4631b38bd1790b3db5180c216cb58f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SDL_Texture*<sp/><ref refid="class_bitmap_1af4631b38bd1790b3db5180c216cb58f3" kindref="member">GetTextureRef</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_pbitmapTexture;<sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="class_bitmap_1a82518a87ccc66a67913b1376c4f87efe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a82518a87ccc66a67913b1376c4f87efe" kindref="member">IsDragged</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151" refid="class_bitmap_1a68697e385eb9ff10c5296f411e90d68a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_bitmap_1a68697e385eb9ff10c5296f411e90d68a" kindref="member">ContainsPoint</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="bitmap.h"/>
+  </compounddef>
+</doxygen>

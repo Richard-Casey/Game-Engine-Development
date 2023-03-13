@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="struct_profile" kind="struct" language="C++" prot="public">
+    <compoundname>Profile</compoundname>
+    <includes refid="_profiler_8h" local="no">Profiler.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_profile_1a0e7c2707a0db7a00d4a0cb278a4ad803" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* Profile::_name</definition>
+        <argsstring></argsstring>
+        <name>_name</name>
+        <qualifiedname>Profile::_name</qualifiedname>
+        <briefdescription>
+<para>The name. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="84" column="16" bodyfile="Profiler.h" bodystart="84" bodyend="-1"/>
+        <referencedby refid="struct_profile_1a2187c1c354a2095ea925093163a9b247" compoundref="_profiler_8h" startline="61" endline="67">Profile</referencedby>
+        <referencedby refid="struct_profile_1a58fa758a59bc4ee3c1a9980e360e4e98" compoundref="_profiler_8h" startline="72" endline="79">~Profile</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_profile_1a2034eac7c13860ce5a0156495a9c9b9c" prot="public" static="no" mutable="no">
+        <type>__int64</type>
+        <definition>__int64 Profile::startTime</definition>
+        <argsstring></argsstring>
+        <name>startTime</name>
+        <qualifiedname>Profile::startTime</qualifiedname>
+        <briefdescription>
+<para>The start time. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="88" column="13" bodyfile="Profiler.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="struct_profile_1a2187c1c354a2095ea925093163a9b247" compoundref="_profiler_8h" startline="61" endline="67">Profile</referencedby>
+        <referencedby refid="struct_profile_1a58fa758a59bc4ee3c1a9980e360e4e98" compoundref="_profiler_8h" startline="72" endline="79">~Profile</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_profile_1a2187c1c354a2095ea925093163a9b247" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Profile::Profile</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>Profile</name>
+        <qualifiedname>Profile::Profile</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="struct_profile" kindref="compound">Profile</ref> struct. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="61" column="5" bodyfile="Profiler.h" bodystart="61" bodyend="67"/>
+        <references refid="struct_profile_1a0e7c2707a0db7a00d4a0cb278a4ad803" compoundref="_profiler_8h" startline="84">_name</references>
+        <references refid="struct_profile_1a2034eac7c13860ce5a0156495a9c9b9c" compoundref="_profiler_8h" startline="88">startTime</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_profile_1a58fa758a59bc4ee3c1a9980e360e4e98" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Profile::~Profile</definition>
+        <argsstring>()</argsstring>
+        <name>~Profile</name>
+        <qualifiedname>Profile::~Profile</qualifiedname>
+        <briefdescription>
+<para>Finalizes an instance of the <ref refid="struct_profile" kindref="compound">Profile</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Profiler.h" line="72" column="5" bodyfile="Profiler.h" bodystart="72" bodyend="79"/>
+        <references refid="struct_profile_1a0e7c2707a0db7a00d4a0cb278a4ad803" compoundref="_profiler_8h" startline="84">_name</references>
+        <references refid="_profiler_8h_1a6f00dbbe483432624a7b14bc8f72379a" compoundref="_profiler_8cpp" startline="69">g_profileManager</references>
+        <references refid="struct_profile_1a2034eac7c13860ce5a0156495a9c9b9c" compoundref="_profiler_8h" startline="88">startTime</references>
+        <references refid="class_profiler_system_1a730a549816e2e48f092576b1f08f3962" compoundref="_profiler_8cpp" startline="43" endline="50">ProfilerSystem::storeSample</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>Profile</label>
+        <link refid="struct_profile"/>
+      </node>
+    </collaborationgraph>
+    <location file="Profiler.h" line="55" column="1" bodyfile="Profiler.h" bodystart="56" bodyend="89"/>
+    <listofallmembers>
+      <member refid="struct_profile_1a0e7c2707a0db7a00d4a0cb278a4ad803" prot="public" virt="non-virtual"><scope>Profile</scope><name>_name</name></member>
+      <member refid="struct_profile_1a2187c1c354a2095ea925093163a9b247" prot="public" virt="non-virtual"><scope>Profile</scope><name>Profile</name></member>
+      <member refid="struct_profile_1a2034eac7c13860ce5a0156495a9c9b9c" prot="public" virt="non-virtual"><scope>Profile</scope><name>startTime</name></member>
+      <member refid="struct_profile_1a58fa758a59bc4ee3c1a9980e360e4e98" prot="public" virt="non-virtual"><scope>Profile</scope><name>~Profile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

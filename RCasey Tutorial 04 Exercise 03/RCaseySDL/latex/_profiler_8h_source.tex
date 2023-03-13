@@ -1,0 +1,70 @@
+\hypertarget{_profiler_8h_source}{}\doxysection{Profiler.\+h}
+\mbox{\hyperlink{_profiler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_game_8h}{Game.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <Windows.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_sample_data}{SampleData}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \_\_int64\ \mbox{\hyperlink{struct_sample_data_a0a5c38dd40d80e48e96dd0dfba8d4353}{functionTime}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sample_data_acab5c4bbe349d1f216e84deceb803046}{frameReference}};}
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{typedef}\ std::map<const\ char*,\ std::vector<SampleData*>>\ \mbox{\hyperlink{_profiler_8h_ab1b49ac083856f4fb48add947394a13a}{FrameMap}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_profiler_system}{ProfilerSystem}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_profiler_system_aa7e3ea767c34204f9ff3c700388cfa45}{ProfilerSystem}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_profiler_system_a6828f2c94031f607cad96f1f92a42ab9}{\string~ProfilerSystem}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_profiler_system_a498888d536a6d82d12d2b58703e80505}{startFrame}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_profiler_system_a730a549816e2e48f092576b1f08f3962}{storeSample}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \_\_int64\ elapsedTime);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_profiler_system_aa73e8057f424a729ec4f37d49fef3fa4}{endFrame}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \_\_int64\ \mbox{\hyperlink{class_profiler_system_a66a0a4ffd4e33b961ee54517d71b4b81}{currentFrameTime}}\ =\ 0;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ currentFrame;}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{_profiler_8h_ab1b49ac083856f4fb48add947394a13a}{FrameMap}}\ frameData;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ frameCount;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ totalFrameTime;}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{class_profiler_system}{ProfilerSystem}}\ \mbox{\hyperlink{_profiler_8h_a6f00dbbe483432624a7b14bc8f72379a}{g\_profileManager}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_profile}{Profile}}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{struct_profile_a2187c1c354a2095ea925093163a9b247}{Profile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name)}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_profile_a0e7c2707a0db7a00d4a0cb278a4ad803}{\_name}}\ =\ name;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ LARGE\_INTEGER\ li;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ QueryPerformanceCounter(\&li);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_profile_a2034eac7c13860ce5a0156495a9c9b9c}{startTime}}\ =\ li.QuadPart;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{struct_profile_a58fa758a59bc4ee3c1a9980e360e4e98}{\string~Profile}}()}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ LARGE\_INTEGER\ li;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ QueryPerformanceCounter(\&li);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \_\_int64\ endTime\ =\ li.QuadPart;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \_\_int64\ elapsedTime\ =\ endTime\ -\/\ \mbox{\hyperlink{struct_profile_a2034eac7c13860ce5a0156495a9c9b9c}{startTime}};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_profiler_8h_a6f00dbbe483432624a7b14bc8f72379a}{g\_profileManager}}.\mbox{\hyperlink{class_profiler_system_a730a549816e2e48f092576b1f08f3962}{storeSample}}(\mbox{\hyperlink{struct_profile_a0e7c2707a0db7a00d4a0cb278a4ad803}{\_name}},\ elapsedTime);}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_profile_a0e7c2707a0db7a00d4a0cb278a4ad803}{\_name}};}
+\DoxyCodeLine{00088\ \ \ \ \ \_\_int64\ \mbox{\hyperlink{struct_profile_a2034eac7c13860ce5a0156495a9c9b9c}{startTime}};}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ PROFILE(name)\ Profile\ p(name)}}
+
+\end{DoxyCode}

@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.6" xml:lang="en-US">
+  <compound refid="struct_game_1_1_asset_data" kind="struct"><name>Game::AssetData</name>
+    <member refid="struct_game_1_1_asset_data_1ad43abc213fc47daee3ae979af3f46778" kind="variable"><name>filename</name></member>
+  </compound>
+  <compound refid="class_bitmap" kind="class"><name>Bitmap</name>
+    <member refid="class_bitmap_1a6c3365cfb162674388a9452820adf569" kind="variable"><name>m_pbitmapSurface</name></member>
+    <member refid="class_bitmap_1a6c48f459ff1de3f34c935ce49e0b474b" kind="variable"><name>m_pbitmapTexture</name></member>
+    <member refid="class_bitmap_1ace621d4947809c755584af37753e652d" kind="variable"><name>m_pRenderer</name></member>
+    <member refid="class_bitmap_1a8c27d777eb2e1913c297ec7f8ea8ae54" kind="variable"><name>m_texture</name></member>
+    <member refid="class_bitmap_1a66dec28bd4fd7df4b5f9c68ddc6e07dd" kind="variable"><name>isVisable</name></member>
+    <member refid="class_bitmap_1ad1e358e487367d573758cb713f046028" kind="variable"><name>isEnd</name></member>
+    <member refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" kind="variable"><name>m_x</name></member>
+    <member refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" kind="variable"><name>m_y</name></member>
+    <member refid="class_bitmap_1a9bf3bc4f22d7dfd239b650c256401937" kind="variable"><name>m_w</name></member>
+    <member refid="class_bitmap_1a9e5b8cf456c4c9c8cdd0b2db0aa7f47d" kind="variable"><name>m_h</name></member>
+    <member refid="class_bitmap_1a35d5bfdeb0071f4c00a29f03dd60fc5a" kind="variable"><name>spriteWidth</name></member>
+    <member refid="class_bitmap_1ad737c8f2f088a650fd4bcb8d67d2ec14" kind="variable"><name>deltaTime</name></member>
+    <member refid="class_bitmap_1addac8e49990e141f9ecd7722b4c4c664" kind="variable"><name>m_vx</name></member>
+    <member refid="class_bitmap_1a115f25bf7f32a12e6d51916cbb33e151" kind="variable"><name>m_vy</name></member>
+    <member refid="class_bitmap_1a2d7dacb014fb8e9b636618eaf850d666" kind="variable"><name>m_ax</name></member>
+    <member refid="class_bitmap_1a433654d519140b96b98b69dbd1a930ce" kind="variable"><name>m_ay</name></member>
+    <member refid="class_bitmap_1a04bad4d42d3f7724226815b3163306fb" kind="variable"><name>Name</name></member>
+    <member refid="class_bitmap_1a909cb95a3129c4bf8d3a9a75e636bc32" kind="variable"><name>path</name></member>
+    <member refid="class_bitmap_1af7ac93fbbb6dd80dfa2a5b60564fcac4" kind="variable"><name>transparent</name></member>
+    <member refid="class_bitmap_1a529c67ada83b851eceec531dcaa5e8f8" kind="variable"><name>type</name></member>
+    <member refid="class_bitmap_1a9af473f70e06ad318e6eaf4033da058e" kind="variable"><name>applyGravity</name></member>
+    <member refid="class_bitmap_1a33b8ef81a8b9510677cfc02623de5c7c" kind="variable"><name>children</name></member>
+    <member refid="class_bitmap_1aac08a6ab8d0907ff5eaccd153a612293" kind="variable"><name>m_parent</name></member>
+    <member refid="class_bitmap_1a365f44ae92df65e23d830224690aaedf" kind="variable"><name>m_children</name></member>
+    <member refid="class_bitmap_1a82518a87ccc66a67913b1376c4f87efe" kind="variable"><name>IsDragged</name></member>
+    <member refid="class_bitmap_1a581872fa25c5dd41ed6729d33e611293" kind="function"><name>SetParent</name></member>
+    <member refid="class_bitmap_1a48981bb560ef8f3f3172ae4c7fe31ca7" kind="function"><name>GetParent</name></member>
+    <member refid="class_bitmap_1a5725c4483a8a1f0a71c901c76c7a10ed" kind="function"><name>AddChild</name></member>
+    <member refid="class_bitmap_1aeb7d1b03c0d830759448d8bf12a108b9" kind="function"><name>GetChildren</name></member>
+    <member refid="class_bitmap_1a7d2d9d8a55c6bd55696d812f8defe011" kind="function"><name>Bitmap</name></member>
+    <member refid="class_bitmap_1a72d2a301ec1eb1c8d0f3d64823659a8e" kind="function"><name>~Bitmap</name></member>
+    <member refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" kind="function"><name>draw</name></member>
+    <member refid="class_bitmap_1afdc4f28cf1a32e587153be4012aa058f" kind="function"><name>addoffset</name></member>
+    <member refid="class_bitmap_1ae93c29792fc2ef318c2de91e2dffacf0" kind="function"><name>Update</name></member>
+    <member refid="class_bitmap_1a8dcb2592cf1a834c0c4864d03597eb0f" kind="function"><name>GetX</name></member>
+    <member refid="class_bitmap_1ab7481fba70b483315b9bcee6007c0e7d" kind="function"><name>GetY</name></member>
+    <member refid="class_bitmap_1a2619a68555872d52f324ec110c78e5e3" kind="function"><name>GetW</name></member>
+    <member refid="class_bitmap_1a7e398a0f351b6747ac85e24368fb9ad5" kind="function"><name>GetH</name></member>
+    <member refid="class_bitmap_1a4277bd01af52a99971bc83d1cf628288" kind="function"><name>GetPositionX</name></member>
+    <member refid="class_bitmap_1a3fd62baa60e6a8747a3a152cab5eeff3" kind="function"><name>GetPositionY</name></member>
+    <member refid="class_bitmap_1a15fe29c1b4fc1f00716c9dd422abc4c1" kind="function"><name>SetPosition</name></member>
+    <member refid="class_bitmap_1a19585ce54ee6f21d8a9a6b1d8b86cc04" kind="function"><name>GetName</name></member>
+    <member refid="class_bitmap_1a2285c1d3b89c5434e1d5b8e4dabd42d9" kind="function"><name>GetFilepath</name></member>
+    <member refid="class_bitmap_1af4631b38bd1790b3db5180c216cb58f3" kind="function"><name>GetTextureRef</name></member>
+    <member refid="class_bitmap_1a68697e385eb9ff10c5296f411e90d68a" kind="function"><name>ContainsPoint</name></member>
+  </compound>
+  <compound refid="class_creature" kind="class"><name>Creature</name>
+    <member refid="class_creature_1a11001933620cbb41bc749281a2f7b95e" kind="function"><name>Creature</name></member>
+    <member refid="class_creature_1aa991b23f4813fbdb6f875204ed49814d" kind="function"><name>~Creature</name></member>
+  </compound>
+  <compound refid="class_game" kind="class"><name>Game</name>
+    <member refid="class_game_1a7f57a7a8408e554d0a72882c287e1d04" kind="enum"><name>GameState</name></member>
+    <member refid="class_game_1a7f57a7a8408e554d0a72882c287e1d04ac7901621f8e804cc3edab886693941b0" kind="enumvalue"><name>GAME</name></member>
+    <member refid="class_game_1a7f57a7a8408e554d0a72882c287e1d04a467bd13398add05f7113f5e87fe2143d" kind="enumvalue"><name>SPLASH</name></member>
+    <member refid="class_game_1a7f57a7a8408e554d0a72882c287e1d04acff616a5d827c0cd609413cacf093eec" kind="enumvalue"><name>ENDGAME</name></member>
+    <member refid="class_game_1a68c305cc4209d3766a853e0dadbdb146" kind="variable"><name>ResetEvent</name></member>
+    <member refid="class_game_1a75fa771386c223c674d257ea0251f116" kind="variable"><name>PickupEvent</name></member>
+    <member refid="class_game_1ae657f5cef92c6208e1c1c905fcc42c06" kind="variable"><name>assetList</name></member>
+    <member refid="class_game_1ae7561893b367eab06b22e764c71363ca" kind="variable"><name>m_Bitmaps</name></member>
+    <member refid="class_game_1a86b8703f2f4b3b5702778d5194b461b6" kind="variable"><name>m_SelectedBitmap</name></member>
+    <member refid="class_game_1a6ab2dc6023585c4c93ef2b8120358eb9" kind="variable"><name>ObjectsInScene</name></member>
+    <member refid="class_game_1a8b824de9b95e8b882e7cde3bc3c45f0a" kind="variable"><name>mousePoint</name></member>
+    <member refid="class_game_1a397f8a701af3f05e5f972c84f0f29062" kind="variable"><name>spriteHeroRect</name></member>
+    <member refid="class_game_1a96c2da745983d6f3d25bc7e0fd4af129" kind="variable"><name>spriteMonsterRect</name></member>
+    <member refid="class_game_1ad0c11d34bcd7055014481f1b8691322f" kind="variable"><name>spritePickupRect</name></member>
+    <member refid="class_game_1a8414683ae26f601e99efd0f0cfdb5f9e" kind="variable"><name>spriteGoalRect</name></member>
+    <member refid="class_game_1a37957a6b5594fe172ac19917907425d4" kind="variable"><name>m_Window</name></member>
+    <member refid="class_game_1a5d9fb92360e0225766e7f0f9c03ca8ce" kind="variable"><name>m_Renderer</name></member>
+    <member refid="class_game_1a0b279644d881de510fea467235531816" kind="variable"><name>ScreenWidth</name></member>
+    <member refid="class_game_1afc638bbbc544814dfe471ec6f3c7f9f9" kind="variable"><name>ScreenHeight</name></member>
+    <member refid="class_game_1a00f29917ded5952ad4649c4ab7a4b411" kind="variable"><name>directory</name></member>
+    <member refid="class_game_1ae0a40e7e00700005e891206dfeafff38" kind="variable"><name>input</name></member>
+    <member refid="class_game_1a8de491bf7f776e728ce6363e1618e9a0" kind="variable"><name>themonsterXpos</name></member>
+    <member refid="class_game_1aef742be3739bfb33b828863f825281cd" kind="variable"><name>themonsterYpos</name></member>
+    <member refid="class_game_1a46f6f69aab0e42120ab524364836cea5" kind="variable"><name>heroXpos</name></member>
+    <member refid="class_game_1ace7481b79db3066f11d27ccc95d5f7a8" kind="variable"><name>heroYpos</name></member>
+    <member refid="class_game_1a20122c27af5d1d69dea53fe299f844bb" kind="variable"><name>pickupXPos</name></member>
+    <member refid="class_game_1a6e65e06452a9015b1166d56ce85f4a79" kind="variable"><name>pickupYPos</name></member>
+    <member refid="class_game_1a53216c596117084979dfbf36bedc7ae0" kind="variable"><name>goalXPos</name></member>
+    <member refid="class_game_1a326b704bfd15c42a414f67e80708f620" kind="variable"><name>goalYPos</name></member>
+    <member refid="class_game_1a693b6e70f7df4f7ec0ac9e8aa2423b39" kind="variable"><name>showMonsterImgui</name></member>
+    <member refid="class_game_1af782c06384b366d4f70e249ce19c57bd" kind="variable"><name>showHeroImgui</name></member>
+    <member refid="class_game_1a6b27c92c6378bed6e11c338f50396e6a" kind="variable"><name>showPickupImgui</name></member>
+    <member refid="class_game_1aade428ec84cbae8b4106b4c16cff96a6" kind="variable"><name>showGoalImgui</name></member>
+    <member refid="class_game_1a6973ef45cca79aac80ecde5fef620044" kind="variable"><name>isGoalActive</name></member>
+    <member refid="class_game_1ad5175b5a3fa6b417ac1e960b0476b19e" kind="variable"><name>AssetMousDrag</name></member>
+    <member refid="class_game_1ae8240437e21e190e11212d51be31b522" kind="variable"><name>showGravityWindow</name></member>
+    <member refid="class_game_1a0d59a177560d30255b7eb844d5aa0c6e" kind="variable"><name>m_SelectedObject</name></member>
+    <member refid="class_game_1a502ddc7ce853ecf1987e77cfffb8c517" kind="variable"><name>showSelectionGui</name></member>
+    <member refid="class_game_1a207e8cf3f8c24e594b95e47ae5df0796" kind="variable"><name>State</name></member>
+    <member refid="class_game_1a1277572667b79c889457e724707d859f" kind="variable"><name>m_running</name></member>
+    <member refid="class_game_1a947eac3914720433686ff9d47ea22d51" kind="variable"><name>m_useGravity</name></member>
+    <member refid="class_game_1a89f5178322d72548ff2be4c9d4c4a5b7" kind="variable"><name>m_monster</name></member>
+    <member refid="class_game_1a94bc151f0a7ab3e74065931218fd1905" kind="variable"><name>m_monsterTrans</name></member>
+    <member refid="class_game_1af791568933a54188274812eb69a5fb7b" kind="variable"><name>m_monsterTransKeyed</name></member>
+    <member refid="class_game_1ad871aeac39e24e85f6bd5beeaa021731" kind="variable"><name>m_pTheMonster</name></member>
+    <member refid="class_game_1a80bc1fdd13519a660792f9f0534dcb76" kind="variable"><name>monsters</name></member>
+    <member refid="class_game_1a36b55d6ad464c14b54e77542a14719ed" kind="variable"><name>pickups</name></member>
+    <member refid="class_game_1ae48da803c387f3ad97bdc49401e2f1d9" kind="variable"><name>m_pTheHero</name></member>
+    <member refid="class_game_1a72d8274f544b3940aa9c0a25390e86cb" kind="variable"><name>m_Pickup</name></member>
+    <member refid="class_game_1ad4e783f90ffa9bc400998c36029dbe4a" kind="variable"><name>m_Goal</name></member>
+    <member refid="class_game_1ae5f695f2b4852e78ea9e840c888ecec2" kind="variable"><name>m_Goal2</name></member>
+    <member refid="class_game_1a7f015757b6f7271c2a5386221ecdd2d8" kind="variable"><name>m_pSmallFont</name></member>
+    <member refid="class_game_1aebd4ad131471a9bb4b1d2da6924e2a7e" kind="variable"><name>m_pBigFont</name></member>
+    <member refid="class_game_1a39ed2eb7d5e1efafe25073ffca3f7092" kind="variable"><name>m_pInfoFont</name></member>
+    <member refid="class_game_1a9d7b76ebf2ba9cb6efb233a77cbe2125" kind="variable"><name>content</name></member>
+    <member refid="class_game_1a423ed3bfb635f8ab44571e72e5e82f11" kind="variable"><name>r</name></member>
+    <member refid="class_game_1ae57bf1c496c60342ff90eaf64fb3c79c" kind="variable"><name>g</name></member>
+    <member refid="class_game_1a0e057a8fa18fa83b7639f61ef957716a" kind="variable"><name>b</name></member>
+    <member refid="class_game_1ab659faadf37bd8c7cd06f35819fe7f72" kind="variable"><name>a</name></member>
+    <member refid="class_game_1a0cce71dd59ba8429786e2ce863e3cf94" kind="variable"><name>xpos</name></member>
+    <member refid="class_game_1a0c01ab46e1c18543492c38b3cde6e3d4" kind="variable"><name>ypos</name></member>
+    <member refid="class_game_1a731dc0c3996eee91cc3b1c2f4acb073e" kind="variable"><name>io</name></member>
+    <member refid="class_game_1aae0472df3a9a5ff0b2df25ba9465fd03" kind="function"><name>RenderSceneHierarchy</name></member>
+    <member refid="class_game_1ad59df6562a58a614fda24622d3715b65" kind="function"><name>Game</name></member>
+    <member refid="class_game_1acd4a0faf4e7210c53a88e8c1cb90281f" kind="function"><name>LoadObjects</name></member>
+    <member refid="class_game_1a770b062e3ff36ddacf78d6625f3162f1" kind="function"><name>UnLoadObjects</name></member>
+    <member refid="class_game_1ae3d112ca6e0e55150d2fdbc704474530" kind="function"><name>~Game</name></member>
+    <member refid="class_game_1a06d91a56a4b25d9b959559e4faa0d84a" kind="function"><name>SetDisplayColour</name></member>
+    <member refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" kind="function"><name>Update</name></member>
+    <member refid="class_game_1a695c2fb1f7148c102a88c9fb809aa7e3" kind="function"><name>randomNumber</name></member>
+    <member refid="class_game_1abd9c6ffdbf89613513913a12b245e768" kind="function"><name>GetSpriteHeroRect</name></member>
+    <member refid="class_game_1a6a2ecdf258404952d8901591ed17db30" kind="function"><name>GetPickupRect</name></member>
+    <member refid="class_game_1a4498c8e574f29ac5714299b7de2917a9" kind="function"><name>AssetManager</name></member>
+    <member refid="class_game_1a4c6e213afd7a79acdaf53225b9b6eaae" kind="function"><name>CheckEvents</name></member>
+    <member refid="class_game_1ac87f4f3efbf13dded7f7c597f1d7e033" kind="function"><name>UpdateText</name></member>
+    <member refid="class_game_1a0897730fc9fed789f6c0f11d21a0c14a" kind="function"><name>Render</name></member>
+    <member refid="class_game_1ada349d8fffe8483d44cd1f4c65a5e7da" kind="function"><name>RenderObjectsWindow</name></member>
+    <member refid="class_game_1a9a982b6c91ec858800d6ba5c50fda58d" kind="function"><name>FindAssets</name></member>
+    <member refid="class_game_1a9bde0194fa855d8a63420df05cad54ed" kind="function"><name>SaveWorldData</name></member>
+  </compound>
+  <compound refid="class_hero" kind="class"><name>Hero</name>
+    <member refid="class_hero_1a046debb5d98f2f33ed92640b380fe3df" kind="variable"><name>m_x</name></member>
+    <member refid="class_hero_1a5848458055e00536b29e145f41341122" kind="variable"><name>m_y</name></member>
+    <member refid="class_hero_1a7abf77fa225e9e0cd56674895117865c" kind="variable"><name>m_speed</name></member>
+    <member refid="class_hero_1ad760a7aac060b27d8702c83ceeb233ba" kind="function"><name>Hero</name></member>
+    <member refid="class_hero_1a5aeef41ede5a80dc29c5acd7b553c4da" kind="function"><name>~Hero</name></member>
+    <member refid="class_hero_1aede83081901c78ba82c0cceb005a6b36" kind="function"><name>Update</name></member>
+    <member refid="class_hero_1a98bf0ef70a3b2c7833b8905f2012f0cd" kind="function"><name>getX</name></member>
+    <member refid="class_hero_1a9553f36a96e777c47f5883da0692f55e" kind="function"><name>setX</name></member>
+    <member refid="class_hero_1a53e89ba45f1680871cd1938431d0bda3" kind="function"><name>getY</name></member>
+    <member refid="class_hero_1adc0946e33dddca3d34ccb17b03eb0d2a" kind="function"><name>setY</name></member>
+    <member refid="class_hero_1abbab59565f4689f0bef8d40372504a5f" kind="function"><name>getSpeed</name></member>
+    <member refid="class_hero_1a269ff444173c922b2a2ee644ff4e4104" kind="function"><name>setSpeed</name></member>
+  </compound>
+  <compound refid="class_input" kind="class"><name>Input</name>
+    <member refid="class_input_1a30181d3abe4b3d73c41f055ebe9e38cc" kind="variable"><name>m_event</name></member>
+    <member refid="class_input_1a58de8333d8464b1948d3e7612e38bf2d" kind="variable"><name>m_keysPressed</name></member>
+    <member refid="class_input_1a6a311e7183da0e8c8f8865a653629350" kind="function"><name>Update</name></member>
+    <member refid="class_input_1abae3f379d3f157cf42dc857309832dba" kind="function"><name>Input</name></member>
+    <member refid="class_input_1af2db35ba67c8a8ccd23bef6a482fc291" kind="function"><name>~Input</name></member>
+    <member refid="class_input_1a637918b2b2f09a0b405e9d699bb4c334" kind="function"><name>KeyIsPressed</name></member>
+  </compound>
+  <compound refid="class_monster" kind="class"><name>Monster</name>
+    <member refid="class_monster_1a5a9cce62b47faa3156b2214921e7db16" kind="variable"><name>m_HeroToChase</name></member>
+    <member refid="class_monster_1a9bf7685a5ac5f42150c0fc1a59a24831" kind="variable"><name>pickup</name></member>
+    <member refid="class_monster_1a7bd842da72313b94128def2cf65e3de7" kind="function"><name>Monster</name></member>
+    <member refid="class_monster_1a21619ba1759b910cd2fd50d858aab338" kind="function"><name>~Monster</name></member>
+    <member refid="class_monster_1a460c74794d4f04977ebf39d912ab3ff3" kind="function"><name>Chase</name></member>
+    <member refid="class_monster_1a30d75e60a6cf10223b00e2fb1d58d485" kind="function"><name>Update</name></member>
+  </compound>
+  <compound refid="class_pickup" kind="class"><name>Pickup</name>
+    <member refid="class_pickup_1a2b7e8d13584987aaa47fa06bbc0c4659" kind="variable"><name>m_hero</name></member>
+    <member refid="class_pickup_1ae45c377faad9281d2f5bf2be02a54efc" kind="variable"><name>directory</name></member>
+    <member refid="class_pickup_1a3710ec2b3f09abeebf099a6af1b4615d" kind="function"><name>Pickup</name></member>
+    <member refid="class_pickup_1a47d91d989a2beafaa497779ab892bcc8" kind="function"><name>Update</name></member>
+  </compound>
+  <compound refid="struct_profile" kind="struct"><name>Profile</name>
+    <member refid="struct_profile_1a0e7c2707a0db7a00d4a0cb278a4ad803" kind="variable"><name>_name</name></member>
+    <member refid="struct_profile_1a2034eac7c13860ce5a0156495a9c9b9c" kind="variable"><name>startTime</name></member>
+    <member refid="struct_profile_1a2187c1c354a2095ea925093163a9b247" kind="function"><name>Profile</name></member>
+    <member refid="struct_profile_1a58fa758a59bc4ee3c1a9980e360e4e98" kind="function"><name>~Profile</name></member>
+  </compound>
+  <compound refid="class_profiler_system" kind="class"><name>ProfilerSystem</name>
+    <member refid="class_profiler_system_1a66a0a4ffd4e33b961ee54517d71b4b81" kind="variable"><name>currentFrameTime</name></member>
+    <member refid="class_profiler_system_1a19f6c5ea6d80e70534415807e3e0c59b" kind="variable"><name>currentFrame</name></member>
+    <member refid="class_profiler_system_1a56069c359e449b7404d3b57198fa4427" kind="variable"><name>frameData</name></member>
+    <member refid="class_profiler_system_1aed612931c13b24bf15e8be5b348a8aea" kind="variable"><name>frameCount</name></member>
+    <member refid="class_profiler_system_1a1c25bb97c09889d9056a8f3b5e2b8393" kind="variable"><name>totalFrameTime</name></member>
+    <member refid="class_profiler_system_1aa7e3ea767c34204f9ff3c700388cfa45" kind="function"><name>ProfilerSystem</name></member>
+    <member refid="class_profiler_system_1a6828f2c94031f607cad96f1f92a42ab9" kind="function"><name>~ProfilerSystem</name></member>
+    <member refid="class_profiler_system_1a498888d536a6d82d12d2b58703e80505" kind="function"><name>startFrame</name></member>
+    <member refid="class_profiler_system_1a730a549816e2e48f092576b1f08f3962" kind="function"><name>storeSample</name></member>
+    <member refid="class_profiler_system_1aa73e8057f424a729ec4f37d49fef3fa4" kind="function"><name>endFrame</name></member>
+  </compound>
+  <compound refid="class_resource_manager" kind="class"><name>ResourceManager</name>
+    <member refid="class_resource_manager_1a037f8c3b6ccd499422a2c9950eb65c18" kind="variable"><name>m_Surfaces</name></member>
+    <member refid="class_resource_manager_1a24f6a69b540daf3c370a41c81a4d2269" kind="variable"><name>s_instance</name></member>
+    <member refid="class_resource_manager_1a3b32babd2e81909bbd90d7f2d566fadb" kind="function"><name>ResourceManager</name></member>
+    <member refid="class_resource_manager_1af7a286275ba537839da512d9d000af01" kind="function"><name>ResourceManager</name></member>
+    <member refid="class_resource_manager_1a43dc1d5891e06160a7e7dcab67d12d3e" kind="function"><name>operator=</name></member>
+    <member refid="class_resource_manager_1a98b11a6302bf0db4ffc81eea70512ee2" kind="function"><name>GetInstance</name></member>
+    <member refid="class_resource_manager_1a31d758ae7d5a972154ccc7dae2144166" kind="function"><name>GetSurface</name></member>
+  </compound>
+  <compound refid="struct_sample_data" kind="struct"><name>SampleData</name>
+    <member refid="struct_sample_data_1a0a5c38dd40d80e48e96dd0dfba8d4353" kind="variable"><name>functionTime</name></member>
+    <member refid="struct_sample_data_1acab5c4bbe349d1f216e84deceb803046" kind="variable"><name>frameReference</name></member>
+  </compound>
+  <compound refid="class_scene_manager" kind="class"><name>SceneManager</name>
+    <member refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3" kind="enum"><name>Status</name></member>
+    <member refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a79351df3b08b59ce054c8081488c0a3e" kind="enumvalue"><name>Menu</name></member>
+    <member refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a353ec594a91555ba2f44575562de3f5f" kind="enumvalue"><name>Game</name></member>
+    <member refid="class_scene_manager_1add126e4b634e8d378ce4f1a9ac661bd3a7f5b05daeb91bd6883e74126232d73be" kind="enumvalue"><name>End</name></member>
+    <member refid="class_scene_manager_1a52085e6737c23b491c228e86781af808" kind="function"><name>SceneManager</name></member>
+    <member refid="class_scene_manager_1a2bb376a85d29e85f47753e26c7539229" kind="function"><name>~SceneManager</name></member>
+    <member refid="class_scene_manager_1a63dcf65832d6a2c190bf496d9a3b00a3" kind="function"><name>Update</name></member>
+  </compound>
+  <compound refid="class_texture_manager" kind="class"><name>TextureManager</name>
+    <member refid="class_texture_manager_1ab78a1ae0477b016569b32ac4ceaeaaef" kind="variable"><name>m_textureMap</name></member>
+    <member refid="class_texture_manager_1ad76abb178b37cedf4514eb0154349935" kind="function"><name>TextureManager</name></member>
+    <member refid="class_texture_manager_1a001d6d74674961db79987e3222682576" kind="function"><name>~TextureManager</name></member>
+    <member refid="class_texture_manager_1ac6fb81774b7741984e3f9f3c965492f4" kind="function"><name>Load</name></member>
+    <member refid="class_texture_manager_1a0b6428ac20e7495ec2e3e8a0c4c869ee" kind="function"><name>Unload</name></member>
+  </compound>
+  <compound refid="_asseteditorcode_8cpp" kind="file"><name>Asseteditorcode.cpp</name>
+  </compound>
+  <compound refid="bitmap_8cpp" kind="file"><name>bitmap.cpp</name>
+  </compound>
+  <compound refid="bitmap_8h" kind="file"><name>bitmap.h</name>
+    <member refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980" kind="enum"><name>ObjectType</name></member>
+    <member refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980a84a8921b25f505d0d2077aeb5db4bc16" kind="enumvalue"><name>Static</name></member>
+    <member refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980ae0a67c8c63f8f7362917abef6ca24c6b" kind="enumvalue"><name>Hero</name></member>
+    <member refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980a243a3afa44aed85d504dbd53fd9804e9" kind="enumvalue"><name>Monster</name></member>
+    <member refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980a96fd07f8244c1d8b9a38930ea4bdec97" kind="enumvalue"><name>Pickup</name></member>
+    <member refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980ae64fb9f0ee2bda394d88c14aaa19b06b" kind="enumvalue"><name>Object_Count</name></member>
+    <member refid="bitmap_8h_1ab701e3ac61a85b337ec5c1abaad6742d" kind="typedef"><name>json</name></member>
+  </compound>
+  <compound refid="_creature_8cpp" kind="file"><name>Creature.cpp</name>
+  </compound>
+  <compound refid="_creature_8h" kind="file"><name>Creature.h</name>
+  </compound>
+  <compound refid="_game_8cpp" kind="file"><name>Game.cpp</name>
+    <member refid="_game_8cpp_1a6766aaa4b64ace39c242f179d917c746" kind="define"><name>PROFILE</name></member>
+    <member refid="_game_8cpp_1ab701e3ac61a85b337ec5c1abaad6742d" kind="typedef"><name>json</name></member>
+    <member refid="_game_8cpp_1a3dec0090b09a252dcc1ccdef420eef4a" kind="function"><name>to_json</name></member>
+    <member refid="_game_8cpp_1a782aa2f411468c6071fce20b49d4aabe" kind="function"><name>from_json</name></member>
+  </compound>
+  <compound refid="_game_8h" kind="file"><name>Game.h</name>
+  </compound>
+  <compound refid="_hero_8cpp" kind="file"><name>Hero.cpp</name>
+  </compound>
+  <compound refid="_hero_8h" kind="file"><name>Hero.h</name>
+  </compound>
+  <compound refid="input_8cpp" kind="file"><name>input.cpp</name>
+  </compound>
+  <compound refid="input_8h" kind="file"><name>input.h</name>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80a" kind="enum"><name>KEYS_PRESSED_LIST</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa3a471c8b61a5f730dcbdd50fe53f3ab7" kind="enumvalue"><name>KEY_ESCAPE</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaa3ec8a2ffd5b0e200db5ebe7b65515ff" kind="enumvalue"><name>KEY_R</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa4ec980867be1d5bded2bccdee2ebd601" kind="enumvalue"><name>KEY_G</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa10072b5ee7aa1faf316434ecc9e2bb3a" kind="enumvalue"><name>KEY_B</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa2e6a652ccd7afc5ce75ac4d902b6a60a" kind="enumvalue"><name>KEY_W</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aabb2f0ce8efc3067757dbf091437f89f5" kind="enumvalue"><name>KEY_S</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaa7b3a3d0503a46bec51c6e3da95747cc" kind="enumvalue"><name>KEY_A</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa2fd73a4d527efe137e8f259db2092766" kind="enumvalue"><name>KEY_D</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aad4961a6c7ea9d008812aaaa8c4ea9730" kind="enumvalue"><name>KEY_U</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aabb3108883bee68e265b554542484c5d7" kind="enumvalue"><name>KEY_J</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa41d1aa573d29ca6a9eb429a680dc53cd" kind="enumvalue"><name>KEY_H</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa6b0799a9923c55f8a73550a371ea69f6" kind="enumvalue"><name>KEY_K</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aaaefd064b1e5d75c429bed314ac18eba0" kind="enumvalue"><name>KEY_RETURN</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aac8234231b36474d3666ad56752fe6f5e" kind="enumvalue"><name>KEY_Q</name></member>
+    <member refid="input_8h_1a4d0279c09abb9f2f3d9059b01562f80aa908d10d502d4e5b1c21cf41d32c9758d" kind="enumvalue"><name>SIZE_OF_KEYS_PRESSED_ENUM</name></member>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_monster_8cpp" kind="file"><name>Monster.cpp</name>
+  </compound>
+  <compound refid="_monster_8h" kind="file"><name>Monster.h</name>
+  </compound>
+  <compound refid="_mouse_selectdragsnippet_8cpp" kind="file"><name>MouseSelectdragsnippet.cpp</name>
+  </compound>
+  <compound refid="_pickup_8cpp" kind="file"><name>Pickup.cpp</name>
+  </compound>
+  <compound refid="_pickup_8h" kind="file"><name>Pickup.h</name>
+  </compound>
+  <compound refid="_profiler_8cpp" kind="file"><name>Profiler.cpp</name>
+    <member refid="_profiler_8cpp_1a6f00dbbe483432624a7b14bc8f72379a" kind="variable"><name>g_profileManager</name></member>
+  </compound>
+  <compound refid="_profiler_8h" kind="file"><name>Profiler.h</name>
+    <member refid="_profiler_8h_1a6766aaa4b64ace39c242f179d917c746" kind="define"><name>PROFILE</name></member>
+    <member refid="_profiler_8h_1ab1b49ac083856f4fb48add947394a13a" kind="typedef"><name>FrameMap</name></member>
+    <member refid="_profiler_8h_1a6f00dbbe483432624a7b14bc8f72379a" kind="variable"><name>g_profileManager</name></member>
+  </compound>
+  <compound refid="_resource_manager_8cpp" kind="file"><name>ResourceManager.cpp</name>
+  </compound>
+  <compound refid="_resource_manager_8h" kind="file"><name>ResourceManager.h</name>
+  </compound>
+  <compound refid="_scene_manager_8cpp" kind="file"><name>SceneManager.cpp</name>
+  </compound>
+  <compound refid="_scene_manager_8h" kind="file"><name>SceneManager.h</name>
+  </compound>
+  <compound refid="_texture_manager_8cpp" kind="file"><name>TextureManager.cpp</name>
+  </compound>
+  <compound refid="_texture_manager_8h" kind="file"><name>TextureManager.h</name>
+  </compound>
+</doxygenindex>

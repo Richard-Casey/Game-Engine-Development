@@ -1,0 +1,1026 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="class_bitmap" kind="class" language="C++" prot="public">
+    <compoundname>Bitmap</compoundname>
+    <derivedcompoundref refid="class_creature" prot="public" virt="non-virtual">Creature</derivedcompoundref>
+    <derivedcompoundref refid="class_pickup" prot="public" virt="non-virtual">Pickup</derivedcompoundref>
+    <includes refid="bitmap_8h" local="no">bitmap.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bitmap_1a6c3365cfb162674388a9452820adf569" prot="private" static="no" mutable="no">
+        <type>SDL_Surface *</type>
+        <definition>SDL_Surface* Bitmap::m_pbitmapSurface</definition>
+        <argsstring></argsstring>
+        <name>m_pbitmapSurface</name>
+        <qualifiedname>Bitmap::m_pbitmapSurface</qualifiedname>
+        <briefdescription>
+<para>Surface for bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="51" column="13" bodyfile="bitmap.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a6c48f459ff1de3f34c935ce49e0b474b" prot="private" static="no" mutable="no">
+        <type>SDL_Texture *</type>
+        <definition>SDL_Texture* Bitmap::m_pbitmapTexture</definition>
+        <argsstring></argsstring>
+        <name>m_pbitmapTexture</name>
+        <qualifiedname>Bitmap::m_pbitmapTexture</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>Texture for bitmap (initialised to nullptr) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="56" column="13" bodyfile="bitmap.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1ace621d4947809c755584af37753e652d" prot="private" static="no" mutable="no">
+        <type>SDL_Renderer *</type>
+        <definition>SDL_Renderer* Bitmap::m_pRenderer</definition>
+        <argsstring></argsstring>
+        <name>m_pRenderer</name>
+        <qualifiedname>Bitmap::m_pRenderer</qualifiedname>
+        <briefdescription>
+<para>Renderer for bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="61" column="14" bodyfile="bitmap.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a8c27d777eb2e1913c297ec7f8ea8ae54" prot="private" static="no" mutable="no">
+        <type>SDL_Texture *</type>
+        <definition>SDL_Texture* Bitmap::m_texture</definition>
+        <argsstring></argsstring>
+        <name>m_texture</name>
+        <qualifiedname>Bitmap::m_texture</qualifiedname>
+        <briefdescription>
+<para>Texture for bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="66" column="13" bodyfile="bitmap.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_bitmap_1a66dec28bd4fd7df4b5f9c68ddc6e07dd" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Bitmap::isVisable</definition>
+        <argsstring></argsstring>
+        <name>isVisable</name>
+        <qualifiedname>Bitmap::isVisable</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>Boolean used for end goal (<ref refid="class_bitmap" kindref="compound">Bitmap</ref> is visable - collecting key results in false) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="73" column="6" bodyfile="bitmap.h" bodystart="73" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" compoundref="bitmap_8cpp" startline="109" endline="124">draw</referencedby>
+        <referencedby refid="class_pickup_1a47d91d989a2beafaa497779ab892bcc8" compoundref="_pickup_8cpp" startline="27" endline="48">Pickup::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1ad1e358e487367d573758cb713f046028" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Bitmap::isEnd</definition>
+        <argsstring></argsstring>
+        <name>isEnd</name>
+        <qualifiedname>Bitmap::isEnd</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Boolean used for JSON save. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="78" column="6" bodyfile="bitmap.h" bodystart="78" bodyend="-1"/>
+        <referencedby refid="class_game_1acd4a0faf4e7210c53a88e8c1cb90281f" compoundref="_game_8cpp" startline="245" endline="312">Game::LoadObjects</referencedby>
+        <referencedby refid="class_pickup_1a47d91d989a2beafaa497779ab892bcc8" compoundref="_pickup_8cpp" startline="27" endline="48">Pickup::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Bitmap::m_x</definition>
+        <argsstring></argsstring>
+        <name>m_x</name>
+        <qualifiedname>Bitmap::m_x</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Used withing bitmap.cpop to set the x, y, width and height of the bitmap. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="83" column="5" bodyfile="bitmap.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1afdc4f28cf1a32e587153be4012aa058f" compoundref="bitmap_8cpp" startline="131" endline="135">addoffset</referencedby>
+        <referencedby refid="class_bitmap_1a7d2d9d8a55c6bd55696d812f8defe011" compoundref="bitmap_8cpp" startline="65" endline="104">Bitmap</referencedby>
+        <referencedby refid="class_monster_1a460c74794d4f04977ebf39d912ab3ff3" compoundref="_monster_8cpp" startline="32" endline="66">Monster::Chase</referencedby>
+        <referencedby refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" compoundref="bitmap_8cpp" startline="109" endline="124">draw</referencedby>
+        <referencedby refid="_game_8cpp_1a782aa2f411468c6071fce20b49d4aabe" compoundref="_game_8cpp" startline="235" endline="240">from_json</referencedby>
+        <referencedby refid="class_bitmap_1a4277bd01af52a99971bc83d1cf628288" compoundref="bitmap_8cpp" startline="29" endline="32">GetPositionX</referencedby>
+        <referencedby refid="class_bitmap_1a8dcb2592cf1a834c0c4864d03597eb0f" compoundref="bitmap_8h" startline="139" endline="139">GetX</referencedby>
+        <referencedby refid="class_bitmap_1a15fe29c1b4fc1f00716c9dd422abc4c1" compoundref="bitmap_8cpp" startline="48" endline="52">SetPosition</referencedby>
+        <referencedby refid="_game_8cpp_1a3dec0090b09a252dcc1ccdef420eef4a" compoundref="_game_8cpp" startline="220" endline="227">to_json</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Bitmap::m_y</definition>
+        <argsstring></argsstring>
+        <name>m_y</name>
+        <qualifiedname>Bitmap::m_y</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="83" column="10" bodyfile="bitmap.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1afdc4f28cf1a32e587153be4012aa058f" compoundref="bitmap_8cpp" startline="131" endline="135">addoffset</referencedby>
+        <referencedby refid="class_bitmap_1a7d2d9d8a55c6bd55696d812f8defe011" compoundref="bitmap_8cpp" startline="65" endline="104">Bitmap</referencedby>
+        <referencedby refid="class_monster_1a460c74794d4f04977ebf39d912ab3ff3" compoundref="_monster_8cpp" startline="32" endline="66">Monster::Chase</referencedby>
+        <referencedby refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" compoundref="bitmap_8cpp" startline="109" endline="124">draw</referencedby>
+        <referencedby refid="_game_8cpp_1a782aa2f411468c6071fce20b49d4aabe" compoundref="_game_8cpp" startline="235" endline="240">from_json</referencedby>
+        <referencedby refid="class_bitmap_1a3fd62baa60e6a8747a3a152cab5eeff3" compoundref="bitmap_8cpp" startline="38" endline="41">GetPositionY</referencedby>
+        <referencedby refid="class_bitmap_1ab7481fba70b483315b9bcee6007c0e7d" compoundref="bitmap_8h" startline="140" endline="140">GetY</referencedby>
+        <referencedby refid="class_bitmap_1a15fe29c1b4fc1f00716c9dd422abc4c1" compoundref="bitmap_8cpp" startline="48" endline="52">SetPosition</referencedby>
+        <referencedby refid="_game_8cpp_1a3dec0090b09a252dcc1ccdef420eef4a" compoundref="_game_8cpp" startline="220" endline="227">to_json</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a9bf3bc4f22d7dfd239b650c256401937" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Bitmap::m_w</definition>
+        <argsstring></argsstring>
+        <name>m_w</name>
+        <qualifiedname>Bitmap::m_w</qualifiedname>
+        <initializer>=0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="83" column="15" bodyfile="bitmap.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a9e5b8cf456c4c9c8cdd0b2db0aa7f47d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Bitmap::m_h</definition>
+        <argsstring></argsstring>
+        <name>m_h</name>
+        <qualifiedname>Bitmap::m_h</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="83" column="20" bodyfile="bitmap.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a35d5bfdeb0071f4c00a29f03dd60fc5a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Bitmap::spriteWidth</definition>
+        <argsstring></argsstring>
+        <name>spriteWidth</name>
+        <qualifiedname>Bitmap::spriteWidth</qualifiedname>
+        <initializer>= 69</initializer>
+        <briefdescription>
+<para>Width of sprite. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="88" column="5" bodyfile="bitmap.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" compoundref="bitmap_8cpp" startline="109" endline="124">draw</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1ad737c8f2f088a650fd4bcb8d67d2ec14" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Bitmap::deltaTime</definition>
+        <argsstring></argsstring>
+        <name>deltaTime</name>
+        <qualifiedname>Bitmap::deltaTime</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+<para>Initialise Delta Time to 0. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="93" column="7" bodyfile="bitmap.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" compoundref="bitmap_8cpp" startline="109" endline="124">draw</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1addac8e49990e141f9ecd7722b4c4c664" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Bitmap::m_vx</definition>
+        <argsstring></argsstring>
+        <name>m_vx</name>
+        <qualifiedname>Bitmap::m_vx</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+<para>Used in the draw function of <ref refid="class_bitmap" kindref="compound">Bitmap</ref> to calculate delta time. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="98" column="7" bodyfile="bitmap.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" compoundref="bitmap_8cpp" startline="109" endline="124">draw</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a115f25bf7f32a12e6d51916cbb33e151" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Bitmap::m_vy</definition>
+        <argsstring></argsstring>
+        <name>m_vy</name>
+        <qualifiedname>Bitmap::m_vy</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="98" column="13" bodyfile="bitmap.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" compoundref="bitmap_8cpp" startline="109" endline="124">draw</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a2d7dacb014fb8e9b636618eaf850d666" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Bitmap::m_ax</definition>
+        <argsstring></argsstring>
+        <name>m_ax</name>
+        <qualifiedname>Bitmap::m_ax</qualifiedname>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="98" column="19" bodyfile="bitmap.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" compoundref="bitmap_8cpp" startline="109" endline="124">draw</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a433654d519140b96b98b69dbd1a930ce" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Bitmap::m_ay</definition>
+        <argsstring></argsstring>
+        <name>m_ay</name>
+        <qualifiedname>Bitmap::m_ay</qualifiedname>
+        <initializer>= 9.81f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="98" column="25" bodyfile="bitmap.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" compoundref="bitmap_8cpp" startline="109" endline="124">draw</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a04bad4d42d3f7724226815b3163306fb" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Bitmap::Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <qualifiedname>Bitmap::Name</qualifiedname>
+        <briefdescription>
+<para>Used in bitmap constructor for name and to return Name for <ref refid="class_bitmap_1a19585ce54ee6f21d8a9a6b1d8b86cc04" kindref="member">GetName()</ref> function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="103" column="13" bodyfile="bitmap.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1a7d2d9d8a55c6bd55696d812f8defe011" compoundref="bitmap_8cpp" startline="65" endline="104">Bitmap</referencedby>
+        <referencedby refid="class_bitmap_1a19585ce54ee6f21d8a9a6b1d8b86cc04" compoundref="bitmap_8cpp" startline="154" endline="157">GetName</referencedby>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Game::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a909cb95a3129c4bf8d3a9a75e636bc32" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Bitmap::path</definition>
+        <argsstring></argsstring>
+        <name>path</name>
+        <qualifiedname>Bitmap::path</qualifiedname>
+        <briefdescription>
+<para>Used in bitmap constructor for filepath. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="108" column="13" bodyfile="bitmap.h" bodystart="108" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1a7d2d9d8a55c6bd55696d812f8defe011" compoundref="bitmap_8cpp" startline="65" endline="104">Bitmap</referencedby>
+        <referencedby refid="_game_8cpp_1a782aa2f411468c6071fce20b49d4aabe" compoundref="_game_8cpp" startline="235" endline="240">from_json</referencedby>
+        <referencedby refid="class_bitmap_1a2285c1d3b89c5434e1d5b8e4dabd42d9" compoundref="bitmap_8cpp" startline="159" endline="162">GetFilepath</referencedby>
+        <referencedby refid="_game_8cpp_1a3dec0090b09a252dcc1ccdef420eef4a" compoundref="_game_8cpp" startline="220" endline="227">to_json</referencedby>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Game::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1af7ac93fbbb6dd80dfa2a5b60564fcac4" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Bitmap::transparent</definition>
+        <argsstring></argsstring>
+        <name>transparent</name>
+        <qualifiedname>Bitmap::transparent</qualifiedname>
+        <briefdescription>
+<para>Used in bitmap constructor for usetransparency. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="113" column="6" bodyfile="bitmap.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1a7d2d9d8a55c6bd55696d812f8defe011" compoundref="bitmap_8cpp" startline="65" endline="104">Bitmap</referencedby>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Game::Update</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a529c67ada83b851eceec531dcaa5e8f8" prot="public" static="no" mutable="no">
+        <type><ref refid="bitmap_8h_1a842c5e2e69277690b064bf363c017980" kindref="member">ObjectType</ref></type>
+        <definition>ObjectType Bitmap::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>Bitmap::type</qualifiedname>
+        <initializer>{ ObjectType::Static }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="121" column="12" bodyfile="bitmap.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="_game_8cpp_1a782aa2f411468c6071fce20b49d4aabe" compoundref="_game_8cpp" startline="235" endline="240">from_json</referencedby>
+        <referencedby refid="class_hero_1ad760a7aac060b27d8702c83ceeb233ba" compoundref="_hero_8cpp" startline="16" endline="21">Hero::Hero</referencedby>
+        <referencedby refid="class_monster_1a7bd842da72313b94128def2cf65e3de7" compoundref="_monster_8cpp" startline="15" endline="20">Monster::Monster</referencedby>
+        <referencedby refid="class_pickup_1a3710ec2b3f09abeebf099a6af1b4615d" compoundref="_pickup_8cpp" startline="17" endline="22">Pickup::Pickup</referencedby>
+        <referencedby refid="_game_8cpp_1a3dec0090b09a252dcc1ccdef420eef4a" compoundref="_game_8cpp" startline="220" endline="227">to_json</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a9af473f70e06ad318e6eaf4033da058e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Bitmap::applyGravity</definition>
+        <argsstring></argsstring>
+        <name>applyGravity</name>
+        <qualifiedname>Bitmap::applyGravity</qualifiedname>
+        <initializer>{ false }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="123" column="6" bodyfile="bitmap.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a33b8ef81a8b9510677cfc02623de5c7c" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_bitmap" kindref="compound">Bitmap</ref> * &gt;</type>
+        <definition>std::vector&lt;Bitmap*&gt; Bitmap::children</definition>
+        <argsstring></argsstring>
+        <name>children</name>
+        <qualifiedname>Bitmap::children</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="125" column="13" bodyfile="bitmap.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1aac08a6ab8d0907ff5eaccd153a612293" prot="public" static="no" mutable="no">
+        <type><ref refid="class_bitmap" kindref="compound">Bitmap</ref> *</type>
+        <definition>Bitmap* Bitmap::m_parent</definition>
+        <argsstring></argsstring>
+        <name>m_parent</name>
+        <qualifiedname>Bitmap::m_parent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="136" column="8" bodyfile="bitmap.h" bodystart="136" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1a48981bb560ef8f3f3172ae4c7fe31ca7" compoundref="bitmap_8h" startline="117" endline="117">GetParent</referencedby>
+        <referencedby refid="class_bitmap_1a581872fa25c5dd41ed6729d33e611293" compoundref="bitmap_8h" startline="116" endline="116">SetParent</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a365f44ae92df65e23d830224690aaedf" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_bitmap" kindref="compound">Bitmap</ref> * &gt;</type>
+        <definition>std::vector&lt;Bitmap*&gt; Bitmap::m_children</definition>
+        <argsstring></argsstring>
+        <name>m_children</name>
+        <qualifiedname>Bitmap::m_children</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="137" column="13" bodyfile="bitmap.h" bodystart="137" bodyend="-1"/>
+        <referencedby refid="class_bitmap_1a5725c4483a8a1f0a71c901c76c7a10ed" compoundref="bitmap_8h" startline="118" endline="118">AddChild</referencedby>
+        <referencedby refid="class_bitmap_1aeb7d1b03c0d830759448d8bf12a108b9" compoundref="bitmap_8h" startline="119" endline="119">GetChildren</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bitmap_1a82518a87ccc66a67913b1376c4f87efe" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Bitmap::IsDragged</definition>
+        <argsstring></argsstring>
+        <name>IsDragged</name>
+        <qualifiedname>Bitmap::IsDragged</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="150" column="6" bodyfile="bitmap.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bitmap_1a581872fa25c5dd41ed6729d33e611293" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bitmap::SetParent</definition>
+        <argsstring>(Bitmap *parent)</argsstring>
+        <name>SetParent</name>
+        <qualifiedname>Bitmap::SetParent</qualifiedname>
+        <param>
+          <type><ref refid="class_bitmap" kindref="compound">Bitmap</ref> *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="116" column="6" bodyfile="bitmap.h" bodystart="116" bodyend="116"/>
+        <references refid="class_bitmap_1aac08a6ab8d0907ff5eaccd153a612293" compoundref="bitmap_8h" startline="136">m_parent</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a48981bb560ef8f3f3172ae4c7fe31ca7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_bitmap" kindref="compound">Bitmap</ref> *</type>
+        <definition>Bitmap * Bitmap::GetParent</definition>
+        <argsstring>() const</argsstring>
+        <name>GetParent</name>
+        <qualifiedname>Bitmap::GetParent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="117" column="8" bodyfile="bitmap.h" bodystart="117" bodyend="117"/>
+        <references refid="class_bitmap_1aac08a6ab8d0907ff5eaccd153a612293" compoundref="bitmap_8h" startline="136">m_parent</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a5725c4483a8a1f0a71c901c76c7a10ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bitmap::AddChild</definition>
+        <argsstring>(Bitmap *child)</argsstring>
+        <name>AddChild</name>
+        <qualifiedname>Bitmap::AddChild</qualifiedname>
+        <param>
+          <type><ref refid="class_bitmap" kindref="compound">Bitmap</ref> *</type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="118" column="6" bodyfile="bitmap.h" bodystart="118" bodyend="118"/>
+        <references refid="class_bitmap_1a365f44ae92df65e23d830224690aaedf" compoundref="bitmap_8h" startline="137">m_children</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1aeb7d1b03c0d830759448d8bf12a108b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_bitmap" kindref="compound">Bitmap</ref> * &gt; &amp;</type>
+        <definition>std::vector&lt; Bitmap * &gt; &amp; Bitmap::GetChildren</definition>
+        <argsstring>()</argsstring>
+        <name>GetChildren</name>
+        <qualifiedname>Bitmap::GetChildren</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="119" column="13" bodyfile="bitmap.h" bodystart="119" bodyend="119"/>
+        <references refid="class_bitmap_1a365f44ae92df65e23d830224690aaedf" compoundref="bitmap_8h" startline="137">m_children</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a7d2d9d8a55c6bd55696d812f8defe011" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bitmap::Bitmap</definition>
+        <argsstring>(SDL_Renderer *renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency=false)</argsstring>
+        <name>Bitmap</name>
+        <qualifiedname>Bitmap::Bitmap</qualifiedname>
+        <param>
+          <type>SDL_Renderer *</type>
+          <declname>renderer</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>xpos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ypos</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useTransparency</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Initializes a new instance of the <ref refid="class_bitmap" kindref="compound">Bitmap</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>renderer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The renderer.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The filename.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xpos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The xpos.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ypos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ypos.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>useTransparency</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if set to <computeroutput>true</computeroutput> [use transparency].</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="128" column="1" bodyfile="bitmap.cpp" bodystart="65" bodyend="104"/>
+        <references refid="class_resource_manager_1a98b11a6302bf0db4ffc81eea70512ee2" compoundref="_resource_manager_8cpp" startline="37" endline="40">ResourceManager::GetInstance</references>
+        <references refid="class_resource_manager_1a31d758ae7d5a972154ccc7dae2144166" compoundref="_resource_manager_8cpp" startline="47" endline="61">ResourceManager::GetSurface</references>
+        <references refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" compoundref="bitmap_8h" startline="83">m_x</references>
+        <references refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" compoundref="bitmap_8h" startline="83">m_y</references>
+        <references refid="class_bitmap_1a04bad4d42d3f7724226815b3163306fb" compoundref="bitmap_8h" startline="103">Name</references>
+        <references refid="class_bitmap_1a909cb95a3129c4bf8d3a9a75e636bc32" compoundref="bitmap_8h" startline="108">path</references>
+        <references refid="class_bitmap_1af7ac93fbbb6dd80dfa2a5b60564fcac4" compoundref="bitmap_8h" startline="113">transparent</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a72d2a301ec1eb1c8d0f3d64823659a8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bitmap::~Bitmap</definition>
+        <argsstring>()</argsstring>
+        <name>~Bitmap</name>
+        <qualifiedname>Bitmap::~Bitmap</qualifiedname>
+        <briefdescription>
+<para>Finalizes an instance of the <ref refid="class_bitmap" kindref="compound">Bitmap</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="130" column="1" bodyfile="bitmap.cpp" bodystart="140" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bitmap::draw</definition>
+        <argsstring>()</argsstring>
+        <name>draw</name>
+        <qualifiedname>Bitmap::draw</qualifiedname>
+        <briefdescription>
+<para>Draws this instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="131" column="6" bodyfile="bitmap.cpp" bodystart="109" bodyend="124"/>
+        <references refid="class_bitmap_1ad737c8f2f088a650fd4bcb8d67d2ec14" compoundref="bitmap_8h" startline="93">deltaTime</references>
+        <references refid="class_bitmap_1a66dec28bd4fd7df4b5f9c68ddc6e07dd" compoundref="bitmap_8h" startline="73">isVisable</references>
+        <references refid="class_bitmap_1a2d7dacb014fb8e9b636618eaf850d666" compoundref="bitmap_8h" startline="98">m_ax</references>
+        <references refid="class_bitmap_1a433654d519140b96b98b69dbd1a930ce" compoundref="bitmap_8h" startline="98">m_ay</references>
+        <references refid="class_bitmap_1addac8e49990e141f9ecd7722b4c4c664" compoundref="bitmap_8h" startline="98">m_vx</references>
+        <references refid="class_bitmap_1a115f25bf7f32a12e6d51916cbb33e151" compoundref="bitmap_8h" startline="98">m_vy</references>
+        <references refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" compoundref="bitmap_8h" startline="83">m_x</references>
+        <references refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" compoundref="bitmap_8h" startline="83">m_y</references>
+        <references refid="class_bitmap_1a35d5bfdeb0071f4c00a29f03dd60fc5a" compoundref="bitmap_8h" startline="88">spriteWidth</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1afdc4f28cf1a32e587153be4012aa058f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bitmap::addoffset</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>addoffset</name>
+        <qualifiedname>Bitmap::addoffset</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Addoffsets the specified x. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The y.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="132" column="6" bodyfile="bitmap.cpp" bodystart="131" bodyend="135"/>
+        <references refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" compoundref="bitmap_8h" startline="83">m_x</references>
+        <references refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" compoundref="bitmap_8h" startline="83">m_y</references>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Game::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1ae93c29792fc2ef318c2de91e2dffacf0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Bitmap::Update</definition>
+        <argsstring>()</argsstring>
+        <name>Update</name>
+        <qualifiedname>Bitmap::Update</qualifiedname>
+        <reimplementedby refid="class_hero_1aede83081901c78ba82c0cceb005a6b36">Update</reimplementedby>
+        <reimplementedby refid="class_pickup_1a47d91d989a2beafaa497779ab892bcc8">Update</reimplementedby>
+        <reimplementedby refid="class_monster_1a30d75e60a6cf10223b00e2fb1d58d485">Update</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="134" column="14" bodyfile="bitmap.h" bodystart="134" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a8dcb2592cf1a834c0c4864d03597eb0f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Bitmap::GetX</definition>
+        <argsstring>()</argsstring>
+        <name>GetX</name>
+        <qualifiedname>Bitmap::GetX</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="139" column="5" bodyfile="bitmap.h" bodystart="139" bodyend="139"/>
+        <references refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" compoundref="bitmap_8h" startline="83">m_x</references>
+        <referencedby refid="class_monster_1a460c74794d4f04977ebf39d912ab3ff3" compoundref="_monster_8cpp" startline="32" endline="66">Monster::Chase</referencedby>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Game::Update</referencedby>
+        <referencedby refid="class_pickup_1a47d91d989a2beafaa497779ab892bcc8" compoundref="_pickup_8cpp" startline="27" endline="48">Pickup::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1ab7481fba70b483315b9bcee6007c0e7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Bitmap::GetY</definition>
+        <argsstring>()</argsstring>
+        <name>GetY</name>
+        <qualifiedname>Bitmap::GetY</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="140" column="5" bodyfile="bitmap.h" bodystart="140" bodyend="140"/>
+        <references refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" compoundref="bitmap_8h" startline="83">m_y</references>
+        <referencedby refid="class_monster_1a460c74794d4f04977ebf39d912ab3ff3" compoundref="_monster_8cpp" startline="32" endline="66">Monster::Chase</referencedby>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Game::Update</referencedby>
+        <referencedby refid="class_pickup_1a47d91d989a2beafaa497779ab892bcc8" compoundref="_pickup_8cpp" startline="27" endline="48">Pickup::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a2619a68555872d52f324ec110c78e5e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Bitmap::GetW</definition>
+        <argsstring>()</argsstring>
+        <name>GetW</name>
+        <qualifiedname>Bitmap::GetW</qualifiedname>
+        <briefdescription>
+<para>Gets the w. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="141" column="5" bodyfile="bitmap.cpp" bodystart="11" bodyend="14"/>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Game::Update</referencedby>
+        <referencedby refid="class_pickup_1a47d91d989a2beafaa497779ab892bcc8" compoundref="_pickup_8cpp" startline="27" endline="48">Pickup::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a7e398a0f351b6747ac85e24368fb9ad5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Bitmap::GetH</definition>
+        <argsstring>()</argsstring>
+        <name>GetH</name>
+        <qualifiedname>Bitmap::GetH</qualifiedname>
+        <briefdescription>
+<para>Gets the h. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="142" column="5" bodyfile="bitmap.cpp" bodystart="20" bodyend="23"/>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Game::Update</referencedby>
+        <referencedby refid="class_pickup_1a47d91d989a2beafaa497779ab892bcc8" compoundref="_pickup_8cpp" startline="27" endline="48">Pickup::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a4277bd01af52a99971bc83d1cf628288" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Bitmap::GetPositionX</definition>
+        <argsstring>()</argsstring>
+        <name>GetPositionX</name>
+        <qualifiedname>Bitmap::GetPositionX</qualifiedname>
+        <briefdescription>
+<para>Gets the position x. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="143" column="5" bodyfile="bitmap.cpp" bodystart="29" bodyend="32"/>
+        <references refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" compoundref="bitmap_8h" startline="83">m_x</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a3fd62baa60e6a8747a3a152cab5eeff3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Bitmap::GetPositionY</definition>
+        <argsstring>()</argsstring>
+        <name>GetPositionY</name>
+        <qualifiedname>Bitmap::GetPositionY</qualifiedname>
+        <briefdescription>
+<para>Gets the position y. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="144" column="5" bodyfile="bitmap.cpp" bodystart="38" bodyend="41"/>
+        <references refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" compoundref="bitmap_8h" startline="83">m_y</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a15fe29c1b4fc1f00716c9dd422abc4c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bitmap::SetPosition</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>SetPosition</name>
+        <qualifiedname>Bitmap::SetPosition</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Sets the position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The y.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="145" column="6" bodyfile="bitmap.cpp" bodystart="48" bodyend="52"/>
+        <references refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" compoundref="bitmap_8h" startline="83">m_x</references>
+        <references refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" compoundref="bitmap_8h" startline="83">m_y</references>
+        <referencedby refid="class_game_1a1c5373c68261c54aff03e6abe40fee52" compoundref="_game_8cpp" startline="379" endline="594">Game::Update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a19585ce54ee6f21d8a9a6b1d8b86cc04" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Bitmap::GetName</definition>
+        <argsstring>() const</argsstring>
+        <name>GetName</name>
+        <qualifiedname>Bitmap::GetName</qualifiedname>
+        <briefdescription>
+<para>Gets the name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="146" column="13" bodyfile="bitmap.cpp" bodystart="154" bodyend="157"/>
+        <references refid="class_bitmap_1a04bad4d42d3f7724226815b3163306fb" compoundref="bitmap_8h" startline="103">Name</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a2285c1d3b89c5434e1d5b8e4dabd42d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Bitmap::GetFilepath</definition>
+        <argsstring>() const</argsstring>
+        <name>GetFilepath</name>
+        <qualifiedname>Bitmap::GetFilepath</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="147" column="13" bodyfile="bitmap.cpp" bodystart="159" bodyend="162"/>
+        <references refid="class_bitmap_1a909cb95a3129c4bf8d3a9a75e636bc32" compoundref="bitmap_8h" startline="108">path</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1af4631b38bd1790b3db5180c216cb58f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SDL_Texture *</type>
+        <definition>SDL_Texture * Bitmap::GetTextureRef</definition>
+        <argsstring>()</argsstring>
+        <name>GetTextureRef</name>
+        <qualifiedname>Bitmap::GetTextureRef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="148" column="13" bodyfile="bitmap.h" bodystart="148" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bitmap_1a68697e385eb9ff10c5296f411e90d68a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Bitmap::ContainsPoint</definition>
+        <argsstring>(int x, int y) const</argsstring>
+        <name>ContainsPoint</name>
+        <qualifiedname>Bitmap::ContainsPoint</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="bitmap.h" line="151" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="class_bitmap" kindref="compound">Bitmap</ref> Class. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Bitmap</label>
+        <link refid="class_bitmap"/>
+      </node>
+      <node id="2">
+        <label>Creature</label>
+        <link refid="class_creature"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Hero</label>
+        <link refid="class_hero"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Monster</label>
+        <link refid="class_monster"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Pickup</label>
+        <link refid="class_pickup"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Bitmap</label>
+        <link refid="class_bitmap"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>+m_parent</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="bitmap.h" line="45" column="1" bodyfile="bitmap.h" bodystart="46" bodyend="153"/>
+    <listofallmembers>
+      <member refid="class_bitmap_1a5725c4483a8a1f0a71c901c76c7a10ed" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>AddChild</name></member>
+      <member refid="class_bitmap_1afdc4f28cf1a32e587153be4012aa058f" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>addoffset</name></member>
+      <member refid="class_bitmap_1a9af473f70e06ad318e6eaf4033da058e" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>applyGravity</name></member>
+      <member refid="class_bitmap_1a7d2d9d8a55c6bd55696d812f8defe011" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>Bitmap</name></member>
+      <member refid="class_bitmap_1a33b8ef81a8b9510677cfc02623de5c7c" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>children</name></member>
+      <member refid="class_bitmap_1a68697e385eb9ff10c5296f411e90d68a" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>ContainsPoint</name></member>
+      <member refid="class_bitmap_1ad737c8f2f088a650fd4bcb8d67d2ec14" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>deltaTime</name></member>
+      <member refid="class_bitmap_1a69ff46a0ca29680ab41813f2a8990f93" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>draw</name></member>
+      <member refid="class_bitmap_1aeb7d1b03c0d830759448d8bf12a108b9" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>GetChildren</name></member>
+      <member refid="class_bitmap_1a2285c1d3b89c5434e1d5b8e4dabd42d9" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>GetFilepath</name></member>
+      <member refid="class_bitmap_1a7e398a0f351b6747ac85e24368fb9ad5" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>GetH</name></member>
+      <member refid="class_bitmap_1a19585ce54ee6f21d8a9a6b1d8b86cc04" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>GetName</name></member>
+      <member refid="class_bitmap_1a48981bb560ef8f3f3172ae4c7fe31ca7" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>GetParent</name></member>
+      <member refid="class_bitmap_1a4277bd01af52a99971bc83d1cf628288" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>GetPositionX</name></member>
+      <member refid="class_bitmap_1a3fd62baa60e6a8747a3a152cab5eeff3" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>GetPositionY</name></member>
+      <member refid="class_bitmap_1af4631b38bd1790b3db5180c216cb58f3" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>GetTextureRef</name></member>
+      <member refid="class_bitmap_1a2619a68555872d52f324ec110c78e5e3" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>GetW</name></member>
+      <member refid="class_bitmap_1a8dcb2592cf1a834c0c4864d03597eb0f" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>GetX</name></member>
+      <member refid="class_bitmap_1ab7481fba70b483315b9bcee6007c0e7d" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>GetY</name></member>
+      <member refid="class_bitmap_1a82518a87ccc66a67913b1376c4f87efe" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>IsDragged</name></member>
+      <member refid="class_bitmap_1ad1e358e487367d573758cb713f046028" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>isEnd</name></member>
+      <member refid="class_bitmap_1a66dec28bd4fd7df4b5f9c68ddc6e07dd" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>isVisable</name></member>
+      <member refid="class_bitmap_1a2d7dacb014fb8e9b636618eaf850d666" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>m_ax</name></member>
+      <member refid="class_bitmap_1a433654d519140b96b98b69dbd1a930ce" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>m_ay</name></member>
+      <member refid="class_bitmap_1a365f44ae92df65e23d830224690aaedf" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>m_children</name></member>
+      <member refid="class_bitmap_1a9e5b8cf456c4c9c8cdd0b2db0aa7f47d" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>m_h</name></member>
+      <member refid="class_bitmap_1aac08a6ab8d0907ff5eaccd153a612293" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>m_parent</name></member>
+      <member refid="class_bitmap_1a6c3365cfb162674388a9452820adf569" prot="private" virt="non-virtual"><scope>Bitmap</scope><name>m_pbitmapSurface</name></member>
+      <member refid="class_bitmap_1a6c48f459ff1de3f34c935ce49e0b474b" prot="private" virt="non-virtual"><scope>Bitmap</scope><name>m_pbitmapTexture</name></member>
+      <member refid="class_bitmap_1ace621d4947809c755584af37753e652d" prot="private" virt="non-virtual"><scope>Bitmap</scope><name>m_pRenderer</name></member>
+      <member refid="class_bitmap_1a8c27d777eb2e1913c297ec7f8ea8ae54" prot="private" virt="non-virtual"><scope>Bitmap</scope><name>m_texture</name></member>
+      <member refid="class_bitmap_1addac8e49990e141f9ecd7722b4c4c664" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>m_vx</name></member>
+      <member refid="class_bitmap_1a115f25bf7f32a12e6d51916cbb33e151" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>m_vy</name></member>
+      <member refid="class_bitmap_1a9bf3bc4f22d7dfd239b650c256401937" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>m_w</name></member>
+      <member refid="class_bitmap_1a7ade805194dabe9d4ac1051fb7b44075" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>m_x</name></member>
+      <member refid="class_bitmap_1af4eee64e60c65393ee7c13f65824dff4" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>m_y</name></member>
+      <member refid="class_bitmap_1a04bad4d42d3f7724226815b3163306fb" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>Name</name></member>
+      <member refid="class_bitmap_1a909cb95a3129c4bf8d3a9a75e636bc32" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>path</name></member>
+      <member refid="class_bitmap_1a581872fa25c5dd41ed6729d33e611293" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>SetParent</name></member>
+      <member refid="class_bitmap_1a15fe29c1b4fc1f00716c9dd422abc4c1" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>SetPosition</name></member>
+      <member refid="class_bitmap_1a35d5bfdeb0071f4c00a29f03dd60fc5a" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>spriteWidth</name></member>
+      <member refid="class_bitmap_1af7ac93fbbb6dd80dfa2a5b60564fcac4" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>transparent</name></member>
+      <member refid="class_bitmap_1a529c67ada83b851eceec531dcaa5e8f8" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>type</name></member>
+      <member refid="class_bitmap_1ae93c29792fc2ef318c2de91e2dffacf0" prot="public" virt="virtual"><scope>Bitmap</scope><name>Update</name></member>
+      <member refid="class_bitmap_1a72d2a301ec1eb1c8d0f3d64823659a8e" prot="public" virt="non-virtual"><scope>Bitmap</scope><name>~Bitmap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

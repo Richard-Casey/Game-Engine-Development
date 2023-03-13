@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="en-US">
+  <compounddef id="_hero_8cpp" kind="file" language="C++">
+    <compoundname>Hero.cpp</compoundname>
+    <includes refid="_hero_8h" local="yes">Hero.h</includes>
+    <includes refid="_creature_8h" local="yes">Creature.h</includes>
+    <includes refid="_monster_8h" local="yes">Monster.h</includes>
+    <includes refid="bitmap_8h" local="yes">bitmap.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>Creature.h</label>
+        <link refid="_creature_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Game.h</label>
+        <link refid="_game_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Hero.cpp</label>
+        <link refid="_hero_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Hero.h</label>
+        <link refid="_hero_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Monster.h</label>
+        <link refid="_monster_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Pickup.h</label>
+        <link refid="_pickup_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>bitmap.h</label>
+        <link refid="bitmap_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>input.h</label>
+        <link refid="input_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>SDL.h</label>
+      </node>
+      <node id="12">
+        <label>SDL_ttf.h</label>
+      </node>
+      <node id="16">
+        <label>backends/imgui_impl_sdl.h</label>
+      </node>
+      <node id="19">
+        <label>cmath</label>
+      </node>
+      <node id="22">
+        <label>filesystem</label>
+      </node>
+      <node id="15">
+        <label>imgui.h</label>
+      </node>
+      <node id="18">
+        <label>imgui_internal.h</label>
+      </node>
+      <node id="17">
+        <label>imgui_sdl.h</label>
+      </node>
+      <node id="6">
+        <label>iostream</label>
+      </node>
+      <node id="8">
+        <label>nlohmann/json.hpp</label>
+      </node>
+      <node id="13">
+        <label>stdio.h</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="21">
+        <label>unordered_map</label>
+      </node>
+      <node id="20">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hero_8h" kindref="compound">Hero.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_creature_8h" kindref="compound">Creature.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_monster_8h" kindref="compound">Monster.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bitmap_8h" kindref="compound">bitmap.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Constructor<sp/>for<sp/>Hero<sp/>class</highlight></codeline>
+<codeline lineno="16" refid="class_hero_1ad760a7aac060b27d8702c83ceeb233ba" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><ref refid="class_hero_1ad760a7aac060b27d8702c83ceeb233ba" kindref="member">Hero::Hero</ref>(SDL_Renderer*<sp/>renderer,<sp/>std::string<sp/>filename,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xpos,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ypos,<sp/>std::string<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useTransparency)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_creature" kindref="compound">Creature</ref>(renderer,<sp/>filename,<sp/>xpos,<sp/>ypos,<sp/>name,<sp/>useTransparency)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_bitmap_1a529c67ada83b851eceec531dcaa5e8f8" kindref="member">type</ref><sp/>=<sp/>ObjectType::Hero;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_hero_1aede83081901c78ba82c0cceb005a6b36" kindref="member">Update</ref>();<sp/></highlight><highlight class="comment">//<sp/>Use<sp/>update<sp/>function<sp/>from<sp/>Hero<sp/>instead<sp/>of<sp/>Creature</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Destructor<sp/>for<sp/>Hero<sp/>class</highlight></codeline>
+<codeline lineno="27" refid="class_hero_1a5aeef41ede5a80dc29c5acd7b553c4da" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><ref refid="class_hero_1a5aeef41ede5a80dc29c5acd7b553c4da" kindref="member">Hero::~Hero</ref>()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Hero.cpp"/>
+  </compounddef>
+</doxygen>
