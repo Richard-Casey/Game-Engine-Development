@@ -281,6 +281,7 @@ void Game::LoadObjects()
 				{
 					m_Goal2 = static_cast<Pickup*>(newObject); // Set the pickup object as the second goal if it is an end goal
 					m_Goal2->isEnd = true;
+
 				}
 				pickups.push_back(static_cast<Pickup*>(newObject)); // Add the pickup object to the pickups vector
 				break;
@@ -653,25 +654,19 @@ void Game::SaveWorldData()
 /// </summary>
 void Game::RenderSceneHierarchy()
 {
-	//ImGui::Begin("Scene Hierarchy", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar);
 	ImGui::SetNextWindowSize(ImVec2(300, 200));
 	ImGui::Begin("Scene Hierarchy");
 	// Window content here
-
-	// Add scene hierarchy nodes here
-	if (ImGui::TreeNode(m_pTheHero->GetName().c_str()))
-		for (int i = 0; i < ObjectsInScene.size(); i++)
+	for (int i = 0; i < ObjectsInScene.size(); i++)
+	{
+		// Add scene hierarchy nodes here
+		if (ImGui::TreeNode(ObjectsInScene[i]->GetName().c_str()))
 		{
 			// Add child nodes here
+			//ObjectsInScene[i].
 			ImGui::TreePop();
-
-			// Add scene hierarchy nodes here
-			if (ImGui::TreeNode(ObjectsInScene[i]->GetName().c_str()))
-			{
-				// Add child nodes here
-				ImGui::TreePop();
-			}
 		}
+	}
 
 	ImGui::End();
 }
