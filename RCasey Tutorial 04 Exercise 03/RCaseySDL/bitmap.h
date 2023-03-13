@@ -144,6 +144,7 @@ public:
 	int GetPositionY();
 	void SetPosition(int x, int y);
 	std::string GetName() const;
+	std::string GetFilepath() const;
 	SDL_Texture* GetTextureRef() { return m_pbitmapTexture; }
 
 	bool IsDragged = false;

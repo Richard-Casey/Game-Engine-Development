@@ -41,6 +41,7 @@ public :
 	Bitmap* m_SelectedBitmap = nullptr;
 	void RenderSceneHierarchy();
 	std::vector<Bitmap*> ObjectsInScene;
+	
 private:
 
 	bool showGravityWindow;

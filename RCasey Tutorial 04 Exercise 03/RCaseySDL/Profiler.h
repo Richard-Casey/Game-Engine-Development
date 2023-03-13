@@ -32,6 +32,8 @@ public:
     void storeSample(const char* name, __int64 elapsedTime);
     void endFrame();
 
+    __int64 currentFrameTime = 0;
+
 private:
 
     /// <summary>

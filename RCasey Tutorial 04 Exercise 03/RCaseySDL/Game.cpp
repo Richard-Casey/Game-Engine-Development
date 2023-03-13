@@ -14,6 +14,7 @@
 #include <iostream>
 #include "ResourceManager.h"
 #include "Pickup.h"
+#include "Profiler.h"
 
 using json = nlohmann::json;
 
@@ -209,12 +210,12 @@ Game::Game()
 
 }
 
-// This function is used to convert a Bitmap object into a JSON object.
 /// <summary>
 /// To the json.
 /// </summary>
 /// <param name="j">The j.</param>
 /// <param name="p">The p.</param>
+/// This function is used to convert a Bitmap object into a JSON object.
 void to_json(json& j, const Bitmap& p) {
 	j = json{
 	{"type", (int)p.type}, // The type of the Bitmap object
@@ -224,12 +225,12 @@ void to_json(json& j, const Bitmap& p) {
 	};
 }
 
-// This function is used to convert a JSON object into a Bitmap object.
 /// <summary>
 /// Froms the json.
 /// </summary>
 /// <param name="j">The j.</param>
 /// <param name="p">The p.</param>
+/// This function is used to convert a JSON object into a Bitmap object.
 void from_json(const json& j, Bitmap& p) {
 	j.at("type").get_to(p.type); // The type of the Bitmap object
 	j.at("x").get_to(p.m_x); // The x-coordinate of the Bitmap object
@@ -381,6 +382,8 @@ void Game::Update(void)
 	ImGui::NewFrame();  // Start a new GUI frame
 	ImGui_ImplSDL2_NewFrame(m_Window);  // Start a new SDL2 frame
 
+	g_profileManager.startFrame();
+
 	// SPLASH state
 	if (State == Game::SPLASH)
 	{
@@ -478,29 +481,29 @@ void Game::Update(void)
 		
 		RenderObjectsWindow();
 
-		if (showSelectionGui && m_SelectedObject != nullptr)
-		{
-			ImGui::Begin("Object Properties");
+		//if (showSelectionGui && m_SelectedObject != nullptr)
+		//{
+		//	ImGui::Begin("Object Properties");
 
-			bool checkboxValue = m_SelectedObject->applyGravity;
-			if (ImGui::Checkbox("Apply Gravity", &checkboxValue))
-			{
-				m_SelectedObject->applyGravity = checkboxValue;
-			}
+		//	bool checkboxValue = m_SelectedObject->applyGravity;
+		//	if (ImGui::Checkbox("Apply Gravity", &checkboxValue))
+		//	{
+		//		m_SelectedObject->applyGravity = checkboxValue;
+		//	}
 
-			const char* type_names[(int)ObjectType::Object_Count] = { "Static", "Hero", "Monster", "Pickup" };
-			int current_type = (int)m_SelectedObject->type;
-			if (ImGui::Combo("combo", &current_type, type_names, IM_ARRAYSIZE(type_names)))
-			{
-				m_SelectedObject->type = (ObjectType)current_type;
-			}
+		//	const char* type_names[(int)ObjectType::Object_Count] = { "Static", "Hero", "Monster", "Pickup" };
+		//	int current_type = (int)m_SelectedObject->type;
+		//	if (ImGui::Combo("combo", &current_type, type_names, IM_ARRAYSIZE(type_names)))
+		//	{
+		//		m_SelectedObject->type = (ObjectType)current_type;
+		//	}
 
-			if (ImGui::Button("Close Window", ImVec2(100, 30)))
-			{
-				showPickupImgui = false;
-			};
-			ImGui::End();
-		}
+		//	if (ImGui::Button("Close Window", ImVec2(100, 30)))
+		//	{
+		//		showPickupImgui = false;
+		//	};
+		//	ImGui::End();
+		//}
 
 		AssetManager();
 		RenderSceneHierarchy();
@@ -547,6 +550,9 @@ void Game::Update(void)
 
 			AssetMousDrag = nullptr;
 		}
+
+		
+		g_profileManager.endFrame();
 		
 	}
 
@@ -663,7 +669,11 @@ void Game::RenderSceneHierarchy()
 		if (ImGui::TreeNode(ObjectsInScene[i]->GetName().c_str()))
 		{
 			// Add child nodes here
-			//ObjectsInScene[i].
+			if (i == 2 && ObjectsInScene.size() > 3)
+			{
+				// Set the third object as the parent of the fourth object
+				ObjectsInScene[2]->AddChild(static_cast<Bitmap*>(ObjectsInScene[3]));
+			}
 			ImGui::TreePop();
 		}
 	}
@@ -671,13 +681,16 @@ void Game::RenderSceneHierarchy()
 	ImGui::End();
 }
 
+
 /// <summary>
 /// Call to Render Objects in scene and provide X and Y coordinate for each
 /// </summary>
 void Game::RenderObjectsWindow()
 {
-	ImGui::Begin("Objects");
+	ImGui::Begin("Objects and Properties");
 
+	// Objects list
+	ImGui::BeginChild("Objects List", ImVec2(150, 0), true);
 	for (auto bitmap : ObjectsInScene)
 	{
 		if (ImGui::Button(bitmap->GetName().c_str()))
@@ -685,17 +698,16 @@ void Game::RenderObjectsWindow()
 			m_SelectedObject = bitmap;
 		}
 	}
+	ImGui::EndChild();
 
-	ImGui::End();
-
-	ImGui::Begin("Save  World");
-	ImGui::Button("Save World");
-	SaveWorldData();
-	ImGui::End();
-
+	// Object details and properties
 	if (m_SelectedObject)
 	{
-		ImGui::Begin("Object Details");
+		ImGui::SameLine();
+
+		ImGui::BeginGroup();
+
+		ImGui::Text("Object Details");
 
 		int x = m_SelectedObject->m_x;
 		int y = m_SelectedObject->m_y;
@@ -705,39 +717,128 @@ void Game::RenderObjectsWindow()
 
 		m_SelectedObject->SetPosition(x, y);
 
-		ImGui::End();
+		// Object properties
+		if (showSelectionGui && m_SelectedObject != nullptr)
+		{
+			ImGui::Separator();
+
+			ImGui::Text("Object Properties");
+
+			bool checkboxValue = m_SelectedObject->applyGravity;
+			if (ImGui::Checkbox("Apply Gravity", &checkboxValue))
+			{
+				m_SelectedObject->applyGravity = checkboxValue;
+			}
+
+			const char* type_names[(int)ObjectType::Object_Count] = { "Static", "Hero", "Monster", "Pickup" };
+			int current_type = (int)m_SelectedObject->type;
+			if (ImGui::Combo("Type", &current_type, type_names, IM_ARRAYSIZE(type_names)))
+			{
+				m_SelectedObject->type = (ObjectType)current_type;
+			}
+
+			ImGui::Separator();
+
+			if (ImGui::Button("Close", ImVec2(100, 30)))
+			{
+				showSelectionGui = false;
+			}
+		}
+
+		ImGui::EndGroup();
 	}
+
+	// Save button
+	ImGui::SameLine(ImGui::GetWindowWidth() - 100);
+	if (ImGui::Button("Save World", ImVec2(90, 0)))
+	{
+		SaveWorldData();
+	}
+
+	ImGui::End();
 }
+
+
 
 /// <summary>
 /// This is a summery of Asset manager
 /// </summary>
+ 
+ 
 void Game::AssetManager()
 {
 	ImGui::Begin("Editor");
 	ImGui::BeginChild("Content Window", ImVec2(), true);
-	;
+
+	// Set the size of each image and the spacing between them
+	const int imageSize = 100;
+	const int spacing = 10;
+
+	// Set the number of images to display per row
+	const int imagesPerRow = ImGui::GetWindowContentRegionWidth() / (imageSize + spacing);
+	int imageCount = 0;
+
 	for (int i = 0; i < content.size(); i++)
 	{
 		ImGui::PushID(i);
 
-		ImGui::ImageButton((ImTextureID)content[i]->GetTextureRef(), { 100,100 });
+		// Display the image button and increment the image count
+		ImGui::ImageButton((ImTextureID)content[i]->GetTextureRef(), { imageSize, imageSize });
 
-
-		 // For Dragging
+		// For Dragging
 		if (ImGui::BeginDragDropSource())
 		{
 			AssetMousDrag = content[i];
-			ImGui::Image((ImTextureID)content[i]->GetTextureRef(), { 100,100 });
+			ImGui::Image((ImTextureID)content[i]->GetTextureRef(), { imageSize, imageSize });
 			ImGui::EndDragDropSource();
 		}
 		//For Dragging
+
 		ImGui::PopID();
+
+		// If we've reached the maximum number of images per row, move to the next row
+		if (++imageCount % imagesPerRow != 0)
+		{
+			ImGui::SameLine(0, spacing);
+		}
 	}
 
 	ImGui::EndChild();
 	ImGui::End();
 }
+
+ 
+ 
+
+//void Game::AssetManager()
+//{
+//	ImGui::Begin("Editor");
+//	ImGui::BeginChild("Content Window", ImVec2(), true);
+//	;
+//	for (int i = 0; i < content.size(); i++)
+//	{
+//		ImGui::PushID(i);
+//
+//		ImGui::ImageButton((ImTextureID)content[i]->GetTextureRef(), { 100,100 });
+//
+//
+//		 // For Dragging
+//		if (ImGui::BeginDragDropSource())
+//		{
+//			AssetMousDrag = content[i];
+//			ImGui::Image((ImTextureID)content[i]->GetTextureRef(), { 100,100 });
+//			ImGui::EndDragDropSource();
+//		}
+//		//For Dragging
+//		ImGui::PopID();
+//	}
+//
+//	ImGui::EndChild();
+//	ImGui::End();
+//}
+
+
+
 
 Uint32 Game::ResetEvent = SDL_RegisterEvents(1);
 Uint32 Game::PickupEvent = SDL_RegisterEvents(1);

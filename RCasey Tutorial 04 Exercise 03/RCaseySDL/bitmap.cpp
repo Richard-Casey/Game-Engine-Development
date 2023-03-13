@@ -156,13 +156,7 @@ std::string Bitmap::GetName() const
 	return Name;
 }
 
-
-
-//
-//bool Bitmap::ContainsPoint(int x, int y) const {
-//	if (x >= m_x && x <= m_x + m_w && y >= m_y && y <= m_y + m_h) {
-//		return true;
-//	}
-//	return false;
-//}
-
+std::string Bitmap::GetFilepath() const
+{
+	return path;
+}
