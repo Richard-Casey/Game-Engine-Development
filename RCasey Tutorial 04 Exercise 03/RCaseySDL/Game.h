@@ -196,12 +196,6 @@ private:
 	void RenderObjectsWindow();
 
 	/// <summary>
-	/// 
-	/// </summary>
-	/// <param name="rect"></param>
-	//void MoveObject(SDL_Rect& rect);
-	
-	/// <summary>
 	/// Finds and loads contents of asset folder
 	/// </summary>
 	void FindAssets();

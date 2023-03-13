@@ -643,29 +643,59 @@ void Game::SaveWorldData()
 
 /// <summary>
 /// Renders the scene hierarchy.
-/// </summary>
+/// </summary> 
+
 void Game::RenderSceneHierarchy()
 {
 	ImGui::SetNextWindowSize(ImVec2(300, 200));
 	ImGui::Begin("Scene Hierarchy");
-	// Window content here
+
 	for (int i = 0; i < ObjectsInScene.size(); i++)
 	{
 		// Add scene hierarchy nodes here
 		if (ImGui::TreeNode(ObjectsInScene[i]->GetName().c_str()))
 		{
-			// Add child nodes here
-			if (i == 2 && ObjectsInScene.size() > 3)
-			{
-				// Set the third object as the parent of the fourth object
-				ObjectsInScene[2]->AddChild(static_cast<Bitmap*>(ObjectsInScene[3]));
-			}
+			// Add child node with text "Test"
+			ImGui::BulletText("Test");
+
 			ImGui::TreePop();
 		}
 	}
 
 	ImGui::End();
 }
+
+
+
+
+//void Game::RenderSceneHierarchy()
+//{
+//	ImGui::SetNextWindowSize(ImVec2(300, 200));
+//	ImGui::Begin("Scene Hierarchy");
+//	// Window content here
+//	for (int i = 0; i < ObjectsInScene.size(); i++)
+//	{
+//		// Add scene hierarchy nodes here
+//		if (ImGui::TreeNode(ObjectsInScene[i]->GetName().c_str()))
+//		{
+//			// Add child nodes here
+//			if (i == 2 && ObjectsInScene.size() > 3)
+//			{
+//				// Set the third object as the parent of the fourth object
+//				ObjectsInScene[2]->AddChild(static_cast<Bitmap*>(ObjectsInScene[3]));
+//
+//				if (ImGui::TreeNode(ObjectsInScene[3]->GetName().c_str()))
+//				{
+//					ImGui::TreePop();
+//				}
+//
+//			}
+//			ImGui::TreePop();
+//		}
+//	}
+//
+//	ImGui::End();
+//}
 
 
 /// <summary>
