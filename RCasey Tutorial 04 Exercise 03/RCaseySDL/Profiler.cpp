@@ -1,3 +1,43 @@
+#include "Profiler.h"
+#include <iostream>
+#include <vector>
+
+
+
+
+
+ProfilerSystem::ProfilerSystem()
+{
+}
+
+ProfilerSystem::~ProfilerSystem()
+{
+    
+}
+
+void ProfilerSystem::startFrame()
+{
+    //make a new frame sample
+    //get current time SDL_ticks()
+}
+
+void ProfilerSystem::storeSample(const char* name, __int64 elapsedTime)
+{
+    SampleData* sample = new SampleData();
+    sample->frameReference = currentFrame;
+    sample->functionTime = elapsedTime;
+
+    frameData[name].push_back(sample);
+}
+
+void ProfilerSystem::endFrame()
+{
+    //call store sample
+}
+
+
+ProfilerSystem g_profileManager;
+
 //#include <debugapi.h>
 //#include <stdio.h>
 //#include <stdarg.h>
@@ -29,7 +69,7 @@
 //
 //	return charsWritten;
 //}
-
+//
 //int VerboseDebugPrintF(int verbosity, const char* format, ...)
 //{
 //	if (g_verbosity < verbosity)
@@ -41,4 +81,4 @@
 //	va_end(argList);
 //	return charsWritten;
 //}
-
+//

@@ -187,6 +187,7 @@
     <ClInclude Include="input.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Pickup.h" />
+    <ClInclude Include="Profiler.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="TextureManager.h" />

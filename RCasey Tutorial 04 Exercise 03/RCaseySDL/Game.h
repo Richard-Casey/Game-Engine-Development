@@ -21,7 +21,7 @@
 
 
 
-using namespace std;
+//using namespace std;
 
 
 struct SDL_Window;
@@ -40,6 +40,7 @@ public :
 	std::vector<Bitmap*> m_Bitmaps;
 	Bitmap* m_SelectedBitmap = nullptr;
 	void RenderSceneHierarchy();
+	std::vector<Bitmap*> ObjectsInScene;
 private:
 
 	bool showGravityWindow;
@@ -65,9 +66,10 @@ private:
 	Creature* m_monsterTransKeyed; //04-01
 
 	Monster* m_pTheMonster; // Created monster
+	std::vector<Monster*> monsters; // A vector to store Monster objects
+	std::vector<Pickup*> pickups; // A vector to store Pickup objects
 
-
-	vector<Bitmap*> ObjectsInScene;
+	
 	Hero* m_pTheHero;		// created hero
 	Pickup* m_Pickup;
 	Pickup* m_Goal;
@@ -76,16 +78,27 @@ private:
 	TTF_Font* m_pBigFont;
 	TTF_Font* m_pInfoFont;
 
+	/// <summary>
+	/// this is a summery of Asset manager
+	/// </summary>
 	void AssetManager();
 	void CheckEvents();
-	void UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour);
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="msg">string the message to display</param>
+	/// <param name="x"></param>
+	/// <param name="y"></param>
+	/// <param name="font"></param>
+	/// <param name="colour"></param>
+	void UpdateText(std::string msg, int x, int y, TTF_Font* font, SDL_Color colour);
 	void Render();
 	void RenderObjectsWindow();
 	void MoveObject(SDL_Rect& rect);
 	
 
 	void FindAssets();
-	vector<Bitmap*> content;
+	std::vector<Bitmap*> content;
 
 	const float GRAVITY = 500.0f;
 	float m_ay = 9.81f; // default value for m_ay
@@ -118,7 +131,7 @@ public:
 	void SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 	void Update();
 	double  randomNumber();
-	string directory = "../assets/";
+	std::string directory = "../assets/";
 
 	Input* input = new Input();
 
