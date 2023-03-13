@@ -2,6 +2,12 @@
 #include "Profiler.h"
 
 
+/// <summary>
+/// Mains the specified argc.
+/// </summary>
+/// <param name="argc">The argc.</param>
+/// <param name="argv">The argv.</param>
+/// <returns></returns>
 int main(int argc, char* argv[])
 {
     

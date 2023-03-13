@@ -4,26 +4,47 @@
 #include "SDL_render.h"
 #include "ResourceManager.h"
 
+/// <summary>
+/// Gets the w.
+/// </summary>
+/// <returns></returns>
 int Bitmap::GetW()
 {
 	return this->m_pbitmapSurface->w;
 }
 
+/// <summary>
+/// Gets the h.
+/// </summary>
+/// <returns></returns>
 int Bitmap::GetH()
 {
 	return this->m_pbitmapSurface->h;
 }
 
+/// <summary>
+/// Gets the position x.
+/// </summary>
+/// <returns></returns>
 int Bitmap::GetPositionX()
 {
 	return m_x;
 }
 
+/// <summary>
+/// Gets the position y.
+/// </summary>
+/// <returns></returns>
 int Bitmap::GetPositionY()
 {
 	return m_y;
 }
 
+/// <summary>
+/// Sets the position.
+/// </summary>
+/// <param name="x">The x.</param>
+/// <param name="y">The y.</param>
 void Bitmap::SetPosition(int x, int y)
 {
 	m_x = x;
@@ -32,6 +53,15 @@ void Bitmap::SetPosition(int x, int y)
 
 
 
+/// <summary>
+/// Initializes a new instance of the <see cref="Bitmap" /> class.
+/// </summary>
+/// <param name="renderer">The renderer.</param>
+/// <param name="filename">The filename.</param>
+/// <param name="xpos">The xpos.</param>
+/// <param name="ypos">The ypos.</param>
+/// <param name="name">The name.</param>
+/// <param name="useTransparency">if set to <c>true</c> [use transparency].</param>
 Bitmap::Bitmap(SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency)// : deltaTime(0.0f) // initialize deltaTime to 0
 {
 	Name = name;
@@ -73,6 +103,9 @@ Bitmap::Bitmap(SDL_Renderer* renderer, std::string filename, int xpos, int ypos,
 	m_y = ypos;
 }
 
+/// <summary>
+/// Draws this instance.
+/// </summary>
 void Bitmap::draw()
 {
 	if (!isVisable) return;
@@ -90,12 +123,20 @@ void Bitmap::draw()
 	}
 }
 
+/// <summary>
+/// Addoffsets the specified x.
+/// </summary>
+/// <param name="x">The x.</param>
+/// <param name="y">The y.</param>
 void Bitmap::addoffset(int x, int y)
 {
 	m_x += x;
 	m_y += y;
 }
 
+/// <summary>
+/// Finalizes an instance of the <see cref="Bitmap"/> class.
+/// </summary>
 Bitmap::~Bitmap()
 {
 	if (m_pbitmapTexture)
@@ -106,6 +147,10 @@ Bitmap::~Bitmap()
 }
 
 // function definition for GetName()
+/// <summary>
+/// Gets the name.
+/// </summary>
+/// <returns></returns>
 std::string Bitmap::GetName() const
 {
 	return Name;

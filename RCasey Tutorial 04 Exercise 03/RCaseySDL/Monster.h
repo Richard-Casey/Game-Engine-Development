@@ -12,12 +12,21 @@ public:
 	Monster(Hero* HeroToChase, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency = false);
 	~Monster();
 	void Chase();
+	/// <summary>
+	/// Updates this instance.
+	/// </summary>
 	void Update() override
 	{
 		Chase();
 	}
 
+	/// <summary>
+	/// The m hero to chase
+	/// </summary>
 	Hero* m_HeroToChase;
+	/// <summary>
+	/// The pickup
+	/// </summary>
 	Pickup* pickup;
 	
 };

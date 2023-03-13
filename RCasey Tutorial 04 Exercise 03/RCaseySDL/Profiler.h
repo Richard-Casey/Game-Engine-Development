@@ -8,12 +8,15 @@
 #include <string>
 
 
-
-
-
 struct SampleData
 {
+    /// <summary>
+    /// The function time
+    /// </summary>
     __int64 functionTime;
+    /// <summary>
+    /// The frame reference
+    /// </summary>
     int frameReference;
 };
 
@@ -31,7 +34,13 @@ public:
 
 private:
 
+    /// <summary>
+    /// The current frame
+    /// </summary>
     int currentFrame;
+    /// <summary>
+    /// The frame data
+    /// </summary>
     FrameMap frameData;
 };
 
@@ -41,6 +50,10 @@ extern ProfilerSystem g_profileManager;
 
 struct Profile
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Profile"/> struct.
+    /// </summary>
+    /// <param name="name">The name.</param>
     Profile(const char* name)
     {
         _name = name;
@@ -49,6 +62,9 @@ struct Profile
         startTime = li.QuadPart;
     }
 
+    /// <summary>
+    /// Finalizes an instance of the <see cref="Profile"/> class.
+    /// </summary>
     ~Profile()
     {
         LARGE_INTEGER li;
@@ -58,7 +74,13 @@ struct Profile
         g_profileManager.storeSample(_name, elapsedTime);
     }
 
+    /// <summary>
+    /// The name
+    /// </summary>
     const char* _name;
+    /// <summary>
+    /// The start time
+    /// </summary>
     __int64 startTime;
 };
 #define PROFILE(name) Profile p(name)

@@ -2,11 +2,17 @@
 
 
 
+/// <summary>
+/// Initializes a new instance of the <see cref="TextureManager"/> class.
+/// </summary>
 TextureManager::TextureManager()
 {
 }
 
 
+/// <summary>
+/// Finalizes an instance of the <see cref="TextureManager"/> class.
+/// </summary>
 TextureManager::~TextureManager()
 {
 	for (auto value : m_textureMap)
@@ -16,6 +22,10 @@ TextureManager::~TextureManager()
 	}
 }
 
+/// <summary>
+/// Unloads the specified file name.
+/// </summary>
+/// <param name="fileName">Name of the file.</param>
 void TextureManager::Unload(const std::string fileName)
 {
 	auto searchResult = m_textureMap.find(fileName);
@@ -27,6 +37,13 @@ void TextureManager::Unload(const std::string fileName)
 	}
 }
 
+/// <summary>
+/// Loads the specified file name.
+/// </summary>
+/// <param name="fileName">Name of the file.</param>
+/// <param name="useTransparancy">if set to <c>true</c> [use transparancy].</param>
+/// <param name="PRenderer">The p renderer.</param>
+/// <returns></returns>
 SDL_Texture* TextureManager::Load(const std::string fileName, bool useTransparancy, SDL_Renderer* PRenderer)
 {
 	SDL_Texture* m_pbitmapTexture = nullptr;

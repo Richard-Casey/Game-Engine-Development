@@ -17,7 +17,13 @@
 
 using json = nlohmann::json;
 
-// Set the display color for rendering
+/// <summary>
+/// Set Display Colour for SDL Window Background
+/// </summary>
+/// <param name="r">Set Red Level (0 - 255)</param>
+/// <param name="g">Set Green Level (0 - 255)</param>
+/// <param name="b">Set Blue Level (0 - 255)</param>
+/// <param name="a">Set Alpha Level (0 - 255)</param>
 void Game::SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 {
 	// Clean up
@@ -35,8 +41,15 @@ void Game::SetDisplayColour(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 	}
 }
 
-// Update text on screen
-void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour)
+/// <summary>
+/// Updates the text to be displayed
+/// </summary>
+/// <param name="msg">string the message to display</param>
+/// <param name="x">X Coordinate of text</param>
+/// <param name="y">Y Coordinate of text</param>
+/// <param name="font">Font Name</param>
+/// <param name="colour">Colour of font displayed</param>
+void Game::UpdateText(std::string msg, int x, int y, TTF_Font* font, SDL_Color colour)
 {
 	SDL_Surface* surface = TTF_RenderText_Solid(font, msg.c_str(), colour);
 	if (!surface)
@@ -68,7 +81,9 @@ void Game::UpdateText(string msg, int x, int y, TTF_Font* font, SDL_Color colour
 	SDL_FreeSurface(surface);
 }
 
-// Check events for the game
+/// <summary>
+/// The CheckEvents Function looks for in game events
+/// </summary>
 void Game::CheckEvents()
 {
 	SDL_Event e;
@@ -93,7 +108,12 @@ void Game::CheckEvents()
 	}
 }
 
-// Generate a random number
+/// <summary>
+/// Random number generator
+/// </summary>
+/// <returns>
+/// Returns random number
+/// </returns>
 double Game::randomNumber()
 {
 	static bool need_random = true;
@@ -110,7 +130,9 @@ double Game::randomNumber()
 
 
 
-// Constructor for the Game class
+/// <summary>
+/// Game Constructor
+/// </summary>
 Game::Game()
 {
 	// Initialize member variables
@@ -188,6 +210,11 @@ Game::Game()
 }
 
 // This function is used to convert a Bitmap object into a JSON object.
+/// <summary>
+/// To the json.
+/// </summary>
+/// <param name="j">The j.</param>
+/// <param name="p">The p.</param>
 void to_json(json& j, const Bitmap& p) {
 	j = json{
 	{"type", (int)p.type}, // The type of the Bitmap object
@@ -198,6 +225,11 @@ void to_json(json& j, const Bitmap& p) {
 }
 
 // This function is used to convert a JSON object into a Bitmap object.
+/// <summary>
+/// Froms the json.
+/// </summary>
+/// <param name="j">The j.</param>
+/// <param name="p">The p.</param>
 void from_json(const json& j, Bitmap& p) {
 	j.at("type").get_to(p.type); // The type of the Bitmap object
 	j.at("x").get_to(p.m_x); // The x-coordinate of the Bitmap object
@@ -205,7 +237,9 @@ void from_json(const json& j, Bitmap& p) {
 	j.at("file").get_to(p.path); // The file path of the Bitmap object
 }
 
-// This function is used to load objects from a JSON file.
+/// <summary>
+/// Function for loading all game objects
+/// </summary>
 void Game::LoadObjects()
 {
 	std::vector<Monster*> monsters; // A vector to store Monster objects
@@ -231,13 +265,13 @@ void Game::LoadObjects()
 			// Create a new game object based on its type
 			switch (type)
 			{
-			case ObjectType::Hero:
-				newObject = new Hero(m_Renderer, file, x, y, "Hero", true); // Create a new hero object
-				m_pTheHero = static_cast<Hero*>(newObject); // Set the hero object as the main hero in the game
-				break;
 			case ObjectType::Monster:
 				newObject = new Monster(nullptr, m_Renderer, file, x, y, "Monster", true); // Create a new monster object
 				monsters.push_back(static_cast<Monster*>(newObject)); // Add the monster object to the monsters vector
+				break;
+			case ObjectType::Hero:
+				newObject = new Hero(m_Renderer, file, x, y, "Hero", true); // Create a new hero object
+				m_pTheHero = static_cast<Hero*>(newObject); // Set the hero object as the main hero in the game
 				break;
 			case ObjectType::Pickup:
 			{
@@ -250,6 +284,7 @@ void Game::LoadObjects()
 				}
 				pickups.push_back(static_cast<Pickup*>(newObject)); // Add the pickup object to the pickups vector
 				break;
+			
 			}
 			case ObjectType::Static:
 				newObject = new Bitmap(m_Renderer, file, x, y, file, true); // Create a new static object
@@ -274,6 +309,9 @@ void Game::LoadObjects()
 }
 
 
+/// <summary>
+/// Function for unloading all game objects
+/// </summary>
 void Game::UnLoadObjects()
 {
 	// delete all objects in the scene
@@ -289,6 +327,9 @@ void Game::UnLoadObjects()
 	m_Goal2 = nullptr;
 }
 
+/// <summary>
+/// Game Deconstructor
+/// </summary>
 Game::~Game()
 {
 	// Clean up all resources allocated by the game
@@ -329,6 +370,9 @@ Game::~Game()
 	}
 }
 
+/// <summary>
+/// Update Function for Game
+/// </summary>
 void Game::Update(void)
 {
 	CheckEvents();  // Check for any events (e.g. key presses) and update the input manager accordingly
@@ -430,8 +474,6 @@ void Game::Update(void)
 		SDL_Rect spriteHeroRect = { m_pTheHero->GetX(),m_pTheHero->GetY(),m_pTheHero->GetW(), m_pTheHero->GetH() };
 		SDL_Rect spriteGoal2Rect = { m_Goal2->GetX(), m_Goal2->GetY(), m_Goal2->GetW(), m_Goal2->GetH() };
 
-
-		// Implement chase function
 		
 		RenderObjectsWindow();
 
@@ -495,7 +537,7 @@ void Game::Update(void)
 
 		if (ImGui::IsMouseReleased(ImGuiMouseButton_Left) && AssetMousDrag != nullptr)
 		{
-			cout << "Test" << endl;
+			std::cout << "Test" << std::endl;
 			int x, y;
 			SDL_GetMouseState(&x, &y);
 
@@ -544,7 +586,7 @@ void Game::Update(void)
 		if (SDL_PointInRect(&heroPos, &spriteGoal2Rect)&& State !=Game::ENDGAME)
 		{
 			State = Game::ENDGAME;
-			cout << "Reached Goal" << endl;
+			std::cout << "Reached Goal" << std::endl;
 		}
 		
 	}
@@ -559,35 +601,9 @@ void Game::Update(void)
 }
 
 
-
-
-
-//void Game::MoveObject(SDL_Rect& rect)
-//{
-//	ImGuiIO& io = ImGui::GetIO();
-//	float speed = 100.0f * io.DeltaTime;
-//
-//	if (ImGui::IsKeyDown(SDL_SCANCODE_UP))
-//	{
-//		rect.y -= (int)speed;
-//	}
-//
-//	if (ImGui::IsKeyDown(SDL_SCANCODE_DOWN))
-//	{
-//		rect.y += (int)speed;
-//	}
-//
-//	if (ImGui::IsKeyDown(SDL_SCANCODE_LEFT))
-//	{
-//		rect.x -= (int)speed;
-//	}
-//
-//	if (ImGui::IsKeyDown(SDL_SCANCODE_RIGHT))
-//	{
-//		rect.x += (int)speed;
-//	}
-//}
-
+/// <summary>
+/// Finds and loads contents of asset folder
+/// </summary>
 void Game::FindAssets()
 {
 	
@@ -609,6 +625,9 @@ void Game::FindAssets()
 	}
 }
 
+/// <summary>
+/// Save Function using JSON
+/// </summary>
 void Game::SaveWorldData()
 {
 	json world;
@@ -629,9 +648,12 @@ void Game::SaveWorldData()
 	stream.close();
 }
 
+/// <summary>
+/// Renders the scene hierarchy.
+/// </summary>
 void Game::RenderSceneHierarchy()
 {
-	ImGui::Begin("Scene Hierarchy", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar);
+	//ImGui::Begin("Scene Hierarchy", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar);
 	ImGui::SetNextWindowSize(ImVec2(300, 200));
 	ImGui::Begin("Scene Hierarchy");
 	// Window content here
@@ -654,6 +676,9 @@ void Game::RenderSceneHierarchy()
 	ImGui::End();
 }
 
+/// <summary>
+/// Call to Render Objects in scene and provide X and Y coordinate for each
+/// </summary>
 void Game::RenderObjectsWindow()
 {
 	ImGui::Begin("Objects");
@@ -666,6 +691,11 @@ void Game::RenderObjectsWindow()
 		}
 	}
 
+	ImGui::End();
+
+	ImGui::Begin("Save  World");
+	ImGui::Button("Save World");
+	SaveWorldData();
 	ImGui::End();
 
 	if (m_SelectedObject)
@@ -684,6 +714,9 @@ void Game::RenderObjectsWindow()
 	}
 }
 
+/// <summary>
+/// This is a summery of Asset manager
+/// </summary>
 void Game::AssetManager()
 {
 	ImGui::Begin("Editor");

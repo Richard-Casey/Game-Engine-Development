@@ -8,8 +8,17 @@ public:
 
 	enum Status
 	{
+		/// <summary>
+		/// The menu
+		/// </summary>
 		Menu,
+		/// <summary>
+		/// The game
+		/// </summary>
 		Game,
+		/// <summary>
+		/// The end
+		/// </summary>
 		End
 	};
 

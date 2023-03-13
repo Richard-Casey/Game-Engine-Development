@@ -6,21 +6,35 @@
 
 
 
+/// <summary>
+/// Initializes a new instance of the <see cref="ProfilerSystem"/> class.
+/// </summary>
 ProfilerSystem::ProfilerSystem()
 {
 }
 
+/// <summary>
+/// Finalizes an instance of the <see cref="ProfilerSystem"/> class.
+/// </summary>
 ProfilerSystem::~ProfilerSystem()
 {
     
 }
 
+/// <summary>
+/// Starts the frame.
+/// </summary>
 void ProfilerSystem::startFrame()
 {
     //make a new frame sample
     //get current time SDL_ticks()
 }
 
+/// <summary>
+/// Stores the sample.
+/// </summary>
+/// <param name="name">The name.</param>
+/// <param name="elapsedTime">The elapsed time.</param>
 void ProfilerSystem::storeSample(const char* name, __int64 elapsedTime)
 {
     SampleData* sample = new SampleData();
@@ -30,55 +44,16 @@ void ProfilerSystem::storeSample(const char* name, __int64 elapsedTime)
     frameData[name].push_back(sample);
 }
 
+/// <summary>
+/// Ends the frame.
+/// </summary>
 void ProfilerSystem::endFrame()
 {
     //call store sample
 }
 
 
+/// <summary>
+/// The g profile manager
+/// </summary>
 ProfilerSystem g_profileManager;
-
-//#include <debugapi.h>
-//#include <stdio.h>
-//#include <stdarg.h>
-//#include "Profiler.h"
-//#include <map>
-//#include <iostream>
-//#include <cassert>
-//
-//int VDebugPrintF(const char* format, va_list argList)
-//{
-//	const unsigned int MAX_CHARS = 1024;
-//	static char s_buffer[MAX_CHARS];
-//
-//	int charsWritten = vsnprintf(s_buffer, MAX_CHARS, format, argList);
-//
-//	OutputDebugStringA(s_buffer);
-//
-//	return charsWritten;
-//}
-//
-//int DebugPrintF(const char* format, ...)
-//{
-//	va_list argList;
-//	va_start(argList, format);
-//
-//	int charsWritten = VDebugPrintF(format, argList);
-//
-//	va_end(argList);
-//
-//	return charsWritten;
-//}
-//
-//int VerboseDebugPrintF(int verbosity, const char* format, ...)
-//{
-//	if (g_verbosity < verbosity)
-//		return 0;
-//
-//	va_list argList;
-//	va_start(argList, format);
-//	int charsWritten = VDebugPrintF(format, argList);
-//	va_end(argList);
-//	return charsWritten;
-//}
-//

@@ -10,6 +10,9 @@ private:
 	ResourceManager(ResourceManager const&);
 	ResourceManager operator = (ResourceManager const&);
 
+	/// <summary>
+	/// The m surfaces
+	/// </summary>
 	std::unordered_map<std::string, SDL_Surface*> m_Surfaces;
 
 public:

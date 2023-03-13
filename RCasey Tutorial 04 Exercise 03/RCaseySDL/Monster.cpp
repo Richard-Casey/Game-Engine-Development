@@ -2,6 +2,16 @@
 #include "Creature.h"
 #include "Hero.h"
 
+/// <summary>
+/// Initializes a new instance of the <see cref="Monster"/> class.
+/// </summary>
+/// <param name="HeroToChase">The hero to chase.</param>
+/// <param name="renderer">The renderer.</param>
+/// <param name="filename">The filename.</param>
+/// <param name="xpos">The xpos.</param>
+/// <param name="ypos">The ypos.</param>
+/// <param name="name">The name.</param>
+/// <param name="useTransparency">if set to <c>true</c> [use transparency].</param>
 Monster::Monster(Hero* HeroToChase, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency)
 	: Creature(renderer, filename, xpos, ypos, name, useTransparency)
 {
@@ -9,10 +19,16 @@ Monster::Monster(Hero* HeroToChase, SDL_Renderer* renderer, std::string filename
 	m_HeroToChase = HeroToChase;
 }
 
+/// <summary>
+/// Finalizes an instance of the <see cref="Monster"/> class.
+/// </summary>
 Monster::~Monster()
 {
 }
 
+/// <summary>
+/// Chases this instance.
+/// </summary>
 void Monster::Chase()
 {
 	if (m_HeroToChase == nullptr)

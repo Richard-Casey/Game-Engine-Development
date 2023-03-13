@@ -4,6 +4,16 @@
 #include "Pickup.h"
 #include "Game.h"
 
+/// <summary>
+/// Initializes a new instance of the <see cref="Pickup"/> class.
+/// </summary>
+/// <param name="hero">The hero.</param>
+/// <param name="renderer">The renderer.</param>
+/// <param name="filename">The filename.</param>
+/// <param name="xpos">The xpos.</param>
+/// <param name="ypos">The ypos.</param>
+/// <param name="name">The name.</param>
+/// <param name="useTransparency">if set to <c>true</c> [use transparency].</param>
 Pickup::Pickup(Hero* hero, SDL_Renderer* renderer, std::string filename, int xpos, int ypos, std::string name, bool useTransparency)
     : Bitmap(renderer, filename, xpos, ypos, name, useTransparency)
 {
@@ -11,6 +21,9 @@ Pickup::Pickup(Hero* hero, SDL_Renderer* renderer, std::string filename, int xpo
     m_hero = hero;
 }
 
+/// <summary>
+/// Updates this instance.
+/// </summary>
 void Pickup::Update()
 {
     if (isEnd) return;
