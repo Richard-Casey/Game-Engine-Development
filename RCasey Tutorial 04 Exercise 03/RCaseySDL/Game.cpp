@@ -377,12 +377,13 @@ Game::~Game()
 /// </summary>
 void Game::Update(void)
 {
+	g_profileManager.startFrame();
+
 	CheckEvents();  // Check for any events (e.g. key presses) and update the input manager accordingly
 	SDL_RenderClear(m_Renderer);  // Clear the renderer
 	ImGui::NewFrame();  // Start a new GUI frame
 	ImGui_ImplSDL2_NewFrame(m_Window);  // Start a new SDL2 frame
 
-	g_profileManager.startFrame();
 
 	// SPLASH state
 	if (State == Game::SPLASH)
@@ -429,6 +430,8 @@ void Game::Update(void)
 	// GAME state
 	else if (State == Game::GAME)
 	{
+		g_profileManager.startFrame();
+
 		// Change the display colour based on user input
 		if (input->KeyIsPressed(KEY_R))
 		{
@@ -479,31 +482,8 @@ void Game::Update(void)
 		SDL_Rect spriteGoal2Rect = { m_Goal2->GetX(), m_Goal2->GetY(), m_Goal2->GetW(), m_Goal2->GetH() };
 
 		
+		
 		RenderObjectsWindow();
-
-		//if (showSelectionGui && m_SelectedObject != nullptr)
-		//{
-		//	ImGui::Begin("Object Properties");
-
-		//	bool checkboxValue = m_SelectedObject->applyGravity;
-		//	if (ImGui::Checkbox("Apply Gravity", &checkboxValue))
-		//	{
-		//		m_SelectedObject->applyGravity = checkboxValue;
-		//	}
-
-		//	const char* type_names[(int)ObjectType::Object_Count] = { "Static", "Hero", "Monster", "Pickup" };
-		//	int current_type = (int)m_SelectedObject->type;
-		//	if (ImGui::Combo("combo", &current_type, type_names, IM_ARRAYSIZE(type_names)))
-		//	{
-		//		m_SelectedObject->type = (ObjectType)current_type;
-		//	}
-
-		//	if (ImGui::Button("Close Window", ImVec2(100, 30)))
-		//	{
-		//		showPickupImgui = false;
-		//	};
-		//	ImGui::End();
-		//}
 
 		AssetManager();
 		RenderSceneHierarchy();
@@ -556,6 +536,8 @@ void Game::Update(void)
 		
 	}
 
+	
+
 	for (auto object : ObjectsInScene)
 	{
 		if (object->applyGravity)
@@ -597,6 +579,8 @@ void Game::Update(void)
 		}
 		
 	}
+	
+	
 
 	ImGui::Render();
 	ImGuiSDL::Render(ImGui::GetDrawData());
@@ -605,6 +589,7 @@ void Game::Update(void)
 	//pause for 1/60th sec (ish)
 	SDL_Delay(16);
 	
+
 }
 
 

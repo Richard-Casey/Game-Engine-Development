@@ -44,6 +44,8 @@ private:
     /// The frame data
     /// </summary>
     FrameMap frameData;
+    int frameCount;
+    float totalFrameTime;
 };
 
 
