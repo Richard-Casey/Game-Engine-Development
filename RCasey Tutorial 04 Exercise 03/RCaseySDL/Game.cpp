@@ -791,7 +791,7 @@ void Game::RenderObjectsWindow()
  
 void Game::AssetManager()
 {
-	ImGui::Begin("Editor");
+	ImGui::Begin("Asset Manager");
 	ImGui::BeginChild("Content Window", ImVec2(), true);
 
 	// Set the size of each image and the spacing between them
